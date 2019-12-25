@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Image, ImageSourcePropType, Text, View } from 'react-native';
-import { Title, Body } from 'repeat-please-styles';
+import { Image, ImageSourcePropType, View } from 'react-native';
+import { ButtonPrimary, Title, Body } from 'repeat-please-styles';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { Walkthrough } from '../walkthrough';
 import { style } from './style';
@@ -59,14 +59,33 @@ export class Slides extends Component <{}, ISlideState> {
         );
     };
 
+    renderButtonNext = ():JSX.Element => (
+        <View>
+            <ButtonPrimary>Next</ButtonPrimary>
+        </View>
+    );
+
+    renderButtonDone = ():JSX.Element => (
+        <View>
+            <ButtonPrimary>Done</ButtonPrimary>
+        </View>
+    );
+
     onDone = (): void => {
         this.setState({ showRealApp: true })
-    }
+    };
 
     render() {
         if (this.state.showRealApp) {
             return <Walkthrough />;
         }
-        return <AppIntroSlider renderItem={this.renderItem} slides={slides} onDone={this.onDone} />
+        return (
+            <AppIntroSlider
+                renderItem={this.renderItem}
+                slides={slides}
+                onDone={this.onDone}
+                bottomButton
+            />
+        );
     }
 }
