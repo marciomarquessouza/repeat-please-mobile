@@ -1,4 +1,4 @@
-package com.rpmobile;
+package com.repeatplease;
 
 import android.content.Intent;
 import android.os.Bundle;

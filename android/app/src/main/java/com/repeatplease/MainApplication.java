@@ -1,4 +1,4 @@
-package com.rpmobile;
+package com.repeatplease;
 
 import android.app.Application;
 import android.util.Log;

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* rpmobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* rpmobileTests.m */; };
-		0DA92A435270C79FF1425F6C /* libPods-rpmobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DAFFB3B67826017ECD6817 /* libPods-rpmobile.a */; };
+		00E356F31AD99517003FC87E /* RepeatPleaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RepeatPleaseTests.m */; };
+		0DA92A435270C79FF1425F6C /* libPods-RepeatPlease.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DAFFB3B67826017ECD6817 /* libPods-RepeatPlease.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -17,11 +17,11 @@
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* rpmobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* rpmobileTests.m */; };
+		2DCD954D1E0B4F2C00145EB5 /* RepeatPleaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RepeatPleaseTests.m */; };
 		44E55FF5C54A428797CF8BC3 /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6CEC45561AB742FBBB8F3864 /* rubicon-icon-font.ttf */; };
-		768A14C7A5814F51FF31C235 /* libPods-rpmobileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A271DF2E30DDFAFED81602A4 /* libPods-rpmobileTests.a */; };
-		8027651F207EE8E6CCCAC5AD /* libPods-rpmobile-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F9C00888CBB819559F4821 /* libPods-rpmobile-tvOSTests.a */; };
-		8B167197E41F3B46079D585F /* libPods-rpmobile-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7C5326A445D6137BDCDD72 /* libPods-rpmobile-tvOS.a */; };
+		768A14C7A5814F51FF31C235 /* libPods-RepeatPleaseTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A271DF2E30DDFAFED81602A4 /* libPods-RepeatPleaseTests.a */; };
+		8027651F207EE8E6CCCAC5AD /* libPods-RepeatPlease-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F9C00888CBB819559F4821 /* libPods-RepeatPlease-tvOSTests.a */; };
+		8B167197E41F3B46079D585F /* libPods-RepeatPlease-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7C5326A445D6137BDCDD72 /* libPods-RepeatPlease-tvOS.a */; };
 		9A17F131AFD44BE6B666A127 /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD623390EFFD4AF2953581AD /* Roboto_medium.ttf */; };
 /* End PBXBuildFile section */
 
@@ -31,60 +31,60 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = rpmobile;
+			remoteInfo = RepeatPlease;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "rpmobile-tvOS";
+			remoteInfo = "RepeatPlease-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* rpmobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rpmobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* RepeatPleaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RepeatPleaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* rpmobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rpmobileTests.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* RepeatPleaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RepeatPleaseTests.m; sourceTree = "<group>"; };
 		020C2580A87A463589E8B6F3 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/native-base/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		0918E13633FB46E2BF26C422 /* Roboto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto.ttf; path = "../node_modules/native-base/Fonts/Roboto.ttf"; sourceTree = "<group>"; };
 		11F66D3F1A9544E699C065D0 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/native-base/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* rpmobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rpmobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = rpmobile/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = rpmobile/AppDelegate.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* RepeatPlease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepeatPlease.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = RepeatPlease/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = RepeatPlease/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = rpmobile/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = rpmobile/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = rpmobile/main.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RepeatPlease/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = RepeatPlease/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RepeatPlease/main.m; sourceTree = "<group>"; };
 		18BCABE967F34E2C9F40FFFF /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		27E89EDD39B944C1AE10CBD7 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/native-base/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
-		2857B59344F04893F50D46E9 /* Pods-rpmobile-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rpmobile-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-rpmobile-tvOSTests/Pods-rpmobile-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		2857B59344F04893F50D46E9 /* Pods-RepeatPlease-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepeatPlease-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-RepeatPlease-tvOSTests/Pods-RepeatPlease-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		296A5227DAF54339BF1E41B8 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* rpmobile-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rpmobile-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* rpmobile-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "rpmobile-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E47B1E0B4A5D006451C7 /* RepeatPlease-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RepeatPlease-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* RepeatPlease-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RepeatPlease-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EB01E078CF24C87B109CB73 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		300A55385A3B478E907C0548 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		3391AEE542B249DABAE1317E /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/native-base/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		379779C5439A448EA3E1FE62 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
-		42DAFFB3B67826017ECD6817 /* libPods-rpmobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rpmobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42DAFFB3B67826017ECD6817 /* libPods-RepeatPlease.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RepeatPlease.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45D2390DAB0946298574B11D /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		516B451395A24107938CA96C /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		54F6145FAA844DD0B2A9282F /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		6403988C78554F8F86BCE1F7 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		65D5EB3DDF454BEBADBDB0F1 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
-		6BF2124BE8FFB2ED04884D6A /* Pods-rpmobile-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rpmobile-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-rpmobile-tvOS/Pods-rpmobile-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		6BF2124BE8FFB2ED04884D6A /* Pods-RepeatPlease-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepeatPlease-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-RepeatPlease-tvOS/Pods-RepeatPlease-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		6CEC45561AB742FBBB8F3864 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; };
 		7392BB238FF748AB90FD5182 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		80DB6D4D0EB548649011F2A6 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		834D61CD9CA64A9088AE9220 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/native-base/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		8CDFCF1C4E6A40C48103A99E /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
-		923C2229AA69F734EE7F1C41 /* Pods-rpmobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rpmobile.release.xcconfig"; path = "Target Support Files/Pods-rpmobile/Pods-rpmobile.release.xcconfig"; sourceTree = "<group>"; };
+		923C2229AA69F734EE7F1C41 /* Pods-RepeatPlease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepeatPlease.release.xcconfig"; path = "Target Support Files/Pods-RepeatPlease/Pods-RepeatPlease.release.xcconfig"; sourceTree = "<group>"; };
 		93203F7D630343C0ADDEBCAD /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
-		A271DF2E30DDFAFED81602A4 /* libPods-rpmobileTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rpmobileTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A271DF2E30DDFAFED81602A4 /* libPods-RepeatPleaseTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RepeatPleaseTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2F2AF6F1DEC47BB8DEE0702 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		A48A1B4D1C184E7582055FC5 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/native-base/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
-		AC62F5B1D02B4E80ACE11B8C /* Pods-rpmobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rpmobile.debug.xcconfig"; path = "Target Support Files/Pods-rpmobile/Pods-rpmobile.debug.xcconfig"; sourceTree = "<group>"; };
+		AC62F5B1D02B4E80ACE11B8C /* Pods-RepeatPlease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepeatPlease.debug.xcconfig"; path = "Target Support Files/Pods-RepeatPlease/Pods-RepeatPlease.debug.xcconfig"; sourceTree = "<group>"; };
 		AD623390EFFD4AF2953581AD /* Roboto_medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Roboto_medium.ttf; path = "../node_modules/native-base/Fonts/Roboto_medium.ttf"; sourceTree = "<group>"; };
 		ADDCC326DB074219A25D81B1 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		AF0DA4BC96984F5481811410 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
@@ -92,19 +92,19 @@
 		B9B410CC39C24DD9A06FE3E1 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/native-base/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		BC285F03271D4992A84345D2 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		BC70AF59D77F41029F1DA8AE /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/native-base/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		C1F9C00888CBB819559F4821 /* libPods-rpmobile-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rpmobile-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1F9C00888CBB819559F4821 /* libPods-RepeatPlease-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RepeatPlease-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A838DA79614CFF92D454D7 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/native-base/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		CE908EDEE07649788741B2C7 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
-		D588D80AD7204D04370BF318 /* Pods-rpmobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rpmobileTests.debug.xcconfig"; path = "Target Support Files/Pods-rpmobileTests/Pods-rpmobileTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D588D80AD7204D04370BF318 /* Pods-RepeatPleaseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepeatPleaseTests.debug.xcconfig"; path = "Target Support Files/Pods-RepeatPleaseTests/Pods-RepeatPleaseTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D6A28773EF574107AE72084C /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
-		D821BCD7C33E0DEF90F404EA /* Pods-rpmobile-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rpmobile-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-rpmobile-tvOSTests/Pods-rpmobile-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		EBAA8D433817F2C9D90C82B0 /* Pods-rpmobile-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rpmobile-tvOS.release.xcconfig"; path = "Target Support Files/Pods-rpmobile-tvOS/Pods-rpmobile-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		D821BCD7C33E0DEF90F404EA /* Pods-RepeatPlease-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepeatPlease-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-RepeatPlease-tvOSTests/Pods-RepeatPlease-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EBAA8D433817F2C9D90C82B0 /* Pods-RepeatPlease-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepeatPlease-tvOS.release.xcconfig"; path = "Target Support Files/Pods-RepeatPlease-tvOS/Pods-RepeatPlease-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F19BB888ED264437B4DC49E5 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		F1FDDE85903D44B0B6F5A727 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/native-base/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
-		FB7C5326A445D6137BDCDD72 /* libPods-rpmobile-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-rpmobile-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBB044CA7920AC909E073842 /* Pods-rpmobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rpmobileTests.release.xcconfig"; path = "Target Support Files/Pods-rpmobileTests/Pods-rpmobileTests.release.xcconfig"; sourceTree = "<group>"; };
+		FB7C5326A445D6137BDCDD72 /* libPods-RepeatPlease-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RepeatPlease-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBB044CA7920AC909E073842 /* Pods-RepeatPleaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepeatPleaseTests.release.xcconfig"; path = "Target Support Files/Pods-RepeatPleaseTests/Pods-RepeatPleaseTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				768A14C7A5814F51FF31C235 /* libPods-rpmobileTests.a in Frameworks */,
+				768A14C7A5814F51FF31C235 /* libPods-RepeatPleaseTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DA92A435270C79FF1425F6C /* libPods-rpmobile.a in Frameworks */,
+				0DA92A435270C79FF1425F6C /* libPods-RepeatPlease.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B167197E41F3B46079D585F /* libPods-rpmobile-tvOS.a in Frameworks */,
+				8B167197E41F3B46079D585F /* libPods-RepeatPlease-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,20 +136,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8027651F207EE8E6CCCAC5AD /* libPods-rpmobile-tvOSTests.a in Frameworks */,
+				8027651F207EE8E6CCCAC5AD /* libPods-RepeatPlease-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* rpmobileTests */ = {
+		00E356EF1AD99517003FC87E /* RepeatPleaseTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* rpmobileTests.m */,
+				00E356F21AD99517003FC87E /* RepeatPleaseTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = rpmobileTests;
+			path = RepeatPleaseTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -163,19 +163,19 @@
 		11CBD669E60D0EE91EA9313A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AC62F5B1D02B4E80ACE11B8C /* Pods-rpmobile.debug.xcconfig */,
-				923C2229AA69F734EE7F1C41 /* Pods-rpmobile.release.xcconfig */,
-				6BF2124BE8FFB2ED04884D6A /* Pods-rpmobile-tvOS.debug.xcconfig */,
-				EBAA8D433817F2C9D90C82B0 /* Pods-rpmobile-tvOS.release.xcconfig */,
-				D821BCD7C33E0DEF90F404EA /* Pods-rpmobile-tvOSTests.debug.xcconfig */,
-				2857B59344F04893F50D46E9 /* Pods-rpmobile-tvOSTests.release.xcconfig */,
-				D588D80AD7204D04370BF318 /* Pods-rpmobileTests.debug.xcconfig */,
-				FBB044CA7920AC909E073842 /* Pods-rpmobileTests.release.xcconfig */,
+				AC62F5B1D02B4E80ACE11B8C /* Pods-RepeatPlease.debug.xcconfig */,
+				923C2229AA69F734EE7F1C41 /* Pods-RepeatPlease.release.xcconfig */,
+				6BF2124BE8FFB2ED04884D6A /* Pods-RepeatPlease-tvOS.debug.xcconfig */,
+				EBAA8D433817F2C9D90C82B0 /* Pods-RepeatPlease-tvOS.release.xcconfig */,
+				D821BCD7C33E0DEF90F404EA /* Pods-RepeatPlease-tvOSTests.debug.xcconfig */,
+				2857B59344F04893F50D46E9 /* Pods-RepeatPlease-tvOSTests.release.xcconfig */,
+				D588D80AD7204D04370BF318 /* Pods-RepeatPleaseTests.debug.xcconfig */,
+				FBB044CA7920AC909E073842 /* Pods-RepeatPleaseTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* rpmobile */ = {
+		13B07FAE1A68108700A75B9A /* RepeatPlease */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -186,7 +186,7 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = rpmobile;
+			name = RepeatPlease;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -194,10 +194,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				42DAFFB3B67826017ECD6817 /* libPods-rpmobile.a */,
-				FB7C5326A445D6137BDCDD72 /* libPods-rpmobile-tvOS.a */,
-				C1F9C00888CBB819559F4821 /* libPods-rpmobile-tvOSTests.a */,
-				A271DF2E30DDFAFED81602A4 /* libPods-rpmobileTests.a */,
+				42DAFFB3B67826017ECD6817 /* libPods-RepeatPlease.a */,
+				FB7C5326A445D6137BDCDD72 /* libPods-RepeatPlease-tvOS.a */,
+				C1F9C00888CBB819559F4821 /* libPods-RepeatPlease-tvOSTests.a */,
+				A271DF2E30DDFAFED81602A4 /* libPods-RepeatPleaseTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,9 +212,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* rpmobile */,
+				13B07FAE1A68108700A75B9A /* RepeatPlease */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* rpmobileTests */,
+				00E356EF1AD99517003FC87E /* RepeatPleaseTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				11CBD669E60D0EE91EA9313A /* Pods */,
@@ -228,10 +228,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* rpmobile.app */,
-				00E356EE1AD99517003FC87E /* rpmobileTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* rpmobile-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* rpmobile-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* RepeatPlease.app */,
+				00E356EE1AD99517003FC87E /* RepeatPleaseTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* RepeatPlease-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* RepeatPlease-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -281,9 +281,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* rpmobileTests */ = {
+		00E356ED1AD99517003FC87E /* RepeatPleaseTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "rpmobileTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "RepeatPleaseTests" */;
 			buildPhases = (
 				39E5101E1F481CB1F3B40FC6 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -295,14 +295,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = rpmobileTests;
-			productName = rpmobileTests;
-			productReference = 00E356EE1AD99517003FC87E /* rpmobileTests.xctest */;
+			name = RepeatPleaseTests;
+			productName = RepeatPleaseTests;
+			productReference = 00E356EE1AD99517003FC87E /* RepeatPleaseTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* rpmobile */ = {
+		13B07F861A680F5B00A75B9A /* RepeatPlease */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "rpmobile" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "RepeatPlease" */;
 			buildPhases = (
 				8E8EECB3AF76EE75A07C6757 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -316,14 +316,14 @@
 			);
 			dependencies = (
 			);
-			name = rpmobile;
-			productName = rpmobile;
-			productReference = 13B07F961A680F5B00A75B9A /* rpmobile.app */;
+			name = RepeatPlease;
+			productName = RepeatPlease;
+			productReference = 13B07F961A680F5B00A75B9A /* RepeatPlease.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* rpmobile-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* RepeatPlease-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "rpmobile-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "RepeatPlease-tvOS" */;
 			buildPhases = (
 				252FE3E1564D2A89281BF20E /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -336,14 +336,14 @@
 			);
 			dependencies = (
 			);
-			name = "rpmobile-tvOS";
-			productName = "rpmobile-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* rpmobile-tvOS.app */;
+			name = "RepeatPlease-tvOS";
+			productName = "RepeatPlease-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* RepeatPlease-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* rpmobile-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* RepeatPlease-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "rpmobile-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "RepeatPlease-tvOSTests" */;
 			buildPhases = (
 				CE3426F2C895D0C33D1D4C91 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -355,9 +355,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "rpmobile-tvOSTests";
-			productName = "rpmobile-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* rpmobile-tvOSTests.xctest */;
+			name = "RepeatPlease-tvOSTests";
+			productName = "RepeatPlease-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* RepeatPlease-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -384,7 +384,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "rpmobile" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "RepeatPlease" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -398,10 +398,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* rpmobile */,
-				00E356ED1AD99517003FC87E /* rpmobileTests */,
-				2D02E47A1E0B4A5D006451C7 /* rpmobile-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* rpmobile-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* RepeatPlease */,
+				00E356ED1AD99517003FC87E /* RepeatPleaseTests */,
+				2D02E47A1E0B4A5D006451C7 /* RepeatPlease-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* RepeatPlease-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -473,7 +473,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-rpmobile-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RepeatPlease-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -509,7 +509,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-rpmobileTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RepeatPleaseTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -531,7 +531,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-rpmobile-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RepeatPlease-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -553,7 +553,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-rpmobile-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RepeatPlease-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -604,7 +604,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-rpmobile/Pods-rpmobile-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-RepeatPlease/Pods-RepeatPlease-resources.sh",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
@@ -643,7 +643,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rpmobile/Pods-rpmobile-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RepeatPlease/Pods-RepeatPlease-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -653,7 +653,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* rpmobileTests.m in Sources */,
+				00E356F31AD99517003FC87E /* RepeatPleaseTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,7 +679,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* rpmobileTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* RepeatPleaseTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -688,12 +688,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* rpmobile */;
+			target = 13B07F861A680F5B00A75B9A /* RepeatPlease */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* rpmobile-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* RepeatPlease-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -705,7 +705,7 @@
 				13B07FB21A68108700A75B9A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = rpmobile;
+			path = RepeatPlease;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -713,14 +713,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D588D80AD7204D04370BF318 /* Pods-rpmobileTests.debug.xcconfig */;
+			baseConfigurationReference = D588D80AD7204D04370BF318 /* Pods-RepeatPleaseTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = rpmobileTests/Info.plist;
+				INFOPLIST_FILE = RepeatPleaseTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -730,17 +730,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rpmobile.app/rpmobile";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RepeatPlease.app/RepeatPlease";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FBB044CA7920AC909E073842 /* Pods-rpmobileTests.release.xcconfig */;
+			baseConfigurationReference = FBB044CA7920AC909E073842 /* Pods-RepeatPleaseTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = rpmobileTests/Info.plist;
+				INFOPLIST_FILE = RepeatPleaseTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -750,18 +750,18 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rpmobile.app/rpmobile";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RepeatPlease.app/RepeatPlease";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC62F5B1D02B4E80ACE11B8C /* Pods-rpmobile.debug.xcconfig */;
+			baseConfigurationReference = AC62F5B1D02B4E80ACE11B8C /* Pods-RepeatPlease.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
-				INFOPLIST_FILE = rpmobile/Info.plist;
+				INFOPLIST_FILE = RepeatPlease/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -769,18 +769,18 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = rpmobile;
+				PRODUCT_NAME = RepeatPlease;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 923C2229AA69F734EE7F1C41 /* Pods-rpmobile.release.xcconfig */;
+			baseConfigurationReference = 923C2229AA69F734EE7F1C41 /* Pods-RepeatPlease.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = rpmobile/Info.plist;
+				INFOPLIST_FILE = RepeatPlease/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -788,14 +788,14 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = rpmobile;
+				PRODUCT_NAME = RepeatPlease;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6BF2124BE8FFB2ED04884D6A /* Pods-rpmobile-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 6BF2124BE8FFB2ED04884D6A /* Pods-RepeatPlease-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -806,14 +806,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "rpmobile-tvOS/Info.plist";
+				INFOPLIST_FILE = "RepeatPlease-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.rpmobile-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.RepeatPlease-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -823,7 +823,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EBAA8D433817F2C9D90C82B0 /* Pods-rpmobile-tvOS.release.xcconfig */;
+			baseConfigurationReference = EBAA8D433817F2C9D90C82B0 /* Pods-RepeatPlease-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -834,14 +834,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "rpmobile-tvOS/Info.plist";
+				INFOPLIST_FILE = "RepeatPlease-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.rpmobile-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.RepeatPlease-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -851,7 +851,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D821BCD7C33E0DEF90F404EA /* Pods-rpmobile-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = D821BCD7C33E0DEF90F404EA /* Pods-RepeatPlease-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -861,24 +861,24 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "rpmobile-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "RepeatPlease-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.rpmobile-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.RepeatPlease-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rpmobile-tvOS.app/rpmobile-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RepeatPlease-tvOS.app/RepeatPlease-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2857B59344F04893F50D46E9 /* Pods-rpmobile-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 2857B59344F04893F50D46E9 /* Pods-RepeatPlease-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -888,17 +888,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "rpmobile-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "RepeatPlease-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.rpmobile-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.facebook.REACT.RepeatPlease-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rpmobile-tvOS.app/rpmobile-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RepeatPlease-tvOS.app/RepeatPlease-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -1005,7 +1005,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "rpmobileTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "RepeatPleaseTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -1014,7 +1014,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "rpmobile" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "RepeatPlease" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -1023,7 +1023,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "rpmobile-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "RepeatPlease-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -1032,7 +1032,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "rpmobile-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "RepeatPlease-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -1041,7 +1041,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "rpmobile" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "RepeatPlease" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
