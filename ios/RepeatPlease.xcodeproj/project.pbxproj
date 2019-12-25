@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* RepeatPleaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RepeatPleaseTests.m */; };
 		0DA92A435270C79FF1425F6C /* libPods-RepeatPlease.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DAFFB3B67826017ECD6817 /* libPods-RepeatPlease.a */; };
@@ -23,6 +22,9 @@
 		8027651F207EE8E6CCCAC5AD /* libPods-RepeatPlease-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1F9C00888CBB819559F4821 /* libPods-RepeatPlease-tvOSTests.a */; };
 		8B167197E41F3B46079D585F /* libPods-RepeatPlease-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB7C5326A445D6137BDCDD72 /* libPods-RepeatPlease-tvOS.a */; };
 		9A17F131AFD44BE6B666A127 /* Roboto_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD623390EFFD4AF2953581AD /* Roboto_medium.ttf */; };
+		ECDAE1EA5F6342879B543793 /* FredokaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF51E027BD704C63A2CA232A /* FredokaOne-Regular.ttf */; };
+		F712BEBD144A4E0FB50DA04D /* Oswald-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6DFFBE236274A949237197F /* Oswald-ExtraLight.ttf */; };
+		D13C365D40174DAD88D1B100 /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04226E2CCA324A96B8D21568 /* Oswald-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,9 @@
 		F1FDDE85903D44B0B6F5A727 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/native-base/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
 		FB7C5326A445D6137BDCDD72 /* libPods-RepeatPlease-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RepeatPlease-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB044CA7920AC909E073842 /* Pods-RepeatPleaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RepeatPleaseTests.release.xcconfig"; path = "Target Support Files/Pods-RepeatPleaseTests/Pods-RepeatPleaseTests.release.xcconfig"; sourceTree = "<group>"; };
+		BF51E027BD704C63A2CA232A /* FredokaOne-Regular.ttf */ = {isa = PBXFileReference; name = "FredokaOne-Regular.ttf"; path = "../assets/fonts/FredokaOne-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C6DFFBE236274A949237197F /* Oswald-ExtraLight.ttf */ = {isa = PBXFileReference; name = "Oswald-ExtraLight.ttf"; path = "../assets/fonts/Oswald-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		04226E2CCA324A96B8D21568 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; name = "Oswald-Regular.ttf"; path = "../assets/fonts/Oswald-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +279,9 @@
 				834D61CD9CA64A9088AE9220 /* Octicons.ttf */,
 				300A55385A3B478E907C0548 /* SimpleLineIcons.ttf */,
 				AF0DA4BC96984F5481811410 /* Zocial.ttf */,
+				BF51E027BD704C63A2CA232A /* FredokaOne-Regular.ttf */,
+				C6DFFBE236274A949237197F /* Oswald-ExtraLight.ttf */,
+				04226E2CCA324A96B8D21568 /* Oswald-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -423,6 +431,9 @@
 				9A17F131AFD44BE6B666A127 /* Roboto_medium.ttf in Resources */,
 				27D5690816C84655A6C8BAEE /* Roboto.ttf in Resources */,
 				44E55FF5C54A428797CF8BC3 /* rubicon-icon-font.ttf in Resources */,
+				ECDAE1EA5F6342879B543793 /* FredokaOne-Regular.ttf in Resources */,
+				F712BEBD144A4E0FB50DA04D /* Oswald-ExtraLight.ttf in Resources */,
+				D13C365D40174DAD88D1B100 /* Oswald-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

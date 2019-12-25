@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  View,
-  StatusBar,
-} from 'react-native';
-import { LogoTitle } from 'repeat-please-styles';
 import SplashScreen from 'react-native-splash-screen';
-
+import { Slides } from './src/screens/slides';
 
 export default class App extends Component {
   componentDidMount() {
@@ -17,14 +10,7 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <StatusBar barStyle="dark-content" />
-        <SafeAreaView>
-          <ScrollView contentInsetAdjustmentBehavior="automatic">
-            <View>
-              <LogoTitle />
-            </View>
-          </ScrollView>
-        </SafeAreaView>
+        <Slides />
       </>
     );
   }
