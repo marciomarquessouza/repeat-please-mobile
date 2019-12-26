@@ -12,5 +12,6 @@ describe('Slides basic tests', () => {
         const wrapper = setup();
         const slidesComnponent = findByDataTest(wrapper, 'slidesComponent');
         expect(slidesComnponent).toHaveLength(1);
+        expect(slidesComnponent).toMatchSnapshot();
     });
 });

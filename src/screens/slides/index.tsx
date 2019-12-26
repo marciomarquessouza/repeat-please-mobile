@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Image, ImageSourcePropType, View } from 'react-native';
-// import { Title, Body } from 'repeat-please-styles';
+import { Title, Body } from 'repeat-please-styles';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { Walkthrough } from '../walkthrough';
 import { style } from './style';
@@ -52,9 +52,9 @@ export class Slides extends Component <{}, ISlideState> {
     renderItem = ({ item }: ISlide): JSX.Element => {
         return (
             <View style={style.slideContainer}>
-                {/* <Title>{item.title}</Title> */}
+                <Title>{item.title}</Title>
                 <Image source={item.image} />
-                {/* <Body customStyle={style.textStyle} >{item.text}</Body> */}
+                <Body customStyle={style.textStyle} >{item.text}</Body>
             </View>
         );
     };
