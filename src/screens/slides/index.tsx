@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Image, ImageSourcePropType, View } from 'react-native';
-import { ButtonPrimary, Title, Body } from 'repeat-please-styles';
+// import { Title, Body } from 'repeat-please-styles';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { Walkthrough } from '../walkthrough';
 import { style } from './style';
@@ -11,9 +11,9 @@ interface ISlideState {
 
 interface ISlide {
     item: {
-        title?: string;
-        text?: string;
-        image?: ImageSourcePropType;
+        title: string;
+        text: string;
+        image: ImageSourcePropType;
     }
 }
 
@@ -42,7 +42,7 @@ const slides = [
 ];
 
 export class Slides extends Component <{}, ISlideState> {
-    constructor(props) {
+    constructor(props={}) {
         super(props);
         this.state = {
             showRealApp: false,
@@ -52,24 +52,12 @@ export class Slides extends Component <{}, ISlideState> {
     renderItem = ({ item }: ISlide): JSX.Element => {
         return (
             <View style={style.slideContainer}>
-                <Title>{item.title}</Title>
+                {/* <Title>{item.title}</Title> */}
                 <Image source={item.image} />
-                <Body customStyle={style.textStyle} >{item.text}</Body>
+                {/* <Body customStyle={style.textStyle} >{item.text}</Body> */}
             </View>
         );
     };
-
-    renderButtonNext = ():JSX.Element => (
-        <View>
-            <ButtonPrimary>Next</ButtonPrimary>
-        </View>
-    );
-
-    renderButtonDone = ():JSX.Element => (
-        <View>
-            <ButtonPrimary>Done</ButtonPrimary>
-        </View>
-    );
 
     onDone = (): void => {
         this.setState({ showRealApp: true })
@@ -85,6 +73,7 @@ export class Slides extends Component <{}, ISlideState> {
                 slides={slides}
                 onDone={this.onDone}
                 bottomButton
+                data-test="slidesComponent"
             />
         );
     }

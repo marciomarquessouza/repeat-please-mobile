@@ -3,6 +3,6 @@ import { Text, View } from 'react-native';
 
 export const Walkthrough = () => (
     <View>
-        <Text>Walkthrough</Text>
+        <Text data-test="walkthrough">Walkthrough</Text>
     </View>
 );
