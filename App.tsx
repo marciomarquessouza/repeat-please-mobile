@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SplashScreen from 'react-native-splash-screen';
-import { Slides } from './src/screens/slides';
+import AppContainer from './src/navigator';
+
 
 export default class App extends Component {
   componentDidMount() {
@@ -9,7 +10,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <Slides />
+      <AppContainer />
     );
   }
 }

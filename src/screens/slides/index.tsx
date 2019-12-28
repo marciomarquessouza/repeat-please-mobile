@@ -3,7 +3,7 @@ import { Image, View } from 'react-native';
 import { slides, ISlide } from './slides';
 import { style } from './style';
 import { Title, Body } from 'repeat-please-styles';
-import { Walkthrough } from '../walkthrough';
+import Walkthrough from '../walkthrough';
 import AppIntroSlider from 'react-native-app-intro-slider';
 
 interface ISlideState {
@@ -14,7 +14,7 @@ interface ISlideItem {
 	item: ISlide;
 }
 
-export class Slides extends Component<{}, ISlideState> {
+class Slides extends Component<{}, ISlideState> {
 	constructor(props = {}) {
 		super(props);
 		this.state = {
@@ -51,3 +51,5 @@ export class Slides extends Component<{}, ISlideState> {
 		);
 	}
 }
+
+export default Slides;

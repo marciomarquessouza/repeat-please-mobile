@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
-import { Walkthrough } from './';
+import Walkthrough from './';
 import { findByDataTest } from '../../utils/testUtil';
 
 const setup = (): ShallowWrapper => {
