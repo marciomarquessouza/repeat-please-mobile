@@ -1,7 +1,9 @@
-import { NavigationStackProp } from 'react-navigation-stack';
+export interface INavigate {
+	navigate: (screen: string, parameter?: any) => void;
+}
 
 export const goToScreen = (
-	navigation: NavigationStackProp,
+	navigation: INavigate,
 	screen: string,
 	parameters?: any,
 ): void => {
