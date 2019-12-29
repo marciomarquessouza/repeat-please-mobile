@@ -1,11 +1,31 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
+import {
+	ButtonRounded,
+	ButtonTransparent,
+	TitleLogo,
+	PlaceholderInput,
+} from 'repeat-please-styles';
+import { styles } from './styles';
 
-class Register extends Component<{}, {}> {
+export class Register extends Component<{}, {}> {
 	render() {
 		return (
-			<View>
-				<Text>Register</Text>
+			<View style={styles.container} data-test="register">
+				<TitleLogo />
+				<View style={styles.formStyle}>
+					<PlaceholderInput placeholder="Name or NickName" />
+					<PlaceholderInput placeholder="Email" keyboardType="email-address" />
+					<PlaceholderInput placeholder="Password" secureTextEntry />
+					<PlaceholderInput placeholder="Confirm Password" secureTextEntry />
+				</View>
+				<ButtonRounded customStyle={styles.buttonStyle}>Register</ButtonRounded>
+				<ButtonTransparent customStyle={styles.buttonStyle}>
+					Loging with Facebook
+				</ButtonTransparent>
+				<ButtonTransparent customStyle={styles.buttonStyle}>
+					Loging with Google
+				</ButtonTransparent>
 			</View>
 		);
 	}
