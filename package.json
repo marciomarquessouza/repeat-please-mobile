@@ -13,6 +13,13 @@
   "lint:js": "eslint -c ./.eslintrc.js './**/*.js'",
   "lint:all": "npx yarn run lint && npx yarn run tslint"
  },
+ "husky": {
+  "hooks": {
+   "pre-commit": "yarn lint",
+   "pre-push": "yarn lint",
+   "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+  }
+ },
  "dependencies": {
   "native-base": "^2.13.8",
   "react": "16.8.6",
@@ -31,6 +38,8 @@
  "devDependencies": {
   "@babel/core": "^7.5.0",
   "@babel/runtime": "^7.5.0",
+  "@commitlint/cli": "^8.2.0",
+  "@commitlint/config-conventional": "^8.2.0",
   "@react-native-community/eslint-config": "^0.0.5",
   "@types/enzyme": "^3.10.4",
   "@types/enzyme-adapter-react-16": "^1.0.5",
@@ -46,7 +55,9 @@
   "eslint": "^6.8.0",
   "eslint-config-prettier": "^6.8.0",
   "eslint-plugin-prettier": "^3.1.2",
+  "husky": "^3.1.0",
   "jest": "^24.1.0",
+  "lint-staged": "^9.5.0",
   "metro-react-native-babel-preset": "0.54.1",
   "prettier": "^1.19.1",
   "react-dom": "^16.12.0",
