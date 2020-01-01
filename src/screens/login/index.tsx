@@ -16,7 +16,7 @@ export class Login extends Component<{}, {}> {
 
 	render() {
 		return (
-			<View style={styles.container} data-test="register">
+			<View style={styles.container} data-test="login">
 				<ScrollView contentContainerStyle={styles.scrollStyle}>
 					<View style={styles.wrapper}>
 						<View style={styles.logoContainer}>
