@@ -24,11 +24,18 @@ export class Login extends Component<{}, {}> {
 							<TitleLogo />
 						</View>
 						<View style={styles.formStyle}>
-							<PlaceholderInput placeholder="Email" keyboardType="email-address" />
+							<PlaceholderInput
+								placeholder="Email"
+								keyboardType="email-address"
+							/>
 							<PlaceholderInput placeholder="Password" secureTextEntry />
-							<MessageWarning customStyle={styles.messageStyle}>Login error</MessageWarning>
+							<MessageWarning customStyle={styles.messageStyle}>
+								Login error
+							</MessageWarning>
 						</View>
-						<ButtonRounded customStyle={styles.buttonStyle}>Login</ButtonRounded>
+						<ButtonRounded customStyle={styles.buttonStyle}>
+							Login
+						</ButtonRounded>
 						<View>
 							<ButtonTransparent customStyle={styles.buttonStyle}>
 								Loging with Facebook

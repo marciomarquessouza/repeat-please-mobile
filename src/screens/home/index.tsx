@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export class Home extends Component<{}, {}> {
 	render() {
 		return (
-			<View>
+			<View style={styles.container}>
 				<Text>Home</Text>
 			</View>
 		);

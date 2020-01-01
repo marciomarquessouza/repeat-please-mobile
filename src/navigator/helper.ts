@@ -15,7 +15,7 @@ export const goToScreen = (
 
 export const navigationOptionsDefault = {
 	headerStyle: {
-	  backgroundColor: color.background,
+		backgroundColor: color.background,
 	},
 	headerTintColor: color.black,
 };

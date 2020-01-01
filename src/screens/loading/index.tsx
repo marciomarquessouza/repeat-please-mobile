@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { ActivityIndicator,  StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import * as firebase from 'firebase';
 import { goToScreen, INavigate } from '../../navigator/helper';
 
@@ -9,16 +9,16 @@ interface ILoadingProps {
 
 export class Loading extends Component<ILoadingProps, {}> {
 	componentDidMount() {
-		firebase.auth().onAuthStateChanged((user) => {
+		firebase.auth().onAuthStateChanged(user => {
 			const { navigation } = this.props;
 			goToScreen(navigation, user ? 'App' : 'Auth');
 		});
 	}
 
 	render() {
-		return(
+		return (
 			<View style={styles.container}>
-				<ActivityIndicator size='large'></ActivityIndicator>
+				<ActivityIndicator size="large" />
 			</View>
 		);
 	}

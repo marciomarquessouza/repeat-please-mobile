@@ -16,24 +16,22 @@ const AppStack = createStackNavigator({
 	},
 });
 
-const AuthStack = createStackNavigator(
-	{
-		Slides: {
-			screen: Slides,
-			navigationOptions,
-		},
-		Walkthrough: {
-			screen: Walkthrough,
-			navigationOptions,
-		},
-		Login: {
-			screen: Login,
-		},
-		Register: {
-			screen: Register,
-		},
+const AuthStack = createStackNavigator({
+	Slides: {
+		screen: Slides,
+		navigationOptions,
 	},
-);
+	Walkthrough: {
+		screen: Walkthrough,
+		navigationOptions,
+	},
+	Login: {
+		screen: Login,
+	},
+	Register: {
+		screen: Register,
+	},
+});
 
 const navigator = createSwitchNavigator(
 	{
@@ -42,7 +40,7 @@ const navigator = createSwitchNavigator(
 		Auth: AuthStack,
 	},
 	{
-		initialRouteName: "Loading"
+		initialRouteName: 'Loading',
 	},
 );
 
