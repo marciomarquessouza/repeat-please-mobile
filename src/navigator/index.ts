@@ -1,13 +1,22 @@
-import { createAppContainer } from 'react-navigation';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import Slides from '../screens/slides';
 import Walkthrough from '../screens/walkthrough';
 import Login from '../screens/login';
 import Register from '../screens/register';
+import Home from '../screens/home';
+import Loading from '../screens/loading';
 
 const navigationOptions = () => ({ header: null });
 
-const navigator = createStackNavigator(
+const AppStack = createStackNavigator({
+	Home: {
+		screen: Home,
+		navigationOptions,
+	},
+});
+
+const AuthStack = createStackNavigator(
 	{
 		Slides: {
 			screen: Slides,
@@ -19,15 +28,21 @@ const navigator = createStackNavigator(
 		},
 		Login: {
 			screen: Login,
-			navigationOptions,
 		},
 		Register: {
 			screen: Register,
-			navigationOptions,
 		},
 	},
+);
+
+const navigator = createSwitchNavigator(
 	{
-		initialRouteName: 'Slides',
+		Loading,
+		App: AppStack,
+		Auth: AuthStack,
+	},
+	{
+		initialRouteName: "Loading"
 	},
 );
 

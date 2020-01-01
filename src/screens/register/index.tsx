@@ -6,9 +6,12 @@ import {
 	TitleLogo,
 	PlaceholderInput,
 } from 'repeat-please-styles';
+import { navigationOptionsDefault } from '../../navigator/helper';
 import { styles } from './styles';
 
 export class Register extends Component<{}, {}> {
+	static navigationOptions = navigationOptionsDefault;
+
 	render() {
 		return (
 			<View style={styles.container} data-test="register">
