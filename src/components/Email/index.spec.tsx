@@ -19,4 +19,16 @@ describe('Email basic tests', () => {
 		expect(email).toHaveLength(1);
 		expect(email).toMatchSnapshot();
 	});
+
+	it('should change the email value when a new value is inputed', () => {
+		let email = '';
+		const newEmail = 'repeat.please@gamellama.com';
+		const onEmailChange = (text: string): void => {
+			email = text;
+		};
+		const wrapper = setup({ email, onEmailChange });
+		const emailComponent = findByDataTest(wrapper, 'email');
+		emailComponent.simulate('ChangeText', newEmail);
+		expect(email).toBe(newEmail);
+	});
 });

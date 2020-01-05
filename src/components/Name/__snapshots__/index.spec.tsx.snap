@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Name basic tests should render the Name Component Properly 1`] = `ShallowWrapper {}`;
+
 exports[`Name basic tests should rendere the Name Component Properly 1`] = `ShallowWrapper {}`;

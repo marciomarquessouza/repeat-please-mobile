@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1578240734173" clover="3.2.0">
-  <project timestamp="1578240734173" name="All files">
-    <metrics statements="131" coveredstatements="107" conditionals="13" coveredconditionals="5" methods="31" coveredmethods="13" elements="175" coveredelements="125" complexity="0" loc="131" ncloc="131" packages="13" files="21" classes="21"/>
+<coverage generated="1578250848941" clover="3.2.0">
+  <project timestamp="1578250848941" name="All files">
+    <metrics statements="131" coveredstatements="110" conditionals="13" coveredconditionals="5" methods="31" coveredmethods="16" elements="175" coveredelements="131" complexity="0" loc="131" ncloc="131" packages="13" files="21" classes="21"/>
     <package name="assets.images">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="monkey_mouth.png" path="/Users/marcio.souza/pessoal/repeat-please-mobile/rpmobile/assets/images/monkey_mouth.png">
@@ -27,36 +27,36 @@
       </file>
     </package>
     <package name="src.components.Email">
-      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="index.tsx" path="/Users/marcio.souza/pessoal/repeat-please-mobile/rpmobile/src/components/Email/index.tsx">
-        <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="5" type="stmt"/>
         <line num="2" count="5" type="stmt"/>
         <line num="9" count="5" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Name">
-      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="index.tsx" path="/Users/marcio.souza/pessoal/repeat-please-mobile/rpmobile/src/components/Name/index.tsx">
-        <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="5" type="stmt"/>
         <line num="2" count="5" type="stmt"/>
-        <line num="3" count="5" type="stmt"/>
-        <line num="10" count="5" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Password">
-      <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="index.tsx" path="/Users/marcio.souza/pessoal/repeat-please-mobile/rpmobile/src/components/Password/index.tsx">
-        <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="1" count="5" type="stmt"/>
         <line num="2" count="5" type="stmt"/>
-        <line num="3" count="5" type="stmt"/>
-        <line num="10" count="5" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.navigator">
@@ -96,9 +96,9 @@
         <line num="34" count="1" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="41" count="1" type="stmt"/>
-        <line num="53" count="1" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="57" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.screens.Login.LoginForm">
@@ -232,7 +232,7 @@
       <file name="testUtil.ts" path="/Users/marcio.souza/pessoal/repeat-please-mobile/rpmobile/src/utils/testUtil.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="9" type="stmt"/>
-        <line num="7" count="13" type="stmt"/>
+        <line num="7" count="16" type="stmt"/>
       </file>
     </package>
   </project>

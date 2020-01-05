@@ -13,10 +13,22 @@ const setup = (props: IPasswordProps): ShallowWrapper => {
 };
 
 describe('Password basic tests', () => {
-	it('should rendere the Password Component Properly', () => {
+	it('should render the Password Component Properly', () => {
 		const wrapper = setup({ ...defaultProps });
 		const password = findByDataTest(wrapper, 'password');
 		expect(password).toHaveLength(1);
 		expect(password).toMatchSnapshot();
+	});
+
+	it('should change the password value when a new text is inputed', () => {
+		let password = '';
+		const newPassword = 'secret';
+		const onPasswordChange = (text: string): void => {
+			password = text;
+		};
+		const wrapper = setup({ password, onPasswordChange });
+		const passwordComponent = findByDataTest(wrapper, 'password');
+		passwordComponent.simulate('ChangeText', newPassword);
+		expect(password).toBe(newPassword);
 	});
 });
