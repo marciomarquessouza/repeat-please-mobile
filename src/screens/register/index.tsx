@@ -1,55 +1,70 @@
 import React, { Component } from 'react';
-import { ScrollView, View } from 'react-native';
-import {
-	ButtonRounded,
-	ButtonTransparent,
-	MessageWarning,
-	TitleLogo,
-	PlaceholderInput,
-} from 'repeat-please-styles';
 import { navigationOptionsDefault } from '../../navigator/helper';
-import { styles } from './styles';
+import { RegisterForm } from './RegisterForm';
+import * as firebase from 'firebase';
 
-export class Register extends Component<{}, {}> {
+export interface IRegisterState {
+	hasError: boolean;
+	errorMessage: string;
+	email: string;
+	password: string;
+	name: string;
+}
+
+export class Register extends Component<{}, IRegisterState> {
+	constructor(props = {}) {
+		super(props);
+		this.state = {
+			hasError: false,
+			errorMessage: '',
+			email: '',
+			password: '',
+			name: '',
+		};
+	}
+
 	static navigationOptions = navigationOptionsDefault;
+
+	onNameChange = (name: string): void => {
+		this.setState({ name });
+	};
+
+	onEmailChange = (email: string): void => {
+		this.setState({ email });
+	};
+
+	onPasswordChange = (password: string): void => {
+		this.setState({ password });
+	};
+
+	handleRegister = (): void => {
+		const { email, name, password } = this.state;
+		firebase
+			.auth()
+			.createUserWithEmailAndPassword(email, password)
+			.then(userCredentials => {
+				if (!userCredentials || !userCredentials.user) {
+					throw Error('User unknown');
+				}
+				return userCredentials.user.updateProfile({
+					displayName: name,
+				});
+			})
+			.catch(error =>
+				this.setState({ hasError: true, errorMessage: error.message }),
+			);
+	};
 
 	render() {
 		return (
-			<View style={styles.container} data-test="register">
-				<ScrollView contentContainerStyle={styles.scrollStyle}>
-					<View style={styles.wrapper}>
-						<View style={styles.logoContainer}>
-							<TitleLogo />
-						</View>
-						<View style={styles.formStyle}>
-							<PlaceholderInput placeholder="Name or NickName" />
-							<PlaceholderInput
-								placeholder="Email"
-								keyboardType="email-address"
-							/>
-							<PlaceholderInput placeholder="Password" secureTextEntry />
-							<PlaceholderInput
-								placeholder="Confirm Password"
-								secureTextEntry
-							/>
-							<MessageWarning customStyle={styles.messageStyle}>
-								Register error
-							</MessageWarning>
-						</View>
-						<ButtonRounded customStyle={styles.buttonStyle}>
-							Register
-						</ButtonRounded>
-						<View>
-							<ButtonTransparent customStyle={styles.buttonStyle}>
-								Loging with Facebook
-							</ButtonTransparent>
-							<ButtonTransparent customStyle={styles.buttonStyle}>
-								Loging with Google
-							</ButtonTransparent>
-						</View>
-					</View>
-				</ScrollView>
-			</View>
+			<RegisterForm
+				{...this.state}
+				data-test="register"
+				onNameChange={this.onNameChange}
+				onPasswordChange={this.onPasswordChange}
+				onEmailChange={this.onEmailChange}
+				handleRegister={this.handleRegister}
+			/>
 		);
 	}
 }

@@ -4,25 +4,30 @@ import { color } from 'repeat-please-styles';
 export const styles = StyleSheet.create({
 	container: {
 		flex: 1,
+		flexDirection: 'column',
+		justifyContent: 'center',
 		backgroundColor: color.background,
 	},
 	scrollStyle: {
 		flexGrow: 1,
 	},
 	wrapper: {
-		height: '100%',
 		padding: 10,
-		justifyContent: 'space-between',
+		justifyContent: 'space-around',
 	},
 	logoContainer: {
-		marginTop: 10,
+		paddingTop: 20,
 		alignItems: 'center',
+		justifyContent: 'center',
 	},
 	formStyle: {
 		marginVertical: 20,
 	},
 	buttonStyle: {
 		marginVertical: 5,
+	},
+	loginButtonStyle: {
+		marginTop: 20,
 	},
 	logoStyle: {
 		height: 100,

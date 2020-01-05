@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 import { findByDataTest } from '../../utils/testUtil';
-import Slides from './';
+import Slides from '.';
 
 const setup = (): ShallowWrapper => {
 	return shallow(<Slides />);

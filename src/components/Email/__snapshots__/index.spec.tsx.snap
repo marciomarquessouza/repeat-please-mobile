@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Email basic tests should rendere the Email Component Properly 1`] = `ShallowWrapper {}`;
