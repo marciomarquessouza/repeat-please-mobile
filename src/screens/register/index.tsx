@@ -11,8 +11,10 @@ export interface IRegisterState {
 	name: string;
 }
 
+export interface IRegisterProps {}
+
 export class Register extends Component<{}, IRegisterState> {
-	constructor(props = {}) {
+	constructor(props: IRegisterProps) {
 		super(props);
 		this.state = {
 			hasError: false,
@@ -37,22 +39,24 @@ export class Register extends Component<{}, IRegisterState> {
 		this.setState({ password });
 	};
 
-	handleRegister = (): void => {
+	handleRegister = async (): Promise<void> => {
 		const { email, name, password } = this.state;
-		firebase
-			.auth()
-			.createUserWithEmailAndPassword(email, password)
-			.then(userCredentials => {
-				if (!userCredentials || !userCredentials.user) {
-					throw Error('User unknown');
-				}
-				return userCredentials.user.updateProfile({
-					displayName: name,
-				});
-			})
-			.catch(error =>
-				this.setState({ hasError: true, errorMessage: error.message }),
-			);
+
+		try {
+			const userCredentials = await firebase
+				.auth()
+				.createUserWithEmailAndPassword(email, password);
+
+			if (!userCredentials || !userCredentials.user) {
+				throw Error('User unknown');
+			}
+
+			return userCredentials.user.updateProfile({
+				displayName: name,
+			});
+		} catch (error) {
+			this.setState({ hasError: true, errorMessage: error.message });
+		}
 	};
 
 	render() {

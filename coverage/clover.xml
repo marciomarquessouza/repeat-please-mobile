@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1578267988806" clover="3.2.0">
-  <project timestamp="1578267988806" name="All files">
-    <metrics statements="132" coveredstatements="116" conditionals="12" coveredconditionals="5" methods="30" coveredmethods="19" elements="174" coveredelements="140" complexity="0" loc="132" ncloc="132" packages="13" files="21" classes="21"/>
+<coverage generated="1578284815004" clover="3.2.0">
+  <project timestamp="1578284815004" name="All files">
+    <metrics statements="133" coveredstatements="126" conditionals="11" coveredconditionals="9" methods="28" coveredmethods="23" elements="172" coveredelements="158" complexity="0" loc="133" ncloc="133" packages="13" files="21" classes="21"/>
     <package name="assets.images">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="monkey_mouth.png" path="/Users/marcio.souza/pessoal/repeat-please-mobile/rpmobile/assets/images/monkey_mouth.png">
@@ -33,7 +33,7 @@
         <line num="1" count="5" type="stmt"/>
         <line num="2" count="5" type="stmt"/>
         <line num="9" count="5" type="stmt"/>
-        <line num="10" count="8" type="stmt"/>
+        <line num="10" count="19" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
       </file>
     </package>
@@ -44,7 +44,7 @@
         <line num="1" count="5" type="stmt"/>
         <line num="2" count="5" type="stmt"/>
         <line num="9" count="5" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
+        <line num="10" count="13" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
       </file>
     </package>
@@ -55,7 +55,7 @@
         <line num="1" count="5" type="stmt"/>
         <line num="2" count="5" type="stmt"/>
         <line num="9" count="5" type="stmt"/>
-        <line num="13" count="8" type="stmt"/>
+        <line num="13" count="19" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
       </file>
     </package>
@@ -97,9 +97,9 @@
         <line num="37" count="1" type="stmt"/>
         <line num="38" count="1" type="stmt"/>
         <line num="39" count="1" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
-        <line num="48" count="7" type="stmt"/>
-        <line num="60" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="46" count="7" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.screens.Login.LoginForm">
@@ -122,32 +122,33 @@
       </file>
     </package>
     <package name="src.screens.Register">
-      <metrics statements="23" coveredstatements="14" conditionals="5" coveredconditionals="0" methods="8" coveredmethods="2"/>
+      <metrics statements="24" coveredstatements="24" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
       <file name="index.tsx" path="/Users/marcio.souza/pessoal/repeat-please-mobile/rpmobile/src/screens/Register/index.tsx">
-        <metrics statements="23" coveredstatements="14" conditionals="5" coveredconditionals="0" methods="8" coveredmethods="2"/>
+        <metrics statements="24" coveredstatements="24" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
+        <line num="18" count="7" type="stmt"/>
+        <line num="19" count="7" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="46" count="0" type="cond" truecount="0" falsecount="4"/>
-        <line num="47" count="0" type="stmt"/>
-        <line num="49" count="0" type="stmt"/>
-        <line num="54" count="0" type="stmt"/>
-        <line num="59" count="1" type="stmt"/>
-        <line num="72" count="1" type="stmt"/>
+        <line num="30" count="7" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+        <line num="34" count="7" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="38" count="7" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="42" count="7" type="stmt"/>
+        <line num="43" count="3" type="stmt"/>
+        <line num="45" count="3" type="stmt"/>
+        <line num="46" count="3" type="stmt"/>
+        <line num="50" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="58" count="2" type="stmt"/>
+        <line num="63" count="12" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.screens.Register.RegisterForm">
@@ -160,8 +161,8 @@
         <line num="10" count="2" type="stmt"/>
         <line num="11" count="2" type="stmt"/>
         <line num="25" count="2" type="stmt"/>
-        <line num="37" count="3" type="stmt"/>
-        <line num="39" count="3" type="stmt"/>
+        <line num="37" count="14" type="stmt"/>
+        <line num="39" count="14" type="stmt"/>
       </file>
       <file name="styles.ts" path="/Users/marcio.souza/pessoal/repeat-please-mobile/rpmobile/src/screens/Register/RegisterForm/styles.ts">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
