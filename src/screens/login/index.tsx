@@ -10,8 +10,10 @@ export interface ILoginState {
 	password: string;
 }
 
+export interface ILoginProps {}
+
 export class Login extends Component<{}, ILoginState> {
-	constructor(props = {}) {
+	constructor(props: ILoginProps) {
 		super(props);
 		this.state = {
 			hasError: false,
@@ -31,14 +33,13 @@ export class Login extends Component<{}, ILoginState> {
 		this.setState({ password });
 	};
 
-	handleLogin = (): void => {
+	handleLogin = async (): Promise<void> => {
 		const { email, password } = this.state;
-		firebase
-			.auth()
-			.signInWithEmailAndPassword(email, password)
-			.catch(error =>
-				this.setState({ hasError: true, errorMessage: error.message }),
-			);
+		try {
+			await firebase.auth().signInWithEmailAndPassword(email, password);
+		} catch (error) {
+			this.setState({ hasError: true, errorMessage: error.message });
+		}
 	};
 
 	render() {
