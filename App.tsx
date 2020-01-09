@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import SplashScreen from 'react-native-splash-screen';
 import AppContainer from './src/navigator';
 import * as firebase from 'firebase';
+<<<<<<< HEAD
 import firebaseConfig from './config.hom';
+=======
+import firebaseConfig from './config.homolog';
+>>>>>>> testing-coverage
 
 firebase.initializeApp(firebaseConfig);
 
