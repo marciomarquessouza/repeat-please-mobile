@@ -3,19 +3,21 @@ import { Image, View } from 'react-native';
 import { slides, ISlide } from './slides';
 import { style } from './style';
 import { Title, Body } from 'repeat-please-styles';
-import Walkthrough from '../Walkthrough';
 import AppIntroSlider from 'react-native-app-intro-slider';
+import { goToScreen } from '../../navigator/helper';
+import { WALKTHROUGH } from '../../navigator/routes';
+import { withNavigation, NavigationInjectedProps } from 'react-navigation';
 
-interface ISlideState {
+export interface ISlideState {
 	showRealApp: boolean;
 }
 
-interface ISlideItem {
+export interface ISlideItem {
 	item: ISlide;
 }
 
-class Slides extends Component<{}, ISlideState> {
-	constructor(props = {}) {
+export class Slides extends Component<NavigationInjectedProps, ISlideState> {
+	constructor(props: NavigationInjectedProps) {
 		super(props);
 		this.state = {
 			showRealApp: false,
@@ -38,8 +40,10 @@ class Slides extends Component<{}, ISlideState> {
 
 	render() {
 		if (this.state.showRealApp) {
-			return <Walkthrough />;
+			const { navigation } = this.props;
+			goToScreen(navigation, WALKTHROUGH);
 		}
+
 		return (
 			<AppIntroSlider
 				renderItem={this.renderItem}
@@ -52,4 +56,4 @@ class Slides extends Component<{}, ISlideState> {
 	}
 }
 
-export default Slides;
+export default withNavigation(Slides);

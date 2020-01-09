@@ -16,11 +16,13 @@ export const Walkthrough = ({ navigation }: IWalkthroughProps): JSX.Element => {
 			<Logo />
 			<TitleLogo />
 			<ButtonRounded
+				data-test="register"
 				customStyle={styles.ButtonStyle}
 				onPress={() => goToScreen(navigation, REGISTER)}>
 				Register
 			</ButtonRounded>
 			<ButtonRounded
+				data-test="login"
 				customStyle={styles.ButtonStyle}
 				onPress={() => goToScreen(navigation, LOGIN)}>
 				Login
