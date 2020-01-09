@@ -54,11 +54,9 @@ export class Register extends Component<{}, IRegisterState> {
 				throw Error('User unknown');
 			}
 
-			userCredentials.user.updateProfile({
+			return userCredentials.user.updateProfile({
 				displayName: name,
 			});
-
-			return this.setState({ isLoading: false });
 		} catch (error) {
 			this.setState({
 				hasError: true,

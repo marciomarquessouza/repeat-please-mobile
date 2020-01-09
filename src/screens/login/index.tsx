@@ -40,7 +40,6 @@ export class Login extends Component<{}, ILoginState> {
 		this.setState({ isLoading: true });
 		try {
 			await firebase.auth().signInWithEmailAndPassword(email, password);
-			this.setState({ isLoading: false });
 		} catch (error) {
 			this.setState({
 				hasError: true,
