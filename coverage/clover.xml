@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1578534213268" clover="3.2.0">
-  <project timestamp="1578534213268" name="All files">
-    <metrics statements="137" coveredstatements="137" conditionals="10" coveredconditionals="10" methods="28" coveredmethods="28" elements="175" coveredelements="175" complexity="0" loc="137" ncloc="137" packages="13" files="21" classes="21"/>
+<coverage generated="1578536429143" clover="3.2.0">
+  <project timestamp="1578536429143" name="All files">
+    <metrics statements="134" coveredstatements="134" conditionals="8" coveredconditionals="8" methods="28" coveredmethods="28" elements="170" coveredelements="170" complexity="0" loc="134" ncloc="134" packages="13" files="21" classes="21"/>
     <package name="assets.images">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="monkey_mouth.png" path="/Users/marcio.souza/pessoal/repeat-please-mobile/rpmobile/assets/images/monkey_mouth.png">
@@ -63,11 +63,11 @@
       <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="helper.ts" path="/Users/marcio.souza/pessoal/repeat-please-mobile/rpmobile/src/navigator/helper.ts">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="4" type="stmt"/>
-        <line num="7" count="4" type="stmt"/>
-        <line num="12" count="3" type="stmt"/>
-        <line num="13" count="3" type="stmt"/>
-        <line num="16" count="4" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
       </file>
       <file name="routes.ts" path="/Users/marcio.souza/pessoal/repeat-please-mobile/rpmobile/src/navigator/routes.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -172,16 +172,15 @@
       </file>
     </package>
     <package name="src.screens.Slides">
-      <metrics statements="26" coveredstatements="26" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+      <metrics statements="23" coveredstatements="23" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
       <file name="index.tsx" path="/Users/marcio.souza/pessoal/repeat-please-mobile/rpmobile/src/screens/Slides/index.tsx">
-        <metrics statements="21" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+        <metrics statements="18" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
@@ -191,11 +190,9 @@
         <line num="28" count="3" type="stmt"/>
         <line num="37" count="2" type="stmt"/>
         <line num="38" count="1" type="stmt"/>
-        <line num="42" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="43" count="1" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
-        <line num="47" count="3" type="stmt"/>
-        <line num="59" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
       </file>
       <file name="slides.ts" path="/Users/marcio.souza/pessoal/repeat-please-mobile/rpmobile/src/screens/Slides/slides.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>

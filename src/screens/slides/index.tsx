@@ -4,7 +4,6 @@ import { slides, ISlide } from './slides';
 import { style } from './style';
 import { Title, Body } from 'repeat-please-styles';
 import AppIntroSlider from 'react-native-app-intro-slider';
-import { goToScreen } from '../../navigator/helper';
 import { WALKTHROUGH } from '../../navigator/routes';
 import { withNavigation, NavigationInjectedProps } from 'react-navigation';
 
@@ -35,15 +34,11 @@ export class Slides extends Component<NavigationInjectedProps, ISlideState> {
 	};
 
 	onDone = (): void => {
-		this.setState({ showRealApp: true });
+		const { navigation } = this.props;
+		navigation.navigate(WALKTHROUGH);
 	};
 
 	render() {
-		if (this.state.showRealApp) {
-			const { navigation } = this.props;
-			goToScreen(navigation, WALKTHROUGH);
-		}
-
 		return (
 			<AppIntroSlider
 				renderItem={this.renderItem}

@@ -39,6 +39,6 @@ describe('Slides basic tests', () => {
 	it('should change showRealApp to true when slides are done', () => {
 		const instance = instanceOf(props);
 		instance.onDone();
-		expect(instance.state.showRealApp).toBe(true);
+		expect(props.navigation.navigate).toBeCalled();
 	});
 });
