@@ -18,6 +18,7 @@ export interface ILoginFormProps {
 	password: string;
 	onPasswordChange: (password: string) => void;
 	handleLogin: () => void;
+	isLoading: boolean;
 }
 
 export const LoginForm = ({
@@ -28,6 +29,7 @@ export const LoginForm = ({
 	password,
 	onPasswordChange,
 	handleLogin,
+	isLoading,
 }: ILoginFormProps): JSX.Element => (
 	<KeyboardAvoidingView style={styles.wrapper} data-test="login">
 		<ScrollView contentContainerStyle={styles.scrollStyle}>
@@ -47,6 +49,7 @@ export const LoginForm = ({
 				)}
 				<ButtonRounded
 					onPress={handleLogin}
+					isLoading={isLoading}
 					customStyle={styles.loginButtonStyle}>
 					Login
 				</ButtonRounded>

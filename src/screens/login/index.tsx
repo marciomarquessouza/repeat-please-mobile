@@ -8,6 +8,7 @@ export interface ILoginState {
 	errorMessage: string;
 	email: string;
 	password: string;
+	isLoading: boolean;
 }
 
 export interface ILoginProps {}
@@ -20,6 +21,7 @@ export class Login extends Component<{}, ILoginState> {
 			email: '',
 			password: '',
 			errorMessage: '',
+			isLoading: false,
 		};
 	}
 
@@ -35,10 +37,16 @@ export class Login extends Component<{}, ILoginState> {
 
 	handleLogin = async (): Promise<void> => {
 		const { email, password } = this.state;
+		this.setState({ isLoading: true });
 		try {
 			await firebase.auth().signInWithEmailAndPassword(email, password);
+			this.setState({ isLoading: false });
 		} catch (error) {
-			this.setState({ hasError: true, errorMessage: error.message });
+			this.setState({
+				hasError: true,
+				errorMessage: error.message,
+				isLoading: false,
+			});
 		}
 	};
 

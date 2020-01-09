@@ -9,6 +9,7 @@ export interface IRegisterState {
 	email: string;
 	password: string;
 	name: string;
+	isLoading: boolean;
 }
 
 export interface IRegisterProps {}
@@ -22,6 +23,7 @@ export class Register extends Component<{}, IRegisterState> {
 			email: '',
 			password: '',
 			name: '',
+			isLoading: false,
 		};
 	}
 
@@ -41,6 +43,7 @@ export class Register extends Component<{}, IRegisterState> {
 
 	handleRegister = async (): Promise<void> => {
 		const { email, name, password } = this.state;
+		this.setState({ isLoading: true });
 
 		try {
 			const userCredentials = await firebase
@@ -51,11 +54,17 @@ export class Register extends Component<{}, IRegisterState> {
 				throw Error('User unknown');
 			}
 
-			return userCredentials.user.updateProfile({
+			userCredentials.user.updateProfile({
 				displayName: name,
 			});
+
+			return this.setState({ isLoading: false });
 		} catch (error) {
-			this.setState({ hasError: true, errorMessage: error.message });
+			this.setState({
+				hasError: true,
+				errorMessage: error.message,
+				isLoading: false,
+			});
 		}
 	};
 

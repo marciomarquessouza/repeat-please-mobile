@@ -20,6 +20,7 @@ export interface IRegisterFormProps {
 	password: string;
 	onPasswordChange: (password: string) => void;
 	handleRegister: () => void;
+	isLoading: boolean;
 }
 
 export class RegisterForm extends Component<IRegisterFormProps, {}> {
@@ -34,6 +35,7 @@ export class RegisterForm extends Component<IRegisterFormProps, {}> {
 			password,
 			onPasswordChange,
 			handleRegister,
+			isLoading,
 		}: IRegisterFormProps = this.props;
 
 		return (
@@ -56,7 +58,8 @@ export class RegisterForm extends Component<IRegisterFormProps, {}> {
 						)}
 						<ButtonRounded
 							customStyle={styles.registerButtonStyle}
-							onPress={handleRegister}>
+							onPress={handleRegister}
+							isLoading={isLoading}>
 							Register
 						</ButtonRounded>
 					</View>
