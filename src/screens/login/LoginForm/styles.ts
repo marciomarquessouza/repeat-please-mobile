@@ -2,32 +2,28 @@ import { StyleSheet } from 'react-native';
 import { color } from 'repeat-please-styles';
 
 export const styles = StyleSheet.create({
-	container: {
+	wrapper: {
 		flex: 1,
 		flexDirection: 'column',
-		justifyContent: 'center',
 		backgroundColor: color.background,
 	},
 	scrollStyle: {
 		flexGrow: 1,
+		justifyContent: 'space-between',
 	},
-	wrapper: {
-		padding: 10,
-		justifyContent: 'space-around',
+	container: {
+		flex: 1,
+		alignItems: 'center',
+		justifyContent: 'center',
+		paddingHorizontal: 10,
 	},
 	logoContainer: {
 		paddingTop: 20,
 		alignItems: 'center',
 		justifyContent: 'center',
 	},
-	formStyle: {
-		marginVertical: 20,
-	},
 	buttonStyle: {
 		marginVertical: 5,
-	},
-	loginButtonStyle: {
-		marginTop: 20,
 	},
 	logoStyle: {
 		height: 100,
@@ -35,5 +31,8 @@ export const styles = StyleSheet.create({
 	},
 	messageStyle: {
 		marginVertical: 5,
+	},
+	loginButtonStyle: {
+		marginTop: 15,
 	},
 });

@@ -29,37 +29,35 @@ export const LoginForm = ({
 	onPasswordChange,
 	handleLogin,
 }: ILoginFormProps): JSX.Element => (
-	<KeyboardAvoidingView style={styles.container} data-test="login">
-		<ScrollView>
-			<View style={styles.wrapper}>
-				<View style={styles.logoContainer}>
-					<Logo customStyle={styles.logoStyle} />
-					<TitleLogo />
-				</View>
-				<View style={styles.formStyle}>
-					<Email email={email} onEmailChange={onEmailChange} />
-					<Password password={password} onPasswordChange={onPasswordChange} />
-					{hasError && (
-						<MessageWarning
-							customStyle={styles.messageStyle}
-							data-test="errorMessage">
-							{errorMessage}
-						</MessageWarning>
-					)}
-					<ButtonRounded
-						onPress={handleLogin}
-						customStyle={styles.loginButtonStyle}>
-						Login
-					</ButtonRounded>
-				</View>
-				<View>
-					<ButtonTransparent customStyle={styles.buttonStyle}>
-						Loging with Facebook
-					</ButtonTransparent>
-					<ButtonTransparent customStyle={styles.buttonStyle}>
-						Loging with Google
-					</ButtonTransparent>
-				</View>
+	<KeyboardAvoidingView style={styles.wrapper} data-test="login">
+		<ScrollView contentContainerStyle={styles.scrollStyle}>
+			<View style={styles.container}>
+				<Logo customStyle={styles.logoStyle} />
+				<TitleLogo />
+			</View>
+			<View style={styles.container}>
+				<Email email={email} onEmailChange={onEmailChange} />
+				<Password password={password} onPasswordChange={onPasswordChange} />
+				{hasError && (
+					<MessageWarning
+						customStyle={styles.messageStyle}
+						data-test="errorMessage">
+						{errorMessage}
+					</MessageWarning>
+				)}
+				<ButtonRounded
+					onPress={handleLogin}
+					customStyle={styles.loginButtonStyle}>
+					Login
+				</ButtonRounded>
+			</View>
+			<View style={styles.container}>
+				<ButtonTransparent customStyle={styles.buttonStyle}>
+					Loging with Facebook
+				</ButtonTransparent>
+				<ButtonTransparent customStyle={styles.buttonStyle}>
+					Loging with Google
+				</ButtonTransparent>
 			</View>
 		</ScrollView>
 	</KeyboardAvoidingView>
