@@ -38,7 +38,7 @@ export const LoginForm = ({
 				<TitleLogo />
 			</View>
 			<View style={styles.container}>
-				<Email email={email} onEmailChange={onEmailChange} />
+				<Email email={email} onEmailChange={onEmailChange} onSubmited={handleLogin} />
 				<Password password={password} onPasswordChange={onPasswordChange} />
 				{hasError && (
 					<MessageWarning

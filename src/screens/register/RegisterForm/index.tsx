@@ -45,9 +45,9 @@ export class RegisterForm extends Component<IRegisterFormProps, {}> {
 						<TitleLogo />
 					</View>
 					<View style={styles.container}>
-						<Name name={name} onNameChange={onNameChange} />
-						<Email email={email} onEmailChange={onEmailChange} />
-						<Password password={password} onPasswordChange={onPasswordChange} />
+						<Name name={name} onNameChange={onNameChange} onSubmited={handleRegister} />
+						<Email email={email} onEmailChange={onEmailChange} onSubmited={handleRegister} />
+						<Password password={password} onPasswordChange={onPasswordChange} onSubmited={handleRegister} />
 						<PlaceholderInput placeholder="Confirm Password" secureTextEntry />
 						{hasError && (
 							<MessageWarning

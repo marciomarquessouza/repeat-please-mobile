@@ -37,7 +37,7 @@ export class Login extends Component<{}, ILoginState> {
 
 	handleLogin = async (): Promise<void> => {
 		const { email, password } = this.state;
-		this.setState({ isLoading: true });
+		this.setState({ isLoading: true , hasError: false });
 		try {
 			await firebase.auth().signInWithEmailAndPassword(email, password);
 		} catch (error) {

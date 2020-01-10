@@ -4,9 +4,10 @@ import { PlaceholderInput } from 'repeat-please-styles';
 export interface IEmailProps {
 	email: string;
 	onEmailChange: (email: string) => void;
+	onSubmited?: () => void;
 }
 
-export const Email = ({ email, onEmailChange }: IEmailProps): JSX.Element => (
+export const Email = ({ email, onEmailChange, onSubmited }: IEmailProps): JSX.Element => (
 	<PlaceholderInput
 		data-test="email"
 		placeholder="Email"
