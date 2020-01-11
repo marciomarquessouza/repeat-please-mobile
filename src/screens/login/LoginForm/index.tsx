@@ -1,12 +1,11 @@
 import React from 'react';
 import {
 	ButtonRounded,
-	ButtonTransparent,
 	Logo,
 	MessageWarning,
 	TitleLogo,
 } from 'repeat-please-styles';
-import { Email, Password } from '../../../components';
+import { Email, Password, SocialMediaButtons } from '../../../components';
 import { ScrollView, KeyboardAvoidingView, View } from 'react-native';
 import { styles } from './styles';
 
@@ -38,8 +37,12 @@ export const LoginForm = ({
 				<TitleLogo />
 			</View>
 			<View style={styles.container}>
-				<Email email={email} onEmailChange={onEmailChange} onSubmited={handleLogin} />
-				<Password password={password} onPasswordChange={onPasswordChange} />
+				<Email email={email} onEmailChange={onEmailChange} />
+				<Password
+					password={password}
+					onPasswordChange={onPasswordChange}
+					onSubmited={handleLogin}
+				/>
 				{hasError && (
 					<MessageWarning
 						customStyle={styles.messageStyle}
@@ -55,12 +58,7 @@ export const LoginForm = ({
 				</ButtonRounded>
 			</View>
 			<View style={styles.container}>
-				<ButtonTransparent customStyle={styles.buttonStyle}>
-					Loging with Facebook
-				</ButtonTransparent>
-				<ButtonTransparent customStyle={styles.buttonStyle}>
-					Loging with Google
-				</ButtonTransparent>
+				<SocialMediaButtons customStyle={styles.buttonStyle} />
 			</View>
 		</ScrollView>
 	</KeyboardAvoidingView>

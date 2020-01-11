@@ -1,39 +1,30 @@
 import React, { Component } from 'react';
 import { ScrollView, KeyboardAvoidingView, View } from 'react-native';
-import {
-	ButtonRounded,
-	ButtonTransparent,
-	MessageWarning,
-	TitleLogo,
-	PlaceholderInput,
-} from 'repeat-please-styles';
-import { Email, Name, Password } from '../../../components';
+import { ButtonRounded, MessageWarning, TitleLogo } from 'repeat-please-styles';
+import { RegisterInput } from '../RegisterInput';
+import { SocialMediaButtons } from '../../../components';
 import { styles } from './styles';
 
 export interface IRegisterFormProps {
-	hasError: boolean;
-	errorMessage: string;
 	email: string;
-	onEmailChange: (email: string) => void;
-	name: string;
-	onNameChange: (name: string) => void;
-	password: string;
-	onPasswordChange: (password: string) => void;
+	errorMessage: string;
 	handleRegister: () => void;
+	hasError: boolean;
 	isLoading: boolean;
+	name: string;
+	onEmailChange: (email: string) => void;
+	onNameChange: (name: string) => void;
+	onPassRepeatChange: (password: string) => void;
+	onPasswordChange: (password: string) => void;
+	passRepeat: string;
+	password: string;
 }
 
 export class RegisterForm extends Component<IRegisterFormProps, {}> {
 	render(): JSX.Element {
 		const {
 			hasError,
-			email,
 			errorMessage,
-			onEmailChange,
-			name,
-			onNameChange,
-			password,
-			onPasswordChange,
 			handleRegister,
 			isLoading,
 		}: IRegisterFormProps = this.props;
@@ -45,10 +36,7 @@ export class RegisterForm extends Component<IRegisterFormProps, {}> {
 						<TitleLogo />
 					</View>
 					<View style={styles.container}>
-						<Name name={name} onNameChange={onNameChange} onSubmited={handleRegister} />
-						<Email email={email} onEmailChange={onEmailChange} onSubmited={handleRegister} />
-						<Password password={password} onPasswordChange={onPasswordChange} onSubmited={handleRegister} />
-						<PlaceholderInput placeholder="Confirm Password" secureTextEntry />
+						<RegisterInput {...this.props} />
 						{hasError && (
 							<MessageWarning
 								customStyle={styles.messageStyle}
@@ -64,12 +52,7 @@ export class RegisterForm extends Component<IRegisterFormProps, {}> {
 						</ButtonRounded>
 					</View>
 					<View style={styles.container}>
-						<ButtonTransparent customStyle={styles.buttonStyle}>
-							Loging with Facebook
-						</ButtonTransparent>
-						<ButtonTransparent customStyle={styles.buttonStyle}>
-							Loging with Google
-						</ButtonTransparent>
+						<SocialMediaButtons customStyle={styles.buttonStyle} />
 					</View>
 				</ScrollView>
 			</KeyboardAvoidingView>

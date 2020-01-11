@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { navigationOptionsDefault } from '../../navigator/helper';
 import { RegisterForm } from './RegisterForm';
-import * as firebase from 'firebase';
+import { createUserWithEmailPassword } from '../../data/services/user';
 
 export interface IRegisterState {
-	hasError: boolean;
-	errorMessage: string;
 	email: string;
-	password: string;
-	name: string;
+	errorMessage: string;
+	hasError: boolean;
 	isLoading: boolean;
+	name: string;
+	passRepeat: string;
+	password: string;
 }
 
 export interface IRegisterProps {}
@@ -22,12 +23,21 @@ export class Register extends Component<{}, IRegisterState> {
 			errorMessage: '',
 			email: '',
 			password: '',
+			passRepeat: '',
 			name: '',
 			isLoading: false,
 		};
 	}
 
 	static navigationOptions = navigationOptionsDefault;
+
+	showErrorMessage = (errorMessage: string, isLoading = false): void => {
+		this.setState({
+			hasError: true,
+			errorMessage,
+			isLoading,
+		});
+	};
 
 	onNameChange = (name: string): void => {
 		this.setState({ name });
@@ -41,28 +51,40 @@ export class Register extends Component<{}, IRegisterState> {
 		this.setState({ password });
 	};
 
+	onPassRepeatChange = (passRepeat: string): void => {
+		this.setState({ passRepeat });
+	};
+
+	checkFormFields = (): boolean => {
+		const { name, email, password, passRepeat } = this.state;
+		const fields = [name, email, password, passRepeat].filter(field => !field);
+
+		if (fields.length) {
+			this.showErrorMessage('All fields are mandatory');
+			return false;
+		}
+
+		if (password !== passRepeat) {
+			this.showErrorMessage("Password don't match");
+			return false;
+		}
+		return true;
+	};
+
 	handleRegister = async (): Promise<void> => {
+		if (!this.checkFormFields()) return;
+
+		this.setState({ isLoading: true, hasError: false });
+
 		const { email, name, password } = this.state;
-		this.setState({ isLoading: true });
 
 		try {
-			const userCredentials = await firebase
-				.auth()
-				.createUserWithEmailAndPassword(email, password);
-
-			if (!userCredentials || !userCredentials.user) {
-				throw Error('User unknown');
-			}
-
-			return userCredentials.user.updateProfile({
+			const user = await createUserWithEmailPassword(email, password);
+			user.updateProfile({
 				displayName: name,
 			});
 		} catch (error) {
-			this.setState({
-				hasError: true,
-				errorMessage: error.message,
-				isLoading: false,
-			});
+			this.showErrorMessage(error);
 		}
 	};
 
@@ -75,6 +97,7 @@ export class Register extends Component<{}, IRegisterState> {
 				onPasswordChange={this.onPasswordChange}
 				onEmailChange={this.onEmailChange}
 				handleRegister={this.handleRegister}
+				onPassRepeatChange={this.onPassRepeatChange}
 			/>
 		);
 	}

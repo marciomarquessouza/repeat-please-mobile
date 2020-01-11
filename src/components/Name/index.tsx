@@ -7,11 +7,16 @@ export interface INameProps {
 	onSubmited?: () => void;
 }
 
-export const Name = ({ name, onNameChange, onSubmited }: INameProps): JSX.Element => (
+export const Name = ({
+	name,
+	onNameChange,
+	onSubmited,
+}: INameProps): JSX.Element => (
 	<PlaceholderInput
 		data-test="name"
 		placeholder="Name or NickName"
 		value={name}
 		onChangeText={text => onNameChange(text)}
+		onSubmitEditing={onSubmited}
 	/>
 );

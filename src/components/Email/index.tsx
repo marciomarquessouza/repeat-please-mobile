@@ -7,12 +7,17 @@ export interface IEmailProps {
 	onSubmited?: () => void;
 }
 
-export const Email = ({ email, onEmailChange, onSubmited }: IEmailProps): JSX.Element => (
+export const Email = ({
+	email,
+	onEmailChange,
+	onSubmited,
+}: IEmailProps): JSX.Element => (
 	<PlaceholderInput
 		data-test="email"
 		placeholder="Email"
 		keyboardType="email-address"
 		value={email}
 		onChangeText={text => onEmailChange(text)}
+		onSubmitEditing={onSubmited}
 	/>
 );
