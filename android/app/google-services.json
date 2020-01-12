@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "86626703872",
+    "firebase_url": "https://repeatpleaseapi.firebaseio.com",
+    "project_id": "repeatpleaseapi",
+    "storage_bucket": "repeatpleaseapi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:86626703872:android:e164ba967a93f9b2a796e5",
+        "android_client_info": {
+          "package_name": "com.repeatplease"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "86626703872-2edtqvf7ndfkcdh82atn3pp8lked7dkt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.repeatplease",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "86626703872-u5orvdf9iss7tcfmhc5rjah4t1tmr7dv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzusVI0hzQX6aaQ9y0bXOhQ4oJsHvSLpg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "86626703872-u5orvdf9iss7tcfmhc5rjah4t1tmr7dv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "86626703872-54dr4q1k4id7po2na8q0s5hhv2ri5ijs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.RepeatPlease"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
