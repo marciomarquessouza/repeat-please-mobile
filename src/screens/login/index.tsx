@@ -3,6 +3,8 @@ import { navigationOptionsDefault } from '../../navigator/helper';
 import * as firebase from 'firebase';
 import { AccessToken, LoginManager, LoginResult } from 'react-native-fbsdk';
 import { LoginForm } from './LoginForm';
+import { GoogleSignin } from 'react-native-google-signin';
+import { googleLogin } from '../../../config.homolog';
 
 export interface ILoginState {
 	hasError: boolean;
@@ -70,11 +72,25 @@ export class Login extends Component<{}, ILoginState> {
 			})
 			.catch(error => {
 				this.setState({
-					hasError: true,
 					errorMessage: error.message,
 					isLoading: false,
 				});
 			});
+	};
+
+	handleGoogleLogin = async () => {
+		this.setState({ isLoading: true, hasError: false });
+		try {
+			await GoogleSignin.configure(googleLogin);
+			const data = await GoogleSignin.signIn();
+			const credential = firebase.auth.GoogleAuthProvider.credential(
+				data.idToken,
+				data.serverAuthCode,
+			);
+			return firebase.auth().signInWithCredential(credential);
+		} catch ({ message }) {
+			this.setState({ errorMessage: message, isLoading: false });
+		}
 	};
 
 	render() {
@@ -85,6 +101,7 @@ export class Login extends Component<{}, ILoginState> {
 				onPasswordChange={this.onPasswordChange}
 				handleLogin={this.handleLogin}
 				handleFacebookLogin={this.handleFacebookLogin}
+				handleGoogleLogin={this.handleGoogleLogin}
 				data-test="login"
 			/>
 		);

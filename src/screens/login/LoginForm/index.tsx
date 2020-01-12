@@ -18,6 +18,7 @@ export interface ILoginFormProps {
 	onPasswordChange: (password: string) => void;
 	handleLogin: () => void;
 	handleFacebookLogin: () => void;
+	handleGoogleLogin: () => void;
 	isLoading: boolean;
 }
 
@@ -26,6 +27,7 @@ export const LoginForm = ({
 	errorMessage,
 	email,
 	handleFacebookLogin,
+	handleGoogleLogin,
 	onEmailChange,
 	password,
 	onPasswordChange,
@@ -63,6 +65,7 @@ export const LoginForm = ({
 				<SocialMediaButtons
 					customStyle={styles.buttonStyle}
 					handleFacebookSubmit={handleFacebookLogin}
+					handleGoogleSubmit={handleGoogleLogin}
 				/>
 			</View>
 		</ScrollView>
