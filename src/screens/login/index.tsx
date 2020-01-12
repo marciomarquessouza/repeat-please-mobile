@@ -6,10 +6,12 @@ import {
 	facebookLogin,
 	googleLogin,
 } from '../../data/services/login';
-import { ILoginState, ILoginProps } from './types';
+import { ILoginState } from './types';
+import { FORGOT_PASSWORD } from '../../navigator/routes';
+import { withNavigation, NavigationInjectedProps } from 'react-navigation';
 
-export class Login extends Component<{}, ILoginState> {
-	constructor(props: ILoginProps) {
+export class Login extends Component<NavigationInjectedProps, ILoginState> {
+	constructor(props: NavigationInjectedProps) {
 		super(props);
 		this.state = {
 			hasError: false,
@@ -36,6 +38,12 @@ export class Login extends Component<{}, ILoginState> {
 
 	onPasswordChange = (password: string): void => {
 		this.setState({ password });
+	};
+
+	forgotPassword = (): void => {
+		const { navigation } = this.props;
+		const { email } = this.state;
+		navigation.navigate(FORGOT_PASSWORD, { loginEmail: email });
 	};
 
 	handleLogin = async (): Promise<void> => {
@@ -75,10 +83,11 @@ export class Login extends Component<{}, ILoginState> {
 				handleLogin={this.handleLogin}
 				handleFacebookLogin={this.handleFacebookLogin}
 				handleGoogleLogin={this.handleGoogleLogin}
+				forgotPassword={this.forgotPassword}
 				data-test="login"
 			/>
 		);
 	}
 }
 
-export default Login;
+export default withNavigation(Login);

@@ -50,3 +50,11 @@ export const googleLogin = async (): Promise<void> => {
 		throw new Error(message);
 	}
 };
+
+export const passwordReset = async (email: string): Promise<void> => {
+	try {
+		await auth().sendPasswordResetEmail(email);
+	} catch ({ message }) {
+		throw new Error(message);
+	}
+};

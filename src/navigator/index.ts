@@ -6,6 +6,7 @@ import Login from '../screens/Login';
 import Register from '../screens/Register';
 import Home from '../screens/Home';
 import Loading from '../screens/Loading';
+import ForgotPassword from '../screens/ForgotPassword';
 
 const navigationOptions = () => ({ header: null });
 
@@ -30,6 +31,9 @@ const AuthStack = createStackNavigator({
 	},
 	Register: {
 		screen: Register,
+	},
+	ForgotPassword: {
+		screen: ForgotPassword,
 	},
 });
 
