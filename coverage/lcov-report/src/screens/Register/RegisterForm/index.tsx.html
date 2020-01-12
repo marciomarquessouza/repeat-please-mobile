@@ -19,26 +19,6 @@
       <a href="../../../../index.html">All files</a> / <a href="index.html">src/screens/Register/RegisterForm</a> index.tsx
     </h1>
     <div class='clearfix'>
-      <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
-        <span class="quiet">Statements</span>
-        <span class='fraction'>8/8</span>
-      </div>
-      <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
-        <span class="quiet">Branches</span>
-        <span class='fraction'>2/2</span>
-      </div>
-      <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
-        <span class="quiet">Functions</span>
-        <span class='fraction'>1/1</span>
-      </div>
-      <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
-        <span class="quiet">Lines</span>
-        <span class='fraction'>8/8</span>
-      </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
@@ -107,31 +87,15 @@
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
 <a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<a name='L62'></a><a href='#L62'>62</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -152,21 +116,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -198,40 +150,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component } from 'react';
 import { ScrollView, KeyboardAvoidingView, View } from 'react-native';
-import {
-	ButtonRounded,
-	ButtonTransparent,
-	MessageWarning,
-	TitleLogo,
-	PlaceholderInput,
-} from 'repeat-please-styles';
-import { Email, Name, Password } from '../../../components';
+import { ButtonRounded, MessageWarning, TitleLogo } from 'repeat-please-styles';
+import { RegisterInput } from '../RegisterInput';
+import { SocialMediaButtons } from '../../../components';
 import { styles } from './styles';
 &nbsp;
 export interface IRegisterFormProps {
-	hasError: boolean;
-	errorMessage: string;
 	email: string;
-	onEmailChange: (email: string) =&gt; void;
-	name: string;
-	onNameChange: (name: string) =&gt; void;
-	password: string;
-	onPasswordChange: (password: string) =&gt; void;
+	errorMessage: string;
 	handleRegister: () =&gt; void;
+	hasError: boolean;
+	isLoading: boolean;
+	name: string;
+	onEmailChange: (email: string) =&gt; void;
+	onNameChange: (name: string) =&gt; void;
+	onPassRepeatChange: (password: string) =&gt; void;
+	onPasswordChange: (password: string) =&gt; void;
+	passRepeat: string;
+	password: string;
 }
 &nbsp;
 export class RegisterForm extends Component&lt;IRegisterFormProps, {}&gt; {
 	render(): JSX.Element {
 		const {
 			hasError,
-			email,
 			errorMessage,
-			onEmailChange,
-			name,
-			onNameChange,
-			password,
-			onPasswordChange,
 			handleRegister,
+			isLoading,
 		}: IRegisterFormProps = this.props;
 &nbsp;
 		return (
@@ -241,10 +186,7 @@ export class RegisterForm extends Component&lt;IRegisterFormProps, {}&gt; {
 						&lt;TitleLogo /&gt;
 					&lt;/View&gt;
 					&lt;View style={styles.container}&gt;
-						&lt;Name name={name} onNameChange={onNameChange} /&gt;
-						&lt;Email email={email} onEmailChange={onEmailChange} /&gt;
-						&lt;Password password={password} onPasswordChange={onPasswordChange} /&gt;
-						&lt;PlaceholderInput placeholder="Confirm Password" secureTextEntry /&gt;
+						&lt;RegisterInput {...this.props} /&gt;
 						{hasError &amp;&amp; (
 							&lt;MessageWarning
 								customStyle={styles.messageStyle}
@@ -254,17 +196,13 @@ export class RegisterForm extends Component&lt;IRegisterFormProps, {}&gt; {
 						)}
 						&lt;ButtonRounded
 							customStyle={styles.registerButtonStyle}
-							onPress={handleRegister}&gt;
+							onPress={handleRegister}
+							isLoading={isLoading}&gt;
 							Register
 						&lt;/ButtonRounded&gt;
 					&lt;/View&gt;
 					&lt;View style={styles.container}&gt;
-						&lt;ButtonTransparent customStyle={styles.buttonStyle}&gt;
-							Loging with Facebook
-						&lt;/ButtonTransparent&gt;
-						&lt;ButtonTransparent customStyle={styles.buttonStyle}&gt;
-							Loging with Google
-						&lt;/ButtonTransparent&gt;
+						&lt;SocialMediaButtons customStyle={styles.buttonStyle} /&gt;
 					&lt;/View&gt;
 				&lt;/ScrollView&gt;
 			&lt;/KeyboardAvoidingView&gt;
@@ -277,7 +215,7 @@ export class RegisterForm extends Component&lt;IRegisterFormProps, {}&gt; {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Jan 09 2020 00:20:29 GMT-0200 (Brasilia Summer Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Jan 11 2020 19:24:45 GMT-0200 (Brasilia Summer Time)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>

@@ -17,6 +17,7 @@ export interface ILoginFormProps {
 	password: string;
 	onPasswordChange: (password: string) => void;
 	handleLogin: () => void;
+	handleFacebookLogin: () => void;
 	isLoading: boolean;
 }
 
@@ -24,6 +25,7 @@ export const LoginForm = ({
 	hasError,
 	errorMessage,
 	email,
+	handleFacebookLogin,
 	onEmailChange,
 	password,
 	onPasswordChange,
@@ -58,7 +60,10 @@ export const LoginForm = ({
 				</ButtonRounded>
 			</View>
 			<View style={styles.container}>
-				<SocialMediaButtons customStyle={styles.buttonStyle} />
+				<SocialMediaButtons
+					customStyle={styles.buttonStyle}
+					handleFacebookSubmit={handleFacebookLogin}
+				/>
 			</View>
 		</ScrollView>
 	</KeyboardAvoidingView>

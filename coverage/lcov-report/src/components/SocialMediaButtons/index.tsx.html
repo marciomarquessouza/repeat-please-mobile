@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src/components/Name/index.tsx</title>
+    <title>Code coverage report for src/components/SocialMediaButtons/index.tsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -16,7 +16,7 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../../index.html">All files</a> / <a href="index.html">src/components/Name</a> index.tsx
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/components/SocialMediaButtons</a> index.tsx
     </h1>
     <div class='clearfix'>
     </div>
@@ -48,8 +48,11 @@
 <a name='L20'></a><a href='#L20'>20</a>
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
-<a name='L23'></a><a href='#L23'>23</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -57,40 +60,43 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import { PlaceholderInput } from 'repeat-please-styles';
+import { StyleProp, ViewStyle } from 'react-native';
+import { ButtonTransparent } from 'repeat-please-styles';
 &nbsp;
-export interface INameProps {
-	name: string;
-	onNameChange: (name: string) =&gt; void;
-	onSubmited?: () =&gt; void;
+export interface ISocialMediaButtonsProps {
+	customStyle?: StyleProp&lt;ViewStyle&gt;;
+	handleFacebookSubmit?: () =&gt; void;
+	handleGoogleSubmit?: () =&gt; void;
 }
 &nbsp;
-export const Name = ({
-	name,
-	onNameChange,
-	onSubmited,
-}: INameProps): JSX.Element =&gt; (
-	&lt;PlaceholderInput
-		data-test="name"
-		placeholder="Name or NickName"
-		value={name}
-		onChangeText={text =&gt; onNameChange(text)}
-		onSubmitEditing={onSubmited}
-	/&gt;
+export const SocialMediaButtons = ({
+	customStyle,
+	handleFacebookSubmit,
+	handleGoogleSubmit,
+}: ISocialMediaButtonsProps): JSX.Element =&gt; (
+	&lt;&gt;
+		&lt;ButtonTransparent customStyle={customStyle} onPress={handleFacebookSubmit}&gt;
+			Loging with Facebook
+		&lt;/ButtonTransparent&gt;
+		&lt;ButtonTransparent customStyle={customStyle} onPress={handleGoogleSubmit}&gt;
+			Loging with Google
+		&lt;/ButtonTransparent&gt;
+	&lt;/&gt;
 );
 &nbsp;</pre></td></tr>
 </table></pre>

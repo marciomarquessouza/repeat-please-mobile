@@ -22,11 +22,13 @@
   }
  },
  "dependencies": {
+  "@types/react-native-fbsdk": "^1.0.0",
   "firebase": "^7.6.1",
   "native-base": "^2.13.8",
   "react": "16.8.6",
   "react-native": "0.60.5",
   "react-native-app-intro-slider": "^3.0.0",
+  "react-native-fbsdk": "^1.1.1",
   "react-native-gesture-handler": "^1.5.2",
   "react-native-reanimated": "^1.4.0",
   "react-native-splash-screen": "^3.2.0",

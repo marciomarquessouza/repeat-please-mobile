@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src/components/Name/index.tsx</title>
+    <title>Code coverage report for src/data/services/user.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -16,7 +16,7 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../../index.html">All files</a> / <a href="index.html">src/components/Name</a> index.tsx
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/data/services</a> user.ts
     </h1>
     <div class='clearfix'>
     </div>
@@ -24,7 +24,7 @@
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -47,51 +47,48 @@
 <a name='L19'></a><a href='#L19'>19</a>
 <a name='L20'></a><a href='#L20'>20</a>
 <a name='L21'></a><a href='#L21'>21</a>
-<a name='L22'></a><a href='#L22'>22</a>
-<a name='L23'></a><a href='#L23'>23</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">14x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L22'></a><a href='#L22'>22</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import { PlaceholderInput } from 'repeat-please-styles';
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { User, auth } from 'firebase';
 &nbsp;
-export interface INameProps {
-	name: string;
-	onNameChange: (name: string) =&gt; void;
-	onSubmited?: () =&gt; void;
-}
+export const createUserWithEmailPassword = <span class="fstat-no" title="function not covered" >async </span>(
+	email: string,
+	password: string,
+): Promise&lt;User&gt; =&gt; {
+<span class="cstat-no" title="statement not covered" >	try {</span>
+		const userCredentials = <span class="cstat-no" title="statement not covered" >await auth().createUserWithEmailAndPassword(</span>
+			email,
+			password,
+		);
 &nbsp;
-export const Name = ({
-	name,
-	onNameChange,
-	onSubmited,
-}: INameProps): JSX.Element =&gt; (
-	&lt;PlaceholderInput
-		data-test="name"
-		placeholder="Name or NickName"
-		value={name}
-		onChangeText={text =&gt; onNameChange(text)}
-		onSubmitEditing={onSubmited}
-	/&gt;
-);
+<span class="cstat-no" title="statement not covered" >		if (!userCredentials || !userCredentials.user) {</span>
+<span class="cstat-no" title="statement not covered" >			throw Error('User unknown');</span>
+		}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		return userCredentials.user;</span>
+	} catch (error) {
+<span class="cstat-no" title="statement not covered" >		throw Error(error);</span>
+	}
+};
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->

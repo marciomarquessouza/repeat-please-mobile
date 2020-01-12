@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { navigationOptionsDefault } from '../../navigator/helper';
 import * as firebase from 'firebase';
+import { AccessToken, LoginManager, LoginResult } from 'react-native-fbsdk';
 import { LoginForm } from './LoginForm';
 
 export interface ILoginState {
@@ -49,6 +50,33 @@ export class Login extends Component<{}, ILoginState> {
 		}
 	};
 
+	handleFacebookLogin = () => {
+		this.setState({ isLoading: true, hasError: false });
+		LoginManager.logInWithPermissions(['public_profile', 'email'])
+			.then((result: LoginResult) => {
+				if (result.isCancelled) {
+					throw new Error('The user cancelled the request');
+				}
+				return AccessToken.getCurrentAccessToken();
+			})
+			.then(data => {
+				if (!data || !data.accessToken) {
+					throw new Error('Facebook server error');
+				}
+				const credential = firebase.auth.FacebookAuthProvider.credential(
+					data.accessToken,
+				);
+				return firebase.auth().signInWithCredential(credential);
+			})
+			.catch(error => {
+				this.setState({
+					hasError: true,
+					errorMessage: error.message,
+					isLoading: false,
+				});
+			});
+	};
+
 	render() {
 		return (
 			<LoginForm
@@ -56,6 +84,7 @@ export class Login extends Component<{}, ILoginState> {
 				onEmailChange={this.onEmailChange}
 				onPasswordChange={this.onPasswordChange}
 				handleLogin={this.handleLogin}
+				handleFacebookLogin={this.handleFacebookLogin}
 				data-test="login"
 			/>
 		);
