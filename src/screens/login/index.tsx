@@ -1,20 +1,12 @@
 import React, { Component } from 'react';
 import { navigationOptionsDefault } from '../../navigator/helper';
-import * as firebase from 'firebase';
-import { AccessToken, LoginManager, LoginResult } from 'react-native-fbsdk';
 import { LoginForm } from './LoginForm';
-import { GoogleSignin } from 'react-native-google-signin';
-import { googleLogin } from '../../../config.homolog';
-
-export interface ILoginState {
-	hasError: boolean;
-	errorMessage: string;
-	email: string;
-	password: string;
-	isLoading: boolean;
-}
-
-export interface ILoginProps {}
+import {
+	emailLogin,
+	facebookLogin,
+	googleLogin,
+} from '../../data/services/login';
+import { ILoginState, ILoginProps } from './types';
 
 export class Login extends Component<{}, ILoginState> {
 	constructor(props: ILoginProps) {
@@ -30,6 +22,14 @@ export class Login extends Component<{}, ILoginState> {
 
 	static navigationOptions = navigationOptionsDefault;
 
+	showErrorMessage = (errorMessage: string, isLoading = false): void => {
+		this.setState({
+			hasError: true,
+			errorMessage,
+			isLoading,
+		});
+	};
+
 	onEmailChange = (email: string): void => {
 		this.setState({ email });
 	};
@@ -42,54 +42,27 @@ export class Login extends Component<{}, ILoginState> {
 		const { email, password } = this.state;
 		this.setState({ isLoading: true, hasError: false });
 		try {
-			await firebase.auth().signInWithEmailAndPassword(email, password);
+			await emailLogin(email, password);
 		} catch (error) {
-			this.setState({
-				hasError: true,
-				errorMessage: error.message,
-				isLoading: false,
-			});
+			this.showErrorMessage(error);
 		}
 	};
 
 	handleFacebookLogin = () => {
 		this.setState({ isLoading: true, hasError: false });
-		LoginManager.logInWithPermissions(['public_profile', 'email'])
-			.then((result: LoginResult) => {
-				if (result.isCancelled) {
-					throw new Error('The user cancelled the request');
-				}
-				return AccessToken.getCurrentAccessToken();
-			})
-			.then(data => {
-				if (!data || !data.accessToken) {
-					throw new Error('Facebook server error');
-				}
-				const credential = firebase.auth.FacebookAuthProvider.credential(
-					data.accessToken,
-				);
-				return firebase.auth().signInWithCredential(credential);
-			})
-			.catch(error => {
-				this.setState({
-					errorMessage: error.message,
-					isLoading: false,
-				});
-			});
+		try {
+			facebookLogin();
+		} catch (error) {
+			this.showErrorMessage(error);
+		}
 	};
 
 	handleGoogleLogin = async () => {
 		this.setState({ isLoading: true, hasError: false });
 		try {
-			await GoogleSignin.configure(googleLogin);
-			const data = await GoogleSignin.signIn();
-			const credential = firebase.auth.GoogleAuthProvider.credential(
-				data.idToken,
-				data.serverAuthCode,
-			);
-			return firebase.auth().signInWithCredential(credential);
-		} catch ({ message }) {
-			this.setState({ errorMessage: message, isLoading: false });
+			await googleLogin();
+		} catch (error) {
+			this.showErrorMessage(error);
 		}
 	};
 

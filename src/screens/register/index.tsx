@@ -2,18 +2,8 @@ import React, { Component } from 'react';
 import { navigationOptionsDefault } from '../../navigator/helper';
 import { RegisterForm } from './RegisterForm';
 import { createUserWithEmailPassword } from '../../data/services/user';
-
-export interface IRegisterState {
-	email: string;
-	errorMessage: string;
-	hasError: boolean;
-	isLoading: boolean;
-	name: string;
-	passRepeat: string;
-	password: string;
-}
-
-export interface IRegisterProps {}
+import { facebookLogin, googleLogin } from '../../data/services/login';
+import { IRegisterState, IRegisterProps } from './types';
 
 export class Register extends Component<{}, IRegisterState> {
 	constructor(props: IRegisterProps) {
@@ -58,12 +48,10 @@ export class Register extends Component<{}, IRegisterState> {
 	checkFormFields = (): boolean => {
 		const { name, email, password, passRepeat } = this.state;
 		const fields = [name, email, password, passRepeat].filter(field => !field);
-
 		if (fields.length) {
 			this.showErrorMessage('All fields are mandatory');
 			return false;
 		}
-
 		if (password !== passRepeat) {
 			this.showErrorMessage("Password don't match");
 			return false;
@@ -73,16 +61,28 @@ export class Register extends Component<{}, IRegisterState> {
 
 	handleRegister = async (): Promise<void> => {
 		if (!this.checkFormFields()) return;
-
 		this.setState({ isLoading: true, hasError: false });
-
 		const { email, name, password } = this.state;
-
 		try {
-			const user = await createUserWithEmailPassword(email, password);
-			user.updateProfile({
-				displayName: name,
-			});
+			await createUserWithEmailPassword(email, password, name);
+		} catch (error) {
+			this.showErrorMessage(error);
+		}
+	};
+
+	handleFacebookLogin = () => {
+		this.setState({ isLoading: true, hasError: false });
+		try {
+			facebookLogin();
+		} catch (error) {
+			this.showErrorMessage(error);
+		}
+	};
+
+	handleGoogleLogin = async () => {
+		this.setState({ isLoading: true, hasError: false });
+		try {
+			await googleLogin();
 		} catch (error) {
 			this.showErrorMessage(error);
 		}
@@ -97,6 +97,8 @@ export class Register extends Component<{}, IRegisterState> {
 				onPasswordChange={this.onPasswordChange}
 				onEmailChange={this.onEmailChange}
 				handleRegister={this.handleRegister}
+				handleFacebookLogin={this.handleFacebookLogin}
+				handleGoogleLogin={this.handleGoogleLogin}
 				onPassRepeatChange={this.onPassRepeatChange}
 			/>
 		);

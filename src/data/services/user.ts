@@ -1,9 +1,10 @@
-import { User, auth } from 'firebase';
+import { auth } from 'firebase';
 
 export const createUserWithEmailPassword = async (
 	email: string,
 	password: string,
-): Promise<User> => {
+	name: string,
+): Promise<void> => {
 	try {
 		const userCredentials = await auth().createUserWithEmailAndPassword(
 			email,
@@ -14,7 +15,9 @@ export const createUserWithEmailPassword = async (
 			throw Error('User unknown');
 		}
 
-		return userCredentials.user;
+		userCredentials.user.updateProfile({
+			displayName: name,
+		});
 	} catch (error) {
 		throw Error(error);
 	}

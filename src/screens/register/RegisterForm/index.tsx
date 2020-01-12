@@ -9,6 +9,8 @@ export interface IRegisterFormProps {
 	email: string;
 	errorMessage: string;
 	handleRegister: () => void;
+	handleFacebookLogin: () => void;
+	handleGoogleLogin: () => void;
 	hasError: boolean;
 	isLoading: boolean;
 	name: string;
@@ -27,6 +29,8 @@ export class RegisterForm extends Component<IRegisterFormProps, {}> {
 			errorMessage,
 			handleRegister,
 			isLoading,
+			handleFacebookLogin,
+			handleGoogleLogin,
 		}: IRegisterFormProps = this.props;
 
 		return (
@@ -52,7 +56,11 @@ export class RegisterForm extends Component<IRegisterFormProps, {}> {
 						</ButtonRounded>
 					</View>
 					<View style={styles.container}>
-						<SocialMediaButtons customStyle={styles.buttonStyle} />
+						<SocialMediaButtons
+							customStyle={styles.buttonStyle}
+							handleFacebookSubmit={handleFacebookLogin}
+							handleGoogleSubmit={handleGoogleLogin}
+						/>
 					</View>
 				</ScrollView>
 			</KeyboardAvoidingView>
