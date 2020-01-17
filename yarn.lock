@@ -7672,7 +7672,7 @@ repeat-element@^1.1.2:
 
 "repeat-please-styles@git+ssh://git@github.com:marciomarquessouza/repeat-please-styles.git":
   version "0.0.1"
-  resolved "git+ssh://git@github.com:marciomarquessouza/repeat-please-styles.git#815c9414f325a8fb9a9f4ade65f6b6a59d5849e1"
+  resolved "git+ssh://git@github.com:marciomarquessouza/repeat-please-styles.git#a6d45aff179b454cffb8320dfbbc6c6bbfc602ac"
 
 repeat-string@^1.6.1:
   version "1.6.1"
