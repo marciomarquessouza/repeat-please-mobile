@@ -12,7 +12,8 @@
   "tslint": "tslint -c ./tslint.json './src/**/*.tsx' './src/**/*.ts'",
   "lint:ts": "eslint -c ./.eslintrc.js './src/**/*.tsx' './src/**/*.ts'",
   "lint:js": "eslint -c ./.eslintrc.js './**/*.js'",
-  "lint:all": "npx yarn run lint && npx yarn run tslint"
+  "lint:all": "npx yarn run lint && npx yarn run tslint",
+  "podinstall": "cd ios && pod install && cd .."
  },
  "husky": {
   "hooks": {
@@ -27,11 +28,11 @@
   "native-base": "^2.13.8",
   "react": "16.8.6",
   "react-native": "0.60.5",
-  "react-native-app-intro-slider": "^3.0.0",
   "react-native-fbsdk": "^1.1.1",
   "react-native-gesture-handler": "^1.5.2",
   "react-native-google-signin": "^2.1.1",
   "react-native-reanimated": "^1.4.0",
+  "react-native-screens": "^2.3.0",
   "react-native-splash-screen": "^3.2.0",
   "react-native-svg": "^9.13.6",
   "react-native-vector-icons": "^6.6.0",

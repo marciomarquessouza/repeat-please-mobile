@@ -1,6 +1,6 @@
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
-import Slides from '../screens/Slides';
+import { Slides } from '../screens/Slides';
 import Walkthrough from '../screens/Walkthrough';
 import Login from '../screens/Login';
 import Register from '../screens/Register';

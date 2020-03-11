@@ -1,54 +1,36 @@
-import React, { Component } from 'react';
-import { Image, View } from 'react-native';
-import { slides, ISlide } from './slides';
-import { style } from './style';
-import { Title, Body } from 'repeat-please-styles';
-import AppIntroSlider from 'react-native-app-intro-slider';
+import React from 'react';
 import { WALKTHROUGH } from '../../navigator/routes';
-import { withNavigation, NavigationInjectedProps } from 'react-navigation';
+import { NavigationStackProp } from 'react-navigation-stack';
+import { View } from 'react-native';
+import { Slide } from 'repeat-please-styles';
 
-export interface ISlideState {
-	showRealApp: boolean;
+export interface ISlidesProps {
+	navigation: NavigationStackProp;
 }
 
-export interface ISlideItem {
-	item: ISlide;
-}
+const slidesContent = [
+	{
+		title: 'PRONUNCIATION?',
+		text: 'Pronunciation is a problem for you? You can improve it with Repeat Pelase!',
+	},
+	{
+		title: 'HARD WORK!',
+		text:
+			'No magic here! You wil have all tools to follow your progress and identify and improve your pronunciation weakeness.',
+	},
+	{
+		title: 'PATH TO SUCCESS!',
+		text: "No more time to left. Let's start now!",
+	},
+];
 
-export class Slides extends Component<NavigationInjectedProps, ISlideState> {
-	constructor(props: NavigationInjectedProps) {
-		super(props);
-		this.state = {
-			showRealApp: false,
-		};
-	}
+export const Slides = ({ navigation }: ISlidesProps): JSX.Element => {
+	const nextScreen = () => navigation.navigate(WALKTHROUGH);
+	const duration = 800;
+	return (
+		<View style={{ flex: 1 }} data-test="slidesComponent">
+			<Slide {...{ slidesContent, nextScreen, duration }}/>
+		</View>
 
-	renderItem = ({ item }: ISlideItem): JSX.Element => {
-		return (
-			<View style={style.slideContainer}>
-				<Title>{item.title}</Title>
-				<Image source={item.image} />
-				<Body customStyle={style.textStyle}>{item.text}</Body>
-			</View>
-		);
-	};
-
-	onDone = (): void => {
-		const { navigation } = this.props;
-		navigation.navigate(WALKTHROUGH);
-	};
-
-	render() {
-		return (
-			<AppIntroSlider
-				renderItem={this.renderItem}
-				slides={slides}
-				onDone={this.onDone}
-				bottomButton
-				data-test="slidesComponent"
-			/>
-		);
-	}
-}
-
-export default withNavigation(Slides);
+	)
+};

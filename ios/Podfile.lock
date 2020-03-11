@@ -87,18 +87,18 @@ PODS:
     - React-cxxreact (= 0.60.5)
     - React-jsi (= 0.60.5)
   - React-jsinspector (0.60.5)
-  - react-native-fbsdk (1.1.1):
+  - react-native-fbsdk (1.1.2):
     - React
-    - react-native-fbsdk/Core (= 1.1.1)
-    - react-native-fbsdk/Login (= 1.1.1)
-    - react-native-fbsdk/Share (= 1.1.1)
-  - react-native-fbsdk/Core (1.1.1):
+    - react-native-fbsdk/Core (= 1.1.2)
+    - react-native-fbsdk/Login (= 1.1.2)
+    - react-native-fbsdk/Share (= 1.1.2)
+  - react-native-fbsdk/Core (1.1.2):
     - FBSDKCoreKit (= 5.8)
     - React
-  - react-native-fbsdk/Login (1.1.1):
+  - react-native-fbsdk/Login (1.1.2):
     - FBSDKLoginKit (= 5.8)
     - React
-  - react-native-fbsdk/Share (1.1.1):
+  - react-native-fbsdk/Share (1.1.2):
     - FBSDKShareKit (= 5.8)
     - React
   - react-native-splash-screen (3.2.0):
@@ -126,12 +126,12 @@ PODS:
     - React-Core (= 0.60.5)
   - React-RCTWebSocket (0.60.5):
     - React-Core (= 0.60.5)
-  - RNGestureHandler (1.5.3):
+  - RNGestureHandler (1.6.0):
     - React
   - RNGoogleSignin (2.1.1):
     - GoogleSignIn (~> 5.0.0)
     - React
-  - RNReanimated (1.4.0):
+  - RNReanimated (1.7.0):
     - React
   - RNSVG (9.13.6):
     - React
@@ -257,7 +257,7 @@ SPEC CHECKSUMS:
   React-jsi: 4d8c9efb6312a9725b18d6fc818ffc103f60fec2
   React-jsiexecutor: 90ad2f9db09513fc763bc757fdc3c4ff8bde2a30
   React-jsinspector: e08662d1bf5b129a3d556eb9ea343a3f40353ae4
-  react-native-fbsdk: b94a83971c496a35803f38b921aec6d637ba07b5
+  react-native-fbsdk: c35d42169e64aaf66f01713c1e18d0674f7f6519
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
   React-RCTActionSheet: b0f1ea83f4bf75fb966eae9bfc47b78c8d3efd90
   React-RCTAnimation: 359ba1b5690b1e87cc173558a78e82d35919333e
@@ -269,9 +269,9 @@ SPEC CHECKSUMS:
   React-RCTText: b074d89033583d4f2eb5faf7ea2db3a13c7553a2
   React-RCTVibration: 2105b2e0e2b66a6408fc69a46c8a7fb5b2fdade0
   React-RCTWebSocket: cd932a16b7214898b6b7f788c8bddb3637246ac4
-  RNGestureHandler: 02905abe54e1f6e59c081a10b4bd689721e17aa6
+  RNGestureHandler: dde546180bf24af0b5f737c8ad04b6f3fa51609a
   RNGoogleSignin: 6baed9bb19c9c54614bef63bdc55c381b4e33c44
-  RNReanimated: b2ab0b693dddd2339bd2f300e770f6302d2e960c
+  RNReanimated: 031fe8d9ea93c2bd689a40f05320ef9d96f74d7f
   RNSVG: 8ba35cbeb385a52fd960fd28db9d7d18b4c2974f
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   yoga: 312528f5bbbba37b4dcea5ef00e8b4033fdd9411
