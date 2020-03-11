@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow, ShallowWrapper } from 'enzyme';
 import { findByDataTest } from '../../utils/testUtil';
 import { Slides, ISlidesProps } from './';
-import rendered from 'react-test-renderer';
 
 const createTestProps = () => ({
 	navigation: {
@@ -12,10 +11,6 @@ const createTestProps = () => ({
 
 const setup = (props: ISlidesProps): ShallowWrapper => {
 	return shallow(<Slides {...props} />);
-};
-
-const instanceOf = (props: ISlidesProps): any => {
-	return rendered.create(<Slides {...props} />).root.instance;
 };
 
 describe('Slides basic tests', () => {

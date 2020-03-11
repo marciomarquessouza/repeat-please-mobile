@@ -11,7 +11,8 @@ export interface ISlidesProps {
 const slidesContent = [
 	{
 		title: 'PRONUNCIATION?',
-		text: 'Pronunciation is a problem for you? You can improve it with Repeat Pelase!',
+		text:
+			'Pronunciation is a problem for you? You can improve it with Repeat Pelase!',
 	},
 	{
 		title: 'HARD WORK!',
@@ -29,8 +30,7 @@ export const Slides = ({ navigation }: ISlidesProps): JSX.Element => {
 	const duration = 800;
 	return (
 		<View style={{ flex: 1 }} data-test="slidesComponent">
-			<Slide {...{ slidesContent, nextScreen, duration }}/>
+			<Slide {...{ slidesContent, nextScreen, duration }} />
 		</View>
-
-	)
+	);
 };
