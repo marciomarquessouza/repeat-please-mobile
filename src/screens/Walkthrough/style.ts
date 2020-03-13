@@ -12,4 +12,7 @@ export const styles = StyleSheet.create({
 	ButtonStyle: {
 		marginVertical: 10,
 	},
+	DividerStyle: {
+		marginVertical: 10,
+	},
 });

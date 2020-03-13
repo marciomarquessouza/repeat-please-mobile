@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { NavigationStackProp } from 'react-navigation-stack';
-import { ButtonRounded, Logo, TitleLogo } from 'repeat-please-styles';
+import { ButtonRounded, Logo, TitleLogo, Divider } from 'repeat-please-styles';
 import { LOGIN, REGISTER } from '../../navigator/routes';
 import { styles } from './style';
 
@@ -26,6 +26,7 @@ export const Walkthrough = ({ navigation }: IWalkthroughProps): JSX.Element => {
 				onPress={() => navigation.navigate(LOGIN)}>
 				Login
 			</ButtonRounded>
+			<Divider text="OR" containerStyle={styles.DividerStyle} />
 		</View>
 	);
 };

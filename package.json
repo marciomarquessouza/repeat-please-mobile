@@ -13,7 +13,8 @@
   "lint:ts": "eslint -c ./.eslintrc.js './src/**/*.tsx' './src/**/*.ts'",
   "lint:js": "eslint -c ./.eslintrc.js './**/*.js'",
   "lint:all": "npx yarn run lint && npx yarn run tslint",
-  "podinstall": "cd ios && pod install && cd .."
+  "podinstall": "cd ios && pod install && cd ..",
+  "update-style": "rm -rf node_modules yarn.lock && yarn && yarn podinstall"
  },
  "husky": {
   "hooks": {
