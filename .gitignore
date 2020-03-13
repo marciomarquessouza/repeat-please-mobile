@@ -64,3 +64,6 @@ buck-out/
 
 # Config File
 config.homolog.ts
+
+# Coverage
+coverage/

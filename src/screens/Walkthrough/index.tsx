@@ -1,34 +1,31 @@
 import React from 'react';
 import { View } from 'react-native';
-import { withNavigation } from 'react-navigation';
-import { goToScreen, INavigate } from '../../navigator/helper';
+import { NavigationStackProp } from 'react-navigation-stack';
 import { ButtonRounded, Logo, TitleLogo } from 'repeat-please-styles';
 import { LOGIN, REGISTER } from '../../navigator/routes';
 import { styles } from './style';
 
 export interface IWalkthroughProps {
-	navigation: INavigate;
+	navigation: NavigationStackProp;
 }
 
 export const Walkthrough = ({ navigation }: IWalkthroughProps): JSX.Element => {
 	return (
 		<View style={styles.Container} data-test="walkthrough">
-			<Logo />
+			<Logo customStyle={{ width: 150, height: 150 }} />
 			<TitleLogo />
 			<ButtonRounded
 				data-test="register"
 				customStyle={styles.ButtonStyle}
-				onPress={() => goToScreen(navigation, REGISTER)}>
+				onPress={() => navigation.navigate(REGISTER)}>
 				Register
 			</ButtonRounded>
 			<ButtonRounded
 				data-test="login"
 				customStyle={styles.ButtonStyle}
-				onPress={() => goToScreen(navigation, LOGIN)}>
+				onPress={() => navigation.navigate(LOGIN)}>
 				Login
 			</ButtonRounded>
 		</View>
 	);
 };
-
-export default withNavigation(Walkthrough);

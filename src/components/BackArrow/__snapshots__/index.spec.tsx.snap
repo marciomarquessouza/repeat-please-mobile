@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Back Arrow basic tests should render the Back Arrow properly 1`] = `ShallowWrapper {}`;
+
+exports[`Back Arrow basic tests should render the Back Arrow with a different color 1`] = `ShallowWrapper {}`;
