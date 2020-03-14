@@ -23,13 +23,13 @@ export const Walkthrough = ({ navigation }: IWalkthroughProps): JSX.Element => (
 		<TitleLogo />
 		<ButtonRounded
 			data-test="register"
-			customStyle={styles.buttonStyle}
+			style={styles.buttonStyle}
 			onPress={() => navigation.navigate(REGISTER)}>
 			Register
 		</ButtonRounded>
 		<ButtonRounded
 			data-test="login"
-			customStyle={styles.buttonStyle}
+			style={styles.buttonStyle}
 			onPress={() => navigation.navigate(LOGIN)}>
 			Login
 		</ButtonRounded>

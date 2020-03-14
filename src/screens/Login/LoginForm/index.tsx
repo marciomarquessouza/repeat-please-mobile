@@ -60,7 +60,7 @@ export const LoginForm = ({
 				<ButtonRounded
 					onPress={handleLogin}
 					isLoading={isLoading}
-					customStyle={styles.loginButtonStyle}>
+					style={styles.loginButtonStyle}>
 					Login
 				</ButtonRounded>
 			</View>

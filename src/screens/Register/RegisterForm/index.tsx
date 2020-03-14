@@ -49,7 +49,7 @@ export class RegisterForm extends Component<IRegisterFormProps, {}> {
 							</MessageWarning>
 						)}
 						<ButtonRounded
-							customStyle={styles.registerButtonStyle}
+							style={styles.registerButtonStyle}
 							onPress={handleRegister}
 							isLoading={isLoading}>
 							Register
