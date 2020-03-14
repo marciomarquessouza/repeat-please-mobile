@@ -33,7 +33,7 @@ export const facebookLogin = (): void => {
 				return auth().signInWithCredential(credential);
 			});
 	} catch ({ message }) {
-		throw new Error(message);
+		console.log(message);
 	}
 };
 

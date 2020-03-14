@@ -13,8 +13,7 @@
   "lint:ts": "eslint -c ./.eslintrc.js './src/**/*.tsx' './src/**/*.ts'",
   "lint:js": "eslint -c ./.eslintrc.js './**/*.js'",
   "lint:all": "npx yarn run lint && npx yarn run tslint",
-  "podinstall": "cd ios && pod install && cd ..",
-  "update-style": "rm -rf node_modules yarn.lock && yarn && yarn podinstall"
+  "podinstall": "cd ios && pod install && cd .."
  },
  "husky": {
   "hooks": {
@@ -24,6 +23,7 @@
   }
  },
  "dependencies": {
+  "@react-native-community/netinfo": "^5.6.2",
   "@types/react-native-fbsdk": "^1.0.0",
   "firebase": "^7.6.1",
   "native-base": "^2.13.8",
