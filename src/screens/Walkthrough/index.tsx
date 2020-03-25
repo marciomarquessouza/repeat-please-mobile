@@ -17,28 +17,30 @@ export interface IWalkthroughProps {
 	navigation: NavigationStackProp;
 }
 
-export const Walkthrough = ({ navigation }: IWalkthroughProps): JSX.Element => (
-	<View style={styles.container} data-test="walkthrough">
-		<Logo customStyle={{ width: 150, height: 150 }} />
-		<TitleLogo />
-		<ButtonRounded
-			data-test="register"
-			style={styles.buttonStyle}
-			onPress={() => navigation.navigate(REGISTER)}>
-			Register
-		</ButtonRounded>
-		<ButtonRounded
-			data-test="login"
-			style={styles.buttonStyle}
-			onPress={() => navigation.navigate(LOGIN)}>
-			Login
-		</ButtonRounded>
-		<Divider text="OR" containerStyle={styles.dividerStyle} />
-		<FacebookButton onPress={facebookLogin} style={styles.buttonStyle}>
-			Login with Facebook
-		</FacebookButton>
-		<GoogleButton onPress={googleLogin} style={styles.buttonStyle}>
-			Login with Google
-		</GoogleButton>
-	</View>
-);
+export const Walkthrough = ({ navigation }: IWalkthroughProps): JSX.Element => {
+	return (
+		<View style={styles.container} data-test="walkthrough">
+			<Logo customStyle={{ width: 150, height: 150 }} />
+			<TitleLogo />
+			<ButtonRounded
+				data-test="register"
+				style={styles.buttonStyle}
+				onPress={() => navigation.navigate(REGISTER)}>
+				Register
+			</ButtonRounded>
+			<ButtonRounded
+				data-test="login"
+				style={styles.buttonStyle}
+				onPress={() => navigation.navigate(LOGIN)}>
+				Login
+			</ButtonRounded>
+			<Divider text="OR" containerStyle={styles.dividerStyle} />
+			<FacebookButton onPress={facebookLogin} style={styles.buttonStyle}>
+				Login with Facebook
+			</FacebookButton>
+			<GoogleButton onPress={googleLogin} style={styles.buttonStyle}>
+				Login with Google
+			</GoogleButton>
+		</View>
+	);
+};
