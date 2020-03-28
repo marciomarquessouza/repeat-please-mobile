@@ -28,7 +28,7 @@
   "firebase": "^7.6.1",
   "native-base": "^2.13.8",
   "react": "16.9.0",
-  "react-native": "0.61.2",
+  "react-native": "0.61.3",
   "react-native-fbsdk": "^1.1.1",
   "react-native-gesture-handler": "^1.5.2",
   "react-native-google-signin": "^2.1.1",
