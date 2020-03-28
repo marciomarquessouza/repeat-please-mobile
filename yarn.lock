@@ -1312,7 +1312,7 @@
   dependencies:
     serve-static "^1.13.1"
 
-"@react-native-community/cli-platform-android@^3.0.0-alpha.1":
+"@react-native-community/cli-platform-android@^3.0.0":
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli-platform-android/-/cli-platform-android-3.1.4.tgz#61f964dc311623e60b0fb29c5f3732cc8a6f076f"
   integrity sha512-ClSdY20F0gzWVLTqCv7vHjnUqOcuq10jd9GgHX6lGSc2GI+Ql3/aQg3tmG4uY3KXNNwAv3U8QCoYgg1WGfwiHA==
@@ -1325,7 +1325,7 @@
     slash "^3.0.0"
     xmldoc "^1.1.2"
 
-"@react-native-community/cli-platform-ios@^3.0.0-alpha.1":
+"@react-native-community/cli-platform-ios@^3.0.0":
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli-platform-ios/-/cli-platform-ios-3.2.0.tgz#c469444f5993c9e6737a4b16d78cf033e3702f00"
   integrity sha512-pzEnx68H6+mHBq5jsMrr3UmAmkrLSMlC9BZ4yoUdfUXCQq6/R70zNYvH4hjUw8h2Al7Kgq53UzHUsM0ph8TSWQ==
@@ -1350,7 +1350,7 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/cli-types/-/cli-types-3.0.0.tgz#488d46605cb05e88537e030f38da236eeda74652"
   integrity sha512-ng6Tm537E/M42GjE4TRUxQyL8sRfClcL7bQWblOCoxPZzJ2J3bdALsjeG3vDnVCIfI/R0AeFalN9KjMt0+Z/Zg==
 
-"@react-native-community/cli@^3.0.0-alpha.1":
+"@react-native-community/cli@^3.0.0":
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli/-/cli-3.2.1.tgz#2a466801eb6080a1f73358c5d740c53c24ed8c6f"
   integrity sha512-bZ/bfZ+9r1gQSxp6t7+00DcpC6vmbVYSvzUCFM/yo5k8bhsDdcy8aocscIaXXVGG+v9Edri/Q7hH9ks7L18/Rg==
@@ -7502,15 +7502,15 @@ react-native-web@^0.12.0-rc.1:
     prop-types "^15.6.0"
     react-timer-mixin "^0.13.4"
 
-react-native@0.61.3:
-  version "0.61.3"
-  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.61.3.tgz#0c7e299ccfa3a5efc6e87e88563f9dc444389aca"
-  integrity sha512-7p89m62+Wsc93tYEy010LZMZtQMOQjUC8nOiVF+XPBn4Fa3WUt7IlQjKs9tO9rcByZ4ilzeMp+W2kr1/U2lPLw==
+react-native@0.61.5:
+  version "0.61.5"
+  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.61.5.tgz#6e21acb56cbd75a3baeb1f70201a66f42600bba8"
+  integrity sha512-MXqE3NoGO0T3dUKIKkIppijBhRRMpfN6ANbhMXHDuyfA+fSilRWgCwYgR/YNCC7ntECoJYikKaNTUBB0DeQy6Q==
   dependencies:
     "@babel/runtime" "^7.0.0"
-    "@react-native-community/cli" "^3.0.0-alpha.1"
-    "@react-native-community/cli-platform-android" "^3.0.0-alpha.1"
-    "@react-native-community/cli-platform-ios" "^3.0.0-alpha.1"
+    "@react-native-community/cli" "^3.0.0"
+    "@react-native-community/cli-platform-android" "^3.0.0"
+    "@react-native-community/cli-platform-ios" "^3.0.0"
     abort-controller "^3.0.0"
     art "^0.10.0"
     base64-js "^1.1.2"
