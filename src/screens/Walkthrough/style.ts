@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
 		padding: 10,
 	},
 	buttonStyle: {
-		marginVertical: 12,
+		marginVertical: 8,
 	},
 	dividerStyle: {
 		marginVertical: 8,
