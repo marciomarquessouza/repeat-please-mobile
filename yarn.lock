@@ -7786,7 +7786,7 @@ repeat-element@^1.1.2:
 
 "repeat-please-styles@git+ssh://git@github.com:marciomarquessouza/repeat-please-styles.git":
   version "0.0.1"
-  resolved "git+ssh://git@github.com:marciomarquessouza/repeat-please-styles.git#7f601c90194206e782b77449e886dca0417531cb"
+  resolved "git+ssh://git@github.com:marciomarquessouza/repeat-please-styles.git#f2cfaeb66a8e50fce87302750748b022ddfb3e6e"
   dependencies:
     moment "^2.24.0"
 
