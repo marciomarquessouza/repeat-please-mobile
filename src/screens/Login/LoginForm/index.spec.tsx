@@ -11,6 +11,8 @@ const defaultProps: ILoginFormProps = {
 	password: 'Secret',
 	onPasswordChange: (password: string) => password,
 	handleLogin: () => {},
+	forgotPassword: () => {},
+	isLoading: false,
 };
 
 const setup = (props: ILoginFormProps): ShallowWrapper => {

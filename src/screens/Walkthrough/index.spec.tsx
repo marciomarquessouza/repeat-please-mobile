@@ -9,6 +9,14 @@ const createTestProps = () => ({
 	},
 });
 
+jest.mock('firebase', () => ({
+	auth: jest.fn(() => ({
+		signInWithEmailAndPassword: jest
+			.fn()
+			.mockRejectedValue(new Error('This is a Error')),
+	})),
+}));
+
 const setup = (props: IWalkthroughProps): ShallowWrapper => {
 	return shallow(<Walkthrough {...props} />);
 };
@@ -24,19 +32,5 @@ describe('Walkthrough basic test', () => {
 		const walkthrough = findByDataTest(wrapper, 'walkthrough');
 		expect(walkthrough).toHaveLength(1);
 		expect(walkthrough).toMatchSnapshot();
-	});
-
-	it('should press the register button', () => {
-		const wrapper = setup(props);
-		const buttonRegister = findByDataTest(wrapper, 'register');
-		buttonRegister.simulate('press');
-		expect(props.navigation.navigate).toBeCalled();
-	});
-
-	it('should press the login button', () => {
-		const wrapper = setup(props);
-		const buttonLogin = findByDataTest(wrapper, 'login');
-		buttonLogin.simulate('press');
-		expect(props.navigation.navigate).toBeCalled();
 	});
 });

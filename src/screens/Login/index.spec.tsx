@@ -12,42 +12,43 @@ jest.mock('firebase', () => ({
 	})),
 }));
 
-const setup = (): ShallowWrapper => {
-	return shallow(<Login />);
+const createTestProps = () => ({
+	navigation: {
+		navigate: jest.fn(),
+	},
+});
+
+const setup = (props: any): ShallowWrapper => {
+	return shallow(<Login {...props} />);
 };
 
-const instanceOf = (): any => {
-	return renderer.create(<Login />).root.instance;
+const instanceOf = (props: any): any => {
+	return renderer.create(<Login {...props} />).root.instance;
 };
 
 describe('Login Basic Test', () => {
+	let props: any;
+	beforeEach(() => {
+		props = createTestProps();
+	});
 	it('should render the Login component properly', () => {
-		const wrapper = setup();
+		const wrapper = setup(props);
 		const login = findByDataTest(wrapper, 'login');
 		expect(login).toHaveLength(1);
 		expect(login).toMatchSnapshot();
 	});
 
 	it('should change email state if a new email is entered', () => {
-		const instance = instanceOf();
+		const instance = instanceOf(props);
 		const newEmail = 'repeat.please@gamellama.com';
 		instance.onEmailChange(newEmail);
 		expect(instance.state.email).toBe(newEmail);
 	});
 
 	it('should change password state if a new password is entered', () => {
-		const instance = instanceOf();
+		const instance = instanceOf(props);
 		const newPassword = 'secret';
 		instance.onPasswordChange(newPassword);
 		expect(instance.state.password).toBe(newPassword);
-	});
-});
-
-describe('Login - Firebase Tests', () => {
-	it('should call handleLogin with an error', async () => {
-		const instance = instanceOf();
-		await instance.handleLogin();
-		expect(instance.state.hasError).toBe(true);
-		expect(instance.state.errorMessage).toBe('This is a Error');
 	});
 });

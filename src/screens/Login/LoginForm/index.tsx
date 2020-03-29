@@ -6,7 +6,7 @@ import {
 	TitleLogo,
 	LinkButton,
 } from 'repeat-please-styles';
-import { Email, Password, SocialMediaButtons } from '../../../components';
+import { Email, Password } from '../../../components';
 import { ScrollView, KeyboardAvoidingView, View } from 'react-native';
 import { styles } from './styles';
 
@@ -19,8 +19,6 @@ export interface ILoginFormProps {
 	password: string;
 	onPasswordChange: (password: string) => void;
 	handleLogin: () => void;
-	handleFacebookLogin: () => void;
-	handleGoogleLogin: () => void;
 	isLoading: boolean;
 }
 
@@ -29,8 +27,6 @@ export const LoginForm = ({
 	errorMessage,
 	email,
 	forgotPassword,
-	handleFacebookLogin,
-	handleGoogleLogin,
 	onEmailChange,
 	password,
 	onPasswordChange,
@@ -65,11 +61,6 @@ export const LoginForm = ({
 				</ButtonRounded>
 			</View>
 			<View style={styles.container}>
-				<SocialMediaButtons
-					customStyle={styles.buttonStyle}
-					handleFacebookSubmit={handleFacebookLogin}
-					handleGoogleSubmit={handleGoogleLogin}
-				/>
 				<View style={styles.container}>
 					<LinkButton onPress={forgotPassword}>Forgot Password</LinkButton>
 				</View>

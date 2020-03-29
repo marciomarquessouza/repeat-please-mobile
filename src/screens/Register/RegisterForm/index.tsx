@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { ScrollView, KeyboardAvoidingView, View } from 'react-native';
 import { ButtonRounded, MessageWarning, TitleLogo } from 'repeat-please-styles';
 import { RegisterInput } from '../RegisterInput';
-import { SocialMediaButtons } from '../../../components';
 import { styles } from './styles';
 
 export interface IRegisterFormProps {
@@ -29,8 +28,6 @@ export class RegisterForm extends Component<IRegisterFormProps, {}> {
 			errorMessage,
 			handleRegister,
 			isLoading,
-			handleFacebookLogin,
-			handleGoogleLogin,
 		}: IRegisterFormProps = this.props;
 
 		return (
@@ -54,13 +51,6 @@ export class RegisterForm extends Component<IRegisterFormProps, {}> {
 							isLoading={isLoading}>
 							Register
 						</ButtonRounded>
-					</View>
-					<View style={styles.container}>
-						<SocialMediaButtons
-							customStyle={styles.buttonStyle}
-							handleFacebookSubmit={handleFacebookLogin}
-							handleGoogleSubmit={handleGoogleLogin}
-						/>
 					</View>
 				</ScrollView>
 			</KeyboardAvoidingView>
