@@ -49,8 +49,8 @@ export const AlertsProvider = ({ children }: IProviderProps) => {
 
 	return (
 		<AlertsContext.Provider value={{ showAlert, hideAlert }}>
-			<Alerts {...{ message, shown, type, onCloseModal: hideAlert }} />
 			{children}
+			<Alerts {...{ message, shown, type, onCloseModal: hideAlert }} />
 		</AlertsContext.Provider>
 	);
 };

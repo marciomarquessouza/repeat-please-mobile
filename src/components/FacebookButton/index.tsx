@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AccessToken, LoginManager, LoginResult } from 'react-native-fbsdk';
 import { FacebookButton as FacebookBtnComponent } from 'repeat-please-styles';
 import { ViewStyle } from 'react-native';
@@ -15,7 +15,10 @@ export const FacebookButton = ({
 	style,
 }: ILoginProps): JSX.Element => {
 	const { showAlert } = useContext(AlertsContext);
+	const [isLoading, setLoading] = useState(false);
+
 	const onPress = () => {
+		setLoading(true);
 		LoginManager.logInWithPermissions(['public_profile', 'email'])
 			.then((result: LoginResult) => {
 				if (result.isCancelled) {
@@ -30,16 +33,17 @@ export const FacebookButton = ({
 				const credential = auth.FacebookAuthProvider.credential(
 					data.accessToken,
 				);
-				return auth().signInWithCredential(credential);
+				auth().signInWithCredential(credential);
 			})
 			.catch(({ message: facebookError }) => {
+				setLoading(false);
 				const message = facebookError || 'Login Error';
 				showAlert({ message, type: 'error' });
 			});
 	};
 
 	return (
-		<FacebookBtnComponent {...{ onPress, style }}>
+		<FacebookBtnComponent {...{ onPress, style, isLoading }}>
 			{children}
 		</FacebookBtnComponent>
 	);
