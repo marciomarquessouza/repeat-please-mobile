@@ -20,7 +20,7 @@ class ForgotPassword extends Component<
 > {
 	constructor(props: NavigationInjectedProps) {
 		super(props);
-		const loginEmail = this.props.navigation.getParam('loginEmail');
+		const loginEmail = this.props.navigation.getParam('email');
 		this.state = {
 			email: loginEmail || '',
 			isLoading: false,

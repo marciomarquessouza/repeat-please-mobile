@@ -1,20 +1,17 @@
 import React from 'react';
 import { StyleSheet, SafeAreaView, TouchableOpacity, View } from 'react-native';
 import { BackArrow } from '../../components/BackArrow';
-import { NavigationStackProp } from 'react-navigation-stack';
 import { color } from 'repeat-please-styles';
 
 export interface IHeaderBackArrow {
-	navigation: NavigationStackProp;
+	onPress: () => void;
 }
 
-export const HeaderBackArrow = ({
-	navigation,
-}: IHeaderBackArrow): JSX.Element => {
+export const HeaderBackArrow = ({ onPress }: IHeaderBackArrow): JSX.Element => {
 	return (
 		<SafeAreaView data-test="backArrow">
 			<View style={styles.container}>
-				<TouchableOpacity onPress={() => navigation.pop()}>
+				<TouchableOpacity {...{ onPress }}>
 					<BackArrow />
 				</TouchableOpacity>
 			</View>

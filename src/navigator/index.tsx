@@ -4,7 +4,7 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { Slides } from '../screens/Slides';
 import { Walkthrough } from '../screens/Walkthrough';
-import Login from '../screens/Login';
+import { Login } from '../screens/Login';
 import Register from '../screens/Register';
 import Home from '../screens/Home';
 import Loading from '../screens/Loading';
@@ -13,6 +13,13 @@ import { HeaderBackArrow } from './HeaderBackArrow';
 
 const navigationOptions = () => ({
 	header: null,
+});
+
+const backArrow = () => ({
+	header: (props: any) => (
+		<HeaderBackArrow onPress={() => props.navigation.pop()} />
+	),
+	headerShown: Platform.OS !== 'ios',
 });
 
 const AppStack = createStackNavigator({
@@ -29,13 +36,13 @@ const AuthStack = createStackNavigator({
 	},
 	Walkthrough: {
 		screen: Walkthrough,
-		navigationOptions: () => ({
-			header: props => <HeaderBackArrow navigation={props.navigation} />,
-			headerShown: Platform.OS !== 'ios',
-		}),
+		navigationOptions: backArrow,
 	},
 	Login: {
 		screen: Login,
+		navigationOptions: () => ({
+			headerShown: false,
+		}),
 	},
 	Register: {
 		screen: Register,
