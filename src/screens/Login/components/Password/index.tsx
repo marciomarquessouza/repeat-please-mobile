@@ -58,7 +58,7 @@ export const Password = ({
 						secureTextEntry: !showPassword,
 						autoCapitalize: 'none',
 						autoCorrect: false,
-						onKeyPress: onPress,
+						onSubmitEditing: onPress,
 					}}
 				/>
 				<TouchableOpacity {...{ onPress }}>

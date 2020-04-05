@@ -30,7 +30,7 @@ export const Login = ({ navigation }: ILoginProps): JSX.Element => {
 		try {
 			await emailLogin(email, password);
 		} catch (error) {
-			showAlert({ type: error.message, message: 'Invalid Email' });
+			showAlert({ type: 'error', message: error.message });
 		} finally {
 			setIsLoading(false);
 		}
