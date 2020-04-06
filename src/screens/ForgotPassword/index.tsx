@@ -1,104 +1,83 @@
-import React, { Component } from 'react';
+import React, { useState, useContext } from 'react';
 import { styles } from './style';
-import { View } from 'react-native';
 import {
-	ButtonRounded,
-	Logo,
-	TitleLogo,
-	Title,
-	MessageSuccess,
-	MessageWarning,
-} from 'repeat-please-styles';
-import { Email } from '../../components/Email';
-import { NavigationInjectedProps } from 'react-navigation';
+	ActivityIndicator,
+	SafeAreaView,
+	TouchableOpacity,
+	Image,
+	View,
+} from 'react-native';
+import { Logo, PlaceholderInput, Title, TitleLogo } from 'repeat-please-styles';
+import { NavigationStackProp } from 'react-navigation-stack';
 import { passwordReset } from '../../data/services/login';
-import { IForgotPasswordState } from './types';
+import { submit } from '../../../assets/images';
+import { emailIsValid } from '../../utils/validations';
+import { AlertsContext } from '../../contexts/AlertsContext';
 
-class ForgotPassword extends Component<
-	NavigationInjectedProps,
-	IForgotPasswordState
-> {
-	constructor(props: NavigationInjectedProps) {
-		super(props);
-		const loginEmail = this.props.navigation.getParam('email');
-		this.state = {
-			email: loginEmail || '',
-			isLoading: false,
-			hasError: false,
-			errorMessage: '',
-			isSuccess: false,
-			successMessage: '',
-		};
-	}
+interface IForgotPasswordProp {
+	navigation: NavigationStackProp;
+}
 
-	onEmailChange = (email: string): void => {
-		this.setState({ email });
-	};
+export const ForgotPassword = ({ navigation }: IForgotPasswordProp) => {
+	const loginEmail = navigation.getParam('email');
+	const [email, setEmail] = useState(loginEmail || '');
+	const [isLoading, setIsLoading] = useState(false);
+	const { showAlert } = useContext(AlertsContext);
 
-	handlePasswordForgot = async (): Promise<void> => {
-		const { email } = this.state;
-
-		this.setState({
-			hasError: false,
-			errorMessage: '',
-			isLoading: true,
-		});
-
-		if (!email) {
-			return this.setState({
-				hasError: true,
-				errorMessage: 'Field email is mandatory',
-				isLoading: false,
-			});
+	const onForgotSubmit = async (): Promise<void> => {
+		if (!emailIsValid(email)) {
+			showAlert({ type: 'error', message: 'Invalid Email' });
+			return;
 		}
 
 		try {
+			setIsLoading(true);
 			await passwordReset(email);
-			this.setState({
-				isSuccess: true,
-				successMessage: 'New password was sent',
-				isLoading: false,
-			});
+			showAlert({ type: 'success', message: 'Success =]' });
 		} catch ({ message }) {
-			this.setState({
-				hasError: true,
-				errorMessage: message,
-				isLoading: false,
-			});
+			showAlert({ type: 'error', message });
+			setIsLoading(false);
 		}
 	};
 
-	render(): JSX.Element {
-		const {
-			email,
-			hasError,
-			errorMessage,
-			isSuccess,
-			successMessage,
-			isLoading,
-		} = this.state;
-		return (
-			<View style={styles.wrapper}>
+	return (
+		<SafeAreaView style={styles.wrapper}>
+			<View>
 				<View style={styles.container}>
 					<Logo customStyle={styles.logoStyle} />
 					<TitleLogo />
 				</View>
 				<View style={styles.container}>
 					<Title customStyle={styles.titleStyle}>Forgot Your Password?</Title>
-					<Email email={email} onEmailChange={this.onEmailChange} />
-					{hasError && <MessageWarning>{errorMessage}</MessageWarning>}
-					{isSuccess && <MessageSuccess>{successMessage}</MessageSuccess>}
 				</View>
-				<View style={styles.container}>
-					<ButtonRounded
-						isLoading={isLoading}
-						onPress={this.handlePasswordForgot}>
-						Send new Password
-					</ButtonRounded>
+				<View style={styles.inputContainer}>
+					<View style={styles.inputStyle}>
+						<PlaceholderInput
+							{...{
+								placeholder: 'Email Address',
+								value: email,
+								onChangeText: text => setEmail(text),
+								keyboardType: 'email-address',
+								autoCapitalize: 'none',
+								autoCorrect: false,
+								onSubmitEditing: onForgotSubmit,
+								returnKeyType: 'send',
+							}}
+						/>
+					</View>
+					<TouchableOpacity
+						{...{
+							onPress: onForgotSubmit,
+							style: styles.buttonStyle,
+						}}>
+						{isLoading ? (
+							<ActivityIndicator size="small" />
+						) : (
+							<Image source={submit} />
+						)}
+					</TouchableOpacity>
 				</View>
 			</View>
-		);
-	}
-}
-
-export default ForgotPassword;
+		</SafeAreaView>
+	);
+};

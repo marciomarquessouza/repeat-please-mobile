@@ -1,13 +1,9 @@
 import React from 'react';
-import {
-	Image,
-	StyleSheet,
-	TouchableOpacity,
-	View,
-	ViewStyle,
-} from 'react-native';
+import { Image, View, ViewStyle } from 'react-native';
 import { mailMonkey, arrowRight } from '../../../../../assets/images';
 import { Title, PlaceholderInput } from 'repeat-please-styles';
+import { IconButton } from '../../../../components';
+import { styles } from './style';
 
 export interface IEmailProps {
 	placeholder: string;
@@ -38,28 +34,10 @@ export const Email = ({
 					autoCapitalize: 'none',
 					autoCorrect: false,
 					onSubmitEditing: onPress,
+					returnKeyType: 'next',
 				}}
 			/>
-			<TouchableOpacity {...{ onPress }}>
-				<Image source={arrowRight} />
-			</TouchableOpacity>
+			<IconButton {...{ onPress, source: arrowRight }} />
 		</View>
 	</View>
 );
-
-const styles = StyleSheet.create({
-	container: {
-		alignItems: 'center',
-		paddingHorizontal: 60,
-	},
-	headerContainer: {
-		paddingBottom: 10,
-		alignItems: 'center',
-	},
-	imageStyle: {
-		marginBottom: 10,
-	},
-	inputContainer: {
-		flexDirection: 'row',
-	},
-});

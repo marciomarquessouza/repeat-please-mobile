@@ -8,7 +8,7 @@ import { Login } from '../screens/Login';
 import Register from '../screens/Register';
 import Home from '../screens/Home';
 import Loading from '../screens/Loading';
-import ForgotPassword from '../screens/ForgotPassword';
+import { ForgotPassword } from '../screens/ForgotPassword';
 import { HeaderBackArrow } from './HeaderBackArrow';
 
 const navigationOptions = () => ({
@@ -46,9 +46,11 @@ const AuthStack = createStackNavigator({
 	},
 	Register: {
 		screen: Register,
+		navigationOptions: backArrow,
 	},
 	ForgotPassword: {
 		screen: ForgotPassword,
+		navigationOptions: backArrow,
 	},
 });
 

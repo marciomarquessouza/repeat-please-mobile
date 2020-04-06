@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import {
-	ActivityIndicator,
-	Image,
-	StyleSheet,
-	TouchableOpacity,
-	View,
-	ViewStyle,
-} from 'react-native';
+import { Image, View, ViewStyle } from 'react-native';
 import {
 	passwordHide,
 	passwordShown,
@@ -15,6 +8,8 @@ import {
 	submit,
 } from '../../../../../assets/images';
 import { Title, PlaceholderInput } from 'repeat-please-styles';
+import { IconButton } from '../../../../components';
+import { styles } from './style';
 
 export interface IPasswordProps {
 	placeholder: string;
@@ -47,10 +42,10 @@ export const Password = ({
 				<Title>Your Password</Title>
 			</View>
 			<View style={styles.inputContainer}>
-				<TouchableOpacity
-					{...{ onPress: () => setShowPassword(!showPassword) }}>
-					<Image source={showPassword ? passwordHide : passwordShown} />
-				</TouchableOpacity>
+				<IconButton
+					onPress={() => setShowPassword(!showPassword)}
+					source={showPassword ? passwordShown : passwordHide}
+				/>
 				<PlaceholderInput
 					{...{
 						placeholder,
@@ -59,33 +54,18 @@ export const Password = ({
 						autoCapitalize: 'none',
 						autoCorrect: false,
 						onSubmitEditing: onPress,
+						returnKeyType: 'done',
 					}}
 				/>
-				<TouchableOpacity {...{ onPress }}>
-					{isLoading ? (
-						<ActivityIndicator size="small" />
-					) : (
-						<Image source={submit} />
-					)}
-				</TouchableOpacity>
+				<IconButton
+					{...{
+						onPress,
+						source: submit,
+						isLoading,
+						style: styles.buttonStyle,
+					}}
+				/>
 			</View>
 		</View>
 	);
 };
-
-const styles = StyleSheet.create({
-	container: {
-		alignItems: 'center',
-		paddingHorizontal: 60,
-	},
-	headerContainer: {
-		paddingBottom: 10,
-		alignItems: 'center',
-	},
-	imageStyle: {
-		marginBottom: 10,
-	},
-	inputContainer: {
-		flexDirection: 'row',
-	},
-});

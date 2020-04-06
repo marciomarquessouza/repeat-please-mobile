@@ -31,7 +31,6 @@ export const Login = ({ navigation }: ILoginProps): JSX.Element => {
 			await emailLogin(email, password);
 		} catch (error) {
 			showAlert({ type: 'error', message: error.message });
-		} finally {
 			setIsLoading(false);
 		}
 	};

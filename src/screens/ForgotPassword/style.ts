@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { color } from 'repeat-please-styles';
+import { Platform } from 'react-native';
 
 export const styles = StyleSheet.create({
 	wrapper: {
@@ -8,10 +9,10 @@ export const styles = StyleSheet.create({
 		backgroundColor: color.background,
 	},
 	container: {
-		flex: 1,
 		alignItems: 'center',
 		justifyContent: 'center',
 		paddingHorizontal: 10,
+		marginTop: Platform.OS === 'ios' ? 60 : 0,
 	},
 	logoStyle: {
 		height: 100,
@@ -20,5 +21,17 @@ export const styles = StyleSheet.create({
 	},
 	titleStyle: {
 		paddingVertical: 20,
+	},
+	buttonStyle: {
+		paddingHorizontal: 5,
+	},
+	inputContainer: {
+		flexDirection: 'row',
+		marginHorizontal: 20,
+	},
+	inputStyle: {
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center',
 	},
 });
