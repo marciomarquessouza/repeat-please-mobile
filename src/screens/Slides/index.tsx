@@ -10,18 +10,22 @@ export interface ISlidesProps {
 
 const slidesContent = [
 	{
-		title: 'PRONUNCIATION?',
-		text:
-			'Pronunciation is a problem for you? You can improve it with Repeat Pelase!',
+		header: <Slide.Logo />,
+		footer: (
+			<Slide.Footer text="Pronunciation is a problem for you? You can improve it with Repeat Pelase! " />
+		),
 	},
 	{
-		title: 'HARD WORK!',
-		text:
-			'No magic here! You wil have all tools to follow your progress and identify and improve your pronunciation weakeness.',
+		header: <Slide.Header title="HARD WORK!" />,
+		footer: (
+			<Slide.Footer text="No magic here! You wil have all tools to follow your progress and identify and improve your pronunciation weekeness." />
+		),
 	},
 	{
-		title: 'PATH TO SUCCESS!',
-		text: "No more time to left. Let's start now!",
+		header: <Slide.Header title="PATH TO SUCCESS!" />,
+		footer: (
+			<Slide.Footer text="No magic here! You wil have all tools to follow your progress and identify and improve your pronunciation weekeness." />
+		),
 	},
 ];
 
@@ -30,7 +34,7 @@ export const Slides = ({ navigation }: ISlidesProps): JSX.Element => {
 	const duration = 800;
 	return (
 		<View style={{ flex: 1 }} data-test="slidesComponent">
-			<Slide {...{ slidesContent, nextScreen, duration }} />
+			<Slide {...{ slides: slidesContent, nextScreen, duration }} />
 		</View>
 	);
 };
