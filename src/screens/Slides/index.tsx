@@ -1,8 +1,8 @@
 import React from 'react';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import { WALKTHROUGH } from '../../navigator/routes';
 import { NavigationStackProp } from 'react-navigation-stack';
-import { View } from 'react-native';
-import { Slide } from 'repeat-please-styles';
+import { Slide, color } from 'repeat-please-styles';
 
 export interface ISlidesProps {
 	navigation: NavigationStackProp;
@@ -33,8 +33,15 @@ export const Slides = ({ navigation }: ISlidesProps): JSX.Element => {
 	const nextScreen = () => navigation.navigate(WALKTHROUGH);
 	const duration = 800;
 	return (
-		<View style={{ flex: 1 }} data-test="slidesComponent">
+		<SafeAreaView style={styles.container} data-test="slidesComponent">
 			<Slide {...{ slides: slidesContent, nextScreen, duration }} />
-		</View>
+		</SafeAreaView>
 	);
 };
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		backgroundColor: color.background,
+	},
+});
