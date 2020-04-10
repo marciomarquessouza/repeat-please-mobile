@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
 import { color } from 'repeat-please-styles';
-import { Platform } from 'react-native';
 
 export const styles = StyleSheet.create({
 	wrapper: {
@@ -12,7 +11,6 @@ export const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 		paddingHorizontal: 10,
-		marginTop: Platform.OS === 'ios' ? 60 : 0,
 	},
 	logoStyle: {
 		height: 100,

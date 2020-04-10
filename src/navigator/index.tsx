@@ -1,5 +1,4 @@
 import React from 'react';
-import { Platform } from 'react-native';
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { Slides } from '../screens/Slides';
@@ -10,16 +9,20 @@ import Home from '../screens/Home';
 import Loading from '../screens/Loading';
 import { ForgotPassword } from '../screens/ForgotPassword';
 import { HeaderBackArrow } from './HeaderBackArrow';
+import { color } from 'repeat-please-styles';
 
 const navigationOptions = () => ({
 	header: null,
 });
 
-const backArrow = () => ({
-	header: (props: any) => (
-		<HeaderBackArrow onPress={() => props.navigation.pop()} />
-	),
-	headerShown: Platform.OS !== 'ios',
+const backArrow = () => (props: any) => ({
+	headerStyle: {
+		backgroundColor: color.background,
+		elevation: 0,
+		shadowOpacity: 0,
+		borderBottomWidth: 0,
+	},
+	headerLeft: () => <HeaderBackArrow onPress={() => props.navigation.pop()} />,
 });
 
 const AppStack = createStackNavigator({
@@ -29,30 +32,35 @@ const AppStack = createStackNavigator({
 	},
 });
 
-const AuthStack = createStackNavigator({
-	Slides: {
-		screen: Slides,
-		navigationOptions,
+const AuthStack = createStackNavigator(
+	{
+		Slides: {
+			screen: Slides,
+			navigationOptions,
+		},
+		Walkthrough: {
+			screen: Walkthrough,
+			navigationOptions: backArrow(),
+		},
+		Login: {
+			screen: Login,
+			navigationOptions: () => ({
+				headerShown: false,
+			}),
+		},
+		Register: {
+			screen: Register,
+			navigationOptions: backArrow(),
+		},
+		ForgotPassword: {
+			screen: ForgotPassword,
+			navigationOptions: backArrow(),
+		},
 	},
-	Walkthrough: {
-		screen: Walkthrough,
-		navigationOptions: backArrow,
+	{
+		headerMode: 'screen',
 	},
-	Login: {
-		screen: Login,
-		navigationOptions: () => ({
-			headerShown: false,
-		}),
-	},
-	Register: {
-		screen: Register,
-		navigationOptions: backArrow,
-	},
-	ForgotPassword: {
-		screen: ForgotPassword,
-		navigationOptions: backArrow,
-	},
-});
+);
 
 const navigator = createSwitchNavigator(
 	{
