@@ -8,12 +8,15 @@ import {
 	View,
 	ViewStyle,
 } from 'react-native';
+import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
 interface IIconButtonProps {
 	onPress?: () => void;
 	isLoading?: boolean;
 	source: ImageSourcePropType;
 	style?: ViewStyle;
+	width?: number;
+	height?: number;
 }
 
 export const IconButton = ({
@@ -21,13 +24,23 @@ export const IconButton = ({
 	isLoading,
 	source,
 	style,
+	width,
+	height,
 }: IIconButtonProps) => (
 	<TouchableOpacity {...{ onPress }}>
 		<View style={[styles.buttonContainer, style]}>
 			{isLoading ? (
 				<ActivityIndicator size="small" />
 			) : (
-				<Image {...{ source }} />
+				<Image
+					{...{
+						source,
+						style: {
+							width: width || wp('9%'),
+							height: height || wp('9%'),
+						},
+					}}
+				/>
 			)}
 		</View>
 	</TouchableOpacity>

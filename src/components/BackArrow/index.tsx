@@ -1,5 +1,6 @@
 import React from 'react';
 import Svg, { Path } from 'react-native-svg';
+import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 
 export interface IBackArrowProps {
 	color?: string;
@@ -10,8 +11,8 @@ export const BackArrow = (props: IBackArrowProps): JSX.Element => {
 
 	return (
 		<Svg
-			width={36}
-			height={36}
+			width={wp('8%')}
+			height={wp('8%')}
 			viewBox="0 0 36 36"
 			fill="none"
 			{...props}

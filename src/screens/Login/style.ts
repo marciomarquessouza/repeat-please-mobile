@@ -11,10 +11,6 @@ export const styles = StyleSheet.create({
 	backArrowStyle: {
 		width: '100%',
 	},
-	animationContainer: {
-		height: 310,
-		width: '100%',
-	},
 	forgotPasswordStyle: {
 		marginVertical: 40,
 	},
@@ -26,8 +22,7 @@ export const styles = StyleSheet.create({
 		paddingBottom: 30,
 	},
 	signUpText: {
-		fontSize: 22,
-		fontWeight: 'bold',
+		fontSize: 20,
 		paddingRight: 10,
 		fontFamily: font.primaryLight,
 	},

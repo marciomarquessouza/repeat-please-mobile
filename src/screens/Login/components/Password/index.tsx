@@ -10,6 +10,7 @@ import {
 import { Title, PlaceholderInput } from 'repeat-please-styles';
 import { IconButton } from '../../../../components';
 import { styles } from './style';
+import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 export interface IPasswordProps {
 	placeholder: string;
@@ -35,9 +36,9 @@ export const Password = ({
 			<View style={styles.headerContainer}>
 				<Image
 					source={showPassword ? monkeyOpenEyes : monkeyCloseEyes}
-					width={160}
-					height={172}
 					style={styles.imageStyle}
+					width={hp('13.5%')}
+					height={hp('14.8%')}
 				/>
 				<Title>Your Password</Title>
 			</View>
@@ -63,6 +64,8 @@ export const Password = ({
 						source: submit,
 						isLoading,
 						style: styles.buttonStyle,
+						width: hp('3.8%'),
+						height: hp('3.8%'),
 					}}
 				/>
 			</View>

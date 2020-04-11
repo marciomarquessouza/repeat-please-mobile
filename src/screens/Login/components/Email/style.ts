@@ -1,18 +1,22 @@
 import { StyleSheet } from 'react-native';
+import {
+	heightPercentageToDP as hp,
+	widthPercentageToDP as wp,
+} from 'react-native-responsive-screen';
 
 export const styles = StyleSheet.create({
 	container: {
 		alignItems: 'center',
-		paddingHorizontal: 60,
+		paddingHorizontal: wp('8%'),
 	},
 	headerContainer: {
 		paddingBottom: 10,
 		alignItems: 'center',
 		justifyContent: 'flex-end',
-		height: 250,
+		height: hp('29.5%'),
 	},
 	imageStyle: {
-		marginBottom: 10,
+		marginBottom: hp('2%'),
 	},
 	inputContainer: {
 		flexDirection: 'row',
