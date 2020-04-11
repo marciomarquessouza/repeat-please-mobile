@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
+import { NavigationStackProp } from 'react-navigation-stack';
 import * as firebase from 'firebase';
-import { goToScreen, INavigate } from '../../navigator/helper';
 
 interface ILoadingProps {
-	navigation: INavigate;
+	navigation: NavigationStackProp;
 }
 
 export class Loading extends Component<ILoadingProps, {}> {
 	componentDidMount() {
 		firebase.auth().onAuthStateChanged(user => {
 			const { navigation } = this.props;
-			goToScreen(navigation, user ? 'App' : 'Auth');
+			navigation.navigate(user ? 'App' : 'Auth');
 		});
 	}
 
@@ -31,5 +31,3 @@ const styles = StyleSheet.create({
 		alignContent: 'center',
 	},
 });
-
-export default Loading;
