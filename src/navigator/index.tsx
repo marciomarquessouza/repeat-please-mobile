@@ -4,7 +4,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { Slides } from '../screens/Slides';
 import { Walkthrough } from '../screens/Walkthrough';
 import { Login } from '../screens/Login';
-import Register from '../screens/Register';
+import { Register } from '../screens/Register';
 import Home from '../screens/Home';
 import Loading from '../screens/Loading';
 import { ForgotPassword } from '../screens/ForgotPassword';

@@ -1,108 +1,37 @@
-import React, { Component } from 'react';
-import { navigationOptionsDefault } from '../../navigator/helper';
+import React, { useState, useContext } from 'react';
 import { RegisterForm } from './RegisterForm';
 import { createUserWithEmailPassword } from '../../data/services/user';
-import { facebookLogin, googleLogin } from '../../data/services/login';
-import { IRegisterState, IRegisterProps } from './types';
+import { AlertsContext } from '../../contexts/AlertsContext';
 
-export class Register extends Component<{}, IRegisterState> {
-	constructor(props: IRegisterProps) {
-		super(props);
-		this.state = {
-			hasError: false,
-			errorMessage: '',
-			email: '',
-			password: '',
-			passRepeat: '',
-			name: '',
-			isLoading: false,
-		};
-	}
+export const Register = (): JSX.Element => {
+	const [name, setName] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [isLoading, setIsLoading] = useState(false);
+	const { showAlert } = useContext(AlertsContext);
 
-	static navigationOptions = navigationOptionsDefault;
-
-	showErrorMessage = (errorMessage: string, isLoading = false): void => {
-		this.setState({
-			hasError: true,
-			errorMessage,
-			isLoading,
-		});
-	};
-
-	onNameChange = (name: string): void => {
-		this.setState({ name });
-	};
-
-	onEmailChange = (email: string): void => {
-		this.setState({ email });
-	};
-
-	onPasswordChange = (password: string): void => {
-		this.setState({ password });
-	};
-
-	onPassRepeatChange = (passRepeat: string): void => {
-		this.setState({ passRepeat });
-	};
-
-	checkFormFields = (): boolean => {
-		const { name, email, password, passRepeat } = this.state;
-		const fields = [name, email, password, passRepeat].filter(field => !field);
-		if (fields.length) {
-			this.showErrorMessage('All fields are mandatory');
-			return false;
-		}
-		if (password !== passRepeat) {
-			this.showErrorMessage("Password don't match");
-			return false;
-		}
-		return true;
-	};
-
-	handleRegister = async (): Promise<void> => {
-		if (!this.checkFormFields()) return;
-		this.setState({ isLoading: true, hasError: false });
-		const { email, name, password } = this.state;
+	const handleRegister = async (): Promise<void> => {
+		const fields = [name, email, password].filter(field => field === '');
 		try {
+			setIsLoading(true);
+			if (fields.length) {
+				throw new Error('All fields are required');
+			}
 			await createUserWithEmailPassword(email, password, name);
 		} catch (error) {
-			this.showErrorMessage(error);
+			setIsLoading(false);
+			showAlert({ type: 'error', message: error.message });
 		}
 	};
 
-	handleFacebookLogin = () => {
-		this.setState({ isLoading: true, hasError: false });
-		try {
-			facebookLogin();
-		} catch (error) {
-			this.showErrorMessage(error);
-		}
-	};
-
-	handleGoogleLogin = async () => {
-		this.setState({ isLoading: true, hasError: false });
-		try {
-			await googleLogin();
-		} catch (error) {
-			this.showErrorMessage(error);
-		}
-	};
-
-	render() {
-		return (
-			<RegisterForm
-				{...this.state}
-				data-test="register"
-				onNameChange={this.onNameChange}
-				onPasswordChange={this.onPasswordChange}
-				onEmailChange={this.onEmailChange}
-				handleRegister={this.handleRegister}
-				handleFacebookLogin={this.handleFacebookLogin}
-				handleGoogleLogin={this.handleGoogleLogin}
-				onPassRepeatChange={this.onPassRepeatChange}
-			/>
-		);
-	}
-}
-
-export default Register;
+	return (
+		<RegisterForm
+			data-test="register"
+			onNameChange={setName}
+			onPasswordChange={setPassword}
+			onEmailChange={setEmail}
+			handleRegister={handleRegister}
+			isLoading={isLoading}
+		/>
+	);
+};
