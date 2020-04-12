@@ -32,17 +32,19 @@ export const Email = ({
 			<Title>Your Email</Title>
 		</View>
 		<View style={styles.inputContainer}>
-			<PlaceholderInput
-				{...{
-					placeholder,
-					onChangeText,
-					keyboardType: 'email-address',
-					autoCapitalize: 'none',
-					autoCorrect: false,
-					onSubmitEditing: onPress,
-					returnKeyType: 'next',
-				}}
-			/>
+			<View style={styles.inputStyle}>
+				<PlaceholderInput
+					{...{
+						placeholder,
+						onChangeText,
+						keyboardType: 'email-address',
+						autoCapitalize: 'none',
+						autoCorrect: false,
+						onSubmitEditing: onPress,
+						returnKeyType: 'next',
+					}}
+				/>
+			</View>
 			<IconButton {...{ onPress, source: arrowRight }} />
 		</View>
 	</View>

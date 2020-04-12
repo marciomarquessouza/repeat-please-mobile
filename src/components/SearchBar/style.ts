@@ -8,19 +8,23 @@ import {
 export const styles = StyleSheet.create({
 	container: {
 		width: '100%',
-		height: wp('20%'),
+		height: wp('18%'),
 		backgroundColor: color.background,
 	},
 	searchContainer: {
 		flex: 1,
-		flexDirection: 'row',
 		backgroundColor: '#fff',
 		marginHorizontal: wp('3%'),
 		marginVertical: hp('1.6%'),
 		borderRadius: hp('1%'),
-		paddingHorizontal: wp('3%'),
-		paddingVertical: hp('0.6%'),
-		justifyContent: 'flex-start',
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
+	formContainer: {
+		flexDirection: 'row',
+		paddingHorizontal: 10,
+
+		justifyContent: 'center',
 		alignItems: 'center',
 	},
 	iconStyle: {
@@ -28,5 +32,6 @@ export const styles = StyleSheet.create({
 	},
 	inputStyle: {
 		flex: 1,
+		height: 28,
 	},
 });

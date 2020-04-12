@@ -26,10 +26,9 @@ export const styles = StyleSheet.create({
 	inputContainer: {
 		flexDirection: 'row',
 		marginHorizontal: 20,
+		alignItems: 'center',
 	},
 	inputStyle: {
 		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
 	},
 });

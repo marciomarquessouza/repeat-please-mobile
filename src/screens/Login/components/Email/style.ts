@@ -19,6 +19,13 @@ export const styles = StyleSheet.create({
 		marginBottom: hp('2%'),
 	},
 	inputContainer: {
+		flex: 1,
 		flexDirection: 'row',
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
+	inputStyle: {
+		flex: 1,
+		paddingRight: 10,
 	},
 });

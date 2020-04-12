@@ -7,7 +7,7 @@ import {
 export const styles = StyleSheet.create({
 	container: {
 		alignItems: 'center',
-		paddingHorizontal: wp('12%'),
+		paddingHorizontal: wp('5%'),
 	},
 	headerContainer: {
 		paddingBottom: 10,
@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
 	},
 	inputContainer: {
 		flexDirection: 'row',
+		flex: 1,
 		alignItems: 'center',
 	},
 	buttonStyle: {
