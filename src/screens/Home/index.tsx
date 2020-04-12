@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, SafeAreaView, Text, View, ScrollView } from 'react-native';
 import { SearchBar } from '../../components/SearchBar';
-import { color } from 'repeat-please-styles';
+import { color, Card } from 'repeat-please-styles';
 import { CircularProgress } from 'repeat-please-styles';
 
 export const Home = () => {
@@ -16,14 +16,22 @@ export const Home = () => {
 			<SafeAreaView>
 				<SearchBar />
 				<View style={styles.container}>
-					<ScrollView>
+					<ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+						<View style={styles.cardContainer}>
+							<Card
+								title="Your daily challenge"
+								subtitle="You have 15 new words to pratice"
+								buttonLabel="START NOW"
+								onPress={() => null}
+							/>
+						</View>
 						<View style={styles.chartContainer}>
 							<Text style={styles.sectionTitleStyle}>Your Weekly Progress</Text>
 							<Text style={styles.sectionSubTitleStyle}>22 of 100 Words</Text>
 						</View>
 						<CircularProgress
 							progress={0.75}
-							duration={1000}
+							duration={2000}
 							startAnimation={startAnimation}
 						/>
 					</ScrollView>
@@ -42,8 +50,8 @@ const styles = StyleSheet.create({
 		backgroundColor: '#fff',
 	},
 	container: {
-		height: '100%',
 		backgroundColor: '#fff',
+		height: '100%',
 	},
 	chartContainer: {
 		marginTop: 20,
@@ -57,5 +65,9 @@ const styles = StyleSheet.create({
 	sectionSubTitleStyle: {
 		fontSize: 14,
 		lineHeight: 25,
+	},
+	cardContainer: {
+		marginHorizontal: 15,
+		marginVertical: 10,
 	},
 });
