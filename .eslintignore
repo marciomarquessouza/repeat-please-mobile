@@ -3,3 +3,6 @@ coverage
 
 # storybook
 storybook
+
+# mocks
+src/__mocks__

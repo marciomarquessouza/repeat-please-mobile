@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
 		backgroundColor: '#fff',
 		flex: 1,
 	},
-	chartContainer: {
+	sectionTitleContainer: {
 		marginTop: 10,
 		marginHorizontal: 20,
 	},
@@ -29,5 +29,9 @@ export const styles = StyleSheet.create({
 	cardContainer: {
 		marginHorizontal: 15,
 		marginTop: 10,
+	},
+	listContainer: {
+		marginHorizontal: 15,
+		marginVertical: 10,
 	},
 });
