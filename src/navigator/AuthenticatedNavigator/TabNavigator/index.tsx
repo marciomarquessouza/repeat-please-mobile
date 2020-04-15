@@ -1,10 +1,10 @@
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { Search } from '../../screens/Search';
-import { Goals } from '../../screens/Goals';
-import { Options } from '../../screens/Options';
-import { Home } from '../../screens/Home';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { Search } from '../../../screens/Search';
+import { Goals } from '../../../screens/Goals';
+import { Options } from '../../../screens/Options';
+import { HomeStack } from '../StackNavigator';
 
 interface ITabIcon {
 	name: string;
@@ -18,7 +18,7 @@ const tabIcon = ({ name, color }: ITabIcon) => (
 export const TabNavigator = createBottomTabNavigator(
 	{
 		Home: {
-			screen: Home,
+			screen: HomeStack,
 			navigationOptions: {
 				tabBarLabel: 'Challenges',
 				tabBarIcon: ({ tintColor: color }) =>

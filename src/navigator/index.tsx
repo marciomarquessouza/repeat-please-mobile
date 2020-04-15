@@ -1,13 +1,13 @@
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { Loading } from '../screens/Loading';
-import { TabNavigator } from './TabNavigator';
-import { AuthStack } from './AuthStack';
+import { AuthenticatedNavigator } from './AuthenticatedNavigator';
+import { UnauthenticatedNavigator } from './UnauthenticatedNavigator';
 
 const navigator = createSwitchNavigator(
 	{
 		Loading,
-		App: TabNavigator,
-		Auth: AuthStack,
+		AuthenticatedNavigator,
+		UnauthenticatedNavigator,
 	},
 	{
 		initialRouteName: 'Loading',

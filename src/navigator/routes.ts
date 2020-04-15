@@ -1,5 +1,9 @@
+export const AUTHENTICATED = 'AuthenticatedNavigator';
+export const UNAUTHENTICATED = 'UnauthenticatedNavigator';
 export const SLIDES = 'Slides';
 export const WALKTHROUGH = 'Walkthrough';
 export const LOGIN = 'Login';
 export const REGISTER = 'Register';
 export const FORGOT_PASSWORD = 'ForgotPassword';
+export const HOME = 'Home';
+export const LEVELS = 'Levels';

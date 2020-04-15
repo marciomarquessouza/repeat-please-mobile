@@ -6,23 +6,18 @@ import { Login } from '../../screens/Login';
 import { Register } from '../../screens/Register';
 import { ForgotPassword } from '../../screens/ForgotPassword';
 import { HeaderBackArrow } from '../HeaderBackArrow';
-import { color } from 'repeat-please-styles';
+import { styles } from '../styles';
 
 const navigationOptions = () => ({
 	header: null,
 });
 
 const backArrow = () => (props: any) => ({
-	headerStyle: {
-		backgroundColor: color.background,
-		elevation: 0,
-		shadowOpacity: 0,
-		borderBottomWidth: 0,
-	},
+	headerStyle: styles.headerStyle,
 	headerLeft: () => <HeaderBackArrow onPress={() => props.navigation.pop()} />,
 });
 
-export const AuthStack = createStackNavigator(
+export const UnauthenticatedNavigator = createStackNavigator(
 	{
 		Slides: {
 			screen: Slides,

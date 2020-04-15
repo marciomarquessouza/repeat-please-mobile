@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, Text, View, ScrollView } from 'react-native';
+import { NavigationStackProp } from 'react-navigation-stack';
+import { LEVELS } from '../../navigator/routes';
 import { SearchBar } from '../../components/SearchBar';
 import { IconIPA } from '../../components/IconsIPA';
-import { Card } from 'repeat-please-styles';
-import { CircularProgress } from 'repeat-please-styles';
+import { Card, CircularProgress } from 'repeat-please-styles';
 import { styles } from './style';
 import {
 	wordsToPratice,
@@ -11,7 +12,11 @@ import {
 	bestResults,
 } from '../../__mocks__/IPA';
 
-export const Home = () => {
+interface ILevelsProps {
+	navigation: NavigationStackProp;
+}
+
+export const Home = ({ navigation }: ILevelsProps) => {
 	const [startAnimation, setStartAnimation] = useState(false);
 
 	useEffect(() => {
@@ -29,7 +34,7 @@ export const Home = () => {
 								title="Your daily challenge"
 								subtitle="You have 15 new words to pratice"
 								buttonLabel="START NOW"
-								onPress={() => null}
+								onPress={() => navigation.navigate(LEVELS)}
 							/>
 						</View>
 						<View style={styles.sectionTitleContainer}>
