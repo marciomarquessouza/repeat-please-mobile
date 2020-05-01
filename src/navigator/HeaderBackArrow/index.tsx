@@ -20,6 +20,7 @@ export const HeaderBackArrow = ({ onPress }: IHeaderBackArrow): JSX.Element => {
 const styles = StyleSheet.create({
 	container: {
 		backgroundColor: color.background,
-		padding: 20,
+		paddingHorizontal: 10,
+		paddingBottom: 2,
 	},
 });

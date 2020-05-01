@@ -1,4 +1,4 @@
-import { IIPA } from './types';
+import { IIPA } from '../../types';
 
 export const bestResults: IIPA[] = [
 	{

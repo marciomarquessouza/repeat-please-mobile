@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, Text, View, ScrollView } from 'react-native';
 import { NavigationStackProp } from 'react-navigation-stack';
-import { LEVELS } from '../../navigator/routes';
 import { SearchBar } from '../../components/SearchBar';
-import { IconIPA } from '../../components/IconsIPA';
 import { Card, CircularProgress } from 'repeat-please-styles';
 import { styles } from './style';
 import {
@@ -11,6 +9,7 @@ import {
 	wordsToReview,
 	bestResults,
 } from '../../__mocks__/IPA';
+import { ChallengeList } from './ChallengesList';
 
 interface ILevelsProps {
 	navigation: NavigationStackProp;
@@ -34,7 +33,7 @@ export const Home = ({ navigation }: ILevelsProps) => {
 								title="Your daily challenge"
 								subtitle="You have 15 new words to pratice"
 								buttonLabel="START NOW"
-								onPress={() => navigation.navigate(LEVELS)}
+								onPress={() => null}
 							/>
 						</View>
 						<View style={styles.sectionTitleContainer}>
@@ -46,28 +45,14 @@ export const Home = ({ navigation }: ILevelsProps) => {
 							duration={2000}
 							startAnimation={startAnimation}
 						/>
-						<View style={styles.sectionTitleContainer}>
-							<Text style={styles.sectionTitleStyle}>Words to Pratice</Text>
-							<Text style={styles.sectionSubTitleStyle}>10% of success</Text>
-						</View>
-						<View style={styles.listContainer}>
-							<IconIPA IPAList={Object.values(wordsToPratice)} />
-						</View>
-						<View style={styles.sectionTitleContainer}>
-							<Text style={styles.sectionTitleStyle}>Words to Review</Text>
-							<Text style={styles.sectionSubTitleStyle}>50% of success</Text>
-						</View>
-						<View style={styles.listContainer}>
-							<IconIPA IPAList={Object.values(wordsToReview)} />
-						</View>
-						<View style={styles.sectionTitleContainer}>
-							<Text style={styles.sectionTitleStyle}>Best Results</Text>
-							<Text style={styles.sectionSubTitleStyle}>80% of success</Text>
-						</View>
-						<View style={styles.listContainer}>
-							<IconIPA IPAList={Object.values(bestResults)} />
-						</View>
-						<View style={{ height: 100 }} />
+						<ChallengeList
+							{...{
+								wordsToPratice,
+								wordsToReview,
+								bestResults,
+								navigation,
+							}}
+						/>
 					</View>
 				</ScrollView>
 			</SafeAreaView>

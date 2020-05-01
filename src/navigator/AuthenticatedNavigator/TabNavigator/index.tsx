@@ -55,6 +55,9 @@ export const TabNavigator = createBottomTabNavigator(
 		tabBarOptions: {
 			activeTintColor: '#000',
 			inactiveTintColor: 'gray',
+			style: {
+				height: 60,
+			},
 		},
 	},
 );

@@ -11,8 +11,8 @@ export const BackArrow = (props: IBackArrowProps): JSX.Element => {
 
 	return (
 		<Svg
-			width={wp('8%')}
-			height={wp('8%')}
+			width={wp('7%')}
+			height={wp('7%')}
 			viewBox="0 0 36 36"
 			fill="none"
 			{...props}
