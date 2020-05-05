@@ -4,6 +4,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { IIPA } from '../../../components/IPAList';
 import { Home } from '../../../screens/Home';
 import { Levels } from '../../../screens/Levels';
+import { Challenge } from '../../../screens/Challenge';
 import { HeaderBackArrow } from '../../HeaderBackArrow';
 import { styles } from '../../styles';
 
@@ -28,6 +29,23 @@ export const HomeStack = createStackNavigator({
 				headerTitle: () => (
 					<View style={styles.headerTitleContainer}>
 						<Text style={styles.headerTitleStyle}>{examples.join(', ')}</Text>
+					</View>
+				),
+				headerRight: () => <View style={styles.headerRightStyle} />,
+			};
+		},
+	},
+	Challenge: {
+		screen: Challenge,
+		navigationOptions: (props: any) => {
+			return {
+				headerStyle: styles.headerStyle,
+				headerLeft: () => (
+					<HeaderBackArrow onPress={() => props.navigation.pop()} />
+				),
+				headerTitle: () => (
+					<View style={styles.headerTitleContainer}>
+						<Text style={styles.headerTitleStyle}>30 Points(+10)</Text>
 					</View>
 				),
 				headerRight: () => <View style={styles.headerRightStyle} />,

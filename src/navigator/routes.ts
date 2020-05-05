@@ -7,3 +7,4 @@ export const REGISTER = 'Register';
 export const FORGOT_PASSWORD = 'ForgotPassword';
 export const HOME = 'Home';
 export const LEVELS = 'Levels';
+export const CHALLENGE = 'Challenge';
