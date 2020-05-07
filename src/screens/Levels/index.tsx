@@ -3,6 +3,7 @@ import { Text, ScrollView, SafeAreaView } from 'react-native';
 import { IPAType } from '../../types';
 import { NavigationStackProp } from 'react-navigation-stack';
 import { IPACard, LevelChoice } from '../../components';
+import { CHALLENGE } from '../../navigator/routes';
 import { levels } from './levels';
 import { styles } from './styles';
 
@@ -23,7 +24,9 @@ export const Levels = ({ navigation }: ILevelsProps) => {
 					IPASound={() => undefined}
 				/>
 				<Text style={styles.levelTitleStyle}>Select a Level</Text>
-				<LevelChoice {...{ levels }} />
+				<LevelChoice
+					{...{ levels, onPress: () => navigation.navigate(CHALLENGE) }}
+				/>
 			</SafeAreaView>
 		</ScrollView>
 	);

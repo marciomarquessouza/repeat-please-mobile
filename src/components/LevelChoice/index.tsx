@@ -31,15 +31,15 @@ export const LevelChoice = ({ levels, style, onPress }: ILevelChoiceProps) => {
 		<View style={[styles.container, style]}>
 			<View style={styles.levelsContainer}>
 				{levels.map(level => (
-					<TouchableWithoutFeedback onPress={() => level.levelChoice}>
-						<View style={styles.levelRow}>
-							<Image source={level.icon} style={styles.iconStyle} />
-							<View>
-								<Text style={styles.levelNameStyle}>{level.name}</Text>
-								<Text style={styles.levelDescriptionStyle}>
-									{level.description}
-								</Text>
-							</View>
+					<View style={styles.levelRow}>
+						<Image source={level.icon} style={styles.iconStyle} />
+						<View>
+							<Text style={styles.levelNameStyle}>{level.name}</Text>
+							<Text style={styles.levelDescriptionStyle}>
+								{level.description}
+							</Text>
+						</View>
+						<TouchableWithoutFeedback onPress={() => level.levelChoice}>
 							<View style={styles.checkBoxContainer}>
 								<View
 									style={[
@@ -48,8 +48,8 @@ export const LevelChoice = ({ levels, style, onPress }: ILevelChoiceProps) => {
 									]}
 								/>
 							</View>
-						</View>
-					</TouchableWithoutFeedback>
+						</TouchableWithoutFeedback>
+					</View>
 				))}
 			</View>
 			<View style={styles.semiCircleContainer}>
