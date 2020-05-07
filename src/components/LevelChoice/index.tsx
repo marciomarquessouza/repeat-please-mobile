@@ -30,8 +30,8 @@ export const LevelChoice = ({ levels, style, onPress }: ILevelChoiceProps) => {
 	return (
 		<View style={[styles.container, style]}>
 			<View style={styles.levelsContainer}>
-				{levels.map(level => (
-					<View style={styles.levelRow}>
+				{levels.map((level, index) => (
+					<View style={styles.levelRow} key={index}>
 						<Image source={level.icon} style={styles.iconStyle} />
 						<View>
 							<Text style={styles.levelNameStyle}>{level.name}</Text>
