@@ -1,6 +1,6 @@
-import { IIPA } from '../../types';
+import { IPAType } from '../../types';
 
-export const wordsToPratice: IIPA[] = [
+export const wordsToPratice: IPAType[] = [
 	{
 		symbol: 'e',
 		type: 'vowel',
@@ -9,7 +9,7 @@ export const wordsToPratice: IIPA[] = [
 	{
 		symbol: 'tʃ',
 		type: 'consonant',
-		examples: [	'CHECK', 'CHURCH'],
+		examples: ['CHECK', 'CHURCH'],
 	},
 	{
 		symbol: 'æ',

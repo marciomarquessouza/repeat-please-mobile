@@ -1,6 +1,6 @@
-import { IIPA } from '../../types';
+import { IPAType } from '../../types';
 
-export const wordsToReview: IIPA[] = [
+export const wordsToReview: IPAType[] = [
 	{
 		symbol: 'ʌ',
 		type: 'vowel',

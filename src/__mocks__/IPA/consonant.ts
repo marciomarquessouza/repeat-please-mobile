@@ -1,6 +1,6 @@
-import { IIPA } from '../../types';
+import { IPAType } from '../../types';
 
-export const IPAconsonants: IIPA[] = [
+export const IPAconsonants: IPAType[] = [
 	{
 		symbol: 'b',
 		type: 'consonant',
@@ -84,7 +84,7 @@ export const IPAconsonants: IIPA[] = [
 	{
 		symbol: 'tʃ',
 		type: 'consonant',
-		examples: [	'CHECK', 'CHURCH'],
+		examples: ['CHECK', 'CHURCH'],
 	},
 	{
 		symbol: 'θ',

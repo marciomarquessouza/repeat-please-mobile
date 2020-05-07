@@ -1,6 +1,6 @@
-import { IIPA } from '../../types';
+import { IPAType } from '../../types';
 
-export const bestResults: IIPA[] = [
+export const bestResults: IPAType[] = [
 	{
 		symbol: 'ŋ',
 		type: 'consonant',

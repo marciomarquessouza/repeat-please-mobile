@@ -1,8 +1,9 @@
 import React from 'react';
 import { Text, ScrollView, SafeAreaView } from 'react-native';
-import { IIPA } from '../../components';
+import { IPAType } from '../../types';
 import { NavigationStackProp } from 'react-navigation-stack';
-import { IPACard } from '../../components/IPACard';
+import { IPACard, LevelChoice } from '../../components';
+import { levels } from './levels';
 import { styles } from './styles';
 
 interface ILevelsProps {
@@ -10,7 +11,7 @@ interface ILevelsProps {
 }
 
 export const Levels = ({ navigation }: ILevelsProps) => {
-	const { symbol, type }: IIPA = navigation.getParam('IPA');
+	const { symbol, type }: IPAType = navigation.getParam('IPA');
 
 	return (
 		<ScrollView style={styles.container}>
@@ -21,8 +22,9 @@ export const Levels = ({ navigation }: ILevelsProps) => {
 					type={type}
 					IPASound={() => undefined}
 				/>
+				<Text style={styles.levelTitleStyle}>Select a Level</Text>
+				<LevelChoice {...{ levels }} />
 			</SafeAreaView>
-			<Text style={styles.levelTitleStyle}>Select a Level</Text>
 		</ScrollView>
 	);
 };

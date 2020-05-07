@@ -8,3 +8,4 @@ export * from './LevelIcons';
 export * from './Name';
 export * from './Password';
 export * from './IPACard';
+export * from './LevelChoice';

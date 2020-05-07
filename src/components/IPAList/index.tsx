@@ -1,22 +1,12 @@
 import React from 'react';
-import {
-	Text,
-	FlatList,
-	View,
-	StyleSheet,
-	TouchableOpacity,
-} from 'react-native';
+import { Text, FlatList, View, TouchableOpacity } from 'react-native';
 import { IconsIPA } from 'repeat-please-styles';
-
-export interface IIPA {
-	symbol: string;
-	type: 'vowel' | 'consonant';
-	examples: string[];
-}
+import { IPAType } from '../../types';
+import { styles } from './styles';
 
 export interface IIconsIPAProps {
-	list: IIPA[];
-	onPress: (IPA: IIPA) => void;
+	list: IPAType[];
+	onPress: (IPA: IPAType) => void;
 }
 
 export const IPAList = ({ list, onPress }: IIconsIPAProps) => (
@@ -37,22 +27,3 @@ export const IPAList = ({ list, onPress }: IIconsIPAProps) => (
 		)}
 	/>
 );
-
-const styles = StyleSheet.create({
-	symbolContainer: {
-		marginHorizontal: 12,
-		marginVertical: 8,
-		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
-	},
-	examplesContainer: {
-		alignItems: 'center',
-		marginVertical: 6,
-		flex: 1,
-	},
-	exampleStyle: {
-		fontSize: 12,
-		flexWrap: 'wrap',
-	},
-});

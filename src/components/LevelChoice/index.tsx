@@ -2,51 +2,62 @@ import React from 'react';
 import {
 	View,
 	Text,
+	TouchableWithoutFeedback,
 	TouchableOpacity,
-	StyleSheet,
 	Image,
 	ViewStyle,
 	ImageSourcePropType,
 } from 'react-native';
+import { playButton } from '../../../assets/images';
+import { SemiCircle } from './SVG/SemiCircle';
+import { styles } from './style';
 
-type Level = {
+export type LevelType = {
 	icon: ImageSourcePropType;
 	name: string;
 	description: string;
 	levelChoice: (level: string) => void;
+	color: string;
 };
 
 interface ILevelChoiceProps {
-	style: ViewStyle;
-	levels: Level[];
+	style?: ViewStyle;
+	levels: LevelType[];
+	onPress?: () => void;
 }
 
-export const LevelChoice = ({ levels, style }: ILevelChoiceProps) => {
+export const LevelChoice = ({ levels, style, onPress }: ILevelChoiceProps) => {
 	return (
 		<View style={[styles.container, style]}>
-			<View>
+			<View style={styles.levelsContainer}>
 				{levels.map(level => (
-					<View>
-						<Image source={level.icon} />
-						<View>
-							<Text>{level.name}</Text>
-							<Text>{level.description}</Text>
+					<TouchableWithoutFeedback onPress={() => level.levelChoice}>
+						<View style={styles.levelRow}>
+							<Image source={level.icon} style={styles.iconStyle} />
+							<View>
+								<Text style={styles.levelNameStyle}>{level.name}</Text>
+								<Text style={styles.levelDescriptionStyle}>
+									{level.description}
+								</Text>
+							</View>
+							<View style={styles.checkBoxContainer}>
+								<View
+									style={[
+										styles.checkboxStyle,
+										{ backgroundColor: level.color },
+									]}
+								/>
+							</View>
 						</View>
-						<View>
-							<TouchableOpacity onPress={() => level.levelChoice(level.name)}>
-								<View />
-							</TouchableOpacity>
-						</View>
-					</View>
+					</TouchableWithoutFeedback>
 				))}
+			</View>
+			<View style={styles.semiCircleContainer}>
+				<SemiCircle />
+				<TouchableOpacity style={styles.playButtonStyle} onPress={onPress}>
+					<Image source={playButton} />
+				</TouchableOpacity>
 			</View>
 		</View>
 	);
 };
-
-export const styles = StyleSheet.create({
-	container: {
-		backgroundColor: '#fff',
-		borderRadius: 30,
-	},
-});
