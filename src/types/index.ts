@@ -3,3 +3,5 @@ export type IPAType = {
 	type: 'vowel' | 'consonant';
 	examples: string[];
 };
+
+export type LevelNameType = 'Chimp' | 'Monkey King' | 'King Kong';

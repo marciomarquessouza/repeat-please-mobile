@@ -2,31 +2,35 @@ import React from 'react';
 import {
 	View,
 	Text,
-	TouchableWithoutFeedback,
-	TouchableOpacity,
 	Image,
 	ViewStyle,
 	ImageSourcePropType,
 } from 'react-native';
-import { playButton } from '../../../assets/images';
 import { SemiCircle } from './SVG/SemiCircle';
+import { LevelNameType } from '../../types';
 import { styles } from './style';
+import { CheckButton } from '../CheckButton';
 
 export type LevelType = {
 	icon: ImageSourcePropType;
-	name: string;
+	name: LevelNameType;
 	description: string;
-	levelChoice: (level: string) => void;
 	color: string;
 };
 
 interface ILevelChoiceProps {
 	style?: ViewStyle;
 	levels: LevelType[];
-	onPress?: () => void;
+	selected: LevelNameType;
+	setSelected: (level: LevelNameType) => void;
 }
 
-export const LevelChoice = ({ levels, style, onPress }: ILevelChoiceProps) => {
+export const LevelChoice = ({
+	levels,
+	style,
+	selected,
+	setSelected,
+}: ILevelChoiceProps) => {
 	return (
 		<View style={[styles.container, style]}>
 			<View style={styles.levelsContainer}>
@@ -39,24 +43,18 @@ export const LevelChoice = ({ levels, style, onPress }: ILevelChoiceProps) => {
 								{level.description}
 							</Text>
 						</View>
-						<TouchableWithoutFeedback onPress={() => level.levelChoice}>
-							<View style={styles.checkBoxContainer}>
-								<View
-									style={[
-										styles.checkboxStyle,
-										{ backgroundColor: level.color },
-									]}
-								/>
-							</View>
-						</TouchableWithoutFeedback>
+						<View style={styles.checkBoxContainer}>
+							<CheckButton
+								onPress={() => setSelected(level.name)}
+								color={level.color}
+								isChecked={selected === level.name}
+							/>
+						</View>
 					</View>
 				))}
 			</View>
 			<View style={styles.semiCircleContainer}>
 				<SemiCircle />
-				<TouchableOpacity style={styles.playButtonStyle} onPress={onPress}>
-					<Image source={playButton} />
-				</TouchableOpacity>
 			</View>
 		</View>
 	);

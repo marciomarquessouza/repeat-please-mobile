@@ -10,4 +10,14 @@ export const styles = StyleSheet.create({
 		fontSize: 24,
 		marginHorizontal: 20,
 	},
+	levelChoiceContainer: {
+		marginTop: 5,
+	},
+	playButtonContainer: {
+		alignItems: 'center',
+	},
+	playButtonStyle: {
+		position: 'absolute',
+		bottom: 10,
+	},
 });

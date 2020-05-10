@@ -49,8 +49,4 @@ export const styles = StyleSheet.create({
 		justifyContent: 'flex-end',
 		height: 60,
 	},
-	playButtonStyle: {
-		position: 'absolute',
-		bottom: -20,
-	},
 });

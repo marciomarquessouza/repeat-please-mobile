@@ -1,10 +1,19 @@
-import React from 'react';
-import { Text, ScrollView, SafeAreaView } from 'react-native';
+import React, { useState } from 'react';
+import {
+	Text,
+	ScrollView,
+	SafeAreaView,
+	TouchableOpacity,
+	Image,
+	View,
+} from 'react-native';
 import { IPAType } from '../../types';
 import { NavigationStackProp } from 'react-navigation-stack';
 import { IPACard, LevelChoice } from '../../components';
+import { playButton } from '../../../assets/images';
 import { CHALLENGE } from '../../navigator/routes';
 import { levels } from './levels';
+import { LevelNameType } from '../../types';
 import { styles } from './styles';
 
 interface ILevelsProps {
@@ -13,6 +22,7 @@ interface ILevelsProps {
 
 export const Levels = ({ navigation }: ILevelsProps) => {
 	const { symbol, type }: IPAType = navigation.getParam('IPA');
+	const [selected, setSelected] = useState<LevelNameType>('Chimp');
 
 	return (
 		<ScrollView style={styles.container}>
@@ -24,9 +34,16 @@ export const Levels = ({ navigation }: ILevelsProps) => {
 					IPASound={() => undefined}
 				/>
 				<Text style={styles.levelTitleStyle}>Select a Level</Text>
-				<LevelChoice
-					{...{ levels, onPress: () => navigation.navigate(CHALLENGE) }}
-				/>
+				<View style={styles.levelChoiceContainer}>
+					<LevelChoice {...{ levels, selected, setSelected }} />
+					<View style={styles.playButtonContainer}>
+						<TouchableOpacity
+							style={styles.playButtonStyle}
+							onPress={() => navigation.navigate(CHALLENGE)}>
+							<Image source={playButton} />
+						</TouchableOpacity>
+					</View>
+				</View>
 			</SafeAreaView>
 		</ScrollView>
 	);
