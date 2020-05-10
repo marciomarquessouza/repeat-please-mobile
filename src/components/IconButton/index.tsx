@@ -6,41 +6,34 @@ import {
 	StyleSheet,
 	TouchableOpacity,
 	View,
+	StyleProp,
 	ViewStyle,
 } from 'react-native';
-import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
+import * as assetsIcons from '../../../assets/images';
 
 interface IIconButtonProps {
 	onPress?: () => void;
 	isLoading?: boolean;
-	source: ImageSourcePropType;
-	style?: ViewStyle;
-	width?: number;
-	height?: number;
+	spinnerSize?: number | 'small' | 'large';
+	name?: assetsIcons.IconNameType;
+	source?: ImageSourcePropType;
+	style?: StyleProp<ViewStyle>;
 }
 
 export const IconButton = ({
 	onPress,
 	isLoading,
 	source,
+	spinnerSize = 'small',
+	name = 'arrowRight',
 	style,
-	width,
-	height,
 }: IIconButtonProps) => (
 	<TouchableOpacity {...{ onPress }}>
 		<View style={[styles.buttonContainer, style]}>
 			{isLoading ? (
-				<ActivityIndicator size="small" />
+				<ActivityIndicator size={spinnerSize} />
 			) : (
-				<Image
-					{...{
-						source,
-						style: {
-							width: width || wp('9%'),
-							height: height || wp('9%'),
-						},
-					}}
-				/>
+				<Image source={source || assetsIcons[name]} />
 			)}
 		</View>
 	</TouchableOpacity>

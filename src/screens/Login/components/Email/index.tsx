@@ -45,7 +45,7 @@ export const Email = ({
 					}}
 				/>
 			</View>
-			<IconButton {...{ onPress, source: arrowRight }} />
+			<IconButton source={arrowRight} onPress={onPress} />
 		</View>
 	</View>
 );
