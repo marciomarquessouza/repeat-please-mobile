@@ -26,7 +26,7 @@ export const styles = StyleSheet.create({
 	},
 	levelNameStyle: {
 		fontFamily: font.title,
-		fontSize: 20,
+		fontSize: 18,
 	},
 	levelDescriptionStyle: {
 		fontSize: 16,

@@ -1,6 +1,8 @@
 import { StyleSheet } from 'react-native';
 import { color, font } from 'repeat-please-styles';
 
+export const TIMER_CIRCLE = 620;
+
 export const styles = StyleSheet.create({
 	container: {
 		flex: 1,
@@ -32,8 +34,27 @@ export const styles = StyleSheet.create({
 	},
 	panelIconStyle: {
 		marginHorizontal: 25,
+		zIndex: 9,
 	},
 	micIconStyle: {
 		marginTop: 16,
+	},
+	timeArcContainer: {
+		position: 'absolute',
+		top: 0,
+		width: 620,
+		height: 620,
+		zIndex: -9,
+	},
+	timerArcStyle: {
+		width: TIMER_CIRCLE,
+		height: TIMER_CIRCLE,
+		borderRadius: TIMER_CIRCLE / 2,
+		paddingTop: 20,
+		borderWidth: 7,
+		borderTopColor: '#fff',
+		borderBottomColor: '#FF9983',
+		borderLeftColor: '#fff',
+		borderRightColor: '#fff',
 	},
 });
