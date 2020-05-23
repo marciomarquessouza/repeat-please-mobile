@@ -17,7 +17,6 @@ const timerAnimation = (
 ) => Animated.timing(component, { toValue, duration });
 
 export const Challenge = () => {
-	console.log('ANGLE_END', ANGLE_END);
 	const [timerArc] = useState(new Animated.Value(0));
 
 	timerAnimation(timerArc, 1, 8000).start();
