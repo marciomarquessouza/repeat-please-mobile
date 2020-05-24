@@ -23,7 +23,6 @@ export const styles = StyleSheet.create({
 		overflow: 'hidden',
 		width: 620,
 		height: 310,
-		backgroundColor: '#fff',
 		borderBottomStartRadius: 310,
 		borderBottomEndRadius: 310,
 		paddingTop: 20,
@@ -56,5 +55,15 @@ export const styles = StyleSheet.create({
 		borderBottomColor: '#FF9983',
 		borderLeftColor: '#fff',
 		borderRightColor: '#fff',
+		backgroundColor: '#fff',
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
+	timerPointer: {
+		position: 'absolute',
+		width: 18,
+		height: 18,
+		borderRadius: 9,
+		backgroundColor: '#FF9983',
 	},
 });
