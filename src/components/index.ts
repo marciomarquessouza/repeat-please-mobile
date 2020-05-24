@@ -9,3 +9,4 @@ export * from './Name';
 export * from './Password';
 export * from './IPACard';
 export * from './LevelChoice';
+export * from './CountdownTimer';

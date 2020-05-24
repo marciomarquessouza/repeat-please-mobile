@@ -66,4 +66,13 @@ export const styles = StyleSheet.create({
 		borderRadius: 9,
 		backgroundColor: '#FF9983',
 	},
+	timerContainer: {
+		justifyContent: 'center',
+		alignItems: 'center',
+		paddingVertical: 20,
+	},
+	timerTextStyle: {
+		fontSize: 18,
+		fontFamily: font.primaryLight,
+	},
 });

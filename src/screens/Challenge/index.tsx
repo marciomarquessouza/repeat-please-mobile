@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, Animated, Dimensions, ScrollView } from 'react-native';
-import { IconButton } from '../../components';
+import { View, Animated, Dimensions, ScrollView } from 'react-native';
+import { CountdownTimer } from '../../components';
+import { Header } from './components/Header';
 import { styles, TIMER_CIRCLE } from './styles';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
@@ -12,7 +13,7 @@ const INTERSECTION_ANGLE =
 	Math.asin(HALF_SCREEN / TIMER_CIRCLE_RADIUS) * (180 / Math.PI);
 const ANGLE_START = 45 - INTERSECTION_ANGLE;
 const ANGLE_END = INTERSECTION_ANGLE + 45;
-const TIMER_ARC_SPEED = 8000;
+const TIMER_ARC_SPEED = 30000;
 
 const timerAnimation = (
 	component: Animated.Value,
@@ -22,9 +23,11 @@ const timerAnimation = (
 
 export const Challenge = () => {
 	const [timerArc] = useState(new Animated.Value(0));
+	const [startTimer, setStartTimer] = useState(false);
 
 	const startTimerAnimation = () => {
 		timerArc.setValue(0);
+		setStartTimer(true);
 		timerAnimation(timerArc, 1, TIMER_ARC_SPEED).start();
 	};
 
@@ -38,23 +41,11 @@ export const Challenge = () => {
 	return (
 		<ScrollView contentContainerStyle={{ flexGrow: 1 }}>
 			<View style={styles.container}>
-				<View style={styles.arcContainer}>
-					<Text style={styles.repeatWordStyle}>TASK</Text>
-					<Text style={styles.ipaStyle}>tæsk</Text>
-					<View style={styles.panelContainer}>
-						<IconButton
-							name="repeat"
-							style={styles.panelIconStyle}
-							onPress={repeatTimerAnimation}
-						/>
-						<IconButton
-							name="mic"
-							style={[styles.panelIconStyle, styles.micIconStyle]}
-							onPress={startTimerAnimation}
-						/>
-						<IconButton name="skip" style={styles.panelIconStyle} />
-					</View>
-				</View>
+				<Header
+					onPressRepeat={repeatTimerAnimation}
+					onPressStart={startTimerAnimation}
+					onPressSkip={() => undefined}
+				/>
 				<View style={styles.timeArcContainer}>
 					<Animated.View
 						style={[
@@ -73,6 +64,13 @@ export const Challenge = () => {
 							]}
 						/>
 					</Animated.View>
+				</View>
+				<View style={styles.timerContainer}>
+					<CountdownTimer
+						miliseconds={TIMER_ARC_SPEED}
+						style={styles.timerTextStyle}
+						startTimer={startTimer}
+					/>
 				</View>
 			</View>
 		</ScrollView>
