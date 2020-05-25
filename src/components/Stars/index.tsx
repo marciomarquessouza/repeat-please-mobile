@@ -2,6 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { styles } from './styles';
+import { starsDescription } from '../../utils/starsDescription';
 
 interface IStarsProps {
 	score: number;
@@ -29,3 +30,5 @@ export const Stars = ({ score }: IStarsProps) => {
 		</View>
 	);
 };
+
+export { starsDescription };

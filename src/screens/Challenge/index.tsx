@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Animated, Dimensions, ScrollView } from 'react-native';
 import { CountdownTimer } from '../../components';
-import { Header } from './components/Header';
+import { Header, Result } from './components';
 import { styles, TIMER_CIRCLE } from './styles';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
@@ -71,6 +71,9 @@ export const Challenge = () => {
 						style={styles.timerTextStyle}
 						startTimer={startTimer}
 					/>
+				</View>
+				<View style={styles.resultContainer}>
+					<Result score={2} repeat="Dask" />
 				</View>
 			</View>
 		</ScrollView>

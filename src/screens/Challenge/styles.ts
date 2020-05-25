@@ -75,4 +75,19 @@ export const styles = StyleSheet.create({
 		fontSize: 18,
 		fontFamily: font.primaryLight,
 	},
+	resultContainer: {
+		justifyContent: 'center',
+		alignItems: 'center',
+		paddingVertical: 5,
+	},
+	resultTextStyle: {
+		fontSize: 24,
+		fontWeight: 'bold',
+		marginBottom: 5,
+	},
+	starsDescriptionTextStyle: {
+		fontSize: 14,
+		fontFamily: font.primaryLight,
+		marginTop: 5,
+	},
 });
