@@ -28,7 +28,7 @@ export const Challenge = () => {
 	const startTimerAnimation = () => {
 		timerArc.setValue(0);
 		setStartTimer(true);
-		timerAnimation(timerArc, 1, TIMER_ARC_SPEED).start();
+		timerAnimation(timerArc, 1, TIMER_ARC_SPEED + 1000).start();
 	};
 
 	const repeatTimerAnimation = () => timerArc.setValue(0);

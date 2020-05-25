@@ -34,17 +34,6 @@ export const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
-	starContainer: {
-		flexDirection: 'row',
-		justifyContent: 'center',
-	},
-	star: {
-		marginVertical: 5,
-		marginHorizontal: 2,
-	},
-	emptyStar: {
-		opacity: 0.2,
-	},
 	cardBottom: {
 		alignItems: 'center',
 		justifyContent: 'center',
