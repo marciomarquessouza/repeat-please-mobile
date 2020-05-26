@@ -90,4 +90,8 @@ export const styles = StyleSheet.create({
 		fontFamily: font.primaryLight,
 		marginTop: 5,
 	},
+	listeningStyle: {
+		fontSize: 20,
+		fontFamily: font.title,
+	},
 });

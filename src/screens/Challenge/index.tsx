@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { View, Animated, Dimensions, ScrollView } from 'react-native';
+import { View, Animated, Dimensions, ScrollView, Text } from 'react-native';
 import { CountdownTimer } from '../../components';
-import { Header, Result } from './components';
+import { Header } from './components';
 import { styles, TIMER_CIRCLE } from './styles';
+import { Waves } from '../../components';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 const HALF_SCREEN = SCREEN_WIDTH / 2;
@@ -73,7 +74,8 @@ export const Challenge = () => {
 					/>
 				</View>
 				<View style={styles.resultContainer}>
-					<Result score={2} repeat="Dask" />
+					<Text style={styles.listeningStyle}>Listening...</Text>
+					<Waves />
 				</View>
 			</View>
 		</ScrollView>
