@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, Animated, Dimensions, ScrollView, Text } from 'react-native';
-import { CountdownTimer, AudioWaves } from '../../components';
+import { View, Animated, Dimensions, ScrollView } from 'react-native';
+import { CountdownTimer, ChimpAudioWaves } from '../../components';
 import { Header } from './components';
 import { styles, TIMER_CIRCLE } from './styles';
 
@@ -73,9 +73,8 @@ export const Challenge = () => {
 					/>
 				</View>
 				<View style={styles.resultContainer}>
-					<Text style={styles.listeningStyle}>Listening...</Text>
 					<View style={styles.listeningContainer}>
-						<AudioWaves />
+						<ChimpAudioWaves label="Listening..." />
 					</View>
 				</View>
 			</View>

@@ -93,8 +93,4 @@ export const styles = StyleSheet.create({
 	listeningContainer: {
 		marginVertical: 15,
 	},
-	listeningStyle: {
-		fontSize: 20,
-		fontFamily: font.title,
-	},
 });
