@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { View, Animated, Dimensions, ScrollView } from 'react-native';
 import { CountdownTimer, ChimpAudioWaves } from '../../components';
-import { Header } from './components';
+import { Header, ArcTimer } from './components';
 import { styles, TIMER_CIRCLE } from './styles';
+import { timingAnimation } from '../../utils/animations';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 const HALF_SCREEN = SCREEN_WIDTH / 2;
@@ -13,13 +14,8 @@ const INTERSECTION_ANGLE =
 	Math.asin(HALF_SCREEN / TIMER_CIRCLE_RADIUS) * (180 / Math.PI);
 const ANGLE_START = 45 - INTERSECTION_ANGLE;
 const ANGLE_END = INTERSECTION_ANGLE + 45;
+const ARC_POSITION = -304;
 const TIMER_ARC_SPEED = 30000;
-
-const timerAnimation = (
-	component: Animated.Value,
-	toValue: number,
-	duration: number,
-) => Animated.timing(component, { toValue, duration });
 
 export const Challenge = () => {
 	const [timerArc] = useState(new Animated.Value(0));
@@ -28,7 +24,7 @@ export const Challenge = () => {
 	const startTimerAnimation = () => {
 		timerArc.setValue(0);
 		setStartTimer(true);
-		timerAnimation(timerArc, 1, TIMER_ARC_SPEED + 1000).start();
+		timingAnimation(timerArc, 1, TIMER_ARC_SPEED + 1000).start();
 	};
 
 	const repeatTimerAnimation = () => timerArc.setValue(0);
@@ -47,23 +43,12 @@ export const Challenge = () => {
 					onPressSkip={() => undefined}
 				/>
 				<View style={styles.timeArcContainer}>
-					<Animated.View
-						style={[
-							styles.timerArcStyle,
-							{ transform: [{ translateY: -304 }, { rotate: arcDegree }] },
-						]}>
-						<View
-							style={[
-								styles.timerPointer,
-								{
-									transform: [
-										{ translateX: TIMER_POINTER_X },
-										{ translateY: TIMER_POINTER_Y - 6 },
-									],
-								},
-							]}
-						/>
-					</Animated.View>
+					<ArcTimer
+						rotate={arcDegree}
+						translateX={TIMER_POINTER_X}
+						translateY={TIMER_POINTER_Y - 6}
+						position={ARC_POSITION}
+					/>
 				</View>
 				<View style={styles.timerContainer}>
 					<CountdownTimer
