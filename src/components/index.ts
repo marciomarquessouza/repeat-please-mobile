@@ -12,3 +12,4 @@ export * from './LevelChoice';
 export * from './CountdownTimer';
 export * from './Stars';
 export * from './Waves';
+export * from './AudioWaves';

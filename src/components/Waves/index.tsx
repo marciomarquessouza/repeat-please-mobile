@@ -3,19 +3,14 @@ import { View } from 'react-native';
 import { WaveBar, BAR_WIDTH } from './WaveBar';
 import { styles, SCREEN_WIDTH } from './styles';
 
-interface IBasicMathProps {
-	a: number;
-	b: number;
-}
-
 interface IArithmeticProgressProps {
 	qnt: number;
 	commonDifference: number;
 	first: number;
 }
 
-const sum = ({ a, b }: IBasicMathProps) => a + b;
-const sub = ({ a, b }: IBasicMathProps) => a - b;
+const sum = (a: number, b: number) => a + b;
+const sub = (a: number, b: number) => a - b;
 
 const HALF_WAVE = 8;
 const BARS_TOTAL = SCREEN_WIDTH / BAR_WIDTH;
@@ -34,8 +29,8 @@ const arithmeticProgress = ({
 			if ((1 + index) % HALF_WAVE === 0) {
 				operation = operation === sum ? sub : sum;
 			}
+			const height = operation(acumulator, currentValue);
 			direction = direction === 'down' ? 'up' : 'down';
-			const height = operation({ a: acumulator, b: currentValue });
 			arrayResult.push({ height, side: direction });
 			return height;
 		}, first);

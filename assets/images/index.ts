@@ -1,6 +1,7 @@
 import arrowLeft from './arrow_left.png';
 import arrowRight from './arrow-right.png';
 import chimp from './chimp.png';
+import chimpListening from './chimp-listening.png';
 import email from './email.png';
 import kingKong from './king_kong.png';
 import lock from './lock.png';
@@ -21,6 +22,7 @@ export {
 	arrowLeft,
 	arrowRight,
 	chimp,
+	chimpListening,
 	email,
 	kingKong,
 	lock,

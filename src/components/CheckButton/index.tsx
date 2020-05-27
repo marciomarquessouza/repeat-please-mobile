@@ -1,24 +1,13 @@
 import React, { useState } from 'react';
 import { Animated, TouchableWithoutFeedback } from 'react-native';
 import { styles } from './styles';
+import { springAnimation, timingAnimation } from '../../utils/animations';
 
 interface ICheckButtonProps {
 	color?: string;
 	onPress: () => void;
 	isChecked: boolean;
 }
-
-const linesAnimation = (
-	component: Animated.Value,
-	toValue: number,
-	duration: number,
-) => Animated.timing(component, { toValue, duration });
-
-const springAnimation = (
-	component: Animated.Value,
-	toValue: number,
-	friction: number,
-) => Animated.spring(component, { toValue, friction });
 
 const SPEED = 400;
 const BOX_SCALE = 0.6;
@@ -36,8 +25,8 @@ export const CheckButton = ({
 		Animated.parallel([
 			springAnimation(boxAnimation, isChecked ? 1 : BOX_SCALE, 1),
 			Animated.sequence([
-				linesAnimation(line1Animation, isChecked ? 1 : 0, SPEED),
-				linesAnimation(line2Animation, isChecked ? 1 : 0, SPEED),
+				timingAnimation(line1Animation, isChecked ? 1 : 0, SPEED),
+				timingAnimation(line2Animation, isChecked ? 1 : 0, SPEED),
 			]),
 		]).start();
 	})();
