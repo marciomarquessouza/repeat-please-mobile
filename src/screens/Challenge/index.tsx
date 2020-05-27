@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import { View, Animated, Dimensions, ScrollView } from 'react-native';
-import { CountdownTimer, ChimpAudioWaves } from '../../components';
+import {
+	CountdownTimer,
+	ChimpAudioWaves,
+	InitialCountdown,
+} from '../../components';
 import { Header, ArcTimer } from './components';
 import { styles, TIMER_CIRCLE } from './styles';
 import { timingAnimation } from '../../utils/animations';
+
+type statusType = 'countdown' | 'initial' | 'listening' | 'result';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 const HALF_SCREEN = SCREEN_WIDTH / 2;
@@ -20,6 +26,7 @@ const TIMER_ARC_SPEED = 30000;
 export const Challenge = () => {
 	const [timerArc] = useState(new Animated.Value(0));
 	const [startTimer, setStartTimer] = useState(false);
+	const [status, setStatus] = useState<statusType>('countdown');
 
 	const startTimerAnimation = () => {
 		timerArc.setValue(0);
@@ -58,9 +65,14 @@ export const Challenge = () => {
 					/>
 				</View>
 				<View style={styles.resultContainer}>
-					<View style={styles.listeningContainer}>
-						<ChimpAudioWaves label="Listening..." />
-					</View>
+					{status === 'countdown' && (
+						<InitialCountdown hasFinished={() => setStatus('listening')} />
+					)}
+					{status === 'listening' && (
+						<View style={styles.listeningContainer}>
+							<ChimpAudioWaves label="Listening..." />
+						</View>
+					)}
 				</View>
 			</View>
 		</ScrollView>
