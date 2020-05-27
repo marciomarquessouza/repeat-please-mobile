@@ -17,6 +17,9 @@ import playButton from './play-button.png';
 import repeat from './repeat-icon.png';
 import skip from './skip-icon.png';
 import submit from './submit.png';
+import countdown3 from './countdown3.png';
+import countdown2 from './countdown2.png';
+import countdown1 from './countdown1.png';
 
 export {
 	arrowLeft,
@@ -38,6 +41,9 @@ export {
 	repeat,
 	skip,
 	submit,
+	countdown3,
+	countdown2,
+	countdown1,
 };
 
 export type IconNameType =
