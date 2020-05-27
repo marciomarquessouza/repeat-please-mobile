@@ -9,7 +9,7 @@ import { Header, ArcTimer } from './components';
 import { styles, TIMER_CIRCLE } from './styles';
 import { timingAnimation } from '../../utils/animations';
 
-type statusType = 'countdown' | 'initial' | 'listening' | 'result';
+type statusType = 'countdown' | 'initial' | 'listening' | 'speaking' | 'result';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 const HALF_SCREEN = SCREEN_WIDTH / 2;
@@ -66,11 +66,16 @@ export const Challenge = () => {
 				</View>
 				<View style={styles.resultContainer}>
 					{status === 'countdown' && (
-						<InitialCountdown hasFinished={() => setStatus('listening')} />
+						<InitialCountdown hasFinished={() => setStatus('speaking')} />
 					)}
 					{status === 'listening' && (
 						<View style={styles.listeningContainer}>
 							<ChimpAudioWaves label="Listening..." />
+						</View>
+					)}
+					{status === 'speaking' && (
+						<View style={styles.listeningContainer}>
+							<ChimpAudioWaves label="Speaking..." type="speaking" />
 						</View>
 					)}
 				</View>

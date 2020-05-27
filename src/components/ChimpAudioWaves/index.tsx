@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { View, Image, Text } from 'react-native';
-import { AudioWaveSVG } from './SVG/AudioWaveSVG';
-import { chimpListening } from '../../../assets/images';
+import { AudioWaveSVG, MicWaveSVG } from './SVG';
+import { chimpListening, chimpSpeaking } from '../../../assets/images';
 import { styles } from './styles';
+
+type chimpType = 'listening' | 'speaking';
 
 interface IAudioWavesProps {
 	label?: string;
+	type?: chimpType;
 }
 
 type colorPositionType = 'first' | 'second' | 'third';
@@ -25,6 +28,7 @@ const audioWaveColors = (posToChange: colorPositionType) => {
 
 export const ChimpAudioWaves = ({
 	label = 'Listening...',
+	type = 'listening',
 }: IAudioWavesProps) => {
 	const [wavePos, setWavePos] = useState<colorPositionType>('first');
 
@@ -39,10 +43,21 @@ export const ChimpAudioWaves = ({
 	return (
 		<View style={styles.container}>
 			<Text style={styles.textStyle}>{label}</Text>
-			<View style={styles.audioWaveContainer}>
-				<AudioWaveSVG {...{ ...audioWaveColors(wavePos) }} />
-				<Image source={chimpListening} style={styles.chimpListeningStyle} />
-			</View>
+			{type === 'listening' && (
+				<View style={styles.audioWaveContainer}>
+					<AudioWaveSVG {...{ ...audioWaveColors(wavePos) }} />
+					<Image source={chimpListening} style={styles.chimpListeningStyle} />
+				</View>
+			)}
+			{type === 'speaking' && (
+				<View style={styles.micWaveContainer}>
+					<MicWaveSVG
+						{...{ ...audioWaveColors(wavePos) }}
+						style={styles.micWaveStyle}
+					/>
+					<Image source={chimpSpeaking} style={styles.chimpSpeakingStyle} />
+				</View>
+			)}
 		</View>
 	);
 };
