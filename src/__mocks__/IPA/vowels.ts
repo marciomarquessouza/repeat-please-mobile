@@ -4,37 +4,37 @@ export const IPAVowels: IPAType[] = [
 	{
 		symbol: 'ʌ',
 		type: 'vowel',
-		examples: ['cUp', 'lUck'],
+		examples: ['CUP', 'LUCK'],
 	},
 	{
 		symbol: 'ɑ:',
 		type: 'vowel',
-		examples: ['Arm', 'fAther'],
+		examples: ['ARM', 'FATHER'],
 	},
 	{
 		symbol: 'æ',
 		type: 'vowel',
-		examples: ['cAt', 'blAck'],
+		examples: ['CAT', 'BLACK'],
 	},
 	{
 		symbol: 'e',
 		type: 'vowel',
-		examples: ['mEt', 'bEd'],
+		examples: ['MET', 'BED'],
 	},
 	{
 		symbol: 'ə',
 		type: 'vowel',
-		examples: ['Away', 'cinemA'],
+		examples: ['AWAY', 'CINEMA'],
 	},
 	{
 		symbol: 'ɜ:',
 		type: 'vowel',
-		examples: ['tURn', 'lEARn'],
+		examples: ['TURN', 'LEARN'],
 	},
 	{
 		symbol: 'ɪ',
 		type: 'vowel',
-		examples: ['hIt', 'sITTING'],
+		examples: ['HIT', 'SITTING'],
 	},
 	{
 		symbol: 'i:',

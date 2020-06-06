@@ -12,6 +12,7 @@ export const styles = StyleSheet.create({
 	container: {
 		backgroundColor: '#fff',
 		flex: 1,
+		paddingBottom: 60,
 	},
 	sectionTitleContainer: {
 		marginTop: 10,
@@ -31,7 +32,7 @@ export const styles = StyleSheet.create({
 		marginTop: 10,
 	},
 	listContainer: {
-		marginHorizontal: 15,
+		marginHorizontal: 0,
 		marginVertical: 10,
 	},
 });

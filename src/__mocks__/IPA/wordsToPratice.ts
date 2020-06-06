@@ -4,7 +4,7 @@ export const wordsToPratice: IPAType[] = [
 	{
 		symbol: 'e',
 		type: 'vowel',
-		examples: ['mEt', 'bEd'],
+		examples: ['MET', 'BED'],
 	},
 	{
 		symbol: 'tʃ',
@@ -14,12 +14,12 @@ export const wordsToPratice: IPAType[] = [
 	{
 		symbol: 'æ',
 		type: 'vowel',
-		examples: ['cAt', 'blAck'],
+		examples: ['CAT', 'BLACK'],
 	},
 	{
 		symbol: 'ɪ',
 		type: 'vowel',
-		examples: ['hIt', 'sITTING'],
+		examples: ['HIT', 'SITTING'],
 	},
 	{
 		symbol: 'i:',

@@ -1,3 +1,4 @@
+import audio from './audio-icon.png';
 import arrowLeft from './arrow_left.png';
 import arrowRight from './arrow-right.png';
 import chimp from './chimp.png';
@@ -23,6 +24,7 @@ import countdown2 from './countdown2.png';
 import countdown1 from './countdown1.png';
 
 export {
+	audio,
 	arrowLeft,
 	arrowRight,
 	chimp,
@@ -49,6 +51,7 @@ export {
 };
 
 export type IconNameType =
+	| 'audio'
 	| 'arrowLeft'
 	| 'arrowRight'
 	| 'chimp'

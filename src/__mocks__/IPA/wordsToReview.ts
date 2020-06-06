@@ -4,12 +4,12 @@ export const wordsToReview: IPAType[] = [
 	{
 		symbol: 'ʌ',
 		type: 'vowel',
-		examples: ['cUp', 'lUck'],
+		examples: ['CUP', 'LUCK'],
 	},
 	{
 		symbol: 'ɑ:',
 		type: 'vowel',
-		examples: ['Arm', 'fAther'],
+		examples: ['ARM', 'FATHER'],
 	},
 	{
 		symbol: 'ʒ',

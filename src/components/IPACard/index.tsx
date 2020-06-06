@@ -1,9 +1,8 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, ViewStyle } from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { View, Text, ViewStyle } from 'react-native';
 import { styles } from './styles';
 import { starsDescription } from '../../utils/starsDescription';
-import { Stars } from '../Stars';
+import { Stars, IconButton } from '../';
 
 interface IIPACardProps {
 	stars: number;
@@ -11,6 +10,7 @@ interface IIPACardProps {
 	IPASymbol: string;
 	IPASound: () => void;
 	style?: ViewStyle;
+	isLoading?: boolean;
 }
 
 export const IPACard = ({
@@ -19,6 +19,7 @@ export const IPACard = ({
 	IPASymbol,
 	IPASound,
 	style,
+	isLoading = false,
 }: IIPACardProps) => (
 	<View style={[styles.container, style]}>
 		<View style={styles.cardHeader}>
@@ -33,9 +34,7 @@ export const IPACard = ({
 			</View>
 		</View>
 		<View style={styles.cardBottom}>
-			<TouchableOpacity onPress={IPASound}>
-				<Icon name="ios-volume-high" size={40} />
-			</TouchableOpacity>
+			<IconButton name="audio" onPress={IPASound} isLoading={isLoading} />
 		</View>
 	</View>
 );
