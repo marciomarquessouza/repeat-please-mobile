@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
-import { IIPA } from '../../../components/IPAList';
+import { IPAType } from '../../../types';
 import { Home } from '../../../screens/Home';
 import { Levels } from '../../../screens/Levels';
 import { Challenge } from '../../../screens/Challenge';
@@ -20,7 +20,7 @@ export const HomeStack = createStackNavigator({
 	Levels: {
 		screen: Levels,
 		navigationOptions: (props: any) => {
-			const { examples }: IIPA = props.navigation.getParam('IPA');
+			const { examples }: IPAType = props.navigation.getParam('IPA');
 			return {
 				headerStyle: styles.headerStyle,
 				headerLeft: () => (

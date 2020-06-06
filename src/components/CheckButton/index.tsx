@@ -5,7 +5,7 @@ import { springAnimation, timingAnimation } from '../../utils/animations';
 
 interface ICheckButtonProps {
 	color?: string;
-	onPress: () => void;
+	onPress?: () => void;
 	isChecked: boolean;
 }
 

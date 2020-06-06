@@ -5,6 +5,7 @@ import {
 	Image,
 	ViewStyle,
 	ImageSourcePropType,
+	TouchableWithoutFeedback,
 } from 'react-native';
 import { SemiCircle } from './SVG/SemiCircle';
 import { LevelNameType } from '../../types';
@@ -35,22 +36,25 @@ export const LevelChoice = ({
 		<View style={[styles.container, style]}>
 			<View style={styles.levelsContainer}>
 				{levels.map((level, index) => (
-					<View style={styles.levelRow} key={index}>
-						<Image source={level.icon} style={styles.iconStyle} />
-						<View>
-							<Text style={styles.levelNameStyle}>{level.name}</Text>
-							<Text style={styles.levelDescriptionStyle}>
-								{level.description}
-							</Text>
+					<TouchableWithoutFeedback
+						onPress={() => setSelected(level.name)}
+						key={index}>
+						<View style={styles.levelRow}>
+							<Image source={level.icon} style={styles.iconStyle} />
+							<View>
+								<Text style={styles.levelNameStyle}>{level.name}</Text>
+								<Text style={styles.levelDescriptionStyle}>
+									{level.description}
+								</Text>
+							</View>
+							<View style={styles.checkBoxContainer}>
+								<CheckButton
+									color={level.color}
+									isChecked={selected === level.name}
+								/>
+							</View>
 						</View>
-						<View style={styles.checkBoxContainer}>
-							<CheckButton
-								onPress={() => setSelected(level.name)}
-								color={level.color}
-								isChecked={selected === level.name}
-							/>
-						</View>
-					</View>
+					</TouchableWithoutFeedback>
 				))}
 			</View>
 			<View style={styles.semiCircleContainer}>
