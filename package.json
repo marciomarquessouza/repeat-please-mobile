@@ -1,109 +1,109 @@
 {
- "name": "RepeatPlease",
- "version": "0.0.1",
- "private": true,
- "scripts": {
-  "start": "react-native start",
-  "test": "jest --coverage",
-  "report": "open -a 'Google Chrome' ./coverage/lcov-report/index.html ",
-  "android": "react-native run-android",
-  "ios": "react-native run-ios",
-  "lint": "npx yarn run lint:js && npx yarn run lint:ts",
-  "tslint": "tslint -c ./tslint.json './src/**/*.tsx' './src/**/*.ts'",
-  "lint:ts": "eslint -c ./.eslintrc.js './src/**/*.tsx' './src/**/*.ts'",
-  "lint:js": "eslint -c ./.eslintrc.js './**/*.js'",
-  "lint:all": "npx yarn run lint && npx yarn run tslint",
-  "podinstall": "cd ios && pod install && cd .."
- },
- "husky": {
-  "hooks": {
-   "pre-commit": "yarn lint",
-   "pre-push": "yarn lint",
-   "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-  }
- },
- "dependencies": {
-  "@react-native-community/netinfo": "^5.6.2",
-  "firebase": "^7.6.1",
-  "native-base": "^2.13.8",
-  "react": "16.11.0",
-  "react-native": "0.62.2",
-  "react-native-gesture-handler": "^1.5.2",
-  "react-native-linear-gradient": "^2.5.6",
-  "react-native-reanimated": "^1.4.0",
-  "react-native-responsive-screen": "^1.4.1",
-  "react-native-screens": "^2.3.0",
-  "react-native-splash-screen": "^3.2.0",
-  "react-native-svg": "^9.13.6",
-  "react-native-tts": "^3.1.1",
-  "react-native-vector-icons": "^6.6.0",
-  "react-native-web": "^0.12.0-rc.1",
-  "react-navigation": "^4.0.10",
-  "react-navigation-stack": "^1.10.3",
-  "react-navigation-tabs": "2.5.6",
-  "repeat-please-styles": "git+ssh://git@github.com:marciomarquessouza/repeat-please-styles.git"
- },
- "devDependencies": {
-  "@babel/core": "^7.5.0",
-  "@babel/runtime": "^7.5.0",
-  "@commitlint/cli": "^8.2.0",
-  "@commitlint/config-conventional": "^8.2.0",
-  "@react-native-community/eslint-config": "^0.0.5",
-  "@types/enzyme": "^3.10.4",
-  "@types/enzyme-adapter-react-16": "^1.0.5",
-  "@types/jest": "^24.0.18",
-  "@types/react": "^16.9.2",
-  "@types/react-dom": "^16.9.4",
-  "@types/react-native": "^0.60.14",
-  "@types/react-native-app-intro-slider": "^3.0.0",
-  "@types/react-native-vector-icons": "^6.4.5",
-  "@types/react-test-renderer": "^16.9.0",
-  "babel-jest": "^24.1.0",
-  "enzyme": "^3.11.0",
-  "enzyme-adapter-react-16": "^1.15.2",
-  "eslint": "^6.8.0",
-  "eslint-config-prettier": "^6.8.0",
-  "eslint-plugin-prettier": "^3.1.2",
-  "husky": "^3.1.0",
-  "jest": "^24.1.0",
-  "lint-staged": "^9.5.0",
-  "metro-react-native-babel-preset": "0.54.1",
-  "prettier": "^1.19.1",
-  "react-dom": "^16.12.0",
-  "react-test-renderer": "16.8.6",
-  "ts-jest": "^24.2.0",
-  "tslint": "^5.20.1",
-  "tslint-config-prettier": "^1.18.0",
-  "tslint-config-standard": "^9.0.0",
-  "tslint-react": "^4.1.0",
-  "typescript": "^3.6.3"
- },
- "jest": {
-  "preset": "react-native",
-  "setupFiles": [
-   "./tests/setup.js"
-  ],
-  "transformIgnorePatterns": [
-   "/node_modules/(?!native-base)/"
-  ],
-  "transform": {
-   "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
-   "\\.(ts|tsx)$": "ts-jest"
-  },
-  "globals": {
-   "ts-jest": {
-    "isolatedModules": true,
-    "tsConfig": "tsconfig.jest.json"
-   }
-  },
-  "moduleFileExtensions": [
-   "ts",
-   "tsx",
-   "js",
-   "jsx",
-   "json",
-   "node"
-  ],
-  "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$"
- }
+	"name": "RepeatPlease",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"start": "react-native start",
+		"test": "jest --coverage",
+		"report": "open -a 'Google Chrome' ./coverage/lcov-report/index.html ",
+		"android": "react-native run-android",
+		"ios": "react-native run-ios",
+		"lint": "npx yarn run lint:js && npx yarn run lint:ts",
+		"tslint": "tslint -c ./tslint.json './src/**/*.tsx' './src/**/*.ts'",
+		"lint:ts": "eslint -c ./.eslintrc.js './src/**/*.tsx' './src/**/*.ts'",
+		"lint:js": "eslint -c ./.eslintrc.js './**/*.js'",
+		"lint:all": "npx yarn run lint && npx yarn run tslint",
+		"podinstall": "cd ios && pod install && cd .."
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "yarn lint",
+			"pre-push": "yarn lint",
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+		}
+	},
+	"dependencies": {
+		"@react-native-community/netinfo": "^5.6.2",
+		"firebase": "^7.6.1",
+		"native-base": "^2.13.8",
+		"react": "16.11.0",
+		"react-native": "0.62.2",
+		"react-native-gesture-handler": "^1.5.2",
+		"react-native-linear-gradient": "^2.5.6",
+		"react-native-reanimated": "^1.4.0",
+		"react-native-responsive-screen": "^1.4.1",
+		"react-native-screens": "^2.3.0",
+		"react-native-splash-screen": "^3.2.0",
+		"react-native-svg": "^9.13.6",
+		"react-native-tts": "^3.1.1",
+		"react-native-vector-icons": "^6.6.0",
+		"react-native-web": "^0.12.0-rc.1",
+		"react-navigation": "^4.0.10",
+		"react-navigation-stack": "^1.10.3",
+		"react-navigation-tabs": "2.5.6",
+		"repeat-please-styles": "git+ssh://git@github.com:marciomarquessouza/repeat-please-styles.git"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.6.2",
+		"@babel/runtime": "^7.6.2",
+		"@commitlint/cli": "^8.2.0",
+		"@commitlint/config-conventional": "^8.2.0",
+		"@react-native-community/eslint-config": "^0.0.5",
+		"@types/enzyme": "^3.10.4",
+		"@types/enzyme-adapter-react-16": "^1.0.5",
+		"@types/jest": "^24.0.18",
+		"@types/react": "^16.9.2",
+		"@types/react-dom": "^16.9.4",
+		"@types/react-native": "^0.60.14",
+		"@types/react-native-app-intro-slider": "^3.0.0",
+		"@types/react-native-vector-icons": "^6.4.5",
+		"@types/react-test-renderer": "^16.9.0",
+		"babel-jest": "^24.9.0",
+		"enzyme": "^3.11.0",
+		"enzyme-adapter-react-16": "^1.15.2",
+		"eslint": "^6.8.0",
+		"eslint-config-prettier": "^6.8.0",
+		"eslint-plugin-prettier": "^3.1.2",
+		"husky": "^3.1.0",
+		"jest": "^24.9.0",
+		"lint-staged": "^9.5.0",
+		"metro-react-native-babel-preset": "0.58.0",
+		"prettier": "^1.19.1",
+		"react-dom": "^16.12.0",
+		"react-test-renderer": "16.11.0",
+		"ts-jest": "^24.2.0",
+		"tslint": "^5.20.1",
+		"tslint-config-prettier": "^1.18.0",
+		"tslint-config-standard": "^9.0.0",
+		"tslint-react": "^4.1.0",
+		"typescript": "^3.6.3"
+	},
+	"jest": {
+		"preset": "react-native",
+		"setupFiles": [
+			"./tests/setup.js"
+		],
+		"transformIgnorePatterns": [
+			"/node_modules/(?!native-base)/"
+		],
+		"transform": {
+			"^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
+			"\\.(ts|tsx)$": "ts-jest"
+		},
+		"globals": {
+			"ts-jest": {
+				"isolatedModules": true,
+				"tsConfig": "tsconfig.jest.json"
+			}
+		},
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js",
+			"jsx",
+			"json",
+			"node"
+		],
+		"testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$"
+	}
 }
