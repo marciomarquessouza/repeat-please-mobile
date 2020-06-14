@@ -1,10 +1,9 @@
 import React from 'react';
-import { Image, View, ViewStyle } from 'react-native';
+import { Image, View, ViewStyle, Text } from 'react-native';
 import { mailMonkey, arrowRight } from '../../../../../assets/images';
-import { Title, PlaceholderInput } from 'repeat-please-styles';
+import { PlaceholderInput } from 'repeat-please-styles';
 import { IconButton } from '../../../../components';
 import { styles } from './style';
-import { heightPercentageToDP as hp } from 'react-native-responsive-screen';
 
 export interface IEmailProps {
 	placeholder: string;
@@ -23,13 +22,8 @@ export const Email = ({
 }: IEmailProps) => (
 	<View style={[styles.container, style, { width }]}>
 		<View style={styles.headerContainer}>
-			<Image
-				source={mailMonkey}
-				style={styles.imageStyle}
-				width={hp('24.4%')}
-				height={hp('14.8%')}
-			/>
-			<Title>Your Email</Title>
+			<Image source={mailMonkey} style={styles.imageStyle} />
+			<Text style={styles.titleStyle}>Your Email</Text>
 		</View>
 		<View style={styles.inputContainer}>
 			<View style={styles.inputStyle}>

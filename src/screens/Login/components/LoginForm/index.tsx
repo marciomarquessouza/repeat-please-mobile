@@ -51,8 +51,8 @@ export const LoginForm = ({
 	};
 
 	return (
-		<View style={styles.container}>
-			<View style={styles.backArrowStyle}>
+		<View style={[styles.container]}>
+			<View style={styles.backArrowContainer}>
 				<HeaderBackArrow onPress={goBack} />
 			</View>
 			<View style={styles.animationContainer}>
@@ -60,7 +60,9 @@ export const LoginForm = ({
 					style={{
 						position: 'absolute',
 						top: 0,
+						bottom: 0,
 						left: 0,
+						width: '200%',
 						transform: [{ translateX: position.x }],
 					}}>
 					<Email

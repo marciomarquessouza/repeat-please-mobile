@@ -6,6 +6,7 @@ import {
 	TouchableOpacity,
 	Image,
 	View,
+	ScrollView,
 } from 'react-native';
 import { Logo, PlaceholderInput, Title, TitleLogo } from 'repeat-please-styles';
 import { NavigationStackProp } from 'react-navigation-stack';
@@ -26,8 +27,7 @@ export const ForgotPassword = ({ navigation }: IForgotPasswordProp) => {
 
 	const onForgotSubmit = async (): Promise<void> => {
 		if (!emailIsValid(email)) {
-			showAlert({ type: 'error', message: 'Invalid Email' });
-			return;
+			return showAlert({ type: 'error', message: 'Invalid Email' });
 		}
 
 		try {
@@ -41,8 +41,8 @@ export const ForgotPassword = ({ navigation }: IForgotPasswordProp) => {
 	};
 
 	return (
-		<SafeAreaView style={styles.wrapper}>
-			<View>
+		<ScrollView contentContainerStyle={{ flexGrow: 1 }} style={{ flex: 1 }}>
+			<SafeAreaView style={styles.wrapper}>
 				<View style={styles.container}>
 					<Logo customStyle={styles.logoStyle} />
 					<TitleLogo />
@@ -77,7 +77,7 @@ export const ForgotPassword = ({ navigation }: IForgotPasswordProp) => {
 						)}
 					</TouchableOpacity>
 				</View>
-			</View>
-		</SafeAreaView>
+			</SafeAreaView>
+		</ScrollView>
 	);
 };

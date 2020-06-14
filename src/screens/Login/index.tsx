@@ -8,6 +8,7 @@ import { AlertsContext } from '../../contexts/AlertsContext';
 import { emailIsValid } from '../../utils/validations';
 import { emailLogin } from '../../data/services/login';
 import { styles } from './style';
+import { ScrollView } from 'react-native-gesture-handler';
 
 interface ILoginProps {
 	navigation: NavigationStackProp;
@@ -44,28 +45,30 @@ export const Login = ({ navigation }: ILoginProps): JSX.Element => {
 	};
 
 	return (
-		<SafeAreaView style={styles.container}>
-			<LoginForm
-				onEmailChange={emailText => setEmail(emailText)}
-				onEmailSubmit={() => onSubmitEmail()}
-				onPassChange={passText => setPassword(passText)}
-				onPassSubmit={onSubmitPassword}
-				navigation={navigation}
-				isLoading={isLoading}
-			/>
-			<LinkButton
-				customStyle={styles.forgotPasswordStyle}
-				onPress={onForgotPasswordPress}>
-				Forgot Password
-			</LinkButton>
-			<View style={styles.signUpContainer}>
-				<Text style={[styles.signUpText, { color: '#fff' }]}>
-					Don't have an account?
-				</Text>
-				<TouchableOpacity onPress={onSignUpPress}>
-					<Text style={[styles.signUpText, { color: '#000' }]}>Sign Up</Text>
-				</TouchableOpacity>
-			</View>
-		</SafeAreaView>
+		<ScrollView contentContainerStyle={{ flexGrow: 1 }} style={{ flex: 1 }}>
+			<SafeAreaView style={styles.container}>
+				<LoginForm
+					onEmailChange={emailText => setEmail(emailText)}
+					onEmailSubmit={() => onSubmitEmail()}
+					onPassChange={passText => setPassword(passText)}
+					onPassSubmit={onSubmitPassword}
+					navigation={navigation}
+					isLoading={isLoading}
+				/>
+				<LinkButton
+					customStyle={styles.forgotPasswordStyle}
+					onPress={onForgotPasswordPress}>
+					Forgot Password
+				</LinkButton>
+				<View style={styles.signUpContainer}>
+					<Text style={[styles.signUpText, { color: '#fff' }]}>
+						Don't have an account?
+					</Text>
+					<TouchableOpacity onPress={onSignUpPress}>
+						<Text style={[styles.signUpText, { color: '#000' }]}>Sign Up</Text>
+					</TouchableOpacity>
+				</View>
+			</SafeAreaView>
+		</ScrollView>
 	);
 };
