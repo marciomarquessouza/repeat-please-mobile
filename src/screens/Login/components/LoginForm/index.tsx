@@ -4,6 +4,7 @@ import { Email, Password } from '../';
 import { HeaderBackArrow } from '../../../../navigator/HeaderBackArrow';
 import { styles } from './style';
 import { NavigationStackProp } from 'react-navigation-stack';
+import { timingAnimation } from '../../../../utils/animations';
 
 interface ILoginFormProps {
 	onEmailSubmit: () => boolean;
@@ -15,6 +16,8 @@ interface ILoginFormProps {
 }
 
 const WIDTH = Dimensions.get('window').width;
+
+const SPEED = 500;
 
 let page: 'email' | 'password' = 'email';
 
@@ -33,23 +36,13 @@ export const LoginForm = ({
 }: ILoginFormProps): JSX.Element => {
 	const [position] = useState(new Animated.ValueXY({ x: 0, y: 0 }));
 
-	const loginAnimation = (
-		animatedObject: Animated.ValueXY,
-		direction: DIRECTION,
-	): void => {
-		Animated.timing(animatedObject, {
-			toValue: { x: direction, y: 0 },
-			duration: 500,
-		}).start();
-	};
-
 	const goToEmail = (): void => {
-		loginAnimation(position, DIRECTION.left);
+		timingAnimation(position, { x: DIRECTION.left, y: 0 }, SPEED).start();
 		page = 'email';
 	};
 
 	const gotToPassword = (): void => {
-		loginAnimation(position, DIRECTION.right);
+		timingAnimation(position, { x: DIRECTION.right, y: 0 }, SPEED).start();
 		page = 'password';
 	};
 
@@ -64,7 +57,12 @@ export const LoginForm = ({
 			</View>
 			<View style={styles.animationContainer}>
 				<Animated.View
-					style={{ position: 'absolute', top: 0, left: position.x }}>
+					style={{
+						position: 'absolute',
+						top: 0,
+						left: 0,
+						transform: [{ translateX: position.x }],
+					}}>
 					<Email
 						placeholder="Email Address"
 						onChangeText={email => onEmailChange(email)}

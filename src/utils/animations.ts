@@ -1,8 +1,8 @@
 import { Animated } from 'react-native';
 
 export const timingAnimation = (
-	component: Animated.Value,
-	toValue: number,
+	component: Animated.Value | Animated.ValueXY,
+	toValue: number | { x: number; y: number },
 	duration: number,
 ) => Animated.timing(component, { toValue, duration, useNativeDriver: true });
 
