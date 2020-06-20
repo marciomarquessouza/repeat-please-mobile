@@ -4051,6 +4051,11 @@ fs.realpath@^1.0.0:
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
   integrity sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
 
+fs@^0.0.1-security:
+  version "0.0.1-security"
+  resolved "https://registry.yarnpkg.com/fs/-/fs-0.0.1-security.tgz#8a7bd37186b6dddf3813f23858b57ecaaf5e41d4"
+  integrity sha1-invTcYa23d84E/I4WLV+yq9eQdQ=
+
 fsevents@^1.2.7:
   version "1.2.13"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-1.2.13.tgz#f325cb0455592428bcf11b383370ef70e3bfcc38"
@@ -7097,10 +7102,10 @@ react-native-tab-view@^2.9.0:
   resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-2.14.4.tgz#740007e62c8723c6813b8c8a05caaaf82c816620"
   integrity sha512-oqkCflPFuZwDTbyY2WaN0377akSsmcttuYACR9LT7htZfO/tKR2Z/ynj1tbv2cz2esGuVICoga9cetN1lPimog==
 
-react-native-tts@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/react-native-tts/-/react-native-tts-3.1.1.tgz#b3eb4133432c70beb6dfb33685737c8cab441e02"
-  integrity sha512-EGwapFt1CMBopawc8WvpHRv/oXZnOQPuS5ZHrKp0zpz7Kosb6aN1cyj6YSUX2LzcqP6glhrvCPS+PPkW2yMbRQ==
+react-native-tts@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-tts/-/react-native-tts-3.2.0.tgz#6c271c6809c164f86699b4b6c420f7bae0f68b4e"
+  integrity sha512-z8p9OfWd9N1QTs3EcZCt05iqNFs9qZ9s743Pt1xqqVlL+vE4ju2pybNE/pjxA2L+RvuD3L0wOdNvXcCNP5qi2g==
 
 react-native-vector-icons@^6.6.0:
   version "6.6.0"

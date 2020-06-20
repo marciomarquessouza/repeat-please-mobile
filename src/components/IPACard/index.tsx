@@ -2,24 +2,22 @@ import React from 'react';
 import { View, Text, ViewStyle } from 'react-native';
 import { styles } from './styles';
 import { starsDescription } from '../../utils/starsDescription';
-import { Stars, IconButton } from '../';
+import { Stars } from '../';
 
 interface IIPACardProps {
 	stars: number;
 	type: 'vowel' | 'consonant';
 	IPASymbol: string;
-	IPASound: () => void;
 	style?: ViewStyle;
-	isLoading?: boolean;
+	bottom?: React.ReactNode;
 }
 
 export const IPACard = ({
 	stars,
 	type,
 	IPASymbol,
-	IPASound,
 	style,
-	isLoading = false,
+	bottom,
 }: IIPACardProps) => (
 	<View style={[styles.container, style]}>
 		<View style={styles.cardHeader}>
@@ -33,8 +31,6 @@ export const IPACard = ({
 				<Text>{starsDescription(stars)}</Text>
 			</View>
 		</View>
-		<View style={styles.cardBottom}>
-			<IconButton name="audio" onPress={IPASound} isLoading={isLoading} />
-		</View>
+		{bottom}
 	</View>
 );

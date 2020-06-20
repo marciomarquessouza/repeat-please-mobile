@@ -34,9 +34,4 @@ export const styles = StyleSheet.create({
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
-	cardBottom: {
-		alignItems: 'center',
-		justifyContent: 'center',
-		marginVertical: 5,
-	},
 });

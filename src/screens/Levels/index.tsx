@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
 	Text,
 	ScrollView,
@@ -15,9 +15,7 @@ import { CHALLENGE } from '../../navigator/routes';
 import { levels } from './levels';
 import { LevelNameType } from '../../types';
 import { styles } from './styles';
-import Tts from 'react-native-tts';
-
-type speechStatusType = 'waiting' | 'started' | 'finished' | 'cancelled';
+import { TextToSpeech } from '../../components/TextToSpeech';
 
 interface ILevelsProps {
 	navigation: NavigationStackProp;
@@ -26,18 +24,6 @@ interface ILevelsProps {
 export const Levels = ({ navigation }: ILevelsProps) => {
 	const { symbol, type, examples }: IPAType = navigation.getParam('IPA');
 	const [selected, setSelected] = useState<LevelNameType>('Chimp');
-	const [speechStatus, setSpeechStatus] = useState<speechStatusType>('waiting');
-
-	useEffect(() => {
-		Tts.addEventListener('tts-start', () => setSpeechStatus('started'));
-		Tts.addEventListener('tts-finish', () => setSpeechStatus('finished'));
-		Tts.addEventListener('tts-cancel', () => setSpeechStatus('finished'));
-	});
-
-	const readText = async () => {
-		Tts.stop();
-		Tts.speak(examples.join(' '));
-	};
 
 	return (
 		<ScrollView style={styles.container}>
@@ -46,8 +32,7 @@ export const Levels = ({ navigation }: ILevelsProps) => {
 					IPASymbol={symbol}
 					stars={2}
 					type={type}
-					IPASound={readText}
-					isLoading={speechStatus === 'started'}
+					bottom={<TextToSpeech text={examples.join(' ')} />}
 				/>
 				<Text style={styles.levelTitleStyle}>Select a Level</Text>
 				<View style={styles.levelChoiceContainer}>

@@ -17,6 +17,6 @@ module.exports = {
 		'max-statements': ['error', 10, { ignoreTopLevelFunctions: true }],
 		semi: 'error',
 		'semi-spacing': 'error',
-		'no-console': 'error',
+		'no-console': ['error', { allow: ['warn', 'error'] }],
 	},
 };
