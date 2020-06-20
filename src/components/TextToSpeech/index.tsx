@@ -1,23 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { View } from 'react-native';
+import { View, TouchableOpacity, ActivityIndicator } from 'react-native';
 import Tts from 'react-native-tts';
-import { IconButton } from '../IconButton';
 import { styles } from './styles';
-
-type StatusType = 'initiliazing' | 'ready' | 'speaking';
 
 interface ITextToSpeechProps {
 	text: string;
+	children: React.ReactNode;
 }
 
-export const TextToSpeech = ({ text }: ITextToSpeechProps) => {
-	const [status, setStatus] = useState<StatusType>('initiliazing');
+export const TextToSpeech = ({ text, children }: ITextToSpeechProps) => {
 	const [loading, setLoading] = useState<boolean>(false);
 
 	useEffect(() => {
 		setLoading(true);
-		Tts.addEventListener('tts-start', () => setStatus('speaking'));
-		Tts.addEventListener('tts-finish', () => setStatus('ready'));
+		Tts.addEventListener('tts-start', () => undefined);
+		Tts.addEventListener('tts-finish', () => undefined);
+		Tts.addEventListener('tts-cancel', () => undefined);
 		Tts.getInitStatus()
 			.then(initTextToSpeech)
 			.then(() => setLoading(false));
@@ -36,14 +34,12 @@ export const TextToSpeech = ({ text }: ITextToSpeechProps) => {
 		if (availableVoice && availableVoice.length > 0) {
 			try {
 				await Tts.setDefaultLanguage(availableVoice[0].language);
-				setStatus('ready');
 			} catch (error) {
 				console.error('set language error', error);
 			}
 		} else {
 			// Some devices don't suport the voice, but are able to reproduce the sound
 			console.error('Voice was not found.');
-			setStatus('ready');
 		}
 	};
 
@@ -53,11 +49,9 @@ export const TextToSpeech = ({ text }: ITextToSpeechProps) => {
 
 	return (
 		<View style={styles.cardBottom}>
-			{status === 'ready' ? (
-				<IconButton name="audio" onPress={readText} isLoading={loading} />
-			) : (
-				<IconButton name="audio" onPress={readText} isLoading={loading} />
-			)}
+			<TouchableOpacity onPress={readText}>
+				{loading ? <ActivityIndicator size="small" /> : children}
+			</TouchableOpacity>
 		</View>
 	);
 };

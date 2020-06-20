@@ -7,6 +7,7 @@ import {
 	Image,
 	View,
 } from 'react-native';
+import { audio } from '../../../assets/images';
 import { IPAType } from '../../types';
 import { NavigationStackProp } from 'react-navigation-stack';
 import { IPACard, LevelChoice } from '../../components';
@@ -15,7 +16,7 @@ import { CHALLENGE } from '../../navigator/routes';
 import { levels } from './levels';
 import { LevelNameType } from '../../types';
 import { styles } from './styles';
-import { TextToSpeech } from '../../components/TextToSpeech';
+import { TextToSpeech } from '../../components';
 
 interface ILevelsProps {
 	navigation: NavigationStackProp;
@@ -32,7 +33,11 @@ export const Levels = ({ navigation }: ILevelsProps) => {
 					IPASymbol={symbol}
 					stars={2}
 					type={type}
-					bottom={<TextToSpeech text={examples.join(' ')} />}
+					bottom={
+						<TextToSpeech text={examples.join(' ')}>
+							<Image source={audio} />
+						</TextToSpeech>
+					}
 				/>
 				<Text style={styles.levelTitleStyle}>Select a Level</Text>
 				<View style={styles.levelChoiceContainer}>
