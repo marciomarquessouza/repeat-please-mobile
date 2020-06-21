@@ -10,7 +10,7 @@ interface IInitialCountdownProps {
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 const TRANSITION_SPEED = 200;
-const STOP_SPEED = 1000;
+const STOP_SPEED = 500;
 
 export const InitialCountdown = ({ hasFinished }: IInitialCountdownProps) => {
 	const countdownImages = [countdown3, countdown2, countdown1];

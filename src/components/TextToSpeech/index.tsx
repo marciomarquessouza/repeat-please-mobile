@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { View, TouchableOpacity, ActivityIndicator } from 'react-native';
 import Tts from 'react-native-tts';
 import { styles } from './styles';
@@ -6,20 +6,21 @@ import { styles } from './styles';
 interface ITextToSpeechProps {
 	text: string;
 	children: React.ReactNode;
+	startSpeech?: boolean;
+	repeat?: number;
+	delay?: number;
+	onFinish?: () => void;
 }
-
-export const TextToSpeech = ({ text, children }: ITextToSpeechProps) => {
+// eslint-disable-next-line max-lines-per-function
+export const TextToSpeech = ({
+	text,
+	children,
+	startSpeech = false,
+	repeat = 0,
+	delay = 0,
+	onFinish,
+}: ITextToSpeechProps) => {
 	const [loading, setLoading] = useState<boolean>(false);
-
-	useEffect(() => {
-		setLoading(true);
-		Tts.addEventListener('tts-start', () => undefined);
-		Tts.addEventListener('tts-finish', () => undefined);
-		Tts.addEventListener('tts-cancel', () => undefined);
-		Tts.getInitStatus()
-			.then(initTextToSpeech)
-			.then(() => setLoading(false));
-	}, []);
 
 	const initTextToSpeech = async () => {
 		const voices = await Tts.voices();
@@ -43,9 +44,38 @@ export const TextToSpeech = ({ text, children }: ITextToSpeechProps) => {
 		}
 	};
 
-	const readText = async () => {
+	const readText = useCallback(async () => {
 		Tts.stop().then(() => Tts.speak(text));
-	};
+	}, [text]);
+
+	const finishSpeeching = useCallback(() => {
+		const timeoutID = setTimeout(() => {
+			onFinish && onFinish();
+			clearTimeout(timeoutID);
+		}, delay);
+	}, [onFinish, delay]);
+
+	const startSpeeching = useCallback(() => {
+		let counter = 0;
+		const intervalID = setInterval(async () => {
+			readText();
+			if (counter++ === repeat) {
+				clearInterval(intervalID);
+				finishSpeeching();
+			}
+		}, delay);
+	}, [readText, delay, finishSpeeching, repeat]);
+
+	useEffect(() => {
+		setLoading(true);
+		Tts.addEventListener('tts-start', () => undefined);
+		Tts.addEventListener('tts-finish', () => undefined);
+		Tts.addEventListener('tts-cancel', () => undefined);
+		Tts.getInitStatus()
+			.then(initTextToSpeech)
+			.then(() => setLoading(false))
+			.then(() => startSpeech && startSpeeching());
+	}, [startSpeech, startSpeeching]);
 
 	return (
 		<View style={styles.cardBottom}>

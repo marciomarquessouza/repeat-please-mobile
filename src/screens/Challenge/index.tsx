@@ -4,6 +4,7 @@ import {
 	CountdownTimer,
 	ChimpAudioWaves,
 	InitialCountdown,
+	TextToSpeech,
 } from '../../components';
 import { Header, ArcTimer } from './components';
 import { styles, TIMER_CIRCLE } from './styles';
@@ -23,6 +24,7 @@ const ANGLE_END = INTERSECTION_ANGLE + 45;
 const ARC_POSITION = -304;
 const TIMER_ARC_SPEED = 30000;
 
+// eslint-disable-next-line max-lines-per-function
 export const Challenge = () => {
 	const [timerArc] = useState(new Animated.Value(0));
 	const [startTimer, setStartTimer] = useState(false);
@@ -68,14 +70,20 @@ export const Challenge = () => {
 					{status === 'countdown' && (
 						<InitialCountdown hasFinished={() => setStatus('speaking')} />
 					)}
+					{status === 'speaking' && (
+						<View style={styles.listeningContainer}>
+							<TextToSpeech
+								text="nothing"
+								startSpeech={status === 'speaking'}
+								delay={1000}
+								onFinish={() => setStatus('listening')}>
+								<ChimpAudioWaves label="Speaking..." type="speaking" />
+							</TextToSpeech>
+						</View>
+					)}
 					{status === 'listening' && (
 						<View style={styles.listeningContainer}>
 							<ChimpAudioWaves label="Listening..." />
-						</View>
-					)}
-					{status === 'speaking' && (
-						<View style={styles.listeningContainer}>
-							<ChimpAudioWaves label="Speaking..." type="speaking" />
 						</View>
 					)}
 				</View>
