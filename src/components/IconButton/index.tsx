@@ -18,6 +18,7 @@ interface IIconButtonProps {
 	name?: assetsIcons.IconNameType;
 	source?: ImageSourcePropType;
 	style?: StyleProp<ViewStyle>;
+	disabled?: boolean;
 }
 
 export const IconButton = ({
@@ -27,13 +28,17 @@ export const IconButton = ({
 	spinnerSize = 'small',
 	name = 'arrowRight',
 	style,
+	disabled,
 }: IIconButtonProps) => (
-	<TouchableOpacity {...{ onPress }}>
+	<TouchableOpacity {...{ onPress, disabled }}>
 		<View style={[styles.buttonContainer, style]}>
 			{isLoading ? (
 				<ActivityIndicator size={spinnerSize} />
 			) : (
-				<Image source={source || assetsIcons[name]} />
+				<Image
+					source={source || assetsIcons[name]}
+					style={{ opacity: disabled ? 0.5 : 1 }}
+				/>
 			)}
 		</View>
 	</TouchableOpacity>

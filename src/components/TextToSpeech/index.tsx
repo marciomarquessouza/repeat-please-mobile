@@ -20,7 +20,7 @@ export const TextToSpeech = ({
 	delay = 0,
 	onFinish,
 }: ITextToSpeechProps) => {
-	const [loading, setLoading] = useState<boolean>(false);
+	const [loading, setLoading] = useState<boolean>(true);
 
 	const initTextToSpeech = async () => {
 		const voices = await Tts.voices();
@@ -67,7 +67,6 @@ export const TextToSpeech = ({
 	}, [readText, delay, finishSpeeching, repeat]);
 
 	useEffect(() => {
-		setLoading(true);
 		Tts.addEventListener('tts-start', () => undefined);
 		Tts.addEventListener('tts-finish', () => undefined);
 		Tts.addEventListener('tts-cancel', () => undefined);

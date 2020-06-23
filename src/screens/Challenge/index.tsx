@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Animated, Dimensions, ScrollView } from 'react-native';
+import { View, Animated, Dimensions, ScrollView, Text } from 'react-native';
 import {
 	CountdownTimer,
 	ChimpAudioWaves,
@@ -10,7 +10,13 @@ import { Header, ArcTimer } from './components';
 import { styles, TIMER_CIRCLE } from './styles';
 import { timingAnimation } from '../../utils/animations';
 
-type statusType = 'countdown' | 'initial' | 'listening' | 'speaking' | 'result';
+type statusType =
+	| 'countdown'
+	| 'initializing'
+	| 'listening'
+	| 'awaiting'
+	| 'speaking'
+	| 'result';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 const HALF_SCREEN = SCREEN_WIDTH / 2;
@@ -36,8 +42,6 @@ export const Challenge = () => {
 		timingAnimation(timerArc, 1, TIMER_ARC_SPEED + 1000).start();
 	};
 
-	const repeatTimerAnimation = () => timerArc.setValue(0);
-
 	const arcDegree = timerArc.interpolate({
 		inputRange: [0, 1],
 		outputRange: [`${ANGLE_START}deg`, `${ANGLE_END}deg`],
@@ -47,7 +51,7 @@ export const Challenge = () => {
 		<ScrollView contentContainerStyle={{ flexGrow: 1 }}>
 			<View style={styles.container}>
 				<Header
-					onPressRepeat={repeatTimerAnimation}
+					onPressRepeat={() => setStatus('speaking')}
 					onPressStart={startTimerAnimation}
 					onPressSkip={() => undefined}
 				/>
@@ -68,17 +72,25 @@ export const Challenge = () => {
 				</View>
 				<View style={styles.resultContainer}>
 					{status === 'countdown' && (
-						<InitialCountdown hasFinished={() => setStatus('speaking')} />
+						<InitialCountdown hasFinished={() => setStatus('initializing')} />
 					)}
-					{status === 'speaking' && (
+					{(status === 'speaking' || status === 'initializing') && (
 						<View style={styles.listeningContainer}>
 							<TextToSpeech
-								text="nothing"
-								startSpeech={status === 'speaking'}
+								text="task"
+								startSpeech={true}
 								delay={1000}
-								onFinish={() => setStatus('listening')}>
+								onFinish={() => {
+									setStatus('awaiting');
+									status === 'initializing' && startTimerAnimation();
+								}}>
 								<ChimpAudioWaves label="Speaking..." type="speaking" />
 							</TextToSpeech>
+						</View>
+					)}
+					{status === 'awaiting' && (
+						<View style={styles.listeningContainer}>
+							<Text style={styles.awaitingStyle}>Your time Now...</Text>
 						</View>
 					)}
 					{status === 'listening' && (
