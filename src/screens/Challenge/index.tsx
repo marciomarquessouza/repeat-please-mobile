@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
-import { View, Animated, Dimensions, ScrollView, Text } from 'react-native';
-import {
-	CountdownTimer,
-	ChimpAudioWaves,
-	InitialCountdown,
-	TextToSpeech,
-} from '../../components';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { View, Animated, Dimensions, ScrollView } from 'react-native';
+import { CountdownTimer, ICountdownTimerRef } from '../../components';
 import { Header, ArcTimer } from './components';
 import { styles, TIMER_CIRCLE } from './styles';
 import { timingAnimation } from '../../utils/animations';
+import { StatusResult } from './components';
 
-type statusType =
+export type StatusType =
 	| 'countdown'
 	| 'initializing'
+	| 'started'
 	| 'listening'
 	| 'awaiting'
 	| 'speaking'
@@ -28,31 +25,36 @@ const INTERSECTION_ANGLE =
 const ANGLE_START = 45 - INTERSECTION_ANGLE;
 const ANGLE_END = INTERSECTION_ANGLE + 45;
 const ARC_POSITION = -304;
-const TIMER_ARC_SPEED = 30000;
+const TIMER_ARC_SPEED = 3e4;
 
-// eslint-disable-next-line max-lines-per-function
 export const Challenge = () => {
 	const [timerArc] = useState(new Animated.Value(0));
-	const [startTimer, setStartTimer] = useState(false);
-	const [status, setStatus] = useState<statusType>('countdown');
+	const [status, setStatus] = useState<StatusType>('countdown');
+	const timerRef = useRef<ICountdownTimerRef>(null);
 
-	const startTimerAnimation = () => {
+	const startTimerAnimation = useCallback(() => {
 		timerArc.setValue(0);
-		setStartTimer(true);
-		timingAnimation(timerArc, 1, TIMER_ARC_SPEED + 1000).start();
-	};
+		timerRef.current?.startTimer(TIMER_ARC_SPEED / 1e3);
+		timingAnimation(timerArc, 1, TIMER_ARC_SPEED + 1e3).start();
+	}, [timerArc]);
 
 	const arcDegree = timerArc.interpolate({
 		inputRange: [0, 1],
 		outputRange: [`${ANGLE_START}deg`, `${ANGLE_END}deg`],
 	});
 
+	useEffect(() => {
+		if (status === 'started') {
+			startTimerAnimation();
+		}
+	}, [status, startTimerAnimation]);
+
 	return (
 		<ScrollView contentContainerStyle={{ flexGrow: 1 }}>
 			<View style={styles.container}>
 				<Header
 					onPressRepeat={() => setStatus('speaking')}
-					onPressStart={startTimerAnimation}
+					onPressStart={() => undefined}
 					onPressSkip={() => undefined}
 				/>
 				<View style={styles.timeArcContainer}>
@@ -64,41 +66,9 @@ export const Challenge = () => {
 					/>
 				</View>
 				<View style={styles.timerContainer}>
-					<CountdownTimer
-						miliseconds={TIMER_ARC_SPEED}
-						style={styles.timerTextStyle}
-						startTimer={startTimer}
-					/>
+					<CountdownTimer style={styles.timerTextStyle} ref={timerRef} />
 				</View>
-				<View style={styles.resultContainer}>
-					{status === 'countdown' && (
-						<InitialCountdown hasFinished={() => setStatus('initializing')} />
-					)}
-					{(status === 'speaking' || status === 'initializing') && (
-						<View style={styles.listeningContainer}>
-							<TextToSpeech
-								text="task"
-								startSpeech={true}
-								delay={1000}
-								onFinish={() => {
-									setStatus('awaiting');
-									status === 'initializing' && startTimerAnimation();
-								}}>
-								<ChimpAudioWaves label="Speaking..." type="speaking" />
-							</TextToSpeech>
-						</View>
-					)}
-					{status === 'awaiting' && (
-						<View style={styles.listeningContainer}>
-							<Text style={styles.awaitingStyle}>Your time Now...</Text>
-						</View>
-					)}
-					{status === 'listening' && (
-						<View style={styles.listeningContainer}>
-							<ChimpAudioWaves label="Listening..." />
-						</View>
-					)}
-				</View>
+				<StatusResult {...{ status, setStatus }} />
 			</View>
 		</ScrollView>
 	);

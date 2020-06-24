@@ -1,3 +1,3 @@
 export * from './Header';
-export * from './Result';
+export * from './StatusResult';
 export * from './ArcTimer';
