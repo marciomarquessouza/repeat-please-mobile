@@ -11,9 +11,14 @@ import { StatusType } from '../../';
 interface IStatusResultProps {
 	status: StatusType;
 	setStatus: (status: StatusType) => void;
+	result?: string;
 }
 
-export const StatusResult = ({ status, setStatus }: IStatusResultProps) => (
+export const StatusResult = ({
+	status,
+	setStatus,
+	result,
+}: IStatusResultProps) => (
 	<View style={styles.resultContainer}>
 		{status === 'countdown' && (
 			<InitialCountdown hasFinished={() => setStatus('initializing')} />
@@ -57,5 +62,6 @@ export const StatusResult = ({ status, setStatus }: IStatusResultProps) => (
 				<ChimpAudioWaves label="Listening..." />
 			</View>
 		)}
+		<Text>{result}</Text>
 	</View>
 );

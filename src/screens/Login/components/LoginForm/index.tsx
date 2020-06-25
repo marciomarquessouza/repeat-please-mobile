@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Animated, Dimensions, View } from 'react-native';
-import { Email, Password } from '../';
+import { Email } from '../Email';
+import { Password } from '../Password';
 import { HeaderBackArrow } from '../../../../navigator/HeaderBackArrow';
 import { styles } from './style';
 import { NavigationStackProp } from 'react-navigation-stack';

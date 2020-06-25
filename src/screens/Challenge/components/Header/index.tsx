@@ -5,14 +5,14 @@ import { styles } from '../../styles';
 
 interface IHeaderProps {
 	onPressRepeat: () => void;
-	onPressStart: () => void;
+	actionButton: React.ReactNode;
 	onPressSkip: () => void;
 	disabled?: boolean;
 }
 
 export const Header = ({
 	onPressRepeat,
-	onPressStart,
+	actionButton,
 	onPressSkip,
 	disabled,
 }: IHeaderProps) => (
@@ -26,12 +26,7 @@ export const Header = ({
 				onPress={onPressRepeat}
 				disabled={disabled}
 			/>
-			<IconButton
-				name="mic"
-				style={[styles.panelIconStyle, styles.micIconStyle]}
-				onPress={onPressStart}
-				disabled={disabled}
-			/>
+			{actionButton}
 			<IconButton
 				name="skip"
 				style={styles.panelIconStyle}

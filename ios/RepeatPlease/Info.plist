@@ -66,6 +66,10 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
+	<string/>
+	<key>NSMicrophoneUsageDescription</key>
+	<string></string>
+	<key>NSSpeechRecognitionUsageDescription</key>
 	<string></string>
 	<key>UIAppFonts</key>
 	<array>

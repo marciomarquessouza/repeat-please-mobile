@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, ViewStyle } from 'react-native';
 import { styles } from './styles';
 import { starsDescription } from '../../utils/starsDescription';
-import { Stars } from '../';
+import { Stars } from '../Stars';
 
 interface IIPACardProps {
 	stars: number;
