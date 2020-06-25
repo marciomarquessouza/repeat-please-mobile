@@ -23,9 +23,9 @@ export class SpeechToText extends Component<
 > {
 	constructor(props: ISpeechtoTextProps) {
 		super(props);
-		Voice.onSpeechStart = this.onSpeechStart;
-		Voice.onSpeechEnd = this.onSpeechEnd;
-		Voice.onSpeechError = this.onSpeechError;
+		Voice.onSpeechStart = () => this.setState({ status: 'started' });
+		Voice.onSpeechEnd = () => this.setState({ status: 'finished' });
+		Voice.onSpeechError = () => this.setState({ status: 'error' });
 		Voice.onSpeechResults = this.onSpeechResults;
 		Voice.onSpeechPartialResults = this.onSpeechPartialResults;
 		Voice.onSpeechVolumeChanged = this.onSpeechVolumeChange;
@@ -41,18 +41,6 @@ export class SpeechToText extends Component<
 	componentWillUnmount() {
 		Voice.destroy().then(Voice.removeAllListeners);
 	}
-
-	onSpeechStart = () => {
-		this.setState({ status: 'started' });
-	};
-
-	onSpeechEnd = () => {
-		this.setState({ status: 'finished' });
-	};
-
-	onSpeechError = () => {
-		this.setState({ status: 'error' });
-	};
 
 	onSpeechResults = (e: any) => {
 		this.setState({ results: e.value });
