@@ -1,10 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { View, Animated, Dimensions, ScrollView } from 'react-native';
-import {
-	CountdownTimer,
-	ICountdownTimerRef,
-	SpeechToText,
-} from '../../components';
+import useSpeech from '../../hooks/useSpeech';
+import { CountdownTimer, ICountdownTimerRef } from '../../components';
 import { Header, ArcTimer } from './components';
 import { styles, TIMER_CIRCLE } from './styles';
 import { timingAnimation } from '../../utils/animations';
@@ -34,7 +31,7 @@ const TIMER_ARC_SPEED = 3e4;
 export const Challenge = () => {
 	const [timerArc] = useState(new Animated.Value(0));
 	const [status, setStatus] = useState<StatusType>('countdown');
-	const [result, setResult] = useState<string>('');
+	const [speechResults, startRecognizing] = useSpeech();
 	const timerRef = useRef<ICountdownTimerRef>(null);
 
 	const startTimerAnimation = useCallback(() => {
@@ -59,7 +56,7 @@ export const Challenge = () => {
 			<View style={styles.container}>
 				<Header
 					onPressRepeat={() => setStatus('speaking')}
-					actionButton={<SpeechToText onResult={setResult} />}
+					onPressStart={() => startRecognizing()}
 					onPressSkip={() => undefined}
 				/>
 				<View style={styles.timeArcContainer}>
@@ -73,7 +70,7 @@ export const Challenge = () => {
 				<View style={styles.timerContainer}>
 					<CountdownTimer style={styles.timerTextStyle} ref={timerRef} />
 				</View>
-				<StatusResult {...{ status, setStatus, result }} />
+				<StatusResult {...{ status, setStatus, result: speechResults }} />
 			</View>
 		</ScrollView>
 	);
