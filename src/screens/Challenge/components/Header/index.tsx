@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { IconButton } from '../../../../components';
+import { MicIcon } from './SVG/MicIcon';
 import { styles } from '../../styles';
 
 interface IHeaderProps {
@@ -8,6 +9,7 @@ interface IHeaderProps {
 	onPressStart: () => void;
 	onPressSkip: () => void;
 	disabled?: boolean;
+	highlight?: boolean;
 }
 
 export const Header = ({
@@ -15,6 +17,7 @@ export const Header = ({
 	onPressStart,
 	onPressSkip,
 	disabled,
+	highlight = false,
 }: IHeaderProps) => (
 	<View style={styles.arcContainer}>
 		<Text style={styles.repeatWordStyle}>TASK</Text>
@@ -26,12 +29,11 @@ export const Header = ({
 				onPress={onPressRepeat}
 				disabled={disabled}
 			/>
-			<IconButton
-				name="mic"
+			<TouchableOpacity
 				style={[styles.panelIconStyle, styles.micIconStyle]}
-				onPress={onPressStart}
-				disabled={disabled}
-			/>
+				onPress={onPressStart}>
+				<MicIcon color={highlight ? '#FF5733' : '#000'} />
+			</TouchableOpacity>
 			<IconButton
 				name="skip"
 				style={styles.panelIconStyle}

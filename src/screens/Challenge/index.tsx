@@ -43,6 +43,7 @@ export const Challenge = () => {
 					onPressRepeat={speechText}
 					onPressStart={voiceRecognizing}
 					onPressSkip={() => undefined}
+					highlight={status === 'waiting'}
 				/>
 				<View style={styles.timeArcContainer}>
 					<ArcTimer
@@ -69,7 +70,11 @@ export const Challenge = () => {
 							<ChimpAudioWaves label="Listening..." />
 						</View>
 					)}
-					{status === 'waiting' && <Text>Click on Mic Icon Brother</Text>}
+					{status === 'waiting' && (
+						<Text style={styles.waitingStyle}>
+							Click on Mic icon and repeat the word
+						</Text>
+					)}
 					{status === 'result' && <Text>{result}</Text>}
 				</View>
 			</View>

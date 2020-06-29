@@ -93,8 +93,10 @@ export const styles = StyleSheet.create({
 	listeningContainer: {
 		marginVertical: 15,
 	},
-	awaitingStyle: {
+	waitingStyle: {
 		fontFamily: font.title,
 		fontSize: 24,
+		textAlign: 'center',
+		marginHorizontal: 30,
 	},
 });
