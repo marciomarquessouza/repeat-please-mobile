@@ -20,9 +20,9 @@ export const useChallenge = (text: string): IUseChallenge => {
 		TextToSpeech.tts.stop().then(() => TextToSpeech.tts.speak(text));
 	};
 
-	const onSpeechResults = useCallback(async (text: string) => {
+	const onSpeechResults = useCallback(async (speechResult: string) => {
 		await SpeechToText.stopRecognizing();
-		setResult(text);
+		setResult(speechResult);
 		setStatus('result');
 	}, []);
 
