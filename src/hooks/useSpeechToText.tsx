@@ -15,14 +15,13 @@ export interface ISpeechtoTextProps {
 	onResult: (result: string) => void;
 }
 
-export default (): [string, () => Promise<void>, string, string] => {
+export default (): [string, () => Promise<void>, StatusType, string] => {
 	const [speechStatus, setStatus] = useState<StatusType>('waiting');
 	const [speechResults, setResults] = useState<string>('');
 	const [pitch, setPitch] = useState<string>('');
 
 	const onSpeechResults = useCallback((e: any) => {
 		setResults(e.value.join(' '));
-		stopRecognizing();
 	}, []);
 
 	const startRecognizing = async () => {
@@ -36,14 +35,6 @@ export default (): [string, () => Promise<void>, string, string] => {
 			await Voice.getSpeechRecognitionServices();
 		} catch (error) {
 			console.error('Error on voice start', error);
-		}
-	};
-
-	const stopRecognizing = async () => {
-		try {
-			await Voice.stop();
-		} catch (error) {
-			console.error('Error on voice stop', error);
 		}
 	};
 

@@ -1,20 +1,11 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { View, Animated, Dimensions, ScrollView } from 'react-native';
-import useSpeech from '../../hooks/useSpeech';
+import React, { useState, useRef } from 'react';
+import { View, Animated, Dimensions, ScrollView, Text } from 'react-native';
+import { useChallenge } from '../../hooks/useChallenge';
 import { CountdownTimer, ICountdownTimerRef } from '../../components';
 import { Header, ArcTimer } from './components';
 import { styles, TIMER_CIRCLE } from './styles';
 import { timingAnimation } from '../../utils/animations';
-import { StatusResult } from './components';
-
-export type StatusType =
-	| 'countdown'
-	| 'initializing'
-	| 'started'
-	| 'listening'
-	| 'awaiting'
-	| 'speaking'
-	| 'result';
+import { ChimpAudioWaves, InitialCountdown } from '../../components';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 const HALF_SCREEN = SCREEN_WIDTH / 2;
@@ -30,33 +21,27 @@ const TIMER_ARC_SPEED = 3e4;
 
 export const Challenge = () => {
 	const [timerArc] = useState(new Animated.Value(0));
-	const [status, setStatus] = useState<StatusType>('countdown');
-	const [speechResults, startRecognizing] = useSpeech();
+	const { status, result, speechText, voiceRecognizing } = useChallenge('TASK');
 	const timerRef = useRef<ICountdownTimerRef>(null);
 
-	const startTimerAnimation = useCallback(() => {
+	const challengeInit = async () => {
+		await speechText();
 		timerArc.setValue(0);
 		timerRef.current?.startTimer(TIMER_ARC_SPEED / 1e3);
 		timingAnimation(timerArc, 1, TIMER_ARC_SPEED + 1e3).start();
-	}, [timerArc]);
+	};
 
 	const arcDegree = timerArc.interpolate({
 		inputRange: [0, 1],
 		outputRange: [`${ANGLE_START}deg`, `${ANGLE_END}deg`],
 	});
 
-	useEffect(() => {
-		if (status === 'started') {
-			startTimerAnimation();
-		}
-	}, [status, startTimerAnimation]);
-
 	return (
 		<ScrollView contentContainerStyle={{ flexGrow: 1 }}>
 			<View style={styles.container}>
 				<Header
-					onPressRepeat={() => setStatus('speaking')}
-					onPressStart={() => startRecognizing()}
+					onPressRepeat={speechText}
+					onPressStart={voiceRecognizing}
 					onPressSkip={() => undefined}
 				/>
 				<View style={styles.timeArcContainer}>
@@ -70,7 +55,23 @@ export const Challenge = () => {
 				<View style={styles.timerContainer}>
 					<CountdownTimer style={styles.timerTextStyle} ref={timerRef} />
 				</View>
-				<StatusResult {...{ status, setStatus, result: speechResults }} />
+				<View style={styles.resultContainer}>
+					{status === 'countdown' && (
+						<InitialCountdown hasFinished={challengeInit} />
+					)}
+					{status === 'speaking' && (
+						<View style={styles.listeningContainer}>
+							<ChimpAudioWaves label="Speaking..." type="speaking" />
+						</View>
+					)}
+					{status === 'listening' && (
+						<View style={styles.listeningContainer}>
+							<ChimpAudioWaves label="Listening..." />
+						</View>
+					)}
+					{status === 'waiting' && <Text>Click on Mic Icon Brother</Text>}
+					{status === 'result' && <Text>{result}</Text>}
+				</View>
 			</View>
 		</ScrollView>
 	);

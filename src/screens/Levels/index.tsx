@@ -7,7 +7,6 @@ import {
 	Image,
 	View,
 } from 'react-native';
-import { audio } from '../../../assets/images';
 import { IPAType } from '../../types';
 import { NavigationStackProp } from 'react-navigation-stack';
 import { IPACard, LevelChoice } from '../../components';
@@ -16,7 +15,7 @@ import { CHALLENGE } from '../../navigator/routes';
 import { levels } from './levels';
 import { LevelNameType } from '../../types';
 import { styles } from './styles';
-import { TextToSpeech } from '../../components';
+import useTextToSpeech from '../../hooks/useTextToSpeech';
 
 interface ILevelsProps {
 	navigation: NavigationStackProp;
@@ -25,6 +24,7 @@ interface ILevelsProps {
 export const Levels = ({ navigation }: ILevelsProps) => {
 	const { symbol, type, examples }: IPAType = navigation.getParam('IPA');
 	const [selected, setSelected] = useState<LevelNameType>('Chimp');
+	const [readText, statusTTS] = useTextToSpeech(examples.join(' '));
 
 	return (
 		<ScrollView style={styles.container}>
@@ -33,11 +33,8 @@ export const Levels = ({ navigation }: ILevelsProps) => {
 					IPASymbol={symbol}
 					stars={2}
 					type={type}
-					bottom={
-						<TextToSpeech text={examples.join(' ')}>
-							<Image source={audio} />
-						</TextToSpeech>
-					}
+					onAudioPressed={readText}
+					loading={statusTTS === 'loading'}
 				/>
 				<Text style={styles.levelTitleStyle}>Select a Level</Text>
 				<View style={styles.levelChoiceContainer}>

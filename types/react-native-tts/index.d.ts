@@ -39,6 +39,6 @@ declare module 'react-native-tts' {
 	): any;
 	export function removeEventListener(
 		type: string,
-		handler: (...args: any[]) => any,
+		handler?: (...args: any[]) => any,
 	): void;
 }

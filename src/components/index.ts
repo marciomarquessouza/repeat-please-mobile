@@ -14,4 +14,3 @@ export * from './Stars';
 export * from './Waves';
 export * from './ChimpAudioWaves';
 export * from './InitialCountdown';
-export * from './TextToSpeech';
