@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import TextToSpeech from '../api/textToSpeech';
-import Voice from '@react-native-community/voice';
+import SpeechToText from '../api/speechToText';
 
 type StatusType = 'countdown' | 'speaking' | 'waiting' | 'listening' | 'result';
 
@@ -10,43 +10,28 @@ interface IUseChallenge {
 	speechText: () => Promise<void>;
 	voiceRecognizing: () => Promise<void>;
 	stopRecognizing: () => Promise<void>;
-	error: string;
 }
 
 export const useChallenge = (text: string): IUseChallenge => {
 	const [status, setStatus] = useState<StatusType>('countdown');
 	const [result, setResult] = useState<string>('');
-	const [error, setError] = useState<string>('');
 
 	const speechText = async () => {
 		TextToSpeech.tts.stop().then(() => TextToSpeech.tts.speak(text));
 	};
 
-	const onSpeechResults = useCallback(async (e: any) => {
-		await stopRecognizing();
-		setResult(e.value.join(' '));
+	const onSpeechResults = useCallback(async (text: string) => {
+		await SpeechToText.stopRecognizing();
+		setResult(text);
 		setStatus('result');
 	}, []);
 
 	const voiceRecognizing = async () => {
-		setStatus('waiting');
-		setResult('');
-
-		try {
-			await Voice.start('en-US');
-			await Voice.isRecognizing();
-			await Voice.getSpeechRecognitionServices();
-		} catch (errorMessage) {
-			setError(`Error on voice start: ${error}`);
-		}
+		await SpeechToText.startRecognizing();
 	};
 
 	const stopRecognizing = async () => {
-		try {
-			await Voice.stop();
-		} catch (errorMessage) {
-			setError(`Error on voice stop': ${errorMessage}`);
-		}
+		await SpeechToText.startRecognizing();
 	};
 
 	useEffect(() => {
@@ -60,11 +45,13 @@ export const useChallenge = (text: string): IUseChallenge => {
 	}, []);
 
 	useEffect(() => {
-		Voice.onSpeechStart = () => setStatus('listening');
-		Voice.onSpeechEnd = () => setStatus('waiting');
-		Voice.onSpeechResults = onSpeechResults;
+		SpeechToText.initSpeechToText({
+			startListener: () => setStatus('listening'),
+			finishListener: () => setStatus('waiting'),
+			resultListener: onSpeechResults,
+		});
 		return () => {
-			Voice.destroy().then(Voice.removeAllListeners);
+			SpeechToText.finishPeechToText();
 		};
 	}, [onSpeechResults]);
 
@@ -74,6 +61,5 @@ export const useChallenge = (text: string): IUseChallenge => {
 		speechText,
 		voiceRecognizing,
 		stopRecognizing,
-		error,
 	};
 };
