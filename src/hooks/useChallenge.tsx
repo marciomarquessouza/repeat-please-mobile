@@ -21,9 +21,8 @@ export const useChallenge = (text: string): IUseChallenge => {
 	};
 
 	const onSpeechResults = useCallback(async (speechResult: string) => {
-		await SpeechToText.stopRecognizing();
 		setResult(speechResult);
-		setStatus('result');
+		await SpeechToText.stopRecognizing();
 	}, []);
 
 	const voiceRecognizing = async () => {
@@ -47,11 +46,11 @@ export const useChallenge = (text: string): IUseChallenge => {
 	useEffect(() => {
 		SpeechToText.initSpeechToText({
 			startListener: () => setStatus('listening'),
-			finishListener: () => setStatus('waiting'),
+			finishListener: () => setStatus('result'),
 			resultListener: onSpeechResults,
 		});
 		return () => {
-			SpeechToText.finishPeechToText();
+			SpeechToText.finishSpeechToText();
 		};
 	}, [onSpeechResults]);
 

@@ -1,11 +1,15 @@
 import React, { useState, useRef } from 'react';
 import { View, Animated, Dimensions, ScrollView, Text } from 'react-native';
 import { useChallenge } from '../../hooks/useChallenge';
-import { CountdownTimer, ICountdownTimerRef } from '../../components';
-import { Header, ArcTimer } from './components';
+import {
+	Timer,
+	ITimerRef,
+	ChimpAudioWaves,
+	InitialCountdown,
+} from '../../components';
+import { Header, ArcTimer, SpeechResult } from './components';
 import { styles, TIMER_CIRCLE } from './styles';
 import { timingAnimation } from '../../utils/animations';
-import { ChimpAudioWaves, InitialCountdown } from '../../components';
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 const HALF_SCREEN = SCREEN_WIDTH / 2;
@@ -22,7 +26,7 @@ const TIMER_ARC_SPEED = 3e4;
 export const Challenge = () => {
 	const [timerArc] = useState(new Animated.Value(0));
 	const { status, result, speechText, voiceRecognizing } = useChallenge('TASK');
-	const timerRef = useRef<ICountdownTimerRef>(null);
+	const timerRef = useRef<ITimerRef>(null);
 
 	const challengeInit = async () => {
 		await speechText();
@@ -54,7 +58,7 @@ export const Challenge = () => {
 					/>
 				</View>
 				<View style={styles.timerContainer}>
-					<CountdownTimer style={styles.timerTextStyle} ref={timerRef} />
+					<Timer style={styles.timerTextStyle} ref={timerRef} />
 				</View>
 				<View style={styles.resultContainer}>
 					{status === 'countdown' && (
@@ -75,7 +79,7 @@ export const Challenge = () => {
 							Click on Mic icon and repeat the word
 						</Text>
 					)}
-					{status === 'result' && <Text>{result}</Text>}
+					{status === 'result' && <SpeechResult result={result} score={3} />}
 				</View>
 			</View>
 		</ScrollView>

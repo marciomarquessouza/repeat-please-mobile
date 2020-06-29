@@ -25,7 +25,7 @@ const initSpeechToText = ({
 	Voice.onSpeechResults = (e: any) => resultListener(e.value.join(' '));
 };
 
-const finishPeechToText = () => {
+const finishSpeechToText = () => {
 	Voice.destroy().then(Voice.removeAllListeners);
 };
 
@@ -41,7 +41,7 @@ const startRecognizing = async (language = 'en-US') => {
 
 export default {
 	initSpeechToText,
-	finishPeechToText,
+	finishSpeechToText,
 	startRecognizing,
 	stopRecognizing: async () => await Voice.stop(),
 };

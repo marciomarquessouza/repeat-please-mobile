@@ -9,7 +9,7 @@ export * from './Name';
 export * from './Password';
 export * from './IPACard';
 export * from './LevelChoice';
-export * from './CountdownTimer';
+export * from './Timer';
 export * from './Stars';
 export * from './Waves';
 export * from './ChimpAudioWaves';

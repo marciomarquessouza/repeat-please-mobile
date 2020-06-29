@@ -8,7 +8,6 @@ import email from './email.png';
 import kingKong from './king_kong.png';
 import lock from './lock.png';
 import mailMonkey from './mail_monkey.png';
-import mic from './mic-icon.png';
 import monkeyCloseEyes from './monkey_close_eyes.png';
 import monkeyKing from './monkey_king.png';
 import monkeyOpenEyes from './monkey_open_eyes.png';
@@ -22,6 +21,9 @@ import submit from './submit.png';
 import countdown3 from './countdown3.png';
 import countdown2 from './countdown2.png';
 import countdown1 from './countdown1.png';
+import monkeyTryAgain from './monkey-try-again.png';
+import monkeyAlmost from './monkey-almost.png';
+import monkeyPerfect from './monkey-perfect.png';
 
 export {
 	audio,
@@ -34,7 +36,6 @@ export {
 	kingKong,
 	lock,
 	mailMonkey,
-	mic,
 	monkeyCloseEyes,
 	monkeyKing,
 	monkeyOpenEyes,
@@ -48,6 +49,9 @@ export {
 	countdown3,
 	countdown2,
 	countdown1,
+	monkeyTryAgain,
+	monkeyAlmost,
+	monkeyPerfect,
 };
 
 export type IconNameType =
@@ -59,7 +63,6 @@ export type IconNameType =
 	| 'kingKong'
 	| 'lock'
 	| 'mailMonkey'
-	| 'mic'
 	| 'monkeyCloseEyes'
 	| 'monkeyKing'
 	| 'monkeyOpenEyes'
