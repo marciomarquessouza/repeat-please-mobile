@@ -33,7 +33,7 @@ export const SpeechResult = ({ result, score }: ISpeechResultPros) => {
 	return (
 		<View style={styles.container}>
 			<Text style={styles.titleStyle}>RESULT</Text>
-			<Text style={styles.resultStyle}>{result?.toUpperCase()}</Text>
+			<Text style={styles.resultStyle}>{result.toUpperCase()}</Text>
 			<Image style={styles.monkeyFaceStyle} source={monkeyFace} />
 			<Text style={styles.scoreStyle}>{scoreText}</Text>
 		</View>
