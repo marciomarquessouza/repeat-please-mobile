@@ -1,12 +1,24 @@
 import { useState, useEffect, useCallback } from 'react';
 import TextToSpeech from '../api/textToSpeech';
 import SpeechToText from '../api/speechToText';
+import { compareString, stringsDifference } from '../utils/compareStrings';
 
-type StatusType = 'countdown' | 'speaking' | 'waiting' | 'listening' | 'result';
+export type StatusType =
+	| 'countdown'
+	| 'speaking'
+	| 'waiting'
+	| 'listening'
+	| 'result';
+
+export type ResultType = {
+	text: string;
+	score: number;
+	difference: { str: string; matches: boolean }[];
+};
 
 interface IUseChallenge {
 	status: StatusType;
-	result: string;
+	result: ResultType;
 	speechText: () => Promise<void>;
 	voiceRecognizing: () => Promise<void>;
 	stopRecognizing: () => Promise<void>;
@@ -14,16 +26,27 @@ interface IUseChallenge {
 
 export const useChallenge = (text: string): IUseChallenge => {
 	const [status, setStatus] = useState<StatusType>('countdown');
-	const [result, setResult] = useState<string>('');
+	const [result, setResult] = useState<ResultType>({
+		text: '',
+		score: 0,
+		difference: [],
+	});
 
 	const speechText = async () => {
 		TextToSpeech.tts.stop().then(() => TextToSpeech.tts.speak(text));
 	};
 
-	const onSpeechResults = useCallback(async (speechResult: string) => {
-		setResult(speechResult);
-		await SpeechToText.stopRecognizing();
-	}, []);
+	const onSpeechResults = useCallback(
+		async (speechResult: string) => {
+			setResult({
+				text: speechResult.toUpperCase(),
+				score: compareString(speechResult, text),
+				difference: stringsDifference(speechResult, text),
+			});
+			await SpeechToText.stopRecognizing();
+		},
+		[text],
+	);
 
 	const voiceRecognizing = async () => {
 		await SpeechToText.startRecognizing();

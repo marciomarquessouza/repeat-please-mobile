@@ -79,7 +79,7 @@ export const Challenge = () => {
 							Click on Mic icon and repeat the word
 						</Text>
 					)}
-					{status === 'result' && <SpeechResult result={result} score={3} />}
+					{status === 'result' && <SpeechResult result={result} />}
 				</View>
 			</View>
 		</ScrollView>

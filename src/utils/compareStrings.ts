@@ -30,13 +30,16 @@ export const compareString = (str1: string, str2: string) => {
 
 export const stringsDifference = (strToCheck: string, reference: string) => {
 	const matchStrs: { str: string; matches: boolean }[] = [];
-	strToCheck.split('').reduce((strsReference, str) => {
-		const index = strsReference.indexOf(str);
-		matchStrs.push({
-			str: index >= 0 ? strsReference.splice(index, 1).join('') : str,
-			matches: index >= 0,
-		});
-		return strsReference;
-	}, reference.split(''));
+	strToCheck
+		.toUpperCase()
+		.split('')
+		.reduce((strsReference, str) => {
+			const index = strsReference.indexOf(str);
+			matchStrs.push({
+				str: index >= 0 ? strsReference.splice(index, 1).join('') : str,
+				matches: index >= 0,
+			});
+			return strsReference;
+		}, reference.toUpperCase().split(''));
 	return matchStrs;
 };

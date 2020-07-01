@@ -10,6 +10,9 @@ export const styles = StyleSheet.create({
 		fontSize: 15,
 		lineHeight: 33,
 	},
+	resultContainer: {
+		flexDirection: 'row',
+	},
 	resultStyle: {
 		fontFamily: font.primary,
 		fontSize: 30,
