@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Animated, TouchableWithoutFeedback } from 'react-native';
+import { Animated } from 'react-native';
 import { styles } from './styles';
 import { springAnimation, timingAnimation } from '../../utils/animations';
 
 interface ICheckButtonProps {
 	color?: string;
-	onPress?: () => void;
 	isChecked: boolean;
 }
 
@@ -14,7 +13,6 @@ const BOX_SCALE = 0.6;
 
 export const CheckButton = ({
 	color = '#000',
-	onPress,
 	isChecked = false,
 }: ICheckButtonProps) => {
 	const [line1Animation] = useState(new Animated.Value(0));
@@ -32,7 +30,7 @@ export const CheckButton = ({
 	})();
 
 	return (
-		<TouchableWithoutFeedback onPress={onPress}>
+		<>
 			<Animated.View
 				style={[
 					styles.container,
@@ -54,6 +52,6 @@ export const CheckButton = ({
 					]}
 				/>
 			</Animated.View>
-		</TouchableWithoutFeedback>
+		</>
 	);
 };
