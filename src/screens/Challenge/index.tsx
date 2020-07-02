@@ -20,11 +20,11 @@ const TIMER_ARC_SPEED = 3e4;
 
 export const Challenge = () => {
 	const [timerArc] = useState(new Animated.Value(0));
-	const { status, result, speechText, voiceRecognizing } = useChallenge('TASK');
+	const [challenge, dispatch] = useChallenge(['TASK', 'BIBLE']);
 	const timerRef = useRef<ITimerRef>(null);
 
 	const challengeInit = async () => {
-		await speechText();
+		dispatch({ type: 'speechText' });
 		timerArc.setValue(0);
 		timerRef.current?.startTimer();
 		timingAnimation(timerArc, 1, TIMER_ARC_SPEED + 1e3).start();
@@ -39,10 +39,10 @@ export const Challenge = () => {
 		<ScrollView contentContainerStyle={{ flexGrow: 1 }}>
 			<View style={styles.container}>
 				<Header
-					onPressRepeat={speechText}
-					onPressStart={voiceRecognizing}
+					onPressRepeat={() => dispatch({ type: 'speechText' })}
+					onPressStart={() => dispatch({ type: 'voiceRecognizing' })}
 					onPressSkip={() => undefined}
-					highlight={status === 'waiting'}
+					highlight={challenge.status === 'waiting'}
 				/>
 				<ArcTimer
 					rotate={arcDegree}
@@ -58,7 +58,11 @@ export const Challenge = () => {
 					/>
 				</View>
 				<ChallengeStatusResult
-					{...{ status, onCountdownFinish: challengeInit, result }}
+					{...{
+						status: challenge.status,
+						onCountdownFinish: challengeInit,
+						result: challenge.result,
+					}}
 				/>
 			</View>
 		</ScrollView>

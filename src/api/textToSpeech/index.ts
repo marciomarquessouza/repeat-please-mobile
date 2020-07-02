@@ -2,15 +2,15 @@ import Tts from 'react-native-tts';
 
 interface IInitTextProps {
 	language?: string;
-	startListener: () => void;
-	finishListener: () => void;
+	startListener?: () => void;
+	finishListener?: () => void;
 	cancelListener?: () => void;
 }
 
 const initTextToSpeech = async ({
 	language = 'en-US',
-	startListener,
-	finishListener,
+	startListener = () => undefined,
+	finishListener = () => undefined,
 	cancelListener = () => undefined,
 }: IInitTextProps) => {
 	Tts.addEventListener('tts-start', startListener);

@@ -1,8 +1,8 @@
 import Voice from '@react-native-community/voice';
 
 interface ISpeechToText {
-	startListener: () => void;
-	finishListener: () => void;
+	startListener?: () => void;
+	finishListener?: () => void;
 	errorListener?: () => void;
 	partialListener?: (text: string) => void;
 	pitchListener?: (value: any) => void;
@@ -10,8 +10,8 @@ interface ISpeechToText {
 }
 
 const initSpeechToText = ({
-	startListener,
-	finishListener,
+	startListener = () => undefined,
+	finishListener = () => undefined,
 	errorListener = () => undefined,
 	partialListener = () => undefined,
 	pitchListener = () => undefined,
