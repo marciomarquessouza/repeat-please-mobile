@@ -1,13 +1,8 @@
 import React, { useState, useRef } from 'react';
-import { View, Animated, Dimensions, ScrollView, Text } from 'react-native';
+import { View, Animated, Dimensions, ScrollView } from 'react-native';
 import { useChallenge } from '../../hooks/useChallenge';
-import {
-	Timer,
-	ITimerRef,
-	ChimpAudioWaves,
-	InitialCountdown,
-} from '../../components';
-import { Header, ArcTimer, SpeechResult } from './components';
+import { Timer, ITimerRef } from '../../components';
+import { Header, ArcTimer, ChallengeStatusResult } from './components';
 import { styles, TIMER_CIRCLE } from './styles';
 import { timingAnimation } from '../../utils/animations';
 
@@ -31,7 +26,7 @@ export const Challenge = () => {
 	const challengeInit = async () => {
 		await speechText();
 		timerArc.setValue(0);
-		timerRef.current?.startTimer(TIMER_ARC_SPEED / 1e3);
+		timerRef.current?.startTimer();
 		timingAnimation(timerArc, 1, TIMER_ARC_SPEED + 1e3).start();
 	};
 
@@ -49,38 +44,22 @@ export const Challenge = () => {
 					onPressSkip={() => undefined}
 					highlight={status === 'waiting'}
 				/>
-				<View style={styles.timeArcContainer}>
-					<ArcTimer
-						rotate={arcDegree}
-						translateX={TIMER_POINTER_X}
-						translateY={TIMER_POINTER_Y - 6}
-						position={ARC_POSITION}
+				<ArcTimer
+					rotate={arcDegree}
+					translateX={TIMER_POINTER_X}
+					translateY={TIMER_POINTER_Y - 6}
+					position={ARC_POSITION}
+				/>
+				<View style={styles.timerContainer}>
+					<Timer
+						initialTime={TIMER_ARC_SPEED / 1e3}
+						style={styles.timerTextStyle}
+						ref={timerRef}
 					/>
 				</View>
-				<View style={styles.timerContainer}>
-					<Timer style={styles.timerTextStyle} ref={timerRef} />
-				</View>
-				<View style={styles.resultContainer}>
-					{status === 'countdown' && (
-						<InitialCountdown hasFinished={challengeInit} />
-					)}
-					{status === 'speaking' && (
-						<View style={styles.listeningContainer}>
-							<ChimpAudioWaves label="Speaking..." type="speaking" />
-						</View>
-					)}
-					{status === 'listening' && (
-						<View style={styles.listeningContainer}>
-							<ChimpAudioWaves label="Listening..." />
-						</View>
-					)}
-					{status === 'waiting' && (
-						<Text style={styles.waitingStyle}>
-							Click on Mic icon and repeat the word
-						</Text>
-					)}
-					{status === 'result' && <SpeechResult result={result} />}
-				</View>
+				<ChallengeStatusResult
+					{...{ status, onCountdownFinish: challengeInit, result }}
+				/>
 			</View>
 		</ScrollView>
 	);

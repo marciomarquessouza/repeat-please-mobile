@@ -8,28 +8,31 @@ import { Text, TextStyle, StyleProp } from 'react-native';
 
 interface ITimerProps {
 	style?: StyleProp<TextStyle>;
+	initialTime: number;
 }
 
 export interface ITimerRef {
-	startTimer: (seconds: number) => void;
+	startTimer: () => void;
 }
 
-export const Timer = forwardRef(({ style }: ITimerProps, ref: any) => {
-	const [timeLeft, setTimeLeft] = useState(0);
+export const Timer = forwardRef(
+	({ style, initialTime }: ITimerProps, ref: any) => {
+		const [timeLeft, setTimeLeft] = useState(initialTime);
 
-	const startTimer = (seconds: number) => {
-		setTimeLeft(seconds);
-	};
+		const startTimer = () => {
+			setTimeLeft(initialTime - 1);
+		};
 
-	useImperativeHandle(ref, () => ({ startTimer }));
+		useImperativeHandle(ref, () => ({ startTimer }));
 
-	useEffect(() => {
-		if (!timeLeft) return;
-		const intervalId = setInterval(() => {
-			setTimeLeft(timeLeft - 1);
-		}, 1000);
-		return () => clearInterval(intervalId);
-	}, [timeLeft, setTimeLeft]);
+		useEffect(() => {
+			if (!timeLeft || timeLeft === initialTime) return;
+			const intervalId = setInterval(() => {
+				setTimeLeft(timeLeft - 1);
+			}, 1000);
+			return () => clearInterval(intervalId);
+		}, [timeLeft, setTimeLeft, initialTime]);
 
-	return timeLeft ? <Text style={style}>{`${timeLeft} sec.`}</Text> : null;
-});
+		return <Text style={style}>{`${timeLeft} sec.`}</Text>;
+	},
+);

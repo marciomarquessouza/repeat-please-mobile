@@ -15,18 +15,20 @@ export const ArcTimer = ({
 	rotate,
 	position,
 }: IArcTimerProps) => (
-	<Animated.View
-		style={[
-			styles.timerArcStyle,
-			{ transform: [{ translateY: position }, { rotate }] },
-		]}>
-		<View
+	<View style={styles.timeArcContainer}>
+		<Animated.View
 			style={[
-				styles.timerPointer,
-				{
-					transform: [{ translateX }, { translateY }],
-				},
-			]}
-		/>
-	</Animated.View>
+				styles.timerArcStyle,
+				{ transform: [{ translateY: position }, { rotate }] },
+			]}>
+			<View
+				style={[
+					styles.timerPointer,
+					{
+						transform: [{ translateX }, { translateY }],
+					},
+				]}
+			/>
+		</Animated.View>
+	</View>
 );

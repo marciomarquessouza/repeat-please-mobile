@@ -43,3 +43,15 @@ export const stringsDifference = (strToCheck: string, reference: string) => {
 		}, reference.toUpperCase().split(''));
 	return matchStrs;
 };
+
+export const hightScoreWord = (str: string, reference: string) =>
+	str
+		.toUpperCase()
+		.split(' ')
+		.reduce(
+			(highScore, word) => {
+				const score = compareString(word, reference);
+				return score >= highScore.score ? { word, score } : highScore;
+			},
+			{ word: '', score: 0 },
+		);

@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import TextToSpeech from '../api/textToSpeech';
 import SpeechToText from '../api/speechToText';
-import { compareString, stringsDifference } from '../utils/compareStrings';
+import { stringsDifference, hightScoreWord } from '../utils/compareStrings';
 
 export type StatusType =
 	| 'countdown'
@@ -38,10 +38,12 @@ export const useChallenge = (text: string): IUseChallenge => {
 
 	const onSpeechResults = useCallback(
 		async (speechResult: string) => {
+			// Android has more than one speech results.
+			const { word, score } = hightScoreWord(speechResult, text);
 			setResult({
-				text: speechResult.toUpperCase(),
-				score: compareString(speechResult, text),
-				difference: stringsDifference(speechResult, text),
+				text: word,
+				score,
+				difference: stringsDifference(word, text),
 			});
 			await SpeechToText.stopRecognizing();
 		},
