@@ -55,7 +55,7 @@ export const useChallenge = (text: string): IUseChallenge => {
 	};
 
 	const stopRecognizing = async () => {
-		await SpeechToText.startRecognizing();
+		await SpeechToText.stopRecognizing();
 	};
 
 	useEffect(() => {

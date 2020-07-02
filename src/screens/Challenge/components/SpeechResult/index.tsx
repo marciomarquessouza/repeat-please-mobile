@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, Text, Image } from 'react-native';
 import {
 	monkeyTryAgain,
@@ -10,9 +10,13 @@ import { styles } from './styles';
 
 interface ISpeechResultPros {
 	result: ResultType;
+	onTimerFinish?: () => void;
 }
 
-export const SpeechResult = ({ result }: ISpeechResultPros) => {
+export const SpeechResult = ({
+	result,
+	onTimerFinish = () => undefined,
+}: ISpeechResultPros) => {
 	let monkeyFace;
 	let scoreText;
 
@@ -26,6 +30,13 @@ export const SpeechResult = ({ result }: ISpeechResultPros) => {
 		monkeyFace = monkeyTryAgain;
 		scoreText = 'Try Again...';
 	}
+
+	useEffect(() => {
+		const timeoutID = setTimeout(() => {
+			onTimerFinish();
+		}, 3000);
+		return () => clearTimeout(timeoutID);
+	}, [onTimerFinish]);
 
 	return (
 		<View style={styles.container}>
