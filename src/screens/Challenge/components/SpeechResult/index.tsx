@@ -8,7 +8,7 @@ import {
 import { ResultType } from '../../../../hooks/useChallenge';
 import { styles } from './styles';
 
-interface ISpeechResultPros {
+interface ISpeechResultProps {
 	result: ResultType;
 	onTimerFinish?: () => void;
 }
@@ -16,7 +16,7 @@ interface ISpeechResultPros {
 export const SpeechResult = ({
 	result,
 	onTimerFinish = () => undefined,
-}: ISpeechResultPros) => {
+}: ISpeechResultProps) => {
 	let monkeyFace;
 	let scoreText;
 

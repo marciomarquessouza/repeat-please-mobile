@@ -46,7 +46,7 @@ export const Challenge = ({ navigation }: IChallengeProps) => {
 
 	const nextChallenge = () => {
 		const isLastChallenge = index === challenges.length - 1;
-		return isLastChallenge ? navigation.push(RESULT) : challengeInit(true);
+		isLastChallenge ? navigation.push(RESULT) : challengeInit(true);
 	};
 
 	const checkScore = () => {
@@ -75,6 +75,9 @@ export const Challenge = ({ navigation }: IChallengeProps) => {
 						initialTime={TIMER_ARC_SPEED / 1e3}
 						style={styles.timerTextStyle}
 						ref={timerRef}
+						onFinishTimer={() =>
+							dispatch({ type: 'setStatus', status: 'timeout' })
+						}
 					/>
 				</View>
 				<ChallengeStatusResult
@@ -82,6 +85,7 @@ export const Challenge = ({ navigation }: IChallengeProps) => {
 						status,
 						onCountdownFinish: challengeInit,
 						onResultFinish: checkScore,
+						onTimeoutFinish: nextChallenge,
 						result,
 					}}
 				/>

@@ -10,7 +10,7 @@ module.exports = {
 		],
 		'max-lines-per-function': [
 			'error',
-			{ max: 60, skipBlankLines: true, skipComments: true },
+			{ max: 65, skipBlankLines: true, skipComments: true },
 		],
 		'max-params': ['error', { max: 3 }],
 		'max-depth': ['error', { max: 2 }],

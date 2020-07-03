@@ -11,7 +11,7 @@ interface ITextToSpeechProps {
 	delay?: number;
 	onFinish?: () => void;
 }
-// eslint-disable-next-line max-lines-per-function
+
 export const TextToSpeech = ({
 	text,
 	children,

@@ -8,7 +8,8 @@ export type StatusType =
 	| 'speaking'
 	| 'waiting'
 	| 'listening'
-	| 'result';
+	| 'result'
+	| 'timeout';
 
 export type ResultType = {
 	text: string;
