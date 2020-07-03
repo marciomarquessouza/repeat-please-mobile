@@ -8,12 +8,14 @@ import { styles } from '../../styles';
 interface IChallengeResultProps {
 	status: StatusType;
 	onCountdownFinish: () => void;
+	onResultFinish: () => void;
 	result: ResultType;
 }
 
 export const ChallengeStatusResult = ({
 	status,
 	onCountdownFinish,
+	onResultFinish,
 	result,
 }: IChallengeResultProps) => (
 	<View style={styles.resultContainer}>
@@ -35,6 +37,8 @@ export const ChallengeStatusResult = ({
 				Click on Mic icon and repeat the word
 			</Text>
 		)}
-		{status === 'result' && <SpeechResult result={result} />}
+		{status === 'result' && (
+			<SpeechResult result={result} onTimerFinish={onResultFinish} />
+		)}
 	</View>
 );

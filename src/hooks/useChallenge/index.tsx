@@ -18,7 +18,7 @@ export type ResultType = {
 
 export type ChallengeAction =
 	| { type: 'setStatus'; status: StatusType }
-	| { type: 'speechText' }
+	| { type: 'speechText'; nextChallenge?: boolean }
 	| { type: 'voiceRecognizing' }
 	| { type: 'stopRecognizing' }
 	| { type: 'speechResult'; result: string }

@@ -2,9 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { IPAType } from '../../../types';
-import { Home } from '../../../screens/Home';
-import { Levels } from '../../../screens/Levels';
-import { Challenge } from '../../../screens/Challenge';
+import { Home, Levels, Challenge, Result } from '../../../screens';
 import { HeaderBackArrow } from '../../HeaderBackArrow';
 import { styles } from '../../styles';
 
@@ -51,5 +49,8 @@ export const HomeStack = createStackNavigator({
 				headerRight: () => <View style={styles.headerRightStyle} />,
 			};
 		},
+	},
+	Result: {
+		screen: Result,
 	},
 });

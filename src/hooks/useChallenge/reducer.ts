@@ -12,14 +12,16 @@ export const reducer = (
 		case 'setStatus':
 			return { ...challenge, status: action.status };
 		case 'speechText':
+			const challengeIndex =
+				action.nextChallenge && index < challenges.length ? index + 1 : index;
 			TextToSpeech.tts
 				.stop()
-				.then(() => TextToSpeech.tts.speak(challenges[index]));
-			return { ...challenge, status: 'speaking' };
+				.then(() => TextToSpeech.tts.speak(challenges[challengeIndex]));
+			return { ...challenge, status: 'speaking', index: challengeIndex };
 		case 'voiceRecognizing':
 			SpeechToText.startRecognizing();
 			return { ...challenge, status: 'listening' };
-		case 'voiceRecognizing':
+		case 'stopRecognizing':
 			SpeechToText.stopRecognizing();
 			return { ...challenge, status: 'waiting' };
 		case 'speechResult':
