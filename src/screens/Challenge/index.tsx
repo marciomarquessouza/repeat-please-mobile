@@ -45,11 +45,14 @@ export const Challenge = ({ navigation }: IChallengeProps) => {
 	});
 
 	const nextChallenge = () => {
-		if (result.score === 1) {
-			const isLastChallenge = index === challenges.length - 1;
-			return isLastChallenge ? navigation.push(RESULT) : challengeInit(true);
-		}
-		dispatch({ type: 'setStatus', status: 'waiting' });
+		const isLastChallenge = index === challenges.length - 1;
+		return isLastChallenge ? navigation.push(RESULT) : challengeInit(true);
+	};
+
+	const checkScore = () => {
+		result.score === 1
+			? nextChallenge()
+			: dispatch({ type: 'setStatus', status: 'waiting' });
 	};
 
 	return (
@@ -58,7 +61,7 @@ export const Challenge = ({ navigation }: IChallengeProps) => {
 				<Header
 					onPressRepeat={() => dispatch({ type: 'speechText' })}
 					onPressStart={() => dispatch({ type: 'voiceRecognizing' })}
-					onPressSkip={() => undefined}
+					onPressSkip={nextChallenge}
 					highlight={status === 'waiting'}
 				/>
 				<ArcTimer
@@ -78,7 +81,7 @@ export const Challenge = ({ navigation }: IChallengeProps) => {
 					{...{
 						status,
 						onCountdownFinish: challengeInit,
-						onResultFinish: nextChallenge,
+						onResultFinish: checkScore,
 						result,
 					}}
 				/>
