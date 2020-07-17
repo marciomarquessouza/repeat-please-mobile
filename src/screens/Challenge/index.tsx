@@ -24,12 +24,13 @@ const ANGLE_END = INTERSECTION_ANGLE + 45;
 const ARC_POSITION = -304;
 const TIMER_ARC_SPEED = 3e4;
 
+const challengeWords = ['BIBLE', 'LOVE'];
+
 export const Challenge = ({ navigation }: IChallengeProps) => {
 	const [timerArc] = useState(new Animated.Value(0));
-	const [{ status, result, index, challenges }, dispatch] = useChallenge([
-		'BIBLE',
-		'LOVE',
-	]);
+	const [{ status, result, index, challenges }, dispatch] = useChallenge(
+		challengeWords,
+	);
 	const timerRef = useRef<ITimerRef>(null);
 
 	const challengeInit = async (next = false) => {
