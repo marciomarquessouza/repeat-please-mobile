@@ -8,7 +8,7 @@ const initialState: IChallengeState = {
 		score: 0,
 		difference: [],
 	},
-	challenges: ['BIBLE', 'LOVE'],
+	challenges: ['WORM', 'LOVE'],
 	index: -1,
 	totalScore: 0,
 	error: '',
