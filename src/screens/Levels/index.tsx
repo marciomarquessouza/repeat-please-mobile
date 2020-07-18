@@ -7,13 +7,13 @@ import {
 	Image,
 	View,
 } from 'react-native';
-import { IPAType } from '../../types';
+import { IPAType } from '../../../types/ipa';
 import { NavigationStackProp } from 'react-navigation-stack';
 import { IPACard, LevelChoice } from '../../components';
 import { playButton } from '../../../assets/images';
 import { CHALLENGE } from '../../navigator/routes';
 import { levels } from './levels';
-import { LevelNameType } from '../../types';
+import { LevelNameType } from '../../../types/ipa';
 import { styles } from './styles';
 import useTextToSpeech from '../../hooks/useTextToSpeech';
 

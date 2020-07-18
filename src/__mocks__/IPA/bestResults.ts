@@ -1,4 +1,4 @@
-import { IPAType } from '../../types';
+import { IPAType } from '../../../types/ipa';
 
 export const bestResults: IPAType[] = [
 	{

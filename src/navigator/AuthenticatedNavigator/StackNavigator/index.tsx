@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
-import { IPAType } from '../../../types';
+import { IPAType } from '../../../../types/ipa';
 import { Home, Levels, Challenge, Result } from '../../../screens';
 import { HeaderBackArrow } from '../../HeaderBackArrow';
 import { styles } from '../../styles';

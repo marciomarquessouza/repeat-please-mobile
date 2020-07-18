@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, FlatList, View, TouchableOpacity } from 'react-native';
 import { IconsIPA } from 'repeat-please-styles';
-import { IPAType } from '../../types';
+import { IPAType } from '../../../types/ipa';
 import { styles } from './styles';
 
 export interface IIconsIPAProps {

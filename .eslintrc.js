@@ -3,7 +3,7 @@ module.exports = {
 	extends: ['@react-native-community', 'prettier'],
 	rules: {
 		'react-native/no-inline-styles': 0,
-		complexity: ['error', { max: 8 }],
+		complexity: ['error', { max: 10 }],
 		'max-lines': [
 			'error',
 			{ max: 100, skipBlankLines: true, skipComments: true },
