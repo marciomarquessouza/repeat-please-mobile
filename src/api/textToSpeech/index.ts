@@ -29,10 +29,10 @@ const initTextToSpeech = async ({
 		try {
 			await Tts.setDefaultLanguage(availableVoice[0].language);
 		} catch (error) {
-			console.error(`set language error ${error}`);
+			throw new Error(`set language error ${error}`);
 		}
 	} else {
-		console.error('Voice was not found');
+		throw new Error('Voice was not found');
 	}
 };
 
