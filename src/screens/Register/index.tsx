@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { RegisterForm } from './RegisterForm';
-import { createUserWithEmailPassword } from '../../data/services/user';
+import { createUserWithEmailPassword } from '../../services/userService';
 import { AlertsContext } from '../../contexts/AlertsContext';
 
 export const Register = (): JSX.Element => {

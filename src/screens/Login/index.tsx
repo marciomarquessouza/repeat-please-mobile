@@ -6,7 +6,7 @@ import { FORGOT_PASSWORD, REGISTER } from '../../navigator/routes';
 import { NavigationStackProp } from 'react-navigation-stack';
 import { AlertsContext } from '../../contexts/AlertsContext';
 import { emailIsValid } from '../../utils/validations';
-import { emailLogin } from '../../data/services/login';
+import { emailLogin } from '../../services/loginService';
 import { styles } from './style';
 import { ScrollView } from 'react-native-gesture-handler';
 

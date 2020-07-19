@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { Logo, PlaceholderInput, Title, TitleLogo } from 'repeat-please-styles';
 import { NavigationStackProp } from 'react-navigation-stack';
-import { passwordReset } from '../../data/services/login';
+import { passwordReset } from '../../services/loginService';
 import { submit } from '../../../assets/images';
 import { emailIsValid } from '../../utils/validations';
 import { AlertsContext } from '../../contexts/AlertsContext';
