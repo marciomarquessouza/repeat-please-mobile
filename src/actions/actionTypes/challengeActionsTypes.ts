@@ -1,4 +1,4 @@
-import { SpeechResultType } from '../../types/challenge';
+import { SpeechResultType } from '../../../types/challenge';
 
 export const START_CHALLENGE = 'challenge/start_challenge';
 

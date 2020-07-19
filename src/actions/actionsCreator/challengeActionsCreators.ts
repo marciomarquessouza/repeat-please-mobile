@@ -1,5 +1,5 @@
-import * as actions from './challengeActionsTypes';
-import { SpeechResultType } from '../../types/challenge';
+import * as actions from '../actionTypes/challengeActionsTypes';
+import { SpeechResultType } from '../../../types/challenge';
 
 export const startChalenge = (
 	index: number,

@@ -1,5 +1,5 @@
 import { IChallengeState } from '../../types/challenge';
-import * as actions from '../actions/challengeActionsTypes';
+import * as actions from '../actions/actionTypes/challengeActionsTypes';
 
 const initialState: IChallengeState = {
 	status: 'countdown',
