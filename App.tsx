@@ -6,10 +6,10 @@ import { firebaseConfig } from './config.homolog';
 import { AlertsProvider } from './src/contexts/AlertsContext';
 import { Provider } from 'react-redux';
 import { configureStore } from './src/store/configureStore';
-import { getUsers } from './src/services/userService';
+import 'firebase/firestore';
 
 firebase.initializeApp(firebaseConfig);
-// firebase.firestore().settings({ timestampsInSnapshots: true });
+firebase.firestore();
 const store = configureStore();
 
 export default class App extends Component {

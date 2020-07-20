@@ -1,12 +1,27 @@
-import { call, put, takeEvery, all, fork } from 'redux-saga/effects';
-import { getUsers } from '../services/userService';
+import { put, takeEvery, all, fork, take } from 'redux-saga/effects';
+import { eventChannel } from 'redux-saga';
+import * as firebase from 'firebase';
 import * as actions from '../actions/actionsCreator/userActionsCreator';
 import * as actionsTypes from '../actions/actionTypes/userActionsTypes';
+import { UserType } from '../../types/users';
+
+interface IDocument {
+	id: string;
+	data: () => UserType;
+}
 
 function* onLoadUsers() {
+	const ref = firebase.firestore().collection('users');
+	const channel = eventChannel(emit => ref.onSnapshot(emit));
 	try {
-		const users = yield call(getUsers);
-		yield put(actions.getUserSuccess(users));
+		while (true) {
+			const users: UserType[] = [];
+			const querySnapshot = yield take(channel);
+			querySnapshot.forEach((document: IDocument) => {
+				users.push({ ...document.data(), id: document.id });
+			});
+			yield put(actions.getUserSuccess(users));
+		}
 	} catch (error) {
 		yield put(actions.userError(error));
 	}
