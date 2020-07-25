@@ -1,46 +1,24 @@
-import React, { useEffect } from 'react';
-import {
-	StyleSheet,
-	View,
-	Text,
-	FlatList,
-	ActivityIndicator,
-	SafeAreaView,
-} from 'react-native';
+import React from 'react';
+import { StyleSheet, View, Text, SafeAreaView } from 'react-native';
 import { ButtonPrimary } from 'repeat-please-styles';
 import * as firebase from 'firebase';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { AppState } from '../../reducers/rootReducer';
-import { getUserRequest } from '../../actions/actionsCreator/userActionsCreator';
 
 export const Options = () => {
-	const { users, loading } = useSelector((state: AppState) => state.users);
-	const dispatch = useDispatch();
-
-	useEffect(() => {
-		dispatch(getUserRequest());
-	}, [dispatch]);
-
+	const { user } = useSelector((state: AppState) => state.user);
 	return (
 		<SafeAreaView style={styles.container}>
 			<Text>Options Screen</Text>
-			<View>
+			<View style={{ alignItems: 'center' }}>
+				<Text
+					style={{
+						marginBottom: 10,
+					}}>{`Hi ${user?.name} - (${user?.email})`}</Text>
 				<ButtonPrimary onPress={() => firebase.auth().signOut()}>
 					Log Out
 				</ButtonPrimary>
 			</View>
-
-			{loading ? (
-				<ActivityIndicator size="small" />
-			) : (
-				<FlatList
-					data={users}
-					keyExtractor={({ id }) => `${id}`}
-					renderItem={({ item, index }) => (
-						<Text key={index}>{`${item.name} - ${item.email}`}</Text>
-					)}
-				/>
-			)}
 		</SafeAreaView>
 	);
 };

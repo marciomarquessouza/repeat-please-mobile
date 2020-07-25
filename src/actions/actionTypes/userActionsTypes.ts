@@ -1,26 +1,27 @@
 import { UserType } from '../../../types/users';
 
-export const GET_USERS_REQUEST = 'user/get_user_request';
+export const GET_USER_REQUEST = 'user/get_user_request';
 
-export interface IGetUsersRequestAction {
-	readonly type: typeof GET_USERS_REQUEST;
+export interface IGetUserRequestAction {
+	readonly type: typeof GET_USER_REQUEST;
+	userId: string;
 }
 
 export const GET_USER_SUCCESS = 'user/get_user_success';
 
-export interface IGetUserSucessAction {
+export interface IGetUserSuccessAction {
 	readonly type: typeof GET_USER_SUCCESS;
-	users: UserType[];
+	user: UserType;
 }
 
-export const USER_ERROR = 'user/get_user_error';
+export const GET_USER_ERROR = 'user/get_user_error';
 
-export interface IUserErrorAction {
-	readonly type: typeof USER_ERROR;
+export interface IGetUserErrorAction {
+	readonly type: typeof GET_USER_ERROR;
 	error: string | Error;
 }
 
-export type UserAction =
-	| IGetUsersRequestAction
-	| IGetUserSucessAction
-	| IUserErrorAction;
+export type UserActions =
+	| IGetUserRequestAction
+	| IGetUserSuccessAction
+	| IGetUserErrorAction;

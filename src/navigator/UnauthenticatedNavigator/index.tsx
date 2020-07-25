@@ -2,8 +2,8 @@ import React from 'react';
 import { createStackNavigator } from 'react-navigation-stack';
 import { Slides } from '../../screens/Slides';
 import { Walkthrough } from '../../screens/Walkthrough';
-import { Login } from '../../screens/Login';
-import { Register } from '../../screens/Register';
+import { SignIn } from '../../screens/SignIn';
+import { SignUp } from '../../screens/SignUp';
 import { ForgotPassword } from '../../screens/ForgotPassword';
 import { HeaderBackArrow } from '../HeaderBackArrow';
 import { styles } from '../styles';
@@ -27,14 +27,14 @@ export const UnauthenticatedNavigator = createStackNavigator(
 			screen: Walkthrough,
 			navigationOptions: backArrow(),
 		},
-		Login: {
-			screen: Login,
+		SignIn: {
+			screen: SignIn,
 			navigationOptions: () => ({
 				headerShown: false,
 			}),
 		},
-		Register: {
-			screen: Register,
+		SignUp: {
+			screen: SignUp,
 			navigationOptions: backArrow(),
 		},
 		ForgotPassword: {

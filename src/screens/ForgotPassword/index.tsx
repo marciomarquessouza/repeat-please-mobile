@@ -10,10 +10,12 @@ import {
 } from 'react-native';
 import { Logo, PlaceholderInput, Title, TitleLogo } from 'repeat-please-styles';
 import { NavigationStackProp } from 'react-navigation-stack';
-import { passwordReset } from '../../services/loginService';
 import { submit } from '../../../assets/images';
 import { emailIsValid } from '../../utils/validations';
 import { AlertsContext } from '../../contexts/AlertsContext';
+import { useSelector, useDispatch } from 'react-redux';
+import * as actions from '../../actions/actionsCreator/signInActionsCreators';
+import { AppState } from '../../reducers/rootReducer';
 
 interface IForgotPasswordProp {
 	navigation: NavigationStackProp;
@@ -22,22 +24,14 @@ interface IForgotPasswordProp {
 export const ForgotPassword = ({ navigation }: IForgotPasswordProp) => {
 	const loginEmail = navigation.getParam('email');
 	const [email, setEmail] = useState(loginEmail || '');
-	const [isLoading, setIsLoading] = useState(false);
 	const { showAlert } = useContext(AlertsContext);
+	const { isLoading } = useSelector((state: AppState) => state.signIn);
+	const dispatch = useDispatch();
 
-	const onForgotSubmit = async (): Promise<void> => {
-		if (!emailIsValid(email)) {
-			return showAlert({ type: 'error', message: 'Invalid Email' });
-		}
-
-		try {
-			setIsLoading(true);
-			await passwordReset(email);
-			showAlert({ type: 'success', message: 'Success =]' });
-		} catch ({ message }) {
-			showAlert({ type: 'error', message });
-			setIsLoading(false);
-		}
+	const onForgotSubmit = () => {
+		return emailIsValid(email)
+			? dispatch(actions.forgotPasswordnRequest(email))
+			: showAlert({ type: 'error', message: 'Invalid Email' });
 	};
 
 	return (

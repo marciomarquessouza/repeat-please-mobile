@@ -3,7 +3,7 @@ import { View, ScrollView, SafeAreaView } from 'react-native';
 import { NavigationStackProp } from 'react-navigation-stack';
 import { ButtonRounded, Divider, Logo, TitleLogo } from 'repeat-please-styles';
 import { FacebookButton, GoogleButton } from '../../components';
-import { LOGIN, REGISTER } from '../../navigator/routes';
+import { SIGN_IN, SIGN_UP } from '../../navigator/routes';
 import { styles } from './style';
 
 export interface IWalkthroughProps {
@@ -19,13 +19,13 @@ export const Walkthrough = ({ navigation }: IWalkthroughProps): JSX.Element => (
 				<ButtonRounded
 					data-test="register"
 					style={styles.buttonStyle}
-					onPress={() => navigation.navigate(REGISTER)}>
+					onPress={() => navigation.navigate(SIGN_UP)}>
 					Register
 				</ButtonRounded>
 				<ButtonRounded
 					data-test="login"
 					style={styles.buttonStyle}
-					onPress={() => navigation.navigate(LOGIN)}>
+					onPress={() => navigation.navigate(SIGN_IN)}>
 					Login
 				</ButtonRounded>
 				<Divider text="OR" containerStyle={styles.dividerStyle} />

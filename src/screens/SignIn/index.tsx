@@ -6,34 +6,31 @@ import { FORGOT_PASSWORD, REGISTER } from '../../navigator/routes';
 import { NavigationStackProp } from 'react-navigation-stack';
 import { AlertsContext } from '../../contexts/AlertsContext';
 import { emailIsValid } from '../../utils/validations';
-import { emailLogin } from '../../services/loginService';
 import { styles } from './style';
 import { ScrollView } from 'react-native-gesture-handler';
+import { useSelector, useDispatch } from 'react-redux';
+import * as actions from '../../actions/actionsCreator/signInActionsCreators';
+import { AppState } from '../../reducers/rootReducer';
 
-interface ILoginProps {
+interface ISignInProps {
 	navigation: NavigationStackProp;
 }
 
-export const Login = ({ navigation }: ILoginProps): JSX.Element => {
+export const SignIn = ({ navigation }: ISignInProps) => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
-	const [isLoading, setIsLoading] = useState(false);
+	const { isLoading } = useSelector((state: AppState) => state.signIn);
+	const dispatch = useDispatch();
 	const { showAlert } = useContext(AlertsContext);
 
-	const onSubmitEmail = (): boolean => {
+	const onEmailSubmit = (): boolean => {
 		if (emailIsValid(email)) return true;
 		showAlert({ type: 'error', message: 'Invalid Email' });
 		return false;
 	};
 
 	const onSubmitPassword = async () => {
-		setIsLoading(true);
-		try {
-			await emailLogin(email, password);
-		} catch (error) {
-			showAlert({ type: 'error', message: error.message });
-			setIsLoading(false);
-		}
+		dispatch(actions.signInRequest(email, password));
 	};
 
 	const onForgotPasswordPress = (): void => {
@@ -49,7 +46,7 @@ export const Login = ({ navigation }: ILoginProps): JSX.Element => {
 			<SafeAreaView style={styles.container}>
 				<LoginForm
 					onEmailChange={emailText => setEmail(emailText)}
-					onEmailSubmit={() => onSubmitEmail()}
+					onEmailSubmit={onEmailSubmit}
 					onPassChange={passText => setPassword(passText)}
 					onPassSubmit={onSubmitPassword}
 					navigation={navigation}

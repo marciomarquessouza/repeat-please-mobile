@@ -2,23 +2,23 @@ import * as actions from '../actions/actionTypes/userActionsTypes';
 import { UserType } from '../../types/users';
 
 interface IUserState {
-	users: UserType[];
+	user?: UserType;
 	loading: boolean;
 	error: string | Error;
 }
 
 export const initialState: IUserState = {
-	users: [],
+	user: undefined,
 	loading: false,
 	error: '',
 };
 
 export const userReducer = (
 	state: IUserState = initialState,
-	action: actions.UserAction,
+	action: actions.UserActions,
 ): IUserState => {
 	switch (action.type) {
-		case actions.GET_USERS_REQUEST:
+		case actions.GET_USER_REQUEST:
 			return {
 				...state,
 				loading: true,
@@ -27,9 +27,9 @@ export const userReducer = (
 			return {
 				...state,
 				loading: false,
-				users: action.users,
+				user: action.user,
 			};
-		case actions.USER_ERROR:
+		case actions.GET_USER_ERROR:
 			return {
 				...state,
 				loading: false,

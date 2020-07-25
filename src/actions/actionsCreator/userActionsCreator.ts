@@ -1,18 +1,23 @@
-import * as actions from '../actionTypes/userActionsTypes';
 import { UserType } from '../../../types/users';
+import * as actions from '../actionTypes/userActionsTypes';
 
-export const getUserRequest = (): actions.IGetUsersRequestAction => ({
-	type: actions.GET_USERS_REQUEST,
+export const getUserRequest = (
+	userId: string,
+): actions.IGetUserRequestAction => ({
+	type: actions.GET_USER_REQUEST,
+	userId,
 });
 
 export const getUserSuccess = (
-	users: UserType[],
-): actions.IGetUserSucessAction => ({
+	user: UserType,
+): actions.IGetUserSuccessAction => ({
 	type: actions.GET_USER_SUCCESS,
-	users,
+	user,
 });
 
-export const userError = (error: Error | string): actions.IUserErrorAction => ({
-	type: actions.USER_ERROR,
+export const getUserError = (
+	error: string | Error,
+): actions.IGetUserErrorAction => ({
+	type: actions.GET_USER_ERROR,
 	error,
 });
