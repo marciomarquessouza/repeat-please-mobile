@@ -67,3 +67,8 @@ config.homolog.ts
 
 # Coverage
 coverage/
+
+# .env
+.env
+.env.production
+.env.staging
