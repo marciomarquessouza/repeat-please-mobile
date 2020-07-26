@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 import { NavigationStackProp } from 'react-navigation-stack';
 import { AUTHENTICATED, UNAUTHENTICATED } from '../../navigator/routes';
@@ -8,22 +8,19 @@ interface ILoadingProps {
 	navigation: NavigationStackProp;
 }
 
-export class Loading extends Component<ILoadingProps, {}> {
-	componentDidMount() {
+export const Loading = ({ navigation }: ILoadingProps) => {
+	useEffect(() => {
 		firebase.auth().onAuthStateChanged(user => {
-			const { navigation } = this.props;
 			navigation.navigate(user ? AUTHENTICATED : UNAUTHENTICATED);
 		});
-	}
+	}, [navigation]);
 
-	render() {
-		return (
-			<View style={styles.container}>
-				<ActivityIndicator size="large" />
-			</View>
-		);
-	}
-}
+	return (
+		<View style={styles.container}>
+			<ActivityIndicator size="large" />
+		</View>
+	);
+};
 
 const styles = StyleSheet.create({
 	container: {
