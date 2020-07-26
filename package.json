@@ -1,6 +1,14 @@
 {
 	"name": "RepeatPlease",
 	"version": "0.0.1",
+	"description": "REPEAT PLEASE is a React Native App to identify weaknesses in English pronunciation and help to improve them.",
+	"author": "Marcio Marques de Souza",
+	"license": "MIT",
+	"homepage": "https://github.com/marciomarquessouza/repeat-please-mobile#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/marciomarquessouza/repeat-please-mobile.git"
+	},
 	"private": true,
 	"scripts": {
 		"start": "react-native start",
