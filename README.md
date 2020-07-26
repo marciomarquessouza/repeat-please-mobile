@@ -1,8 +1,8 @@
 <p align="center">
- <img width=1280px height=640px src="https://i.imgur.com/41CMNb5.png" alt="Project logo"></a>
+ <img width=640px src="https://i.imgur.com/41CMNb5.png" alt="Project logo"></a>
 </p>
 
-<h3 align="center">Repeat Please</h3>
+<h3 align="center">Virtual Pronunciation Coach developed in React Native</h3>
 
 <div align="center">
 
@@ -29,7 +29,7 @@
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+REPEAT PLEASE is an Android and iOS APP developed in React Native to help people of the entire world to improve English speaking skills. .
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
@@ -42,7 +42,26 @@ Write about 1-2 paragraphs describing the purpose of your project.
 
 ## 🎈 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
+- Dashboard: show the progress and words to pratice and improve.
+
+<img width=211x src="https://i.imgur.com/viz7z1x.gif" alt="Dashboard"></a>
+
+- Levels: after choice the group, you can choice between three levels to pratice:
+
+<img width=211x src="https://i.imgur.com/2eIwWAh.png" alt="Levels"></a>
+
+- Challenge: a seguence of words to be repeated. Repeat Please check the pronuncation and give the pronuncation feedback. Automatically, the list of words to be pratice is updated with the results.
+
+<img width=211x src="https://i.imgur.com/oZHd701.png" alt="Challenge"></a>
+
+- Search: Localize a specific word to pratice:
+
+<img width=211x src="https://i.imgur.com/Vqh4Ga5.png" alt="Search"></a>
+
+
+- Goals: Configure your monthly goals:
+
+<img width=211x src="https://i.imgur.com/S8qmYuj.png" alt="Goals"></a>
 
 ## ✍️ Authors <a name = "authors"></a>
 
