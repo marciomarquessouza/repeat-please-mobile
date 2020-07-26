@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import SplashScreen from 'react-native-splash-screen';
 import AppContainer from './src/navigator';
 import * as firebase from 'firebase';
@@ -12,18 +12,16 @@ firebase.initializeApp(firebaseConfig);
 firebase.firestore();
 const store = configureStore();
 
-export default class App extends Component {
-	componentDidMount() {
+export default () => {
+	useEffect(() => {
 		SplashScreen.hide();
-	}
+	}, []);
 
-	render() {
-		return (
-			<Provider store={store}>
-				<AlertsProvider>
-					<AppContainer />
-				</AlertsProvider>
-			</Provider>
-		);
-	}
-}
+	return (
+		<Provider store={store}>
+			<AlertsProvider>
+				<AppContainer />
+			</AlertsProvider>
+		</Provider>
+	);
+};
