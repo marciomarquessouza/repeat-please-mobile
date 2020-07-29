@@ -12,7 +12,7 @@ export const signUpSuccess = (): actionsTypes.ISignUpSuccessAction => ({
 });
 
 export const signUpError = (
-	error: string | Error,
+	error: string,
 ): actionsTypes.ISignUpErrorAction => ({
 	type: actionsTypes.SIGN_UP_ERROR,
 	error,

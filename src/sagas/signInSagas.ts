@@ -21,7 +21,8 @@ function* onSignIn({
 		yield put(userAction.getUserRequest(userId));
 		yield put(signInActions.signInSuccess());
 	} catch (error) {
-		yield put(signInActions.signInError(error));
+		const message = error ? error.message : 'Login error';
+		yield put(signInActions.signInError(message));
 	}
 }
 
@@ -36,7 +37,8 @@ function* onForgotPassword({
 		yield call(forgotPassword, email);
 		yield put(signInActions.forgotPasswordSuccess());
 	} catch (error) {
-		yield put(signInActions.signInError(error));
+		const message = error ? error.message : 'Login error';
+		yield put(signInActions.signInError(message));
 	}
 }
 

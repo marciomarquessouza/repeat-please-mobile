@@ -11,7 +11,9 @@ export const SignUp = () => {
 	const [password, setPassword] = useState('');
 	const { showAlert } = useContext(AlertsContext);
 	const dispatch = useDispatch();
-	const { isLoading } = useSelector((state: AppState) => state.signUp);
+	const { isLoading, error } = useSelector((state: AppState) => state.signUp);
+
+	if (error) showAlert({ type: 'error', message: error });
 
 	const handleRegister = async (): Promise<void> => {
 		const fields = [name, email, password].filter(field => field === '');

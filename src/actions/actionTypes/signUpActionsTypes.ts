@@ -22,7 +22,7 @@ export const SIGN_UP_ERROR = 'signup/signup_error';
 
 export interface ISignUpErrorAction {
 	readonly type: typeof SIGN_UP_ERROR;
-	error: string | Error;
+	error: string;
 }
 
 export type SignUpAction =

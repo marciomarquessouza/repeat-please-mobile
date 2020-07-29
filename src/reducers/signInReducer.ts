@@ -2,7 +2,7 @@ import * as actions from '../actions/actionTypes/signInActionsTypes';
 
 interface ISignInState {
 	isLoading: boolean;
-	error: string | Error;
+	error: string;
 }
 
 const initialState: ISignInState = {

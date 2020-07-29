@@ -9,7 +9,8 @@ function* onSignUp({ user }: signUpActionsTypes.ISignUpRequestAction) {
 		const { userId } = yield call(signUpWithEmailPassword, user);
 		yield put(userActions.getUserRequest(userId));
 	} catch (error) {
-		yield put(signUpActions.signUpError(error));
+		const message = error ? error.message : 'Register error';
+		yield put(signUpActions.signUpError(message));
 	}
 }
 

@@ -24,9 +24,7 @@ export const forgotPasswordSuccess = (): actions.IForgotPasswordSuccessAction =>
 	type: actions.FORGOT_PASSWORD_SUCCESS,
 });
 
-export const signInError = (
-	error: Error | string,
-): actions.ISignInErrorAction => ({
+export const signInError = (error: string): actions.ISignInErrorAction => ({
 	type: actions.SIGN_IN_ERROR,
 	error,
 });

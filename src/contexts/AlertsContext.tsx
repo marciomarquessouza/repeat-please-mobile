@@ -22,14 +22,14 @@ export const AlertsContext = createContext<IALertsContext>({
 export const AlertsProvider = ({ children }: IProviderProps) => {
 	const [state, setState] = useState(initialState);
 
-	const hideAlert = () => {
-		setState({ ...state, shown: false });
+	const hideAlert = (props: IAlertsProps = state) => {
+		setState({ ...props, shown: false });
 	};
 
 	const showAlert = (props: IAlertsProps) => {
 		setState({ ...props, shown: true });
 		const timeoutId = setTimeout(() => {
-			hideAlert();
+			hideAlert(props);
 			clearTimeout(timeoutId);
 		}, ALERT_TIME_OPENED);
 	};

@@ -1,1 +1,1 @@
-export const ALERT_TIME_OPENED = 4000;
+export const ALERT_TIME_OPENED = 3000;

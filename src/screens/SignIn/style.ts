@@ -24,6 +24,14 @@ export const styles = StyleSheet.create({
 	signUpText: {
 		fontSize: 20,
 		paddingRight: 10,
+		fontFamily: font.primary,
+		color: '#000',
+	},
+	signUpTextLink: {
+		fontSize: 20,
+		paddingRight: 10,
 		fontFamily: font.primaryLight,
+		color: '#000',
+		textDecorationLine: 'underline',
 	},
 });

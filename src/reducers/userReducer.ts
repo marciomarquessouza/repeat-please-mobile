@@ -4,7 +4,7 @@ import { UserType } from '../../types/users';
 interface IUserState {
 	user?: UserType;
 	loading: boolean;
-	error: string | Error;
+	error: string;
 }
 
 export const initialState: IUserState = {

@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
 import { LinkButton } from 'repeat-please-styles';
 import { LoginForm } from './components';
-import { FORGOT_PASSWORD, REGISTER } from '../../navigator/routes';
+import { FORGOT_PASSWORD, SIGN_UP } from '../../navigator/routes';
 import { NavigationStackProp } from 'react-navigation-stack';
 import { AlertsContext } from '../../contexts/AlertsContext';
 import { emailIsValid } from '../../utils/validations';
@@ -19,7 +19,7 @@ interface ISignInProps {
 export const SignIn = ({ navigation }: ISignInProps) => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
-	const { isLoading } = useSelector((state: AppState) => state.signIn);
+	const { isLoading, error } = useSelector((state: AppState) => state.signIn);
 	const dispatch = useDispatch();
 	const { showAlert } = useContext(AlertsContext);
 
@@ -38,8 +38,10 @@ export const SignIn = ({ navigation }: ISignInProps) => {
 	};
 
 	const onSignUpPress = (): void => {
-		navigation.navigate(REGISTER);
+		navigation.navigate(SIGN_UP);
 	};
+
+	if (error) showAlert({ message: error, type: 'error' });
 
 	return (
 		<ScrollView contentContainerStyle={{ flexGrow: 1 }} style={{ flex: 1 }}>
@@ -58,11 +60,13 @@ export const SignIn = ({ navigation }: ISignInProps) => {
 					Forgot Password
 				</LinkButton>
 				<View style={styles.signUpContainer}>
-					<Text style={[styles.signUpText, { color: '#fff' }]}>
-						Don't have an account?
-					</Text>
 					<TouchableOpacity onPress={onSignUpPress}>
-						<Text style={[styles.signUpText, { color: '#000' }]}>Sign Up</Text>
+						<Text style={[styles.signUpText, { color: '#000' }]}>
+							Don't have an account?
+						</Text>
+					</TouchableOpacity>
+					<TouchableOpacity onPress={onSignUpPress}>
+						<Text style={styles.signUpTextLink}>Sign Up Please</Text>
 					</TouchableOpacity>
 				</View>
 			</SafeAreaView>

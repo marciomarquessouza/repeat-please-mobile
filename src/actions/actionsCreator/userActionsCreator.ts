@@ -15,9 +15,7 @@ export const getUserSuccess = (
 	user,
 });
 
-export const getUserError = (
-	error: string | Error,
-): actions.IGetUserErrorAction => ({
+export const getUserError = (error: string): actions.IGetUserErrorAction => ({
 	type: actions.GET_USER_ERROR,
 	error,
 });

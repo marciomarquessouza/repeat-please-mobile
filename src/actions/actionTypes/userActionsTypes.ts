@@ -18,7 +18,7 @@ export const GET_USER_ERROR = 'user/get_user_error';
 
 export interface IGetUserErrorAction {
 	readonly type: typeof GET_USER_ERROR;
-	error: string | Error;
+	error: string;
 }
 
 export type UserActions =

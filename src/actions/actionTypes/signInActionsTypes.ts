@@ -29,7 +29,7 @@ export const SIGN_IN_ERROR = 'signin/signin_error';
 
 export interface ISignInErrorAction {
 	readonly type: typeof SIGN_IN_ERROR;
-	error: string | Error;
+	error: string;
 }
 
 export type SignInAction =

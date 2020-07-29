@@ -24,7 +24,7 @@ interface IForgotPasswordProp {
 export const ForgotPassword = ({ navigation }: IForgotPasswordProp) => {
 	const loginEmail = navigation.getParam('email');
 	const [email, setEmail] = useState(loginEmail || '');
-	const { isLoading } = useSelector((state: AppState) => state.signIn);
+	const { isLoading, error } = useSelector((state: AppState) => state.signIn);
 	const dispatch = useDispatch();
 	const { showAlert } = useContext(AlertsContext);
 
@@ -33,6 +33,8 @@ export const ForgotPassword = ({ navigation }: IForgotPasswordProp) => {
 			? dispatch(actions.forgotPasswordnRequest(email))
 			: showAlert({ type: 'error', message: 'Invalid Email' });
 	};
+
+	if (error) showAlert({ type: 'error', message: error });
 
 	return (
 		<ScrollView contentContainerStyle={{ flexGrow: 1 }} style={{ flex: 1 }}>
