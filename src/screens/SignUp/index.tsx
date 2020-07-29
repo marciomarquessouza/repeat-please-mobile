@@ -20,8 +20,8 @@ export const SignUp = () => {
 		try {
 			if (fields.length) throw new Error('All fields are required');
 			dispatch(actions.signUpRequest({ name, email, password }));
-		} catch (error) {
-			showAlert({ type: 'error', message: error.message });
+		} catch (err) {
+			showAlert({ type: 'error', message: err.message });
 		}
 	};
 
