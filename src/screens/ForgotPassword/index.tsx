@@ -24,9 +24,9 @@ interface IForgotPasswordProp {
 export const ForgotPassword = ({ navigation }: IForgotPasswordProp) => {
 	const loginEmail = navigation.getParam('email');
 	const [email, setEmail] = useState(loginEmail || '');
-	const { showAlert } = useContext(AlertsContext);
 	const { isLoading } = useSelector((state: AppState) => state.signIn);
 	const dispatch = useDispatch();
+	const { showAlert } = useContext(AlertsContext);
 
 	const onForgotSubmit = () => {
 		return emailIsValid(email)

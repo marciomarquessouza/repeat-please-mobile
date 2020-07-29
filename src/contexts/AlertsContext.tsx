@@ -1,13 +1,12 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useState } from 'react';
 import { Alerts } from 'repeat-please-styles';
 import {
-	ActionTypes,
 	IAlertsState,
 	IALertsContext,
 	IProviderProps,
 	IAlertsProps,
-	IAlertsActions,
 } from './types';
+import { ALERT_TIME_OPENED } from '../constants/alerts';
 
 const initialState: IAlertsState = {
 	shown: false,
@@ -16,41 +15,29 @@ const initialState: IAlertsState = {
 };
 
 export const AlertsContext = createContext<IALertsContext>({
-	showAlert: () => {},
-	hideAlert: () => {},
+	showAlert: () => undefined,
+	hideAlert: () => undefined,
 });
 
-const alertsReducer = (
-	state = initialState,
-	action: IAlertsActions,
-): IAlertsState => {
-	const { type, payload } = action;
-	switch (type) {
-		case ActionTypes.SHOW_ALERT:
-			return { ...payload, shown: true };
-		case ActionTypes.HIDE_ALERT:
-			return { ...state, shown: false };
-		default:
-			return state;
-	}
-};
-
 export const AlertsProvider = ({ children }: IProviderProps) => {
-	const [state, dispatch] = useReducer(alertsReducer, initialState);
-	const { message, shown, type } = state;
-
-	const showAlert = (props: IAlertsProps) => {
-		dispatch({ type: ActionTypes.SHOW_ALERT, payload: { ...props } });
-	};
+	const [state, setState] = useState(initialState);
 
 	const hideAlert = () => {
-		dispatch({ type: ActionTypes.HIDE_ALERT, payload: { ...state } });
+		setState({ ...state, shown: false });
+	};
+
+	const showAlert = (props: IAlertsProps) => {
+		setState({ ...props, shown: true });
+		const timeoutId = setTimeout(() => {
+			hideAlert();
+			clearTimeout(timeoutId);
+		}, ALERT_TIME_OPENED);
 	};
 
 	return (
 		<AlertsContext.Provider value={{ showAlert, hideAlert }}>
 			{children}
-			<Alerts {...{ message, shown, type, onCloseModal: hideAlert }} />
+			<Alerts {...{ ...state, onCloseModal: hideAlert }} />
 		</AlertsContext.Provider>
 	);
 };
