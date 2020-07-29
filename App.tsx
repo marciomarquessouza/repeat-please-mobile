@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { configureStore } from './src/store/configureStore';
 import 'firebase/firestore';
 import { firebaseConfig } from './config';
+import './src/locales/i18n';
 
 firebase.initializeApp(firebaseConfig);
 firebase.firestore();
