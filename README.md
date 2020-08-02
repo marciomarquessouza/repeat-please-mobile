@@ -38,6 +38,7 @@ REPEAT PLEASE is an Android and iOS APP developed in React Native to help people
 - [Redux-Saga](https://redux-saga.js.org/) - Saga middleware for Redux to handle Side Effects..
 - [Firebase](https://firebase.google.com/) - Backend Functions and Analytics.
 - [Firestore](https://firebase.google.com/docs/firestore) - Cloud NoSQL database.
+- [i18next](https://www.i18next.com/) - Internationalization framework (react-native-localize was used to identify the device language).
 - [WaterMelonDB](https://github.com/Nozbe/WatermelonDB) - Local Database.
 
 ## 🎈 Usage <a name="usage"></a>
@@ -57,7 +58,6 @@ REPEAT PLEASE is an Android and iOS APP developed in React Native to help people
 - Search: Localize a specific word to pratice:
 
 <img width=211x src="https://i.imgur.com/Vqh4Ga5.png" alt="Search"></a>
-
 
 - Goals: Configure your monthly goals:
 
