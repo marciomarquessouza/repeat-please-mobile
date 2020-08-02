@@ -2,7 +2,13 @@ import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
 import { WALKTHROUGH } from '../../navigator/routes';
 import { NavigationStackProp } from 'react-navigation-stack';
-import { Slide, color } from 'repeat-please-styles';
+import {
+	Slide,
+	SlideFooter,
+	SlideLogo,
+	SlideHeader,
+	color,
+} from 'repeat-please-styles';
 import { useTranslation } from 'react-i18next';
 
 export interface ISlidesProps {
@@ -14,23 +20,35 @@ export const Slides = ({ navigation }: ISlidesProps) => {
 
 	const slidesContent = [
 		{
-			header: <Slide.Logo />,
-			footer: <Slide.Footer text={t('slide01')} />,
+			header: <SlideLogo />,
+			footer: <SlideFooter text={t('slide01')} />,
 		},
 		{
-			header: <Slide.Header title={t('slide02Title')} />,
-			footer: <Slide.Footer text={t('slide02')} />,
+			header: <SlideHeader title={t('slide02Title')} />,
+			footer: <SlideFooter text={t('slide02')} />,
 		},
 		{
-			header: <Slide.Header title={t('slide03Title')} />,
-			footer: <Slide.Footer text={t('slide03')} />,
+			header: <SlideHeader title={t('slide03Title')} />,
+			footer: <SlideFooter text={t('slide03')} />,
 		},
 	];
 	const nextScreen = () => navigation.navigate(WALKTHROUGH);
 	const duration = 800;
 	return (
 		<SafeAreaView style={styles.container} data-test="slidesComponent">
-			<Slide {...{ slides: slidesContent, nextScreen, duration }} />
+			<Slide
+				{...{
+					slides: slidesContent,
+					nextScreen,
+					duration,
+					labels: {
+						skipLabel: t('skipLabel'),
+						nextLabel: t('nextLabel'),
+						startLabel: t('startLabel'),
+						backLabel: t('backLabel'),
+					},
+				}}
+			/>
 		</SafeAreaView>
 	);
 };
