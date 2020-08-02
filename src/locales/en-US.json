@@ -9,6 +9,11 @@
 		"nextLabel": "Next",
 		"startLabel": "Start",
 		"backLabel": "Back",
-		"greeting": "Welcome to"
+		"greeting": "Welcome to",
+		"login": "Login with email",
+		"register": "Register",
+		"or": "OR",
+		"loginFacebook": "Login with Facebook",
+		"loginGoogle": "Login with Google"
 	}
 }

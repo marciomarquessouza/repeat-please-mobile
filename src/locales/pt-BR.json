@@ -9,6 +9,11 @@
 		"nextLabel": "Próximo",
 		"startLabel": "Iniciar",
 		"backLabel": "Voltar",
-		"greeting": "Bem vindo ao"
+		"greeting": "Bem vindo ao",
+		"login": "Entrar com e-mail",
+		"register": "Cadastro",
+		"or": "OU",
+		"loginFacebook": "Entrar com Facebook",
+		"loginGoogle": "Entrar com Google"
 	}
 }

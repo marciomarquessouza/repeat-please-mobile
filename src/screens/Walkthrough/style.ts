@@ -5,6 +5,9 @@ export const styles = StyleSheet.create({
 	wrapper: {
 		backgroundColor: color.background,
 	},
+	logoContainer: {
+		marginVertical: 15,
+	},
 	container: {
 		flex: 1,
 		justifyContent: 'center',
