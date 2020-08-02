@@ -8,14 +8,20 @@ import { configureStore } from './src/store/configureStore';
 import 'firebase/firestore';
 import { firebaseConfig } from './config';
 import './src/locales/i18n';
+import { setI18nConfig, RNLocalize } from './src/locales/i18n';
 
 firebase.initializeApp(firebaseConfig);
 firebase.firestore();
 const store = configureStore();
+setI18nConfig();
 
 export default () => {
 	useEffect(() => {
+		RNLocalize.addEventListener('change', setI18nConfig);
 		SplashScreen.hide();
+		return () => {
+			RNLocalize.removeEventListener('change', setI18nConfig);
+		};
 	}, []);
 
 	return (

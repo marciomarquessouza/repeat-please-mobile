@@ -1,21 +1,31 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import pt from './pt';
-import en from './en';
+import * as RNLocalize from 'react-native-localize';
 
-const resources = {
-	en,
-	pt,
+const translationGetters = {
+	en: require('./en-US.json'),
+	pt: require('./pt-BR.json'),
 };
 
-i18n.use(initReactI18next).init({
-	resources,
-	lng: 'en',
-	fallbackLng: 'en',
-	debug: true,
-	interpolation: {
-		escapeValue: false,
-	},
-});
+interface ISetI18nConfig {
+	languageTag: string;
+	isRTL: boolean;
+}
 
-export default i18n;
+export const setI18nConfig = () => {
+	const fallback: ISetI18nConfig = { languageTag: 'en', isRTL: false };
+	const { languageTag } =
+		RNLocalize.findBestAvailableLanguage(Object.keys(translationGetters)) ||
+		fallback;
+	i18n.use(initReactI18next).init({
+		resources: translationGetters,
+		lng: languageTag,
+		fallbackLng: 'en',
+		debug: false,
+		interpolation: {
+			escapeValue: false,
+		},
+	});
+};
+
+export { RNLocalize };

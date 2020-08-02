@@ -3,33 +3,29 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 import { WALKTHROUGH } from '../../navigator/routes';
 import { NavigationStackProp } from 'react-navigation-stack';
 import { Slide, color } from 'repeat-please-styles';
+import { useTranslation } from 'react-i18next';
 
 export interface ISlidesProps {
 	navigation: NavigationStackProp;
 }
 
-const slidesContent = [
-	{
-		header: <Slide.Logo />,
-		footer: (
-			<Slide.Footer text="Pronunciation is a problem for you? You can improve it with Repeat Pelase! " />
-		),
-	},
-	{
-		header: <Slide.Header title="HARD WORK!" />,
-		footer: (
-			<Slide.Footer text="No magic here! You wil have all tools to follow your progress and identify and improve your pronunciation weekeness." />
-		),
-	},
-	{
-		header: <Slide.Header title="PATH TO SUCCESS!" />,
-		footer: (
-			<Slide.Footer text="No magic here! You wil have all tools to follow your progress and identify and improve your pronunciation weekeness." />
-		),
-	},
-];
+export const Slides = ({ navigation }: ISlidesProps) => {
+	const { t } = useTranslation();
 
-export const Slides = ({ navigation }: ISlidesProps): JSX.Element => {
+	const slidesContent = [
+		{
+			header: <Slide.Logo />,
+			footer: <Slide.Footer text={t('slide01')} />,
+		},
+		{
+			header: <Slide.Header title={t('slide02Title')} />,
+			footer: <Slide.Footer text={t('slide02')} />,
+		},
+		{
+			header: <Slide.Header title={t('slide03Title')} />,
+			footer: <Slide.Footer text={t('slide03')} />,
+		},
+	];
 	const nextScreen = () => navigation.navigate(WALKTHROUGH);
 	const duration = 800;
 	return (
