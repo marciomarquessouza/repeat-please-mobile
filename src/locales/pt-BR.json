@@ -8,6 +8,7 @@
 		"skipLabel": "Pular",
 		"nextLabel": "Próximo",
 		"startLabel": "Iniciar",
-		"backLabel": "Voltar"
+		"backLabel": "Voltar",
+		"greeting": "Bem vindo ao"
 	}
 }

@@ -8,6 +8,7 @@
 		"skipLabel": "Skip",
 		"nextLabel": "Next",
 		"startLabel": "Start",
-		"backLabel": "Back"
+		"backLabel": "Back",
+		"greeting": "Welcome to"
 	}
 }

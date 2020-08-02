@@ -20,7 +20,7 @@ export const Slides = ({ navigation }: ISlidesProps) => {
 
 	const slidesContent = [
 		{
-			header: <SlideLogo />,
+			header: <SlideLogo greeting={t('greeting')} />,
 			footer: <SlideFooter text={t('slide01')} />,
 		},
 		{
