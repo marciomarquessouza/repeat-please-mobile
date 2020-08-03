@@ -4,6 +4,7 @@ import { mailMonkey, arrowRight } from '../../../../../assets/images';
 import { PlaceholderInput } from 'repeat-please-styles';
 import { IconButton } from '../../../../components';
 import { styles } from './style';
+import { useTranslation } from 'react-i18next';
 
 export interface IEmailProps {
 	placeholder: string;
@@ -19,27 +20,31 @@ export const Email = ({
 	onChangeText,
 	width,
 	style,
-}: IEmailProps) => (
-	<View style={[styles.container, style, { width }]}>
-		<View style={styles.headerContainer}>
-			<Image source={mailMonkey} style={styles.imageStyle} />
-			<Text style={styles.titleStyle}>Your Email</Text>
-		</View>
-		<View style={styles.inputContainer}>
-			<View style={styles.inputStyle}>
-				<PlaceholderInput
-					{...{
-						placeholder,
-						onChangeText,
-						keyboardType: 'email-address',
-						autoCapitalize: 'none',
-						autoCorrect: false,
-						onSubmitEditing: onPress,
-						returnKeyType: 'next',
-					}}
-				/>
+}: IEmailProps) => {
+	const { t } = useTranslation();
+
+	return (
+		<View style={[styles.container, style, { width }]}>
+			<View style={styles.headerContainer}>
+				<Image source={mailMonkey} style={styles.imageStyle} />
+				<Text style={styles.titleStyle}>{t('yourEmail')}</Text>
 			</View>
-			<IconButton source={arrowRight} onPress={onPress} />
+			<View style={styles.inputContainer}>
+				<View style={styles.inputStyle}>
+					<PlaceholderInput
+						{...{
+							placeholder,
+							onChangeText,
+							keyboardType: 'email-address',
+							autoCapitalize: 'none',
+							autoCorrect: false,
+							onSubmitEditing: onPress,
+							returnKeyType: 'next',
+						}}
+					/>
+				</View>
+				<IconButton source={arrowRight} onPress={onPress} />
+			</View>
 		</View>
-	</View>
-);
+	);
+};

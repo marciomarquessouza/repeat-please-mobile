@@ -6,6 +6,7 @@ import { HeaderBackArrow } from '../../../../navigator/HeaderBackArrow';
 import { styles } from './style';
 import { NavigationStackProp } from 'react-navigation-stack';
 import { timingAnimation } from '../../../../utils/animations';
+import { useTranslation } from 'react-i18next';
 
 interface ILoginFormProps {
 	onEmailSubmit: () => boolean;
@@ -36,6 +37,7 @@ export const LoginForm = ({
 	navigation,
 }: ILoginFormProps): JSX.Element => {
 	const [position] = useState(new Animated.ValueXY({ x: 0, y: 0 }));
+	const { t } = useTranslation();
 
 	const goToEmail = (): void => {
 		timingAnimation(position, { x: DIRECTION.left, y: 0 }, SPEED).start();
@@ -67,14 +69,14 @@ export const LoginForm = ({
 						transform: [{ translateX: position.x }],
 					}}>
 					<Email
-						placeholder="Email Address"
+						placeholder={t('email')}
 						onChangeText={email => onEmailChange(email)}
 						onPress={() => onEmailSubmit() && gotToPassword()}
 						width={WIDTH}
 						style={{ position: 'absolute', top: 0, left: 0 }}
 					/>
 					<Password
-						placeholder="Password"
+						placeholder={t('password')}
 						onChangeText={password => onPassChange(password)}
 						onPress={onPassSubmit}
 						width={WIDTH}

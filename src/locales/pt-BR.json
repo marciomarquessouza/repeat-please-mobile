@@ -16,10 +16,16 @@
 		"loginFacebook": "Entrar com Facebook",
 		"loginGoogle": "Entrar com Google",
 		"name": "Nome ou Apelido",
-		"password": "Password",
+		"password": "Senha",
 		"confirmPassword": "Confirm Password",
 		"email": "E-mail",
+		"yourEmail": "Insira seu e-mail",
+		"yourPassword": "Agora a sua senha",
+		"forgotPassword": "Esqueci minha senha",
+		"dontHaveAccount": "Não tem uma conta?",
+		"signUpPlease": "Cadastre-se Agora",
 
-		"errorAllFields": "Todos os campos são obrigatórios"
+		"errorAllFields": "Todos os campos são obrigatórios",
+		"errorRegister": "Erro no Cadastro do Usuário."
 	}
 }

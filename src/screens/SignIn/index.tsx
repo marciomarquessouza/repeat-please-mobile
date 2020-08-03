@@ -11,6 +11,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../actions/actionsCreator/signInActionsCreators';
 import { AppState } from '../../reducers/rootReducer';
+import { useTranslation } from 'react-i18next';
 
 interface ISignInProps {
 	navigation: NavigationStackProp;
@@ -22,6 +23,7 @@ export const SignIn = ({ navigation }: ISignInProps) => {
 	const { isLoading, error } = useSelector((state: AppState) => state.signIn);
 	const dispatch = useDispatch();
 	const { showAlert } = useContext(AlertsContext);
+	const { t } = useTranslation();
 
 	const onEmailSubmit = (): boolean => {
 		if (emailIsValid(email)) return true;
@@ -41,7 +43,9 @@ export const SignIn = ({ navigation }: ISignInProps) => {
 		navigation.navigate(SIGN_UP);
 	};
 
-	if (error) showAlert({ message: error, type: 'error' });
+	if (error) {
+		showAlert({ message: error, type: 'error' });
+	}
 
 	return (
 		<ScrollView contentContainerStyle={{ flexGrow: 1 }} style={{ flex: 1 }}>
@@ -57,16 +61,16 @@ export const SignIn = ({ navigation }: ISignInProps) => {
 				<LinkButton
 					customStyle={styles.forgotPasswordStyle}
 					onPress={onForgotPasswordPress}>
-					Forgot Password
+					{t('forgotPassword')}
 				</LinkButton>
 				<View style={styles.signUpContainer}>
 					<TouchableOpacity onPress={onSignUpPress}>
 						<Text style={[styles.signUpText, { color: '#000' }]}>
-							Don't have an account?
+							{t('dontHaveAccount')}
 						</Text>
 					</TouchableOpacity>
 					<TouchableOpacity onPress={onSignUpPress}>
-						<Text style={styles.signUpTextLink}>Sign Up Please</Text>
+						<Text style={styles.signUpTextLink}>{t('signUpPlease')}</Text>
 					</TouchableOpacity>
 				</View>
 			</SafeAreaView>

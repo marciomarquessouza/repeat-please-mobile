@@ -19,7 +19,13 @@
 		"password": "Password",
 		"confirmPassword": "Confirm Password",
 		"email": "Email",
+		"yourEmail": "Your Email",
+		"yourPassword": "Now your Password",
+		"forgotPassword": "Forgot Password",
+		"dontHaveAccount": "Don't have an account?",
+		"signUpPlease": "Sign Up Please",
 
-		"errorAllFields": "All fields are required"
+		"errorAllFields": "All fields are required",
+		"errorRegister": "Register Error"
 	}
 }

@@ -10,6 +10,7 @@ import {
 import { PlaceholderInput } from 'repeat-please-styles';
 import { IconButton } from '../../../../components';
 import { styles } from './style';
+import { useTranslation } from 'react-i18next';
 
 export interface IPasswordProps {
 	placeholder: string;
@@ -29,6 +30,7 @@ export const Password = ({
 	isLoading,
 }: IPasswordProps) => {
 	const [showPassword, setShowPassword] = useState(false);
+	const { t } = useTranslation();
 
 	return (
 		<View style={[styles.container, style, { width }]}>
@@ -37,7 +39,7 @@ export const Password = ({
 					source={showPassword ? monkeyOpenEyes : monkeyCloseEyes}
 					style={[styles.imageStyle]}
 				/>
-				<Text style={styles.titleStyle}>Your Password</Text>
+				<Text style={styles.titleStyle}>{t('yourPassword')}</Text>
 			</View>
 			<View style={styles.inputContainer}>
 				<IconButton
@@ -53,6 +55,7 @@ export const Password = ({
 						autoCorrect: false,
 						onSubmitEditing: onPress,
 						returnKeyType: 'done',
+						autoFocus: true,
 					}}
 				/>
 				<IconButton
