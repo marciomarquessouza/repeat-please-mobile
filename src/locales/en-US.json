@@ -14,6 +14,12 @@
 		"register": "Register",
 		"or": "OR",
 		"loginFacebook": "Login with Facebook",
-		"loginGoogle": "Login with Google"
+		"loginGoogle": "Login with Google",
+		"name": "Name or Nickname",
+		"password": "Password",
+		"confirmPassword": "Confirm Password",
+		"email": "Email",
+
+		"errorAllFields": "All fields are required"
 	}
 }

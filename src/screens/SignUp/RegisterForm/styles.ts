@@ -18,20 +18,20 @@ export const styles = StyleSheet.create({
 	},
 	formContainer: {
 		flex: 1,
-		paddingVertical: wp('3%'),
-		paddingHorizontal: wp('8%'),
+		paddingVertical: 20,
+		paddingHorizontal: 20,
 	},
 	inputContainer: {
 		flex: 1,
-		marginVertical: wp('2%'),
+		marginVertical: 10,
 		flexDirection: 'row',
-		justifyContent: 'center',
-		alignItems: 'center',
+		justifyContent: 'flex-end',
+		alignItems: 'flex-end',
 	},
 	iconStyle: {
-		marginRight: wp('1.8%'),
-		width: hp('3.2%'),
-		height: hp('3.2%'),
+		marginRight: 10,
+		width: 25,
+		height: 25,
 	},
 	scrollStyle: {
 		flexGrow: 1,

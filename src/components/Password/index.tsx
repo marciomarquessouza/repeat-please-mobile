@@ -1,5 +1,6 @@
 import React from 'react';
 import { PlaceholderInput } from 'repeat-please-styles';
+import { useTranslation } from 'react-i18next';
 
 export interface IPasswordProps {
 	repeat?: boolean;
@@ -11,14 +12,18 @@ export const Password = ({
 	onPasswordChange,
 	onSubmited,
 	repeat,
-}: IPasswordProps): JSX.Element => (
-	<PlaceholderInput
-		data-test="password"
-		autoCapitalize="none"
-		autoCorrect={false}
-		placeholder={repeat ? 'Confirm Password' : 'Password'}
-		secureTextEntry
-		onChangeText={text => onPasswordChange(text)}
-		onSubmitEditing={onSubmited}
-	/>
-);
+}: IPasswordProps) => {
+	const { t } = useTranslation();
+
+	return (
+		<PlaceholderInput
+			data-test="password"
+			autoCapitalize="none"
+			autoCorrect={false}
+			placeholder={repeat ? t('confirmPassword') : t('password')}
+			secureTextEntry
+			onChangeText={text => onPasswordChange(text)}
+			onSubmitEditing={onSubmited}
+		/>
+	);
+};

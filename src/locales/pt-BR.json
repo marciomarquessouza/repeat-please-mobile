@@ -14,6 +14,12 @@
 		"register": "Cadastro",
 		"or": "OU",
 		"loginFacebook": "Entrar com Facebook",
-		"loginGoogle": "Entrar com Google"
+		"loginGoogle": "Entrar com Google",
+		"name": "Nome ou Apelido",
+		"password": "Password",
+		"confirmPassword": "Confirm Password",
+		"email": "E-mail",
+
+		"errorAllFields": "Todos os campos são obrigatórios"
 	}
 }
