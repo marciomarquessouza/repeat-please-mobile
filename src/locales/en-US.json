@@ -26,6 +26,7 @@
 		"signUpPlease": "Sign Up Please",
 
 		"errorAllFields": "All fields are required",
-		"errorRegister": "Register Error"
+		"errorRegister": "Register Error",
+		"errorEmail": "Invalid Email"
 	}
 }

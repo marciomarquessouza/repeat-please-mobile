@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useMemo, useEffect } from 'react';
 import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
 import { LinkButton } from 'repeat-please-styles';
 import { LoginForm } from './components';
@@ -25,9 +25,21 @@ export const SignIn = ({ navigation }: ISignInProps) => {
 	const { showAlert } = useContext(AlertsContext);
 	const { t } = useTranslation();
 
+	useEffect(() => {
+		return () => {
+			dispatch(actions.signInFinish());
+		};
+	}, [dispatch]);
+
+	useMemo(() => {
+		if (error) {
+			showAlert({ type: 'error', message: error });
+		}
+	}, [error, showAlert]);
+
 	const onEmailSubmit = (): boolean => {
 		if (emailIsValid(email)) return true;
-		showAlert({ type: 'error', message: 'Invalid Email' });
+		showAlert({ type: 'error', message: t('errorEmail') });
 		return false;
 	};
 
@@ -42,10 +54,6 @@ export const SignIn = ({ navigation }: ISignInProps) => {
 	const onSignUpPress = (): void => {
 		navigation.navigate(SIGN_UP);
 	};
-
-	if (error) {
-		showAlert({ message: error, type: 'error' });
-	}
 
 	return (
 		<ScrollView contentContainerStyle={{ flexGrow: 1 }} style={{ flex: 1 }}>

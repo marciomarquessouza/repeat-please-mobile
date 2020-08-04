@@ -19,12 +19,15 @@ export const signInReducer = (
 		case actions.FORGOT_PASSWORD_REQUEST:
 			return {
 				...state,
+				error: '',
 				isLoading: true,
 			};
 		case actions.SIGN_IN_SUCCESS:
 		case actions.FORGOT_PASSWORD_SUCCESS:
+		case actions.SIGN_IN_FINISH:
 			return {
 				...state,
+				error: '',
 				isLoading: false,
 			};
 		case actions.SIGN_IN_ERROR:

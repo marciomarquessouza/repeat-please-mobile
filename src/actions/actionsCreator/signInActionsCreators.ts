@@ -13,6 +13,10 @@ export const signInSuccess = (): actions.ISignInSuccessAction => ({
 	type: actions.SIGN_IN_SUCCESS,
 });
 
+export const signInFinish = (): actions.ISignInFinishAction => ({
+	type: actions.SIGN_IN_FINISH,
+});
+
 export const forgotPasswordnRequest = (
 	email: string,
 ): actions.IForgotPasswordRequesAction => ({

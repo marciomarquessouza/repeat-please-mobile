@@ -1,4 +1,11 @@
-import { call, put, takeLatest, all, fork } from 'redux-saga/effects';
+import {
+	call,
+	put,
+	takeLatest,
+	takeEvery,
+	all,
+	fork,
+} from 'redux-saga/effects';
 import * as signInActions from '../actions/actionsCreator/signInActionsCreators';
 import * as signInActionsTypes from '../actions/actionTypes/signInActionsTypes';
 import * as userAction from '../actions/actionsCreator/userActionsCreator';
@@ -27,7 +34,7 @@ function* onSignIn({
 }
 
 function* watchOnSignIn() {
-	yield takeLatest(signInActionsTypes.SIGN_IN_REQUEST, onSignIn);
+	yield takeEvery(signInActionsTypes.SIGN_IN_REQUEST, onSignIn);
 }
 
 function* onForgotPassword({

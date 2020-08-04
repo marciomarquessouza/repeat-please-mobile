@@ -12,6 +12,12 @@ export interface ISignInSuccessAction {
 	readonly type: typeof SIGN_IN_SUCCESS;
 }
 
+export const SIGN_IN_FINISH = 'signin/signin_fisnish';
+
+export interface ISignInFinishAction {
+	readonly type: typeof SIGN_IN_FINISH;
+}
+
 export const FORGOT_PASSWORD_REQUEST = 'signin/forgot_password_request';
 
 export interface IForgotPasswordRequesAction {
@@ -37,4 +43,5 @@ export type SignInAction =
 	| ISignInSuccessAction
 	| IForgotPasswordRequesAction
 	| IForgotPasswordSuccessAction
-	| ISignInErrorAction;
+	| ISignInErrorAction
+	| ISignInFinishAction;

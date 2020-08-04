@@ -26,6 +26,7 @@
 		"signUpPlease": "Cadastre-se Agora",
 
 		"errorAllFields": "Todos os campos são obrigatórios",
-		"errorRegister": "Erro no Cadastro do Usuário."
+		"errorRegister": "Erro no Cadastro do Usuário.",
+		"errorEmail": "E-mail inválido"
 	}
 }
