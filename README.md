@@ -23,22 +23,6 @@
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
-## 🧐 About <a name = "about"></a>
-
-## 📝 Table of Contents
-
-- [About](#about)
-- [Built Using](#built_using)
-- [Usage](#usage)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
-
-## 🧐 About <a name = "about"></a>
-
-REPEAT PLEASE is an Android and iOS APP developed in React Native to help people of the entire world to improve English speaking skills. .
-
 ## ⛏️ Built Using <a name = "built_using"></a>
 
 - [React Native](https://reactnative.dev/) - Framework to build iOS and Android App.
