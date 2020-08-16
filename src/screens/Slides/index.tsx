@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet } from 'react-native';
-import { WALKTHROUGH } from '../../navigator/routes';
+import { HOME } from '../../navigator/routes';
 import { NavigationStackProp } from 'react-navigation-stack';
 import {
 	Slide,
@@ -10,6 +10,8 @@ import {
 	color,
 } from 'repeat-please-styles';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
+import * as actions from '../../actions/actionsCreator/profileActionsCreator';
 
 export interface ISlidesProps {
 	navigation: NavigationStackProp;
@@ -17,7 +19,12 @@ export interface ISlidesProps {
 
 export const Slides = ({ navigation }: ISlidesProps) => {
 	const { t } = useTranslation();
-
+	const dispatch = useDispatch();
+	const nextScreen = () => {
+		dispatch(actions.setProfile({ id: 0, isFirstAccess: false }));
+		navigation.navigate(HOME);
+	};
+	const duration = 800;
 	const slidesContent = [
 		{
 			header: <SlideLogo greeting={t('greeting')} />,
@@ -32,8 +39,7 @@ export const Slides = ({ navigation }: ISlidesProps) => {
 			footer: <SlideFooter text={t('slide03')} />,
 		},
 	];
-	const nextScreen = () => navigation.navigate(WALKTHROUGH);
-	const duration = 800;
+
 	return (
 		<SafeAreaView style={styles.container} data-test="slidesComponent">
 			<Slide

@@ -1,3 +1,5 @@
+export type TLevels = 'easy' | 'regular' | 'hard';
+
 export type StatusType =
 	| 'countdown'
 	| 'speaking'

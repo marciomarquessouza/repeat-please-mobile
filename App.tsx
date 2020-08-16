@@ -9,6 +9,7 @@ import 'firebase/firestore';
 import { firebaseConfig } from './config';
 import './src/locales/i18n';
 import { setI18nConfig, RNLocalize } from './src/locales/i18n';
+import { initializeProfile } from './src/services/profileServices';
 
 firebase.initializeApp(firebaseConfig);
 firebase.firestore();
@@ -18,6 +19,7 @@ setI18nConfig();
 export default () => {
 	useEffect(() => {
 		RNLocalize.addEventListener('change', setI18nConfig);
+		initializeProfile();
 		SplashScreen.hide();
 		return () => {
 			RNLocalize.removeEventListener('change', setI18nConfig);
