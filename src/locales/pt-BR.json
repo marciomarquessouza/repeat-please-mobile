@@ -27,6 +27,7 @@
 
 		"errorAllFields": "Todos os campos são obrigatórios",
 		"errorRegister": "Erro no Cadastro do Usuário.",
-		"errorEmail": "E-mail inválido"
+		"errorEmail": "E-mail inválido",
+		"errorLoading": "Erro ao carregar os dados de profile"
 	}
 }
