@@ -19,7 +19,7 @@ export const WordsToPracticeSchema: Realm.ObjectSchema = {
 	properties: {
 		word: 'string',
 		phonetic: 'string',
-		ipa: IPA_SCHEMA_NAME,
+		ipaId: 'int',
 		score: 'int',
 	},
 };
