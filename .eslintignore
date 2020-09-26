@@ -6,3 +6,6 @@ storybook
 
 # mocks
 src/__mocks__
+
+# IPA data
+src/data/ipa

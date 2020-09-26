@@ -27,7 +27,7 @@
 
 - [React Native](https://reactnative.dev/) - Framework to build iOS and Android App.
 - [Redux](https://reactnative.dev/) - Library for managing application state.
-- [Redux-Saga](https://redux-saga.js.org/) - Saga middleware for Redux to handle Side Effects..
+- [Redux-Saga](https://redux-saga.js.org/) - Saga middleware for Redux to handle Side Effects.
 - [Firebase](https://firebase.google.com/) - Backend Functions and Analytics.
 - [Firestore](https://firebase.google.com/docs/firestore) - Cloud NoSQL database.
 - [i18next](https://www.i18next.com/) - Internationalization framework (react-native-localize was used to identify the device language).
