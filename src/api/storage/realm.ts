@@ -3,7 +3,7 @@ import {
 	RepeatGradeSchema,
 	WordsToPracticeSchema,
 	IPASchema,
-} from '../../models';
+} from '../../schemas';
 import Realm from 'realm';
 
 export default new Realm({

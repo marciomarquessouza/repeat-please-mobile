@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>86626703872-54dr4q1k4id7po2na8q0s5hhv2ri5ijs.apps.googleusercontent.com</string>
+	<string>86626703872-6hr8bqsv0q6vc05guqg08ta02orub27e.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.86626703872-54dr4q1k4id7po2na8q0s5hhv2ri5ijs</string>
+	<string>com.googleusercontent.apps.86626703872-6hr8bqsv0q6vc05guqg08ta02orub27e</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>86626703872-2edtqvf7ndfkcdh82atn3pp8lked7dkt.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCZUxLiqQmp74K36399CYiJ2-DGUrGFlnk</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>org.reactjs.native.example.RepeatPlease</string>
+	<string>org.reactjs.native.RepeatPlease</string>
 	<key>PROJECT_ID</key>
 	<string>repeatpleaseapi</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:86626703872:ios:3646026e7c0f4079a796e5</string>
+	<string>1:86626703872:ios:2bd15a27d153ffbfa796e5</string>
 	<key>DATABASE_URL</key>
 	<string>https://repeatpleaseapi.firebaseio.com</string>
 </dict>

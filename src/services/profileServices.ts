@@ -1,10 +1,10 @@
 import * as storage from '../api/storage';
-import * as models from '../models';
+import * as schemas from '../schemas';
 import { IProfile } from '../../types/profile';
 import { INITAL_PROFILE } from '../constants/profile';
 
 export const initializeProfile = () => {
-	const profile = storage.get(models.PROFILE_SCHEMA_NAME).byId(0);
+	const profile = storage.get(schemas.PROFILE_SCHEMA_NAME).byId(0);
 	if (!profile.length) {
 		setProfile(INITAL_PROFILE);
 	}
@@ -12,7 +12,7 @@ export const initializeProfile = () => {
 
 export const setProfile = (profile: IProfile) => {
 	try {
-		storage.set<IProfile>(models.PROFILE_SCHEMA_NAME, {
+		storage.set<IProfile>(schemas.PROFILE_SCHEMA_NAME, {
 			...profile,
 			id: 0,
 		});
@@ -22,11 +22,11 @@ export const setProfile = (profile: IProfile) => {
 };
 
 export const getProfile = () =>
-	storage.get<IProfile>(models.PROFILE_SCHEMA_NAME).byId(0);
+	storage.get<IProfile>(schemas.PROFILE_SCHEMA_NAME).byId(0);
 
 export const clearProfile = () => {
 	try {
-		storage.clear<IProfile>(models.PROFILE_SCHEMA_NAME).all();
+		storage.clear<IProfile>(schemas.PROFILE_SCHEMA_NAME).all();
 	} catch (error) {
 		throw new Error(error.message);
 	}

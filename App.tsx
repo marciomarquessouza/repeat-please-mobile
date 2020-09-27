@@ -10,10 +10,17 @@ import { firebaseConfig } from './config';
 import './src/locales/i18n';
 import { setI18nConfig, RNLocalize } from './src/locales/i18n';
 import { initializeProfile } from './src/services/profileServices';
+import { checkConnection } from './src/utils/checkConnection';
 
-firebase.initializeApp(firebaseConfig);
-firebase.firestore();
 const store = configureStore();
+
+checkConnection().then(netInfo => {
+	if (netInfo.isConnected && firebaseConfig.apiKey) {
+		firebase.initializeApp(firebaseConfig);
+		firebase.firestore();
+	}
+});
+
 setI18nConfig();
 
 export default () => {
