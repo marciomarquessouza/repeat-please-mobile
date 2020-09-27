@@ -1,10 +1,10 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect } from 'react';
 import { ActivityIndicator, View } from 'react-native';
 import { AUTHENTICATED, UNAUTHENTICATED } from '../../navigator/routes';
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../actions/actionsCreator/profileActionsCreator';
 import { AppState } from '../../reducers/rootReducer';
-import { AlertsContext } from '../../contexts/AlertsContext';
+import { useAlertContext } from '../../contexts/AlertsContext';
 import { useTranslation } from 'react-i18next';
 import { styles } from './styles';
 import { ILoadingProps } from './interface';
@@ -12,7 +12,7 @@ import { ILoadingProps } from './interface';
 export const Loading = ({ navigation }: ILoadingProps) => {
 	const { profile, error } = useSelector((state: AppState) => state.profile);
 	const dispatch = useDispatch();
-	const { showAlert } = useContext(AlertsContext);
+	const { showAlert } = useAlertContext();
 	const { t } = useTranslation();
 
 	useEffect(() => {

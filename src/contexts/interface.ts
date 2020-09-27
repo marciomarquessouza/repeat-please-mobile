@@ -8,7 +8,6 @@ export interface IAlertsState {
 
 export interface IALertsContext {
 	showAlert: (props: IAlertsProps) => void;
-	hideAlert: () => void;
 }
 
 export interface IProviderProps {

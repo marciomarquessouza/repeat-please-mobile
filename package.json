@@ -12,7 +12,8 @@
 	"private": true,
 	"scripts": {
 		"start": "react-native start",
-		"test": "jest --coverage",
+		"test": "jest",
+		"coverage": "jest --coverage",
 		"report": "open -a 'Google Chrome' ./coverage/lcov-report/index.html ",
 		"android": "react-native run-android",
 		"ios": "react-native run-ios",
@@ -25,9 +26,9 @@
 	},
 	"husky": {
 		"hooks": {
-			"pre-commit": "yarn lint",
-			"pre-push": "yarn lint",
-			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+			"pre-commit": "npx yarn lint && npx yarn coverage",
+			"pre-push": "npx yarn lint && npx yarn coverage",
+			"commit-msg": "npx commitlint -E HUSKY_GIT_PARAMS"
 		}
 	},
 	"dependencies": {
@@ -117,6 +118,13 @@
 				"tsConfig": "tsconfig.jest.json"
 			}
 		},
+		"coverageThreshold": {
+			"global": {
+				"branches": 80,
+				"lines": 80,
+				"statements": 80
+			}
+		},
 		"moduleFileExtensions": [
 			"ts",
 			"tsx",
@@ -124,6 +132,9 @@
 			"jsx",
 			"json",
 			"node"
+		],
+		"setupFilesAfterEnv": [
+			"@testing-library/jest-native/extend-expect"
 		],
 		"testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$"
 	}

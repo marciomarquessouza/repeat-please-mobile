@@ -9,3 +9,6 @@ src/__mocks__
 
 # IPA data
 src/data/ipa
+
+# test config
+tests

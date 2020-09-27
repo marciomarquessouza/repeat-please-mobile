@@ -1,11 +1,11 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useContext } from 'react';
 import { Alerts } from 'repeat-please-styles';
 import {
 	IAlertsState,
 	IALertsContext,
 	IProviderProps,
 	IAlertsProps,
-} from './types';
+} from './interface';
 import { ALERT_TIME_OPENED } from '../constants/alerts';
 
 const initialState: IAlertsState = {
@@ -16,7 +16,6 @@ const initialState: IAlertsState = {
 
 export const AlertsContext = createContext<IALertsContext>({
 	showAlert: () => undefined,
-	hideAlert: () => undefined,
 });
 
 export const AlertsProvider = ({ children }: IProviderProps) => {
@@ -35,9 +34,11 @@ export const AlertsProvider = ({ children }: IProviderProps) => {
 	};
 
 	return (
-		<AlertsContext.Provider value={{ showAlert, hideAlert }}>
+		<AlertsContext.Provider value={{ showAlert }}>
 			{children}
 			<Alerts {...{ ...state, onCloseModal: hideAlert }} />
 		</AlertsContext.Provider>
 	);
 };
+
+export const useAlertContext = () => useContext(AlertsContext);

@@ -13,7 +13,7 @@ const setup = (props: ISlidesProps): ShallowWrapper => {
 	return shallow(<Slides {...props} />);
 };
 
-describe('Slides basic tests', () => {
+describe.skip('Slides basic tests', () => {
 	let props: any;
 	beforeEach(() => {
 		props = createTestProps();
