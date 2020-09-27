@@ -45,7 +45,7 @@
   dependencies:
     "@babel/types" "^7.10.2"
     jsesc "^2.5.1"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
     source-map "^0.5.0"
 
 "@babel/generator@^7.10.3":
@@ -55,7 +55,7 @@
   dependencies:
     "@babel/types" "^7.10.3"
     jsesc "^2.5.1"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
     source-map "^0.5.0"
 
 "@babel/helper-annotate-as-pure@^7.10.1":
@@ -118,7 +118,7 @@
   dependencies:
     "@babel/helper-function-name" "^7.10.1"
     "@babel/types" "^7.10.1"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
 
 "@babel/helper-explode-assignable-expression@^7.10.1":
   version "7.10.1"
@@ -185,7 +185,7 @@
     "@babel/helper-split-export-declaration" "^7.10.1"
     "@babel/template" "^7.10.1"
     "@babel/types" "^7.10.1"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
 
 "@babel/helper-optimise-call-expression@^7.10.1":
   version "7.10.1"
@@ -204,7 +204,7 @@
   resolved "https://registry.yarnpkg.com/@babel/helper-regex/-/helper-regex-7.10.1.tgz#021cf1a7ba99822f993222a001cc3fec83255b96"
   integrity sha512-7isHr19RsIJWWLLFn21ubFt223PjQyg1HY7CZEMRr820HttHPpVvrsIN3bUOo44DEfFV4kBXO7Abbn9KTUZV7g==
   dependencies:
-    lodash "^4.17.13"
+    lodash "^4.17.19"
 
 "@babel/helper-remap-async-to-generator@^7.10.1":
   version "7.10.1"
@@ -454,7 +454,7 @@
   integrity sha512-8bpWG6TtF5akdhIm/uWTyjHqENpy13Fx8chg7pFH875aNLwX8JxIxqm08gmAT+Whe6AOmaTeLPe7dpLbXt+xUw==
   dependencies:
     "@babel/helper-plugin-utils" "^7.10.1"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
 
 "@babel/plugin-transform-classes@^7.0.0":
   version "7.10.1"
@@ -664,7 +664,7 @@
   integrity sha512-sl96+kB3IA2B9EzpwwBmYadOT14vw3KaXOknGDbJaZCOj52GDA4Tivudq9doCJcB+bEIKCEARZYwRgBBsCGXyg==
   dependencies:
     find-cache-dir "^2.0.0"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
     make-dir "^2.1.0"
     pirates "^4.0.0"
     source-map-support "^0.5.16"
@@ -722,7 +722,7 @@
     "@babel/types" "^7.10.1"
     debug "^4.1.0"
     globals "^11.1.0"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
 
 "@babel/traverse@^7.7.0":
   version "7.10.3"
@@ -737,7 +737,7 @@
     "@babel/types" "^7.10.3"
     debug "^4.1.0"
     globals "^11.1.0"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
 
 "@babel/types@^7.0.0", "@babel/types@^7.10.1", "@babel/types@^7.10.2", "@babel/types@^7.3.0", "@babel/types@^7.4.0":
   version "7.10.2"
@@ -745,7 +745,7 @@
   integrity sha512-AD3AwWBSz0AWF0AkCN9VPiWrvldXq+/e3cHa4J89vo4ymjz1XwrBFFVZmkJTsQIPNk+ZVomPSXUJqq8yyjZsng==
   dependencies:
     "@babel/helper-validator-identifier" "^7.10.1"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
 "@babel/types@^7.10.3", "@babel/types@^7.7.0":
@@ -754,7 +754,7 @@
   integrity sha512-nZxaJhBXBQ8HVoIcGsf9qWep3Oh3jCENK54V4mRF7qaJabVsAYdbTtmSD8WmAp1R6ytPiu5apMwSXyxB1WlaBA==
   dependencies:
     "@babel/helper-validator-identifier" "^7.10.3"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
 "@cnakazawa/watch@^1.0.3":
@@ -777,7 +777,7 @@
     babel-polyfill "6.26.0"
     chalk "2.4.2"
     get-stdin "7.0.0"
-    lodash "4.17.15"
+    lodash "4.17.19"
     meow "5.0.0"
     resolve-from "5.0.0"
     resolve-global "1.0.0"
@@ -794,7 +794,7 @@
   resolved "https://registry.yarnpkg.com/@commitlint/ensure/-/ensure-8.3.4.tgz#6931677e4ca0fde71686ae3b7a367261647a341d"
   integrity sha512-8NW77VxviLhD16O3EUd02lApMFnrHexq10YS4F4NftNoErKbKaJ0YYedktk2boKrtNRf/gQHY/Qf65edPx4ipw==
   dependencies:
-    lodash "4.17.15"
+    lodash "4.17.19"
 
 "@commitlint/execute-rule@^8.3.4":
   version "8.3.4"
@@ -824,7 +824,7 @@
     "@commitlint/parse" "^8.3.4"
     "@commitlint/rules" "^8.3.4"
     babel-runtime "^6.23.0"
-    lodash "4.17.15"
+    lodash "^4.17.19"
 
 "@commitlint/load@^8.3.5":
   version "8.3.5"
@@ -836,7 +836,7 @@
     babel-runtime "^6.23.0"
     chalk "2.4.2"
     cosmiconfig "^5.2.0"
-    lodash "4.17.15"
+    lodash "^4.17.19"
     resolve-from "^5.0.0"
 
 "@commitlint/message@^8.3.4":
@@ -869,7 +869,7 @@
   integrity sha512-nHhFAK29qiXNe6oH6uG5wqBnCR+BQnxlBW/q5fjtxIaQALgfoNLHwLS9exzbIRFqwJckpR6yMCfgMbmbAOtklQ==
   dependencies:
     import-fresh "^3.0.0"
-    lodash "4.17.15"
+    lodash "^4.17.19"
     resolve-from "^5.0.0"
     resolve-global "^1.0.0"
 
@@ -1442,7 +1442,7 @@
     fs-extra "^8.1.0"
     glob "^7.1.3"
     jetifier "^1.6.2"
-    lodash "^4.17.15"
+    lodash "^4.17.19"
     logkitty "^0.7.1"
     slash "^3.0.0"
     xmldoc "^1.1.2"
@@ -1456,7 +1456,7 @@
     chalk "^3.0.0"
     glob "^7.1.3"
     js-yaml "^3.13.1"
-    lodash "^4.17.15"
+    lodash "^4.17.19"
     plist "^3.0.1"
     xcode "^2.0.0"
 
@@ -1480,7 +1480,7 @@
   integrity sha512-vCeYkJ3n/EIaW3lAfznzojMffGxYhCUzwZzwBuC3+O+gYxkymdpletqNYLLEa04DzJr174mxgbgBw8g5IP91yA==
   dependencies:
     chalk "^3.0.0"
-    lodash "^4.17.15"
+    lodash "^4.17.19"
     mime "^2.4.1"
     node-fetch "^2.6.0"
     open "^6.2.0"
@@ -1514,7 +1514,7 @@
     graceful-fs "^4.1.3"
     inquirer "^3.0.6"
     leven "^3.1.0"
-    lodash "^4.17.15"
+    lodash "^4.17.19"
     metro "^0.58.0"
     metro-config "^0.58.0"
     metro-core "^0.58.0"
@@ -1943,7 +1943,7 @@
     eslint-visitor-keys "^1.1.0"
     glob "^7.1.6"
     is-glob "^4.0.1"
-    lodash "^4.17.15"
+    lodash "^4.17.19"
     semver "^7.3.2"
     tsutils "^3.17.1"
 
@@ -2355,7 +2355,7 @@ async@^2.4.0:
   resolved "https://registry.yarnpkg.com/async/-/async-2.6.3.tgz#d72625e2344a3656e3a3ad4fa749fa83299d82ff"
   integrity sha512-zflvls11DCy+dQWzTW2dzuilv8Z5X/pjfmZOWba6TNIVDm+2UDaJmXSOXlasHKfNBs8oo3M0aT50fDEWfKZjXg==
   dependencies:
-    lodash "^4.17.14"
+    lodash "^4.17.19"
 
 asynckit@^0.4.0:
   version "0.4.0"
@@ -2787,7 +2787,7 @@ cheerio@^1.0.0-rc.3:
     dom-serializer "~0.1.1"
     entities "~1.1.1"
     htmlparser2 "^3.9.1"
-    lodash "^4.15.0"
+    lodash "^4.17.19"
     parse5 "^3.0.1"
 
 chownr@^1.1.1:
@@ -3061,7 +3061,7 @@ conventional-changelog-conventionalcommits@4.2.1:
   integrity sha512-vC02KucnkNNap+foDKFm7BVUSDAXktXrUJqGszUuYnt6T0J2azsbYz/w9TDc3VsrW2v6JOtiQWVcgZnporHr4Q==
   dependencies:
     compare-func "^1.3.1"
-    lodash "^4.2.1"
+    lodash "^4.17.19"
     q "^1.5.1"
 
 conventional-commits-parser@^3.0.0:
@@ -3071,7 +3071,7 @@ conventional-commits-parser@^3.0.0:
   dependencies:
     JSONStream "^1.0.4"
     is-text-path "^1.0.1"
-    lodash "^4.17.15"
+    lodash "^4.17.19"
     meow "^7.0.0"
     split2 "^2.0.0"
     through2 "^3.0.0"
@@ -3790,7 +3790,7 @@ eslint-plugin-flowtype@2.50.3:
   resolved "https://registry.yarnpkg.com/eslint-plugin-flowtype/-/eslint-plugin-flowtype-2.50.3.tgz#61379d6dce1d010370acd6681740fd913d68175f"
   integrity sha512-X+AoKVOr7Re0ko/yEXyM5SSZ0tazc6ffdIOocp2fFUlWoDt7DV0Bz99mngOkAFLOAWjqRA5jPwqUCbrx13XoxQ==
   dependencies:
-    lodash "^4.17.10"
+    lodash "^4.17.19"
 
 eslint-plugin-jest@22.4.1:
   version "22.4.1"
@@ -3913,7 +3913,7 @@ eslint@^6.8.0:
     js-yaml "^3.13.1"
     json-stable-stringify-without-jsonify "^1.0.1"
     levn "^0.3.0"
-    lodash "^4.17.14"
+    lodash "^4.17.19"
     minimatch "^3.0.4"
     mkdirp "^0.5.1"
     natural-compare "^1.4.0"
@@ -4991,7 +4991,7 @@ inquirer@^3.0.6:
     cli-width "^2.0.0"
     external-editor "^2.0.4"
     figures "^2.0.0"
-    lodash "^4.3.0"
+    lodash "^4.17.19"
     mute-stream "0.0.7"
     run-async "^2.2.0"
     rx-lite "^4.0.8"
@@ -5011,7 +5011,7 @@ inquirer@^7.0.0:
     cli-width "^2.0.0"
     external-editor "^3.0.3"
     figures "^3.0.0"
-    lodash "^4.17.15"
+    lodash "^4.17.19"
     mute-stream "0.0.8"
     run-async "^2.4.0"
     rxjs "^6.5.3"
@@ -6716,7 +6716,7 @@ native-base-shoutem-theme@0.3.1:
   integrity sha512-uwEGhg6gwDuJTHuhNXRKbHtNjni1UI9qfAsVchIqfK7mQAHSNPVU1QRs9Hw6O2K/qLZaP/aJmNoZGc2h2EGSwA==
   dependencies:
     hoist-non-react-statics "^1.0.5"
-    lodash "^4.17.14"
+    lodash "^4.17.19"
     prop-types "^15.5.10"
 
 native-base@^2.13.8:
@@ -6731,7 +6731,7 @@ native-base@^2.13.8:
     eslint-config-prettier "^6.0.0"
     fs-extra "^2.0.0"
     jest-react-native "^18.0.0"
-    lodash "^4.17.14"
+    lodash "^4.17.19"
     native-base-shoutem-theme "0.3.1"
     opencollective-postinstall "^2.0.2"
     print-message "^2.1.0"
@@ -7691,7 +7691,7 @@ react-native-easy-grid@0.2.2:
   resolved "https://registry.yarnpkg.com/react-native-easy-grid/-/react-native-easy-grid-0.2.2.tgz#f0be33620be1ebe2d2295918eb58b0a27e8272ab"
   integrity sha512-MlYrNIldnEMKn6TVatQN1P64GoVlwGIuz+8ncdfJ0Wq/xtzUkQwlil8Uksyp7MhKfENE09MQnGNcba6Mx3oSAA==
   dependencies:
-    lodash "^4.17.15"
+    lodash "^4.17.19"
 
 react-native-gesture-handler@^1.5.2:
   version "1.6.1"
@@ -8163,7 +8163,7 @@ request-promise-core@1.1.3:
   resolved "https://registry.yarnpkg.com/request-promise-core/-/request-promise-core-1.1.3.tgz#e9a3c081b51380dfea677336061fea879a829ee9"
   integrity sha512-QIs2+ArIGQVp5ZYbWD5ZLCY29D5CfWizP8eWnm8FoGD1TX61veauETVQbrV60662V0oFBkrDOuaBI8XgtuyYAQ==
   dependencies:
-    lodash "^4.17.15"
+    lodash "^4.17.19"
 
 request-promise-native@^1.0.5:
   version "1.0.8"
@@ -9037,7 +9037,7 @@ table@^5.2.3:
   integrity sha512-wmEc8m4fjnob4gt5riFRtTu/6+4rSe12TpAELNSqHMfF3IqnA+CH37USM6/YR3qRZv7e56kAEAtd6nKZaxe0Ug==
   dependencies:
     ajv "^6.10.2"
-    lodash "^4.17.14"
+    lodash "^4.17.19"
     slice-ansi "^2.1.0"
     string-width "^3.0.0"
 
