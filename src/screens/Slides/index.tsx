@@ -1,21 +1,17 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { HOME } from '../../navigator/routes';
-import { NavigationStackProp } from 'react-navigation-stack';
 import {
 	Slide,
 	SlideFooter,
 	SlideLogo,
 	SlideHeader,
-	color,
 } from 'repeat-please-styles';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 import * as actions from '../../actions/actionsCreator/profileActionsCreator';
-
-export interface ISlidesProps {
-	navigation: NavigationStackProp;
-}
+import { ISlidesProps } from './interface';
+import { styles } from './styles';
 
 export const Slides = ({ navigation }: ISlidesProps) => {
 	const { t } = useTranslation();
@@ -58,10 +54,3 @@ export const Slides = ({ navigation }: ISlidesProps) => {
 		</SafeAreaView>
 	);
 };
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: color.background,
-	},
-});
