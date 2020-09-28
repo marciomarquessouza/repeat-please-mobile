@@ -13,6 +13,7 @@
 	"scripts": {
 		"start": "react-native start",
 		"test": "jest",
+		"test:watch": "jest --watch",
 		"coverage": "jest --coverage",
 		"report": "open -a 'Google Chrome' ./coverage/lcov-report/index.html ",
 		"android": "react-native run-android",

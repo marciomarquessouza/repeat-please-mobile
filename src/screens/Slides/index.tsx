@@ -27,11 +27,15 @@ export const Slides = ({ navigation }: ISlidesProps) => {
 			footer: <SlideFooter text={t('slide01')} />,
 		},
 		{
-			header: <SlideHeader title={t('slide02Title')} />,
+			header: (
+				<SlideHeader title={t('slide02Title')} testIDSlideHeader="slide02" />
+			),
 			footer: <SlideFooter text={t('slide02')} />,
 		},
 		{
-			header: <SlideHeader title={t('slide03Title')} />,
+			header: (
+				<SlideHeader title={t('slide03Title')} testIDSlideHeader="slide03" />
+			),
 			footer: <SlideFooter text={t('slide03')} />,
 		},
 	];
