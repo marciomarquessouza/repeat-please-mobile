@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, Text, View, ScrollView } from 'react-native';
-import { NavigationStackProp } from 'react-navigation-stack';
 import { SearchBar } from '../../components/SearchBar';
 import { Card, CircularProgress } from 'repeat-please-styles';
 import { styles } from './style';
@@ -10,13 +9,12 @@ import {
 	bestResults,
 } from '../../__mocks__/IPA';
 import { ChallengeList } from './ChallengesList';
-
-interface ILevelsProps {
-	navigation: NavigationStackProp;
-}
+import { useTranslation } from 'react-i18next';
+import { ILevelsProps } from './interface';
 
 export const Home = ({ navigation }: ILevelsProps) => {
 	const [startAnimation, setStartAnimation] = useState(false);
+	const { t } = useTranslation();
 
 	useEffect(() => {
 		setStartAnimation(true);
@@ -30,20 +28,25 @@ export const Home = ({ navigation }: ILevelsProps) => {
 					<View style={styles.container}>
 						<View style={styles.cardContainer}>
 							<Card
-								title="Your daily challenge"
-								subtitle="You have 15 new words to pratice"
-								buttonLabel="START NOW"
+								title={t('dailyChallengeTitle')}
+								subtitle={t('dailyChallengeSubTitle')}
+								buttonLabel={t('dailyChallengeButton')}
 								onPress={() => null}
 							/>
 						</View>
 						<View style={styles.sectionTitleContainer}>
-							<Text style={styles.sectionTitleStyle}>Your Weekly Progress</Text>
-							<Text style={styles.sectionSubTitleStyle}>22 of 100 Words</Text>
+							<Text style={styles.sectionTitleStyle}>
+								{t('weeklyProgreesTile')}
+							</Text>
+							<Text style={styles.sectionSubTitleStyle}>
+								{t('weeklyProgreesSubTile')}
+							</Text>
 						</View>
 						<CircularProgress
 							progress={0.25}
 							duration={2000}
 							startAnimation={startAnimation}
+							chartText={t('chartText')}
 						/>
 						<ChallengeList
 							{...{

@@ -28,6 +28,24 @@
 		"errorAllFields": "Todos os campos são obrigatórios",
 		"errorRegister": "Erro no Cadastro do Usuário.",
 		"errorEmail": "E-mail inválido",
-		"errorLoading": "Erro ao carregar os dados de profile"
+		"errorLoading": "Erro ao carregar os dados de profile",
+
+		"dailyChallengeTitle": "Seu desafio diário",
+		"dailyChallengeSubTitle": "Você tem 15 novas palavras para praticar",
+		"dailyChallengeButton": "INICIAR AGORA",
+
+		"weeklyProgreesTile": "Seu progresso desta semana",
+		"weeklyProgreesSubTile": "22 de 100 Palavras",
+
+		"wordsToPratice": "Palavras para praticar",
+		"wordsToPraticeScore": "10% de sucesso",
+
+		"wordsToReview": "Palavras para revisar",
+		"wordsToReviewScore": "50% de sucesso",
+
+		"bestResults": "Melhores resultados",
+		"bestResultsScore": "80% de sucesso",
+
+		"chartText": "Desafio Semanal"
 	}
 }

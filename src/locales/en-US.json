@@ -28,6 +28,24 @@
 		"errorAllFields": "All fields are required",
 		"errorRegister": "Register Error",
 		"errorEmail": "Invalid Email",
-		"errorLoading": "Error to load profile data"
+		"errorLoading": "Error to load profile data",
+
+		"dailyChallengeTitle": "Your daily challenge",
+		"dailyChallengeSubTitle": "You have 15 new words to pratice",
+		"dailyChallengeButton": "START NOW",
+
+		"weeklyProgreesTile": "Your Weekly Progress",
+		"weeklyProgreesSubTile": "22 of 100 Words",
+
+		"wordsToPratice": "Words to Pratice",
+		"wordsToPraticeScore": "10% of success",
+
+		"wordsToReview": "Words to Review",
+		"wordsToReviewScore": "50% of success",
+
+		"bestResults": "Best Results",
+		"bestResultsScore": "80% of success",
+
+		"chartText": "Week Goal"
 	}
 }

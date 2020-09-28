@@ -8162,7 +8162,7 @@ repeat-element@^1.1.2:
 
 "repeat-please-styles@git+ssh://git@github.com:marciomarquessouza/repeat-please-styles.git":
   version "0.0.1"
-  resolved "git+ssh://git@github.com:marciomarquessouza/repeat-please-styles.git#c020fb017bf14a4abda66cd5c1fa752c3c945f7f"
+  resolved "git+ssh://git@github.com:marciomarquessouza/repeat-please-styles.git#881f68d6d3ff65f15f19bcab8e4c71bc296a3886"
   dependencies:
     "@types/react-native-vector-icons" "^6.4.5"
     moment "^2.24.0"
