@@ -1,0 +1,1 @@
+export const SLIDES_TRANSITION_DURATION = 800;

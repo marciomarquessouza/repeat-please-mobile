@@ -12,6 +12,7 @@ import { useDispatch } from 'react-redux';
 import * as actions from '../../actions/actionsCreator/profileActionsCreator';
 import { ISlidesProps } from './interface';
 import { styles } from './styles';
+import { SLIDES_TRANSITION_DURATION } from '../../constants/slides';
 
 export const Slides = ({ navigation }: ISlidesProps) => {
 	const { t } = useTranslation();
@@ -20,22 +21,18 @@ export const Slides = ({ navigation }: ISlidesProps) => {
 		dispatch(actions.setProfile({ id: 0, isFirstAccess: false }));
 		navigation.navigate(HOME);
 	};
-	const duration = 800;
+	const duration = SLIDES_TRANSITION_DURATION;
 	const slidesContent = [
 		{
 			header: <SlideLogo greeting={t('greeting')} />,
 			footer: <SlideFooter text={t('slide01')} />,
 		},
 		{
-			header: (
-				<SlideHeader title={t('slide02Title')} testIDSlideHeader="slide02" />
-			),
+			header: <SlideHeader title={t('slide02Title')} />,
 			footer: <SlideFooter text={t('slide02')} />,
 		},
 		{
-			header: (
-				<SlideHeader title={t('slide03Title')} testIDSlideHeader="slide03" />
-			),
+			header: <SlideHeader title={t('slide03Title')} />,
 			footer: <SlideFooter text={t('slide03')} />,
 		},
 	];

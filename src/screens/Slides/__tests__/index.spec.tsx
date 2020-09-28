@@ -1,8 +1,15 @@
 import React from 'react';
-import { fireEvent, render, waitFor } from '@testing-library/react-native';
+import {
+	fireEvent,
+	render,
+	RenderAPI,
+	waitFor,
+} from '@testing-library/react-native';
 import * as redux from 'react-redux';
 import { Slides } from '../';
 import { ISlidesProps } from '../interface';
+import { HOME } from '../../../navigator/routes';
+import { SLIDES_TRANSITION_DURATION } from '../../../constants/slides';
 
 const defaultProps: any = {
 	navigation: {
@@ -11,6 +18,26 @@ const defaultProps: any = {
 };
 
 const setup = (props: ISlidesProps) => render(<Slides {...props} />);
+
+const moveToLastSlide = async (wrapper: RenderAPI, action: () => void) => {
+	const interval = SLIDES_TRANSITION_DURATION;
+	const nextButton = wrapper.getByTestId('nextButton');
+	fireEvent.press(nextButton);
+
+	await waitFor(
+		async () => {
+			fireEvent.press(nextButton);
+			await waitFor(
+				async () => {
+					fireEvent.press(nextButton);
+					await waitFor(() => action(), { interval });
+				},
+				{ interval },
+			);
+		},
+		{ interval },
+	);
+};
 
 describe('#Slides', () => {
 	afterEach(() => {
@@ -29,17 +56,28 @@ describe('#Slides', () => {
 		});
 	});
 
-	describe.skip('#Integration Tests', () => {
-		describe('when press the next slide button', () => {
-			it('enables the previous button ', async () => {
-				jest.spyOn(redux, 'useDispatch').mockReturnValue(jest.fn());
-				const wrapper = setup(defaultProps);
-				const nextButton = wrapper.getByTestId('nextButton');
-				fireEvent.press(nextButton);
-				await waitFor(() => wrapper.getByTestId('slide02'), {
-					interval: 2000,
+	describe('#Integration Tests', () => {
+		describe('when goes to the last slide', () => {
+			describe('when press the start button', () => {
+				it('dispatchs a actions to set the first access', async () => {
+					const spy = jest
+						.spyOn(redux, 'useDispatch')
+						.mockReturnValue(jest.fn());
+					const wrapper = setup(defaultProps);
+					await moveToLastSlide(wrapper, () =>
+						fireEvent.press(wrapper.getByTestId('startButton')),
+					);
+					expect(spy).toHaveBeenCalled();
 				});
-				expect(wrapper.toJSON()).toMatchSnapshot();
+
+				it('navigate to HOME', async () => {
+					jest.spyOn(redux, 'useDispatch').mockReturnValue(jest.fn());
+					const wrapper = setup(defaultProps);
+					await moveToLastSlide(wrapper, () =>
+						fireEvent.press(wrapper.getByTestId('startButton')),
+					);
+					expect(defaultProps.navigation.navigate).toHaveBeenCalledWith(HOME);
+				});
 			});
 		});
 	});
