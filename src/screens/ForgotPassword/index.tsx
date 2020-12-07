@@ -9,7 +9,6 @@ import {
 	ScrollView,
 } from 'react-native';
 import { PlaceholderInput, Title, TitleLogo } from 'repeat-please-styles';
-import { NavigationStackProp } from 'react-navigation-stack';
 import { submit } from '../../../assets/images';
 import { emailIsValid } from '../../utils/validations';
 import { AlertsContext } from '../../contexts/AlertsContext';
@@ -18,12 +17,10 @@ import * as actions from '../../actions/actionsCreator/signInActionsCreators';
 import { AppState } from '../../reducers/rootReducer';
 import { useTranslation } from 'react-i18next';
 
-interface IForgotPasswordProp {
-	navigation: NavigationStackProp;
-}
-
-export const ForgotPassword = ({ navigation }: IForgotPasswordProp) => {
-	const loginEmail = navigation.getParam('email');
+export const ForgotPassword = () => {
+	// const loginEmail = navigation.getParam('email');
+	// TODO add state management here
+	const loginEmail = 'change@gmail.com';
 	const [email, setEmail] = useState(loginEmail || '');
 	const { isLoading, error } = useSelector((state: AppState) => state.signIn);
 	const dispatch = useDispatch();

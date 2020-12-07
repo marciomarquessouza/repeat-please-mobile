@@ -1,5 +1,4 @@
-import { NavigationStackProp } from 'react-navigation-stack';
+import { RootStackParamList } from '../../navigator/interface';
+import { StackScreenProps } from '@react-navigation/stack';
 
-export interface ILevelsProps {
-	navigation: NavigationStackProp;
-}
+export type ILevelsProps = StackScreenProps<RootStackParamList, 'Levels'>;

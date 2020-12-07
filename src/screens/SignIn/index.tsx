@@ -3,7 +3,6 @@ import { SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
 import { LinkButton } from 'repeat-please-styles';
 import { LoginForm } from './components';
 import { FORGOT_PASSWORD, SIGN_UP } from '../../navigator/routes';
-import { NavigationStackProp } from 'react-navigation-stack';
 import { AlertsContext } from '../../contexts/AlertsContext';
 import { emailIsValid } from '../../utils/validations';
 import { styles } from './style';
@@ -12,12 +11,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../actions/actionsCreator/signInActionsCreators';
 import { AppState } from '../../reducers/rootReducer';
 import { useTranslation } from 'react-i18next';
+import { RootStackParamList } from '../../navigator/interface';
+import { StackScreenProps } from '@react-navigation/stack';
 
-interface ISignInProps {
-	navigation: NavigationStackProp;
-}
+type ISignInProps = StackScreenProps<RootStackParamList, 'SignIn'>;
 
-export const SignIn = ({ navigation }: ISignInProps) => {
+export const SignIn = (props: ISignInProps) => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const { isLoading, error } = useSelector((state: AppState) => state.signIn);
@@ -48,11 +47,11 @@ export const SignIn = ({ navigation }: ISignInProps) => {
 	};
 
 	const onForgotPasswordPress = (): void => {
-		navigation.navigate(FORGOT_PASSWORD, { email });
+		props.navigation.navigate(FORGOT_PASSWORD, { email });
 	};
 
 	const onSignUpPress = (): void => {
-		navigation.navigate(SIGN_UP);
+		props.navigation.navigate(SIGN_UP);
 	};
 
 	return (
@@ -63,7 +62,7 @@ export const SignIn = ({ navigation }: ISignInProps) => {
 					onEmailSubmit={onEmailSubmit}
 					onPassChange={passText => setPassword(passText)}
 					onPassSubmit={onSubmitPassword}
-					navigation={navigation}
+					navigation={props}
 					isLoading={isLoading}
 				/>
 				<LinkButton

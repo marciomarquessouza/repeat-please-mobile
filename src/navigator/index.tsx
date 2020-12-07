@@ -1,17 +1,24 @@
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
 import { Loading } from '../screens/Loading';
-import { AuthenticatedNavigator } from './AuthenticatedNavigator';
+import { TabNavigator } from './AuthenticatedNavigator/TabNavigator';
 import { UnauthenticatedNavigator } from './UnauthenticatedNavigator';
+import { NavigationContainer } from '@react-navigation/native';
+import * as ROUTES from './routes';
 
-const navigator = createSwitchNavigator(
-	{
-		Loading,
-		AuthenticatedNavigator,
-		UnauthenticatedNavigator,
-	},
-	{
-		initialRouteName: 'Loading',
-	},
+const Stack = createStackNavigator();
+
+export const AppNavigationContainer = () => (
+	<NavigationContainer>
+		<Stack.Navigator
+			initialRouteName={ROUTES.LOADING}
+			screenOptions={{ headerShown: false }}>
+			<Stack.Screen name={ROUTES.LOADING} component={Loading} />
+			<Stack.Screen name={ROUTES.TAB_NAVIGATOR} component={TabNavigator} />
+			<Stack.Screen
+				name={ROUTES.UNAUTHENTICATED}
+				component={UnauthenticatedNavigator}
+			/>
+		</Stack.Navigator>
+	</NavigationContainer>
 );
-
-export default createAppContainer(navigator);

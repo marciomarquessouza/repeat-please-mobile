@@ -1,10 +1,11 @@
 import React from 'react';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Search } from '../../../screens/Search';
 import { Goals } from '../../../screens/Goals';
 import { Options } from '../../../screens/Options';
 import { HomeStack } from '../StackNavigator';
+import * as ROUTES from '../../routes';
 
 interface ITabIcon {
 	name: string;
@@ -15,49 +16,49 @@ const tabIcon = ({ name, color }: ITabIcon) => (
 	<Icon {...{ name, color, size: 25 }} />
 );
 
-export const TabNavigator = createBottomTabNavigator(
-	{
-		Home: {
-			screen: HomeStack,
-			navigationOptions: {
-				tabBarLabel: 'Challenges',
-				tabBarIcon: ({ tintColor: color }) =>
-					tabIcon({ name: 'ios-mic', color }),
-			},
-		},
-		Search: {
-			screen: Search,
-			navigationOptions: {
-				tabBarLabel: 'Search',
-				tabBarIcon: ({ tintColor: color }) =>
-					tabIcon({ name: 'ios-search', color }),
-			},
-		},
-		Goals: {
-			screen: Goals,
-			navigationOptions: {
-				tabBarLabel: 'Goals',
-				tabBarIcon: ({ tintColor: color }) =>
-					tabIcon({ name: 'ios-star', color }),
-			},
-		},
-		Options: {
-			screen: Options,
-			navigationOptions: {
-				tabBarLabel: 'Options',
-				tabBarIcon: ({ tintColor: color }) =>
-					tabIcon({ name: 'ios-menu', color }),
-			},
-		},
-	},
-	{
-		initialRouteName: 'Home',
-		tabBarOptions: {
+const Tab = createBottomTabNavigator();
+
+export const TabNavigator = () => (
+	<Tab.Navigator
+		initialRouteName={ROUTES.HOME}
+		tabBarOptions={{
 			activeTintColor: '#000',
 			inactiveTintColor: 'gray',
 			style: {
-				height: 60,
+				height: 80,
 			},
-		},
-	},
+		}}>
+		<Tab.Screen
+			name={ROUTES.HOME}
+			component={HomeStack}
+			options={{
+				tabBarLabel: 'Challenges',
+				tabBarIcon: ({ color }) => tabIcon({ name: 'ios-mic', color }),
+			}}
+		/>
+		<Tab.Screen
+			name={ROUTES.SEARCH}
+			component={Search}
+			options={{
+				tabBarLabel: 'Search',
+				tabBarIcon: ({ color }) => tabIcon({ name: 'ios-search', color }),
+			}}
+		/>
+		<Tab.Screen
+			name={ROUTES.GOALS}
+			component={Goals}
+			options={{
+				tabBarLabel: 'Goals',
+				tabBarIcon: ({ color }) => tabIcon({ name: 'ios-star', color }),
+			}}
+		/>
+		<Tab.Screen
+			name={ROUTES.OPTIONS}
+			component={Options}
+			options={{
+				tabBarLabel: 'Options',
+				tabBarIcon: ({ color }) => tabIcon({ name: 'ios-menu', color }),
+			}}
+		/>
+	</Tab.Navigator>
 );

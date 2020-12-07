@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { ActivityIndicator, View } from 'react-native';
-import { AUTHENTICATED, UNAUTHENTICATED } from '../../navigator/routes';
+import { TAB_NAVIGATOR, UNAUTHENTICATED } from '../../navigator/routes';
 import { useSelector, useDispatch } from 'react-redux';
 import * as actions from '../../actions/actionsCreator/profileActionsCreator';
 import { AppState } from '../../reducers/rootReducer';
@@ -22,7 +22,7 @@ export const Loading = ({ navigation }: ILoadingProps) => {
 		}
 
 		navigation.navigate(
-			profile.isFirstAccess ? UNAUTHENTICATED : AUTHENTICATED,
+			profile.isFirstAccess ? UNAUTHENTICATED : TAB_NAVIGATOR,
 		);
 	}, [navigation, profile, dispatch]);
 

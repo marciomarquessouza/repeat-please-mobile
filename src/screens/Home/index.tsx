@@ -49,12 +49,10 @@ export const Home = ({ navigation }: ILevelsProps) => {
 							chartText={t('chartText')}
 						/>
 						<ChallengeList
-							{...{
-								wordsToPratice,
-								wordsToReview,
-								bestResults,
-								navigation,
-							}}
+							wordsToPratice={wordsToPratice}
+							wordsToReview={wordsToReview}
+							bestResults={bestResults}
+							navigation={navigation}
 						/>
 					</View>
 				</ScrollView>

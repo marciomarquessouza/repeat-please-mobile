@@ -8,7 +8,7 @@ import {
 import * as redux from 'react-redux';
 import { Slides } from '../';
 import { ISlidesProps } from '../interface';
-import { HOME } from '../../../navigator/routes';
+import { TAB_NAVIGATOR } from '../../../navigator/routes';
 import { SLIDES_TRANSITION_DURATION } from '../../../constants/slides';
 
 const defaultProps: any = {
@@ -76,7 +76,9 @@ describe('#Slides', () => {
 					await moveToLastSlide(wrapper, () =>
 						fireEvent.press(wrapper.getByTestId('startButton')),
 					);
-					expect(defaultProps.navigation.navigate).toHaveBeenCalledWith(HOME);
+					expect(defaultProps.navigation.navigate).toHaveBeenCalledWith(
+						TAB_NAVIGATOR,
+					);
 				});
 			});
 		});

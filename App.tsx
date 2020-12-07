@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import SplashScreen from 'react-native-splash-screen';
-import AppContainer from './src/navigator';
+import { AppNavigationContainer } from './src/navigator';
 import * as firebase from 'firebase';
 import { AlertsProvider } from './src/contexts/AlertsContext';
 import { Provider } from 'react-redux';
@@ -36,7 +36,7 @@ export default () => {
 	return (
 		<Provider store={store}>
 			<AlertsProvider>
-				<AppContainer />
+				<AppNavigationContainer />
 			</AlertsProvider>
 		</Provider>
 	);

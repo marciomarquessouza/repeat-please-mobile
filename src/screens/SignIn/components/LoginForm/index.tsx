@@ -4,16 +4,17 @@ import { Email } from '../Email';
 import { Password } from '../Password';
 import { HeaderBackArrow } from '../../../../navigator/HeaderBackArrow';
 import { styles } from './style';
-import { NavigationStackProp } from 'react-navigation-stack';
+import { StackScreenProps } from '@react-navigation/stack';
 import { timingAnimation } from '../../../../utils/animations';
 import { useTranslation } from 'react-i18next';
+import { RootStackParamList } from '../../../../navigator/interface';
 
 interface ILoginFormProps {
 	onEmailSubmit: () => boolean;
 	onEmailChange: (text: string) => void;
 	onPassSubmit: () => void;
 	onPassChange: (text: string) => void;
-	navigation: NavigationStackProp;
+	navigation: StackScreenProps<RootStackParamList, 'SignIn'>;
 	isLoading: boolean;
 }
 
@@ -50,7 +51,7 @@ export const LoginForm = ({
 	};
 
 	const goBack = (): void => {
-		page === 'password' ? goToEmail() : navigation.goBack();
+		page === 'password' ? goToEmail() : navigation.navigation.goBack();
 	};
 
 	return (

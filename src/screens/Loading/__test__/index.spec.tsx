@@ -3,7 +3,7 @@ import { render } from '@testing-library/react-native';
 import { Loading } from '../';
 import * as redux from 'react-redux';
 import { ILoadingProps } from '../interface';
-import { AUTHENTICATED, UNAUTHENTICATED } from '../../../navigator/routes';
+import { TAB_NAVIGATOR, UNAUTHENTICATED } from '../../../navigator/routes';
 import * as AlertsContext from '../../../contexts/AlertsContext';
 
 const defaultProps: any = {
@@ -47,7 +47,7 @@ describe('#Loading', () => {
 		describe('when exists a profile', () => {
 			[
 				{ isFirstAccess: true, route: UNAUTHENTICATED },
-				{ isFirstAccess: false, route: AUTHENTICATED },
+				{ isFirstAccess: false, route: TAB_NAVIGATOR },
 			].forEach(({ isFirstAccess, route }) => {
 				describe(`when ${isFirstAccess ? 'is' : 'is not'} first access`, () => {
 					it(`navigate to the ${route} route `, () => {

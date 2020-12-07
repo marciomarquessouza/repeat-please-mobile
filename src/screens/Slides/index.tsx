@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { HOME } from '../../navigator/routes';
+import { TAB_NAVIGATOR } from '../../navigator/routes';
 import {
 	Slide,
 	SlideFooter,
@@ -19,7 +19,7 @@ export const Slides = ({ navigation }: ISlidesProps) => {
 	const dispatch = useDispatch();
 	const nextScreen = () => {
 		dispatch(actions.setProfile({ id: 0, isFirstAccess: false }));
-		navigation.navigate(HOME);
+		navigation.navigate(TAB_NAVIGATOR);
 	};
 	const duration = SLIDES_TRANSITION_DURATION;
 	const slidesContent = [

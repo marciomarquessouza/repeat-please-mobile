@@ -1,15 +1,14 @@
 import React from 'react';
 import { View, ScrollView, SafeAreaView } from 'react-native';
-import { NavigationStackProp } from 'react-navigation-stack';
 import { ButtonRounded, Divider, Logo } from 'repeat-please-styles';
 import { FacebookButton, GoogleButton } from '../../components';
 import { SIGN_IN, SIGN_UP } from '../../navigator/routes';
 import { styles } from './style';
 import { useTranslation } from 'react-i18next';
+import { RootStackParamList } from '../../navigator/interface';
+import { StackScreenProps } from '@react-navigation/stack';
 
-export interface IWalkthroughProps {
-	navigation: NavigationStackProp;
-}
+type IWalkthroughProps = StackScreenProps<RootStackParamList, 'Home'>;
 
 export const Walkthrough = ({ navigation }: IWalkthroughProps) => {
 	const { t } = useTranslation();

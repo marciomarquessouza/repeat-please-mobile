@@ -5,12 +5,11 @@ import { Timer, ITimerRef } from '../../components';
 import { Header, ArcTimer, ChallengeStatusResult } from './components';
 import { styles, TIMER_CIRCLE } from './styles';
 import { timingAnimation } from '../../utils/animations';
-import { NavigationStackProp } from 'react-navigation-stack';
+import { StackScreenProps } from '@react-navigation/stack';
 import { RESULT } from '../../navigator/routes';
+import { RootStackParamList } from '../../navigator/interface';
 
-interface IChallengeProps {
-	navigation: NavigationStackProp;
-}
+type Props = StackScreenProps<RootStackParamList, 'Home'>;
 
 const SCREEN_WIDTH = Dimensions.get('screen').width;
 const HALF_SCREEN = SCREEN_WIDTH / 2;
@@ -26,7 +25,7 @@ const TIMER_ARC_SPEED = 3e4;
 
 const challengeWords = ['BIBLE', 'LOVE'];
 
-export const Challenge = ({ navigation }: IChallengeProps) => {
+export const Challenge = ({ navigation }: Props) => {
 	const [timerArc] = useState(new Animated.Value(0));
 	const [{ status, result, index, challenges }, dispatch] = useChallenge(
 		challengeWords,

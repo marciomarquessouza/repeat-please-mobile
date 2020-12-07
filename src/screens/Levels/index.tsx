@@ -7,8 +7,8 @@ import {
 	Image,
 	View,
 } from 'react-native';
-import { IPAType } from '../../../types/ipa';
-import { NavigationStackProp } from 'react-navigation-stack';
+// import { IPAType } from '../../../types/ipa';
+import { StackScreenProps } from '@react-navigation/stack';
 import { IPACard, LevelChoice } from '../../components';
 import { playButton } from '../../../assets/images';
 import { CHALLENGE } from '../../navigator/routes';
@@ -16,23 +16,23 @@ import { levels } from './levels';
 import { LevelNameType } from '../../../types/ipa';
 import { styles } from './styles';
 import useTextToSpeech from '../../hooks/useTextToSpeech';
+import { RootStackParamList } from '../../navigator/interface';
 
-interface ILevelsProps {
-	navigation: NavigationStackProp;
-}
+type ILevelsProps = StackScreenProps<RootStackParamList, 'Levels'>;
 
 export const Levels = ({ navigation }: ILevelsProps) => {
-	const { symbol, type, examples }: IPAType = navigation.getParam('IPA');
+	// TODO take this information by redux state management
+	// const { symbol, type, examples }: IPAType = navigation.getParam('IPA');
 	const [selected, setSelected] = useState<LevelNameType>('Chimp');
-	const [readText, statusTTS] = useTextToSpeech(examples.join(' '));
+	const [readText, statusTTS] = useTextToSpeech('LOVE');
 
 	return (
 		<ScrollView style={styles.container}>
 			<SafeAreaView>
 				<IPACard
-					IPASymbol={symbol}
+					IPASymbol={'A'}
 					stars={2}
-					type={type}
+					type={'consonant'}
 					onAudioPressed={readText}
 					loading={statusTTS === 'loading'}
 				/>

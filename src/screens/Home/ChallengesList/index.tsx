@@ -24,7 +24,7 @@ export const ChallengeList = ({
 			<View style={styles.listContainer}>
 				<IPAList
 					list={Object.values(wordsToPratice)}
-					onPress={IPA => navigation.navigate(LEVELS, { IPA })}
+					onPress={() => navigation.navigate(LEVELS)}
 				/>
 			</View>
 			<View style={styles.sectionTitleContainer}>
@@ -36,7 +36,7 @@ export const ChallengeList = ({
 			<View style={styles.listContainer}>
 				<IPAList
 					list={Object.values(wordsToReview)}
-					onPress={IPA => navigation.navigate(LEVELS, { IPA })}
+					onPress={() => navigation.navigate(LEVELS)}
 				/>
 			</View>
 			<View style={styles.sectionTitleContainer}>
@@ -46,7 +46,7 @@ export const ChallengeList = ({
 			<View style={styles.listContainer}>
 				<IPAList
 					list={Object.values(bestResults)}
-					onPress={IPA => navigation.navigate(LEVELS, { IPA })}
+					onPress={() => navigation.navigate(LEVELS)}
 				/>
 			</View>
 		</>

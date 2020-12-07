@@ -1,5 +1,4 @@
-import { NavigationStackProp } from 'react-navigation-stack';
+import { RootStackParamList } from '../../navigator/interface';
+import { StackScreenProps } from '@react-navigation/stack';
 
-export interface ILoadingProps {
-	navigation: NavigationStackProp;
-}
+export type ILoadingProps = StackScreenProps<RootStackParamList, 'Loading'>;
